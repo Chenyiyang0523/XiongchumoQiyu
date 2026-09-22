@@ -1,0 +1,26 @@
+[
+  {
+    "package": "Xiongchumo_Qiyu_Build-mac.zip",
+    "size_bytes": 73659583,
+    "sha256": "6bdffee2437dc0fbabe5ae7bf62b8f7e6e31b7a956847e7fb653d0a9b6f9555a",
+    "zip_entries": 1497,
+    "rpa_entries": {
+      "XiongchumoQiyu.app/Contents/Resources/autorun/game/archive.rpa": 159
+    },
+    "music_in_zip": false,
+    "music_in_rpa": false,
+    "forbidden_paths": []
+  },
+  {
+    "package": "Xiongchumo_Qiyu_Build-pc.zip",
+    "size_bytes": 79346708,
+    "sha256": "73e9168443217a6fe49eced3a649d6fdf17207f15a77c8058e15ef54c5f673df",
+    "zip_entries": 1513,
+    "rpa_entries": {
+      "Xiongchumo_Qiyu_Build-pc/game/archive.rpa": 159
+    },
+    "music_in_zip": false,
+    "music_in_rpa": false,
+    "forbidden_paths": []
+  }
+]

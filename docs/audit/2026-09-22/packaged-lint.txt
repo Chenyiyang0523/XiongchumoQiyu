@@ -1,0 +1,15 @@
+﻿Ren'Py 8.5.2.26010301 lint report, generated at: Tue Sep 22 10:21:07 2026
+
+game/flow.rpy:17 'audio/music.mp3' is not loadable
+
+
+Statistics:
+
+The game contains 12 dialogue blocks, containing 13 words and 189 characters,
+for an average of 1.1 words and 16 characters per block.
+
+The game contains 0 menus, 24 images, and 50 screens.
+
+
+Lint is not a substitute for thorough testing. Remember to update Ren'Py
+before releasing. New releases fix bugs and improve compatibility.

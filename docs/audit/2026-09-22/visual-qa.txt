@@ -1,0 +1,32 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.visual_qa
+[rpytest] [log] - global.visual_qa
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-26.6.2-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  1.1.0-alpha.1
+
+[rpytest] [exc] + global
+[rpytest] [exc]   + visual_qa
+[rpytest] [exc]     - key_screens
+[rpytest] [exc]     - key_screens (4.290 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (4.966 s)
+[rpytest]   PASSED  visual_qa            - (4.312 s)
+[rpytest]     PASSED  key_screens          - (4.290 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :     1 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test hooks :     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed | 
+
+[rpytest] Time: 4.967 s
+[rpytest] Status: PASSED 
+
+视觉 QA 截图已写入：/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/docs/qa-screenshots

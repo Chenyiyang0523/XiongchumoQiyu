@@ -1,0 +1,70 @@
+[
+  {
+    "check": "offline model matrix (no GUI)",
+    "passed": true,
+    "cases": 216
+  },
+  {
+    "check": "endpoint validation",
+    "passed": true,
+    "cases": 4
+  },
+  {
+    "check": "mock transport fallback: connection failure",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: timeout",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: empty SSE",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: malformed SSE JSON",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: incomplete SSE",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: oversize SSE",
+    "passed": true
+  },
+  {
+    "check": "stale story commit rejected",
+    "passed": true
+  },
+  {
+    "check": "setting behavior probe",
+    "observed": [
+      {
+        "setting": "scenario",
+        "changes_middle_chapter": false
+      },
+      {
+        "setting": "_game_mode",
+        "changes_middle_chapter": false
+      },
+      {
+        "setting": "_game_difficulty",
+        "changes_middle_chapter": false
+      },
+      {
+        "setting": "powerup",
+        "changes_middle_chapter": false
+      },
+      {
+        "setting": "fate_text",
+        "changes_middle_chapter": false
+      }
+    ]
+  },
+  {
+    "check": "chosen ending consistency",
+    "story_is_open_ended": true,
+    "record_type": "温馨成长"
+  }
+]
