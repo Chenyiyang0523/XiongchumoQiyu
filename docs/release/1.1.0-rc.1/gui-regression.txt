@@ -1,0 +1,39 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.regression
+[rpytest] [log] - global.regression
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-26.6.2-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  1.1.0-rc.1
+
+[rpytest] [exc] + global
+[rpytest] [exc]   + regression
+[rpytest] [exc]     - full_adventure
+[rpytest] [exc]     - full_adventure (9.518 s)
+[rpytest] [exc]     - independent_settings_inputs
+[rpytest] [exc]     - independent_settings_inputs (0.738 s)
+[rpytest] [exc]     - challenge_timeout
+[rpytest] [exc]     - challenge_timeout (7.158 s)
+[rpytest] [exc]     - challenge_keyboard_success
+[rpytest] [exc]     - challenge_keyboard_success (0.273 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (18.445 s)
+[rpytest]   PASSED  regression           - (17.760 s)
+[rpytest]     PASSED  full_adventure       - (9.518 s)
+[rpytest]     PASSED  independent_settings_inputs - (0.738 s)
+[rpytest]     PASSED  challenge_timeout    - (7.158 s)
+[rpytest]     PASSED  challenge_keyboard_success - (0.273 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :     4 |     4 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test hooks :     6 |     6 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :    19 |    19 passed |     0 xfailed |     0 failed |     0 xpassed |
+
+[rpytest] Time: 18.445 s
+[rpytest] Status: PASSED

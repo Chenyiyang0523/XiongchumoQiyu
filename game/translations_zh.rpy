@@ -1,0 +1,16 @@
+# 默认语言为简体中文，补齐引擎通用确认提示。
+translate None strings:
+    old "Are you sure you want to quit?"
+    new "确定要退出游戏吗？"
+    old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
+    new "确定返回主菜单吗？\n尚未保存的进度将会丢失。"
+    old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
+    new "读取存档会替换当前尚未保存的进度。\n确定继续吗？"
+    old "Are you sure you want to overwrite your save?"
+    new "确定要覆盖这个存档吗？"
+    old "Are you sure you want to delete this save?"
+    new "确定要删除这个存档吗？"
+    old "Yes"
+    new "是"
+    old "No"
+    new "否"

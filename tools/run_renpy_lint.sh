@@ -1,29 +1,18 @@
 #!/bin/sh
 set -eu
-
 project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
-runtime_root=${XCMQY_RUNTIME_ROOT:-$project_root/archive/legacy-releases/credentials-compromised-2026-08-23/XcmQy/XcmQy_v1.01}
-launcher="$runtime_root/lib/py3-linux-x86_64/XiongchumoQiyu"
-
-if [ ! -x "$launcher" ]; then
-    echo "Ren'Py 运行时不可用：$launcher" >&2
-    echo "可通过 XCMQY_RUNTIME_ROOT 指向同版本的解包运行时。" >&2
+sdk_root=${XCMQY_RENPY_SDK_ROOT:-$project_root/.local/toolchains/renpy-8.5.2-sdk}
+if [ ! -x "$sdk_root/renpy.sh" ]; then
+    echo "请通过 XCMQY_RENPY_SDK_ROOT 指定 Ren'Py 8.5.2 SDK。" >&2
     exit 2
 fi
-
 temp_root=$(mktemp -d "${TMPDIR:-/tmp}/xcmqy-lint.XXXXXX")
-cleanup() {
-    chmod -R u+w "$temp_root" 2>/dev/null || true
-    rm -rf -- "$temp_root"
-}
-trap cleanup EXIT INT TERM
-
+trap 'chmod -R u+w "$temp_root"; rm -rf -- "$temp_root"' EXIT INT TERM
 cp -R "$project_root/game" "$temp_root/game"
-
-docker run --rm --platform linux/amd64 \
-    -e SDL_VIDEODRIVER=dummy \
-    -e SDL_AUDIODRIVER=dummy \
-    -v "$runtime_root:/runtime:ro" \
-    -v "$temp_root/game:/runtime/game" \
-    debian:bookworm-slim \
-    /bin/sh -c 'exec /runtime/lib/py3-linux-x86_64/XiongchumoQiyu --lint'
+RENPY_DISABLE_SOUND=1 "$sdk_root/renpy.sh" --savedir "$temp_root/saves" "$temp_root" lint >"$temp_root/lint.txt" 2>&1
+cat "$temp_root/lint.txt"
+# Ren'Py lint 遇到缺资源仍可能返回 0，必须检查诊断正文。
+if rg -q '^game/.*:[0-9]+|not loadable|Could not|Exception|Error|is not defined|unknown' "$temp_root/lint.txt"; then
+    echo '[FAIL] Ren\x27Py lint 有诊断，不能发布。' >&2
+    exit 1
+fi

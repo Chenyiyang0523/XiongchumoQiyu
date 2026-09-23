@@ -1,0 +1,20 @@
+[OK] 工程门禁通过：扫描 13 个源码文件，6 个规范背景，未发现高风险残留。
+[
+  {
+    "package": "Xiongchumo_Qiyu_Build-mac.zip",
+    "bytes": 77517586,
+    "sha256": "617db736c235a1e23d734c4d922dd531ec3cd58518b4ef75fe72c89de3c854c5",
+    "resources_verified_by_hash": 149,
+    "game_entries": 166,
+    "music_present": true
+  },
+  {
+    "package": "Xiongchumo_Qiyu_Build-pc.zip",
+    "bytes": 83204662,
+    "sha256": "7fdf970eccda9e249593c043a7093e6096bca88315ea79da730d692c9c525fc0",
+    "resources_verified_by_hash": 149,
+    "game_entries": 166,
+    "music_present": true
+  }
+]
+[OK] 已验证真正归档的 Mac/PC 安装包：/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/dist/1.1.0-rc.1

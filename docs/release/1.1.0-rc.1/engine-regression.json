@@ -1,0 +1,52 @@
+[
+  {
+    "check": "offline model matrix (no GUI)",
+    "passed": true,
+    "cases": 216
+  },
+  {
+    "check": "endpoint validation",
+    "passed": true,
+    "cases": 4
+  },
+  {
+    "check": "mock transport fallback: connection failure",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: timeout",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: empty SSE",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: malformed SSE JSON",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: incomplete SSE",
+    "passed": true
+  },
+  {
+    "check": "mock transport fallback: oversize SSE",
+    "passed": true
+  },
+  {
+    "check": "stale story commit rejected",
+    "passed": true
+  },
+  {
+    "check": "state restoration preserves route, QTE, family and stats",
+    "passed": true
+  },
+  {
+    "check": "response finalization is idempotent",
+    "passed": true
+  },
+  {
+    "check": "stale evaluation and report discarded",
+    "passed": true
+  }
+]

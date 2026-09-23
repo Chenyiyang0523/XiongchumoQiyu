@@ -174,6 +174,10 @@ label player_turn:
                 game._eq_used_indices.append(_eq_idx)
         call screen eq_feedback_screen(reflection=EQ_REFLECTIONS[_eq_idx])
 
+    if game._game_mode == "亲子共玩" and game.turn_count == 1 and not getattr(game, "family_discussion", ""):
+        call screen family_discussion
+        $ game.family_discussion = _return
+
     # 显示选项或自由输入
     if current_options:
         $ quick_menu = False
@@ -280,7 +284,7 @@ label story_end:
         if persistent.current_user:
             _account = get_current_account()
             _committed = _account.setdefault("committed_runs", []) if _account else []
-            if game.run_id not in _committed:
+            if game.run_id not in _committed and not any(e.get("run_id") == game.run_id for e in _account.get("endings_unlocked", []) if isinstance(e, dict)):
                 _run_was_committed = True
                 _committed.append(game.run_id)
                 if len(_committed) > 200:

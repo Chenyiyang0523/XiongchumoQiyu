@@ -394,6 +394,8 @@ screen game_settings():
     default show_fate_input = False
     default tts_enabled = False
     default online_enabled = False
+    $ scenario_value = ScreenVariableInputValue("scenario_text", default=True)
+    $ fate_value = ScreenVariableInputValue("fate_text", default=False)
 
     add Transform("bg/bg_cabin.webp", xysize=(1920, 1080), fit="cover")
     add Solid("#1a0f05CC")
@@ -436,13 +438,14 @@ screen game_settings():
                         spacing 15
                         xfill True
 
-                        frame:
-                            xfill True
+                        button:
+                            action scenario_value.Enable()
+                            xsize 900
                             padding (15, 10)
                             background Solid("#4a3520")
                             input:
                                 id "scenario_input"
-                                value ScreenVariableInputValue("scenario_text")
+                                value scenario_value
                                 length 80
                                 size 26
                                 color "#ffffff"
@@ -451,6 +454,17 @@ screen game_settings():
                         textbutton "随机":
                             style "settings_btn_small"
                             action SetScreenVariable("scenario_text", renpy.random.choice(EXAMPLE_SCENARIOS))
+
+                hbox:
+                    spacing 12
+                    for _theme in LOCAL_CAMPAIGNS.values():
+                        textbutton _theme["title"]:
+                            style "settings_btn_small"
+                            text_size 22
+                            action SetScreenVariable("scenario_text", _theme["title"])
+
+                text ("本地篇章：" + local_theme(scenario_text)["title"] + " / 开局选择将进入不同路线") size 22 color "#BFD8C4"
+                text "本地提供寻宝、运动会、风雨重建、美食节四个篇章；其他主题采用寻宝篇。" size 18 color "#BFD8C4"
 
                 # --- 体验模式 ---
                 vbox:
@@ -485,7 +499,7 @@ screen game_settings():
                 # --- 时长 ---
                 vbox:
                     spacing 10
-                    text "体验时长（分钟）" size 28 color "#FFD700" bold True
+                    text "预计时长（分钟，按阅读速度变化）" size 28 color "#FFD700" bold True
                     hbox:
                         spacing 15
                         for dur in [5, 10, 15, 20]:
@@ -512,10 +526,10 @@ screen game_settings():
                             style "settings_toggle"
                             selected (powerup == "问题提示神器")
                             action [SetScreenVariable("powerup", "问题提示神器"), SetScreenVariable("show_fate_input", False)]
-                        textbutton "命运改写":
+                        textbutton "心愿支线":
                             style "settings_toggle"
                             selected (powerup == "人物命运改写神器")
-                            action [SetScreenVariable("powerup", "人物命运改写神器"), SetScreenVariable("show_fate_input", True)]
+                            action [SetScreenVariable("powerup", "人物命运改写神器"), SetScreenVariable("show_fate_input", True), fate_value.Enable()]
                         textbutton "结局指定":
                             style "settings_toggle"
                             selected (powerup == "结局指定神器")
@@ -525,16 +539,21 @@ screen game_settings():
                     if powerup == "人物命运改写神器":
                         hbox:
                             spacing 10
-                            text "指定命运：" size 24 color "#aaaaaa" yalign 0.5
-                            frame:
+                            text "冒险心愿：" size 24 color "#aaaaaa" yalign 0.5
+                            button:
+                                action fate_value.Enable()
                                 xsize 600
                                 padding (15, 10)
                                 background Solid("#4a3520")
                                 input:
-                                    value ScreenVariableInputValue("fate_text")
+                                    id "wish_input"
+                                    value fate_value
                                     length 60
                                     size 24
                                     color "#ffffff"
+
+                    if powerup == "人物命运改写神器":
+                        text ("支线预览：" + local_wish_kind(fate_text)[0]) size 20 color "#BFD8C4"
 
                     # 结局指定选择
                     if powerup == "结局指定神器":
@@ -552,7 +571,7 @@ screen game_settings():
                     text "故事引擎" size 28 color "#F6B73C" bold True
                     hbox:
                         spacing 15
-                        textbutton "本地故事 ✓":
+                        textbutton "本地故事":
                             style "settings_toggle"
                             selected (online_enabled == False)
                             action SetScreenVariable("online_enabled", False)
@@ -603,7 +622,7 @@ screen game_settings():
                 if not scenario_text.strip():
                     text "请先填写一个情景主题。" size 18 color "#FFB4A9" xalign 0.5
                 elif powerup == "人物命运改写神器" and not fate_text.strip():
-                    text "请先写下你想指定的人物命运。" size 18 color "#FFB4A9" xalign 0.5
+                    text "请先写下本次冒险的心愿。" size 18 color "#FFB4A9" xalign 0.5
                 elif powerup == "结局指定神器" and not ending_type:
                     text "请先选择一种结局类型。" size 18 color "#FFB4A9" xalign 0.5
 
@@ -755,6 +774,11 @@ screen story_choice(options):
 
             text "你想怎么做？" size 30 color "#FFD700" bold True xalign 0.5
 
+            if game.powerup == "问题提示神器" and not game.online_enabled:
+                text local_hint(game) id "local_hint" size 23 color "#BFE5BE" xmaximum 1400
+            if not game.online_enabled:
+                text "自定义想法会按观察、行动或合作的关键词进入对应路线。" size 18 color "#C4CEBE"
+
             if len(options) > 0 and not show_input:
                 for i, opt in enumerate(options):
                     $ opt_letter = opt[0]
@@ -785,7 +809,7 @@ screen story_choice(options):
                     xfill True
 
                     frame:
-                        xfill True
+                        xsize 1200
                         padding (15, 12)
                         background Solid("#4a3520")
                         input:
@@ -837,7 +861,7 @@ screen evaluation_screen(eval_text):
 
             viewport:
                 xfill True
-                yfill True
+                ysize 610
                 mousewheel True
                 draggable True
                 pagekeys True
@@ -987,8 +1011,7 @@ transform stat_change_center_popup:
     alpha 0.0 zoom 0.6 yoffset 20
     ease 0.2 alpha 1.0 zoom 1.1 yoffset 0
     ease 0.1 zoom 1.0
-    pause 0.8
-    ease 0.5 alpha 0.0 yoffset -60
+    # 模态弹窗始终可见，等待玩家确认。
 
 transform encyclopedia_pulse:
     alpha 0.6 zoom 1.0
@@ -1041,6 +1064,7 @@ screen stats_overlay():
 
         vbox:
             spacing 8
+            text "进度 [game.turn_count]/[game.max_turns]" size 22 color "#FFF4D6" xalign 0.5
 
             for _stat_name in STAT_NAMES:
                 $ _stat_val = game.stats.get(_stat_name, 5)
@@ -1075,6 +1099,8 @@ screen stats_overlay():
 
 screen stats_change_popup(changes):
 
+    key "K_RETURN" action Return()
+    key "K_SPACE" action Return()
     modal True
     zorder 180
 
@@ -1293,7 +1319,7 @@ screen encyclopedia_card(enc_name="", enc_desc=""):
                 spacing 30
 
                 if enc_name in get_forest_notes():
-                    textbutton "已收藏 \u2713":
+                    textbutton "已收藏":
                         padding (25, 12)
                         text_size 22
                         text_color "#888888"
@@ -1383,7 +1409,8 @@ screen ending_gallery():
 
                 text "已解锁 {} 个结局".format(len(get_endings_unlocked())):
                     size 22
-                    color "#e67e22"
+                    color "#FFD166"
+                    outlines [(2, "#10251F", 0, 0)]
                     xalign 0.5
 
                 null height 10
@@ -1406,7 +1433,7 @@ screen ending_gallery():
                             frame:
                                 xfill True
                                 padding (20, 15)
-                                background Solid(_e_color + "33")
+                                background Solid("#203B2BF5")
 
                                 hbox:
                                     spacing 15
@@ -1420,15 +1447,16 @@ screen ending_gallery():
                                         null width 50
 
                                     vbox:
-                                        spacing 4
-                                        text _ending.get("title", "未知结局") size 24 color "#FFD700" bold True
+                                        spacing 8
+                                        xmaximum 1200
+                                        text _ending.get("title", "未知结局") size 28 color "#FFD700" bold True
                                         hbox:
                                             spacing 15
-                                            text _ending.get("ending_type", "") size 18 color "#aaaaaa"
-                                            text "{}/100".format(_ending.get("score", "?")) size 18 color _e_color
-                                            text _ending.get("date", "") size 18 color "#666666"
+                                            text _ending.get("ending_type", "") size 22 color "#D8E8D8"
+                                            text "{}/100".format(_ending.get("score", "?")) size 22 color "#FFD166"
+                                            text _ending.get("date", "") size 22 color "#BFD8C4"
                                         if _ending.get("summary"):
-                                            text _ending["summary"] size 18 color "#cccccc"
+                                            text _ending["summary"] size 22 color "#F4F6E8" xmaximum 1200
 
 
 # ============================================================
@@ -1567,6 +1595,7 @@ screen qte_screen(description="挑战！", seconds=5):
     zorder 200
 
     default clicks = 0
+    default started = False
     default remaining = seconds
     $ _target = max(4, seconds * 2 if game._game_difficulty == "青少年难度" else seconds + seconds // 2)
 
@@ -1590,7 +1619,10 @@ screen qte_screen(description="挑战！", seconds=5):
             null height 5
 
             # 倒计时条
-            text "剩余 [remaining] 秒" size 22 color "#FFD166" xalign 0.5
+            if started:
+                text "剩余 [remaining] 秒" size 22 color "#FFD166" xalign 0.5
+            else:
+                text "准备好再开始，先读清楚任务。" size 22 color "#FFD166" xalign 0.5
             frame:
                 xalign 0.5
                 xsize 600
@@ -1600,7 +1632,10 @@ screen qte_screen(description="挑战！", seconds=5):
                 frame:
                     ysize 20
                     background Solid("#e74c3c")
-                    at qte_countdown_bar(seconds)
+                    if started:
+                        at qte_countdown_bar(seconds)
+                    else:
+                        xsize 600
 
             null height 10
 
@@ -1611,13 +1646,13 @@ screen qte_screen(description="挑战！", seconds=5):
                 ysize 200
                 background Solid("#F6B73C")
                 hover_background Solid("#FFD166")
-                action SetScreenVariable("clicks", clicks + 1)
+                action If(started, SetScreenVariable("clicks", clicks + 1), SetScreenVariable("started", True))
                 at qte_button_bounce
 
                 vbox:
                     xalign 0.5
                     yalign 0.5
-                    text "点击！" size 36 color "#14251C" bold True xalign 0.5
+                    text ("点击！" if started else "开始挑战") size 36 color "#14251C" bold True xalign 0.5
                     text "[clicks]/[_target]" size 24 color "#14251CCC" xalign 0.5
 
             # 进度条
@@ -1644,15 +1679,17 @@ screen qte_screen(description="挑战！", seconds=5):
                 text_xalign 0.5
                 action Return("assist")
 
-    key "K_SPACE" action SetScreenVariable("clicks", clicks + 1)
-    timer 1.0 repeat True action SetScreenVariable("remaining", max(0, remaining - 1))
+    key "K_SPACE" action If(started, SetScreenVariable("clicks", clicks + 1), SetScreenVariable("started", True))
+    if started:
+        timer 1.0 repeat True action SetScreenVariable("remaining", max(0, remaining - 1))
 
     # 成功判定
     if clicks >= _target:
         timer 0.1 action Return("success")
 
     # 超时判定
-    timer seconds action Return("fail")
+    if started:
+        timer seconds action If(clicks >= _target, Return("success"), Return("fail"))
 
 
 # ============================================================
@@ -1719,13 +1756,13 @@ screen parent_report_screen(report_text=""):
 
             viewport:
                 xfill True
-                yfill True
+                ysize 610
                 mousewheel True
                 draggable True
                 pagekeys True
                 scrollbars "vertical"
 
-                text report_text:
+                text markdown_to_renpy(report_text):
                     size 24
                     color "#dddddd"
                     line_spacing 8
@@ -1831,14 +1868,14 @@ screen parent_report_detail(report=None):
 
             viewport:
                 xfill True
-                yfill True
+                ysize 610
                 mousewheel True
                 draggable True
                 pagekeys True
                 scrollbars "vertical"
 
                 $ _pr_text = report.get("report_text", "报告内容为空") if report else "报告内容为空"
-                text _pr_text:
+                text markdown_to_renpy(_pr_text):
                     size 24
                     color "#dddddd"
                     line_spacing 8
@@ -1920,7 +1957,7 @@ screen scene_knowledge_card(kn_name="", kn_desc="", kn_scene=""):
                 spacing 30
 
                 if kn_name in get_forest_notes():
-                    textbutton "已收藏 \u2713":
+                    textbutton "已收藏":
                         padding (25, 12)
                         text_size 22
                         text_color "#888888"

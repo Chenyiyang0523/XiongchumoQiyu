@@ -1,4 +1,4 @@
-﻿# 熊出没奇遇 — Ren'Py 版
+# 熊出没奇遇 — Ren'Py 版
 # 从 ModelScope 创空间 app.py 移植的核心逻辑与 Prompt
 
 # ============================================================
@@ -121,16 +121,10 @@ init python:
     # 示例情景
     # --------------------------------------------------------
     EXAMPLE_SCENARIOS = [
-        "光头强第一次当导游，带领游客游览狗熊岭",
-        "熊大熊二和光头强一起开发狗熊岭旅游区",
-        "狗熊岭举办美食大赛，各路选手齐聚",
-        "天才威策划阴谋要霸占狗熊岭，大家团结起来保卫家园",
-        "森林里发现了一张古老的藏宝图，众人开启寻宝之旅",
-        "光头强的小木屋被暴风雨吹坏了，大家齐心协力帮忙重建",
-        "吉吉国王要举办一场盛大的森林运动会",
-        "赵琳暑假来狗熊岭探险，遇到了神秘事件",
-        "熊二误食了奇怪的蘑菇获得了'超能力'，引发一系列趣事",
-        "光头强和熊大熊二意外穿越到了古代狗熊岭",
+        "森林古地图：寻找松果宝藏",
+        "吉吉国王的森林运动会",
+        "风雨之后：重建光头强的小木屋",
+        "狗熊岭美食节：分享蜂蜜的味道",
     ]
 
     # --------------------------------------------------------
@@ -492,7 +486,7 @@ init python:
         segments = []
         for line in str(text or "")[:12000].split('\n'):
             s = line.strip()
-            if not s:
+            if not s or s == "【剧终】":
                 continue
             # 属性变化标签: 【属性变化：智+2，勇+1，友-1】
             stats_m = re.search(r'【属性变化[：:](.+?)】', s)
@@ -950,6 +944,8 @@ C. 8勺"""
             self._pending_stat_popup = None
             # QTE 结果（供下一轮 AI 输入注入）
             self._qte_result = None
+            self.last_qte_success = None
+            self.family_discussion = ""
             # 家长报告
             self.parent_report_result = None
             # 游戏设置（用于报告）
@@ -966,7 +962,7 @@ C. 8勺"""
             state['_eq_feedback_pending'] = False
             state['_pending_encyclopedia'] = []
             state['_pending_stat_popup'] = None
-            state['_qte_result'] = None
+            # 已完成的 QTE 结果属于本轮进度，保留到下一次选择。
             state['parent_report_result'] = None
             return state
 
@@ -1228,18 +1224,19 @@ C. 8勺"""
             self.ai_busy = True
             self.ai_result = None
             self.ai_error = None
-            renpy.invoke_in_thread(self._bg_call_eval)
+            self._request_epoch += 1
+            renpy.invoke_in_thread(self._bg_call_eval, self._request_epoch)
 
-        def _bg_call_eval(self):
+        def _bg_call_eval(self, request_epoch):
             """后台线程执行评价调用"""
             try:
-                self.ai_result = call_ai(self._eval_messages, self, "evaluation")
-                self.ai_error = None
+                result = call_ai(self._eval_messages, self, "evaluation")
             except Exception as error:
                 renpy.log("[evaluation] local fallback after {}".format(type(error).__name__))
-                self.ai_result = build_local_evaluation(self)
+                result = build_local_evaluation(self)
+            if request_epoch == self._request_epoch:
+                self.ai_result = result
                 self.ai_error = None
-            finally:
                 self.ai_busy = False
                 renpy.restart_interaction()
 
@@ -1356,7 +1353,8 @@ C. 8勺"""
 
         def finalize_stream_response(self):
             """流式完成后调用，将完整响应存入消息历史"""
-            if self._full_response:
+            if self._full_response and getattr(self, "_finalized_epoch", None) != self._request_epoch:
+                self._finalized_epoch = self._request_epoch
                 self.messages.append({"role": "assistant", "content": self._full_response})
                 self.ai_result = self._full_response
                 if "【剧终】" in self._full_response:
@@ -1439,20 +1437,19 @@ C. 8勺"""
             self.ai_busy = True
             self.parent_report_result = None
             self.ai_error = None
-            renpy.invoke_in_thread(self._bg_call_parent_report)
+            self._request_epoch += 1
+            renpy.invoke_in_thread(self._bg_call_parent_report, self._request_epoch)
 
-        def _bg_call_parent_report(self):
+        def _bg_call_parent_report(self, request_epoch):
             """后台线程执行家长报告生成"""
             try:
-                self.parent_report_result = call_ai(
-                    self._report_messages, self, "parent_report"
-                )
-                self.ai_error = None
+                result = call_ai(self._report_messages, self, "parent_report")
             except Exception as error:
                 renpy.log("[parent-report] local fallback after {}".format(type(error).__name__))
-                self.parent_report_result = build_local_parent_report(self)
+                result = build_local_parent_report(self)
+            if request_epoch == self._request_epoch:
+                self.parent_report_result = result
                 self.ai_error = None
-            finally:
                 self.ai_busy = False
                 renpy.restart_interaction()
 
@@ -1558,6 +1555,9 @@ C. 8勺"""
                     not game.ai_busy
                     and game._stream_done
                     and not game.has_pending_segments()
+                    and not getattr(game, "_rendering_segment", False)
+                    and not game._pending_stat_popup
+                    and not game._eq_feedback_pending
                 )
             )
         except Exception:
@@ -1723,7 +1723,15 @@ C. 8勺"""
         return game.current_scene_id
 
     def render_stream_segment(seg):
-        """渲染单个流式段落（供 flow.rpy 的 while 循环调用）"""
+        # Python 段落循环中存档会丢失尚未处理的片段；只在选择点开放存档。
+        game._rendering_segment = True
+        try:
+            _render_story_segment(seg)
+        finally:
+            game._rendering_segment = False
+
+    def _render_story_segment(seg):
+        """渲染一个已经完整验证的段落。"""
         if seg[0] == "scene":
             hide_character_portrait()
             sid = detect_scene(seg[1], game.current_scene_id)
@@ -1761,7 +1769,10 @@ C. 8勺"""
         elif seg[0] == "stats":
             actual = game.apply_stats(seg[1])
             if actual:
-                game._pending_stat_popup = actual
+                pending = game._pending_stat_popup or {}
+                for key, delta in actual.items():
+                    pending[key] = pending.get(key, 0) + delta
+                game._pending_stat_popup = pending
             # 情商反馈延迟到玩家选择后显示
         elif seg[0] == "encyclopedia":
             game._pending_encyclopedia.append({"name": seg[1], "description": seg[2]})
@@ -1774,9 +1785,14 @@ C. 8勺"""
             renpy.call_screen("qte_result_screen", success=success)
             # 属性联动
             if success:
-                game.apply_stats({"勇": 1, "体": 1})
+                actual = game.apply_stats({"勇": 1, "体": 1})
             else:
-                game.apply_stats({"勇": 0, "体": -1})
+                actual = game.apply_stats({"勇": 0, "体": -1})
+            game.last_qte_success = success
+            pending = game._pending_stat_popup or {}
+            for key, delta in actual.items():
+                pending[key] = pending.get(key, 0) + delta
+            game._pending_stat_popup = pending
 
     # --------------------------------------------------------
     # CHAR_OBJECTS：为每个角色创建 Ren'Py Character 对象

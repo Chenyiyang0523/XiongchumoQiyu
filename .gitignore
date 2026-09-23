@@ -10,6 +10,7 @@ traceback.txt
 /game/tts_cache/
 /game/python-packages/
 /.local/
+/dist/
 /archive/
 
 /*-dists/

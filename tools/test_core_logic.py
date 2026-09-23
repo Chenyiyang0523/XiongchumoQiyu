@@ -26,7 +26,7 @@ def python_blocks(source: Path) -> list[ast.Module]:
                 line = lines[index]
                 # Ren'Py 的 Python 块可包含内容顶格的三引号字符串，所以不能用
                 # “无缩进”判断块结束；只在明确的 Ren'Py 顶层语句处停止。
-                if re.match(r"^(?:default|screen|transform|label|style|image|define)\s+", line):
+                if re.match(r"^(?:init|default|screen|transform|label|style|image|define)\s+", line):
                     break
                 body.append(line[4:] if line.startswith("    ") else line)
                 index += 1
@@ -98,6 +98,8 @@ def test_story_parser() -> None:
 
 def test_local_story_engine() -> None:
     ns = {"_story_re": re}
+    for module in python_blocks(ROOT / "game" / "local_adventures.rpy"):
+        exec(compile(module, "local_adventures.rpy", "exec"), ns)
     load_functions(
         ROOT / "game" / "story_service.rpy",
         (
@@ -127,6 +129,43 @@ def test_local_story_engine() -> None:
     assert "【剧终】" in ending and "**请选择：**" not in ending
     assert 60 <= ns["_local_score"](game) <= 100
     assert "综合评分：" in ns["build_local_evaluation"](game)
+    assert ns["local_choice_code"]("一起看线索") == "C"
+    assert ns["local_choice_code"]("build a bridge") == "B"
+    assert ns["local_choice_code"]("ABC is a word") == "A"
+    cases = 0
+    for theme in ns["LOCAL_CAMPAIGNS"].values():
+        for rounds in (3, 5, 7, 10):
+            for difficulty in ("儿童难度", "青少年难度"):
+                for powerup, ending_type in (("", ""), ("问题提示神器", ""), ("人物命运改写神器", ""), ("结局指定神器", "大团圆式结局"), ("结局指定神器", "意料之外结局"), ("结局指定神器", "留白式结局")):
+                    branches = set()
+                    for route in "ABC":
+                        g = SimpleNamespace(turn_count=0, max_turns=rounds, user_responses=[], character="熊二", scenario=theme["keywords"][0], stats={}, powerup=powerup, ending_type=ending_type, fate_text="帮助伙伴", _game_difficulty=difficulty)
+                        nodes = []
+                        qtes = 0
+                        for turn in range(rounds + 1):
+                            g.turn_count = turn
+                            text = ns["build_local_story"](g)
+                            assert len(text.splitlines()) <= 32
+                            qtes += text.count("【QTE：")
+                            if turn < rounds:
+                                node = ns["local_node"](g)
+                                nodes.append(node[1])
+                                assert "A. " in text and "C. " in text
+                                if turn == 1:
+                                    branches.add(node)
+                                g.user_responses.append(route + ". " + node[2 + "ABC".index(route)])
+                            else:
+                                assert "【剧终】" in text and "**请选择：**" not in text
+                        assert len(nodes) == len(set(nodes)), (theme["title"], rounds, nodes)
+                        assert qtes == 1
+                        assert len(g.user_responses) == rounds
+                        if powerup == "结局指定神器":
+                            assert "结局类型：" + ending_type in ns["build_local_evaluation"](g)
+                        if powerup == "人物命运改写神器":
+                            assert "友谊丝带" in text
+                        cases += 1
+                    assert len(branches) == 3
+    print(f"[OK] {cases} 条完整离线路径：主题、时长、难度、神器、开局分支与结局一致性")
     report = ns["build_local_parent_report"](game)
     assert "不是能力或心理测评" in report and "不应用于诊断" in report
 

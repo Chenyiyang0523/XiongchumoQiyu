@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## 初始化
 ################################################################################
 
@@ -312,13 +312,13 @@ screen navigation():
             if get_current_account():
                 textbutton _("\u5f00\u59cb\u6e38\u620f") action Start()
             else:
-                textbutton _("\u5148\u9009\u62e9\u8d26\u6237") action Call("account_hub")
+                textbutton _("\u5148\u9009\u62e9\u8d26\u6237") action Function(renpy.call_in_new_context, "account_hub")
 
             # 多账户：切换账户 / 退出游客
             if is_current_user_guest():
-                textbutton _("\u9000\u51fa\u6e38\u5ba2") action Call("account_hub")
+                textbutton _("\u9000\u51fa\u6e38\u5ba2") action Function(renpy.call_in_new_context, "account_hub")
             else:
-                textbutton _("\u5207\u6362\u8d26\u6237") action Call("account_hub")
+                textbutton _("\u5207\u6362\u8d26\u6237") action Function(renpy.call_in_new_context, "account_hub")
 
         else:
 

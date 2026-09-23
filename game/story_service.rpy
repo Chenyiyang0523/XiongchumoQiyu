@@ -139,77 +139,17 @@ init python:
         return "熊大"
 
     def _local_choice_effect(user_text):
-        normalized = sanitize_player_text(user_text, 120, "继续观察")
-        letter = normalized[:1].upper()
-        if letter == "A":
-            return {"智": 1, "友": 1}, "你先观察线索，再稳稳地行动"
-        if letter == "B":
-            return {"勇": 1, "体": 1}, "你鼓起勇气，迅速付诸行动"
-        if letter == "C":
-            return {"友": 2}, "你叫上伙伴，大家一起想办法"
-        return {"智": 1, "友": 1}, "你提出了自己的办法“{}”".format(normalized)
+        code = local_choice_code(user_text)
+        if "独自" in str(user_text):
+            return {"勇": 1, "友": -2}, "你的行动很快，但伙伴也需要被照顾"
+        if code == "B":
+            return {"勇": 1, "体": 1}, "动手解决问题"
+        if code == "C":
+            return {"友": 2}, "和伙伴一起完成任务"
+        return {"智": 1, "友": 1}, "先观察，再判断"
 
     def build_local_story(game_ref):
-        """小而完整的离线冒险生成器，保证主循环不依赖外部服务。"""
-        if game_ref is None:
-            return "【场景：狗熊岭森林】\n清晨的阳光穿过松枝，鸟鸣在树梢间清脆地回荡。\n**熊大**[开心]：“新的冒险开始啦！”"
-
-        turn = int(getattr(game_ref, "turn_count", 0) or 0)
-        player = sanitize_player_text(getattr(game_ref, "character", ""), 12, "小伙伴")
-        scenario = sanitize_player_text(getattr(game_ref, "scenario", ""), 80, "狗熊岭的奇妙一天")
-        friend = _supporting_character(game_ref)
-
-        if turn <= 0 and not getattr(game_ref, "user_responses", []):
-            return "\n".join([
-                "【场景：狗熊岭森林】",
-                "清晨，翠绿松针上的露珠闪着金光，远处传来哗啦啦的溪水声。",
-                "**{}**[开心]：“{}，今天咱们要完成‘{}’！”".format(friend, player, scenario),
-                "草丛边落着三枚发亮的松果，一串小脚印正通向河边。",
-                "**请选择：**",
-                "A. 蹲下来查看脚印",
-                "B. 沿着小路马上追过去",
-                "C. 叫上伙伴一起出发",
-            ])
-
-        last_answer = getattr(game_ref, "user_responses", [""])[-1]
-        changes, feedback = _local_choice_effect(last_answer)
-        stat_text = "，".join("{}{}{}".format(k, "+" if v >= 0 else "", v) for k, v in changes.items())
-
-        if turn >= int(getattr(game_ref, "max_turns", 3) or 3):
-            ending_type = sanitize_player_text(getattr(game_ref, "ending_type", ""), 20, "温馨成长")
-            if "留白" in ending_type:
-                ending_line = "夜幕降临时，那枚发亮松果又轻轻闪了一下，仿佛还藏着下一次冒险。"
-            elif "意料之外" in ending_type:
-                ending_line = "大家这才发现，一路带路的小脚印来自一只正在帮忙的小松鼠。"
-            else:
-                ending_line = "村庄的灯一盏盏亮起，大家围着蜂蜜茶，把今天的勇气与好办法讲给彼此听。"
-            return "\n".join([
-                "【场景：狗熊岭村庄】",
-                "{}，最后一个难题也迎刃而解。".format(feedback),
-                "**{}**[开心]：“{}，这次可多亏你啦！”".format(friend, player),
-                ending_line,
-                "【属性变化：{}】".format(stat_text),
-                "【剧终】",
-            ])
-
-        chapters = [
-            ("狗熊岭河边", "蓝亮亮的溪水被枝条挡住，小鱼在浅水里焦急地摆尾。", "清理水道", ("先观察水流方向", "搬开最外层的小树枝", "请大家分工合作")),
-            ("熊大熊二的树洞", "暖黄的洞里传来咚、咚、咚的回声，石头上画着三个圆圈。", "找到图案线索", ("数一数圆圈和石头", "沿回声最响的方向走", "和伙伴对照各自的发现")),
-            ("狗熊岭山顶", "灰蓝的云朵慢慢压低，山风呼呼地吹动草叶。", "在下雨前找到安全路线", ("查看地图和云的方向", "快步走向最近的遮蔽处", "提醒每个人互相照应")),
-            ("狗熊岭村庄", "晒谷场上洒满橙黄的夕阳，风车轻轻发出吱呀声。", "把收集的线索拼在一起", ("按先后顺序排列线索", "大声说出你的推理", "让每个伙伴补充一点")),
-        ]
-        scene_name, atmosphere, task, options = chapters[(turn - 1) % len(chapters)]
-        return "\n".join([
-            "【场景：{}】".format(scene_name),
-            "{}，大家顺利来到下一站。".format(feedback),
-            atmosphere,
-            "**{}**[思考]：“眼下要先{}，你怎么选？”".format(friend, task),
-            "【属性变化：{}】".format(stat_text),
-            "**请选择：**",
-            "A. " + options[0],
-            "B. " + options[1],
-            "C. " + options[2],
-        ])
+        return build_campaign_story(game_ref)
 
     def _local_score(game_ref):
         stats = getattr(game_ref, "stats", {}) or {}
@@ -230,7 +170,7 @@ init python:
         growth = min(("智", "勇", "体", "友"), key=lambda k: int(stats.get(k, 5)))
         score = _local_score(game_ref)
         title = "{}{}".format(labels[strongest], "小队长" if strongest != "友" else "守护者")
-        ending_title = "松风里的{}冒险".format(labels[strongest])
+        ending_title, ending_kind, ending_summary = local_ending(game_ref)
         return """**角色表现**
 你完成了{turns}轮互动。从“{first}”到“{last}”，每次选择都真正推动了故事。
 
@@ -247,11 +187,11 @@ init python:
 
 **结局档案**
 结局标题：{ending_title}
-结局类型：温馨成长
-一句话概括：你和伙伴用选择把难题一步步变成了新发现。""".format(
+结局类型：{ending_kind}
+一句话概括：{ending_summary}""".format(
             turns=len(responses), first=first, last=last,
             strongest=labels[strongest], growth=labels[growth], score=score,
-            title=title, ending_title=ending_title,
+            title=title, ending_title=ending_title, ending_kind=ending_kind, ending_summary=ending_summary,
         )
 
     def build_local_parent_report(game_ref):
@@ -267,12 +207,16 @@ init python:
 **本次观察**
 孩子最后一次回应是“{example}”。可以围绕这个选择询问“你当时看到了什么线索”和“还有别的办法吗”，帮助孩子讲清自己的思考。
 
+**共玩记录**
+{family_note}
+
 **共玩建议**
 下次可让孩子先选，家长再提一个不同方案，一起预测两种结果。关注孩子愿意说出理由的过程，无需追求唯一正确答案。
 
 **说明**
 本记录仅根据这一次游戏内的有限选择生成，不应用于诊断、评估或比较孩子。""".format(
             turns=len(responses), summary=summary, example=example,
+            family_note=getattr(game_ref, "family_discussion", "") or "本次未进行亲子讨论，可以在结束后一起聊聊选择的理由。",
         )
 
     def _fallback_for_purpose(game_ref, purpose):

@@ -1,4 +1,4 @@
-﻿## 此文件包含有可自定义您游戏的设置。
+## 此文件包含有可自定义您游戏的设置。
 ##
 ## 以"##"开头的语句是注释，您不应该对其取消注释。以"#"开头的语句是注释掉的代码，
 ## 在适用的时候您可能需要对其取消注释。
@@ -21,7 +21,7 @@ define gui.show_name = True
 
 ## 游戏版本号。
 
-define config.version = "1.1.0-alpha.1"
+define config.version = "1.1.0-rc.1"
 
 
 ## 放置在游戏内"关于"屏幕上的文本。将文本放在三个引号之间，并在段落之间留出空
@@ -35,6 +35,7 @@ define gui.about = _p("""
 ## 且不能包含空格、冒号或分号。
 
 define build.name = "XiongchumoQiyu"
+define build.mac_info_plist = {"CFBundleIdentifier": "org.xcmqy.forest-adventure"}
 
 ## 构建输出目录名称（不含中文和空格）
 define build.directory_name = "Xiongchumo_Qiyu_Build"
@@ -207,6 +208,7 @@ init python:
     build.classify('**/.local/**', None)
     build.classify('**/packaging/**', None)
     build.classify('**/docs/**', None)
+    build.classify('**/dist/**', None)
     build.classify('**/vibe_images/**', None)
     build.classify('**/C*/**', None)
     build.classify('**/c/**', None)
@@ -225,6 +227,8 @@ init python:
     build.classify('game/**.png', 'archive')
     build.classify('game/**.jpg', 'archive')
     build.classify('game/**.webp', 'archive')
+
+    build.archive('audio', 'all')
 
     ## 音频资源单独封装
     build.classify('game/**.ogg', 'audio')
