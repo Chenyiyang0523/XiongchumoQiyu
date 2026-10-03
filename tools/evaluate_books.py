@@ -15,7 +15,7 @@ from service.storage import Store
 from service.pipeline import Pipeline
 from service.provider import create_provider
 from service.mock import MockProvider
-from storybook.engine import replay, apply_operations, VERB_KINDS, matches, validate_page, effects
+from storybook.engine import replay, apply_operations, VERB_KINDS, matches, validate_page, effects, page_action_contexts
 from storybook.export import export_html
 
 NEW_THEMES={
@@ -116,10 +116,11 @@ def checks(story):
                 b['items'].extend(event['expansion']['items']);b['clues'].update(event['expansion']['clues']);b['quests'].extend(event['expansion']['quests'])
         replay({**story,'events':events,'blueprint':b,'state':snapshot})
         validate_page(page,snapshot,b,story['manifest'],[e['id'] for e in events],story['settings']['assets'],story['settings']['age'],events)
+        contexts=page_action_contexts(page,snapshot,b,story['manifest'])
         for inter in page['interactions']:
             outcomes=set()
             for action in inter['actions']:
-                state=deepcopy(snapshot);effects(state,action,b,story['manifest'],'counterfactual')
+                state=deepcopy(contexts[action['id']][0]);effects(state,action,b,story['manifest'],'counterfactual')
                 signature=json.dumps({k:v for k,v in state.items() if k not in {'provenance','version'}},sort_keys=True)
                 if signature in outcomes:raise ValueError('identical counterfactual: '+action['id'])
                 outcomes.add(signature);counterfactuals+=1

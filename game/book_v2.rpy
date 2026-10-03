@@ -37,6 +37,11 @@ init -5 python:
         return BOOK_MANIFEST[aid]["path"]
 
     def book_at_page():
+        if book_page_index == len(book_story['pages'])-1 and not book_story.get('ending') and book_operations:
+            try:
+                return _book_preview(book_story, book_operations, book_reason)[0]
+            except _BookRule:
+                pass
         return book_story['pages'][book_page_index].get('state_snapshot', book_story['state'])
 
     def book_plain(value):
@@ -167,10 +172,22 @@ init -5 python:
         book_operations, book_input, book_reason, book_feedback, book_order, book_clarifications = [], "", "", "", [], []
         book_items, book_amount = [], 1
 
+    def book_operation_sequence(action, interaction, operation):
+        group = {a['id'] for a in interaction['actions']}
+        ops, replaced = [], False
+        for old in book_operations:
+            if old['action_id'] in group:
+                if not replaced:
+                    ops.append(operation)
+                    replaced = True
+            else:
+                ops.append(old)
+        if not replaced:
+            ops.append(operation)
+        return ops
+
     def book_stage_action(action, interaction):
         global book_operations, book_feedback
-        chosen = {a["id"] for a in interaction["actions"]}
-        ops = [op for op in book_operations if op["action_id"] not in chosen]
         operation = {"action_id": action["id"]}
         if action["verb"] == "allocate":
             operation["amount"] = book_amount
@@ -178,12 +195,31 @@ init -5 python:
             operation['items'] = list(book_items)
         if interaction.get("order_action") == action["id"]:
             operation["order"] = list(book_order)
+        ops = book_operation_sequence(action, interaction, operation)
         try:
-            _book_preview(book_story, ops + [operation], book_reason)
-            book_operations = ops + [operation]
+            _book_preview(book_story, ops, book_reason)
+            book_operations = ops
             book_feedback = "已准备：" + action["feedback"]
         except _BookRule:
             book_feedback = "这个操作的条件还不满足。请检查线索顺序、物品或剩余资源。"
+        renpy.restart_interaction()
+
+    def book_action_available(action, interaction):
+        operation = {'action_id': action['id'], 'items': action.get('inputs', [])}
+        if action['verb'] == 'allocate':
+            operation['amount'] = -next(e['value'] for e in action['effects'] if e['op'] == 'resource')
+        if interaction.get('order_action') == action['id']:
+            operation['order'] = interaction['order']
+        try:
+            _book_preview(book_story, book_operation_sequence(action, interaction, operation), book_reason)
+            return True
+        except _BookRule:
+            return False
+
+    def book_clear_staged():
+        global book_operations, book_feedback, book_items, book_order
+        book_operations, book_items, book_order = [], [], []
+        book_feedback = '本页操作已撤回，可以重新安排。'
         renpy.restart_interaction()
 
     def book_select_clue(cid):
@@ -455,7 +491,7 @@ screen book_reader():
                                     textbutton book_plain(book_story["blueprint"]["clues"][cid]) style "book_button" selected cid in book_order action Function(book_select_clue, cid)
                                 text ("已排列 " + str(len(book_order)) + " 条线索；再次点击可移除。") style "book_text" size 23
                             if inter['kind'] == 'items':
-                                for iid, item in book_story['state']['items'].items():
+                                for iid, item in book_at_page()['items'].items():
                                     if item['owner'] == 'player':
                                         textbutton ("物品：" + book_plain(item['name'])) style "book_button" selected iid in book_items action Function(book_select_item, iid)
                                 if any(a.get('inputs') for a in inter['actions']):
@@ -468,10 +504,12 @@ screen book_reader():
                                     textbutton '+' style 'book_button' sensitive book_amount < 20 action SetVariable('book_amount', book_amount+1)
                             for action in inter["actions"]:
                                 textbutton book_plain(action["label"]) style "book_button":
-                                    sensitive not book_busy
+                                    sensitive not book_busy and book_action_available(action, inter)
                                     selected any(op["action_id"] == action["id"] for op in book_operations)
                                     action Function(book_stage_action, action, inter)
                         text "我有自己的想法" style "book_text" size 28
+                        if book_operations:
+                            textbutton '重新安排本页' style 'book_button' action Function(book_clear_staged)
                         button:
                             background Solid("#EDF1E5") padding (16, 12) xfill True
                             action thought_value.Enable()

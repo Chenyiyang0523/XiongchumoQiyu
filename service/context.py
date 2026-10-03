@@ -23,7 +23,7 @@ def for_generation(story, state, events):
              'interaction_types_used':kinds,'callback_pages':callback_pages,'trait_used':traits}
     closure['ending_allowed']=closure['core_tasks_and_promises_complete'] and len(story['pages'])>=story['settings']['pages'] and len(kinds)>=3 and callback_pages>=2 and traits
     return {'story': compact, 'post_action_state': state, 'action_events': events,'closure_readiness':closure,
-            'pace': 'resolve' if len(story['pages']) >= story['settings']['pages']-2 else 'explore',
+            'pace': 'resolve' if len(story['pages']) >= max(4,round(story['settings']['pages']*.6)) else 'explore',
             'relevant_events': relevant, 'unresolved': [q for q in story['blueprint']['quests'] if state['quests'][q['id']] != 'complete']}
 
 def review_preview(story):

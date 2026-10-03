@@ -10,7 +10,7 @@ from service.provider import BudgetExceeded, ModelError
 from service.context import for_generation, review_preview
 from service.prompts import compact_context
 from service import model_protocol
-from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError, effects
+from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError, effects, page_action_contexts
 
 MANIFEST_PATH = Path(__file__).resolve().parents[1] / 'game/storybook/asset_manifest.json'
 
@@ -18,14 +18,19 @@ def page_diagnostics(page, state, blueprint, manifest, event_ids, settings):
     """Return independent hard errors together so the single repair can fix them."""
     errors=[]
     if not page:return errors
+    try:contexts=page_action_contexts(page,state,blueprint,manifest,require_all=False)
+    except ValueError:contexts={}
     for inter in page['interactions']:
         outcomes={}
         for action in inter['actions']:
             trial={**page,'interactions':[{**inter,'actions':[action],'order':[],'order_action':None}]}
-            try:validate_page(trial,state,blueprint,manifest,event_ids,settings['assets'],settings['age'])
+            enabling=(contexts.get(action['id']) or [state])[0]
+            # Only effects use the enabling state. Static page artwork remains
+            # anchored to the confirmed page, including its original scene.
+            try:effects(deepcopy(enabling),action,blueprint,manifest,'diagnostic')
             except ValueError as exc:errors.append(action['id']+': '+str(exc))
             else:
-                after=deepcopy(state);effects(after,action,blueprint,manifest,'diagnostic')
+                after=deepcopy(enabling);effects(after,action,blueprint,manifest,'diagnostic')
                 signature=json.dumps({k:v for k,v in after.items() if k!='provenance'},sort_keys=True)
                 if signature in outcomes:
                     errors.append(outcomes[signature]+' and '+action['id']+': identical state outcomes; different wording/trait explanation is not a consequence. Change an actual knowledge/item/resource/relationship outcome.')
@@ -124,6 +129,8 @@ class Pipeline:
                 defs['TraitUse']['properties']['character']['enum']=ids
                 if wire_model==model_protocol.ModelOpening:
                     defs['ModelBlueprint']['properties']['profiles']['propertyNames']={'enum':ids}
+                    defs['ModelTask']['properties']['relationships']['propertyNames']={'enum':[cid for cid in ids if cid!='player']}
+                    defs['ModelTask']['properties']['owners']['additionalProperties']['enum']=ids+model_context['asset_catalog']['scenes']
                 elif not request.get('text'):
                     facts=context['post_action_state'];props=defs['ModelAction']['properties']
                     props['learn']['items']['enum']=list(context['story']['blueprint']['clues'])

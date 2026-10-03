@@ -16,7 +16,7 @@ class LocalGLMProvider(ClaudeSettingsProvider):
         if parsed.hostname!='open.bigmodel.cn':
             raise ModelError('glm-local requires a verified BigModel Claude Code endpoint')
         self.endpoint='https://open.bigmodel.cn/api/coding/paas/v4/chat/completions'
-        self.reasoning_effort=os.environ.get('XCMQY_GLM_REASONING_EFFORT','high')
+        self.reasoning_effort=os.environ.get('XCMQY_GLM_REASONING_EFFORT','low')
         if self.reasoning_effort not in {'low','high','max'}:
             raise ModelError('GLM reasoning effort must be low, high or max')
         self.max_tokens=int(os.environ.get('XCMQY_MODEL_MAX_TOKENS','20000'))

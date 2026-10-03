@@ -22,6 +22,7 @@ recipe中的每件原料必须单独声明在items中，不能直接写prop素�
 当前状态中已拥有的知识不能再作为唯一动作后果。必要任务不要依赖一个唯一选项；提供可补救的替代路径。
 叙述只能写已经确认或本次操作建立的事实，不能先写物品已转移/任务已完成，再让玩家选择是否做。
 每页优先只编排一张互动卡片、两条action，合适时才增加第二张。单页一个鲜明新问题，选项回应它；不要在一页塞满许多无关任务。
+可用两张卡片承载页内步骤：先在观察卡片收集全部所需原料，再在另一张物品卡片组合；后一步可暂时不可用，但必须通过同页另一张卡片的一条合法动作到达。不能让同一卡片的互斥选项互相依赖。craft自动消耗recipe原料，不要再次consume同一原料。
 核心任务与承诺全部完成、实际已用至少三类互动、两页回响、特长真实影响行动后，才能在达到页数时结束。
 图像用合法场景、在场人物与可及道具分层组合。key_art默认null，除非它的全部适用条件都已被确认。'''
 
@@ -82,6 +83,8 @@ def compact_context(stage, raw):
             'present_characters':[k for k,v in state.get('characters',{}).items() if v['location']==state.get('location')],
             'interaction_types_used':context.get('closure_readiness',{}).get('interaction_types_used',[])}
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
+        if context.get('pace')=='resolve':
+            context['contract_notes']+='\n当前进入收束：每页至少一种办法实质推进一个未完成的必要条件，或完成所缺的第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
     if stage=='review':
         context['contract_notes'] += '\n这是独立语义审校：只输出approved与issues，不重写正文。技术字段已由程序验证；重点检查可见文字是否提前宣布未执行的动作、目标是否真实闭合、转折是否有前因、同一角色口吻，以及画面具体对象是否与文字关键对象一致。字数或未展示的未来计划不应误报为当前事件。发现关键矛盾必须拒绝，并提出精确可修订问题。'
         context['contract_notes']+='\nissues仅填写必须阻断并修复的问题。可接受的旁观描述、道具尚未写入正文或轻微措辞建议放advice。approved=true必须issues=[]，不能一面批准一面列阻断问题。'

@@ -43,7 +43,7 @@ def test_glm_uses_supported_reasoning_and_exact_verified_coding_endpoint(tmp_pat
     assert p.endpoint=='https://open.bigmodel.cn/api/coding/paas/v4/chat/completions'
     assert p.model=='glm-5.3' and p.max_tokens==20000
     assert p.payload_options('proposal')['thinking']=={'type':'enabled'}
-    assert p.payload_options('review')['reasoning_effort']=='high'
+    assert p.payload_options('review')['reasoning_effort']=='low'
     assert 'local-private-test' not in json.dumps(p.payload_options('setup'))
 
 

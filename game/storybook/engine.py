@@ -70,6 +70,21 @@ def initial_state(blueprint, manifest):
         visit(quest['id'], set())
         for condition in quest['conditions']:
             condition_value(state, condition, blueprint)
+            kind,value=condition['kind'],condition['value']
+            require(condition.get('comparison','eq')=='eq' or kind in {'resource','relationship'},'non-numeric quest comparison')
+            if kind=='owner':
+                require(value in chars or value in {'consumed','unmade'} or value in manifest and manifest[value]['kind']=='scene','quest expects unknown owner')
+            elif kind=='location':
+                require(value in manifest and manifest[value]['kind']=='scene','quest expects unknown location')
+            elif kind=='relationship':
+                require(type(value) is int and -10<=value<=10,'unreachable relationship goal')
+            elif kind=='resource':
+                require(type(value) is int and value>=0,'invalid resource goal')
+                require(condition.get('comparison','eq')=='lte' or value<=state['resources'][condition['key']],'resource goal requires impossible creation')
+            elif kind in {'knowledge','promise'}:
+                require(type(value) is bool,'non-boolean fact goal')
+            elif kind=='quest':
+                require(value in {'open','complete'},'unknown quest goal status')
     state['provenance'] = {key: 'initial' for key in fact_keys(state)}
     refresh_quests(state, blueprint, 'initial')
     return state
@@ -194,6 +209,39 @@ def effects(s, action, b, manifest, event_id):
 def available_actions(page):
     return {a['id']: a for i in page['interactions'] for a in i['actions']}
 
+def page_action_contexts(page, state, blueprint, manifest, require_all=True):
+    """Find legal local sequences, choosing at most one alternative per card.
+
+    A later card may use materials collected on an earlier card. Every offered
+    action must be reachable without a model call; circular/impossible recipes
+    still fail. Effects always use the same physical reducer as committed turns.
+    """
+    contexts={a['id']:[] for i in page['interactions'] for a in i['actions']}
+    pending=[(deepcopy(state),frozenset())];seen=set();errors={}
+    while pending:
+        current,used=pending.pop()
+        signature=(tuple(sorted(used)),repr({k:v for k,v in current.items() if k!='provenance'}))
+        if signature in seen:continue
+        seen.add(signature);require(len(seen)<=4096,'page operation graph too complex')
+        for inter in page['interactions']:
+            if inter['id'] in used:continue
+            outcomes=[]
+            for action in inter['actions']:
+                trial=deepcopy(current)
+                try:
+                    effects(trial,action,blueprint,manifest,'local-preview')
+                    outcome={k:v for k,v in trial.items() if k!='provenance'}
+                    require(outcome!={k:v for k,v in current.items() if k!='provenance'},'interaction has no state consequence')
+                except RuleError as exc:
+                    errors[action['id']]=str(exc);continue
+                require(outcome not in outcomes,'alternative actions have identical consequences')
+                outcomes.append(outcome);contexts[action['id']].append(current)
+                pending.append((trial,used|{inter['id']}))
+    if require_all:
+        for aid,values in contexts.items():
+            require(values,errors.get(aid,'unreachable page action')+' ['+aid+']')
+    return contexts
+
 def apply_operations(story, operations, reason='', free_action=None):
     b, manifest = story['blueprint'], story['manifest']
     s = deepcopy(story['state'])
@@ -275,16 +323,10 @@ def validate_page(page, s, b, manifest, event_ids, assets, age, confirmed_events
             require(set(interaction['order']) <= set(b['clues']), 'unknown evidence card')
             require(all(k in s['knowledge'] for k in interaction['order']), 'evidence not yet discovered')
             require(interaction.get('order_action') in [a['id'] for a in interaction['actions']], 'unknown order action')
-        outcomes = []
         for action in interaction['actions']:
             if action.get('hotspot'):
                 require(action['hotspot'] in used, 'hotspot object absent from illustration')
-            trial = deepcopy(s)
-            effects(trial, action, b, manifest, 'validation')
-            require({k:v for k,v in trial.items() if k != 'provenance'} != {k:v for k,v in s.items() if k != 'provenance'}, 'interaction has no state consequence')
-            outcome = {k:v for k,v in trial.items() if k != 'provenance'}
-            require(outcome not in outcomes, 'alternative actions have identical consequences')
-            outcomes.append(outcome)
+    page_action_contexts(page,s,b,manifest)
 
 def can_close(s, b):
     return all(s['quests'][q['id']] == 'complete' for q in b['quests'] if q['required']) and all(s['promises'].values())
