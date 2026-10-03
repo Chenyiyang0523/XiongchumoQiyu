@@ -1,6 +1,7 @@
 """Keep canonical facts, causal evidence and unfinished tasks; bound prose history."""
 from copy import deepcopy
 from storybook.engine import can_close
+from service.pacing import frontier
 
 def for_generation(story, state, events):
     prior = story['events']
@@ -22,6 +23,7 @@ def for_generation(story, state, events):
              'pages_read':len(story['pages']),'planned_pages':story['settings']['pages'],
              'interaction_types_used':kinds,'callback_pages':callback_pages,'trait_used':traits}
     closure['ending_allowed']=closure['core_tasks_and_promises_complete'] and len(story['pages'])>=story['settings']['pages'] and len(kinds)>=3 and callback_pages>=2 and traits
+    closure.update(frontier(state,story['blueprint']))
     return {'story': compact, 'post_action_state': state, 'action_events': events,'closure_readiness':closure,
             'pace': 'resolve' if len(story['pages']) >= max(4,round(story['settings']['pages']*.6)) else 'explore',
             'relevant_events': relevant, 'unresolved': [q for q in story['blueprint']['quests'] if state['quests'][q['id']] != 'complete']}

@@ -591,7 +591,7 @@ screen book_notebook(kind):
                         for name, amount in page_state["resources"].items():
                             text (book_plain(name) + "：" + str(amount)) style "book_text" size 28
                         for pid, done in page_state["promises"].items():
-                            text ("约定 " + book_plain(pid) + (" / 已兑现" if done else " / 待兑现")) style "book_text" size 27
+                            text ("约定：" + book_plain(book_story['blueprint'].get('promise_descriptions',{}).get(pid,pid)) + (" / 已兑现" if done else " / 待兑现")) style "book_text" size 27
             textbutton "回到绘本" style "book_button" action Hide("book_notebook")
 
 screen book_shelf_screen():

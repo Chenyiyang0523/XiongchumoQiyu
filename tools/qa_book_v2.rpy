@@ -1,4 +1,58 @@
 # Native Ren'Py integration test, injected only into an isolated QA copy.
+testsuite live_book_reader:
+    setup:
+        $ _test.timeout = 90.0
+        $ _test.screenshot_directory = __import__('os').environ['XCMQY_QA_OUTPUT']
+        $ persistent.accounts = {'user_0': _make_empty_account_data('真实绘本回看', slot_index=0)}
+        $ persistent.account_order = ['user_0']
+        $ persistent.current_user = 'user_0'
+        $ game = StoryGame()
+        run MainMenu(confirm=False)
+        pause until screen 'main_menu'
+
+    testcase offline_real_book:
+        run Start()
+        pause until screen 'character_select'
+        click '熊大'
+        pause until screen 'book_setup'
+        $ book_story = __import__('json').loads(__import__('pathlib').Path(__import__('os').environ['XCMQY_REAL_QA_BOOK']).read_text(encoding='utf-8'))
+        $ book_owner = book_identity()[0]
+        $ book_page_index = 0
+        $ book_reset_operations()
+        $ _qa_version = book_story['state']['version']
+        $ book_library().save(book_story)
+        $ book_refresh_account(book_story)
+        $ _book_token = ''
+        run Hide('book_setup')
+        run Show('book_reader')
+        assert eval (book_story['mock'] is False and book_story['ending'] is not None and len(book_story['pages'])==12)
+        assert eval (book_at_page()==book_story['pages'][0]['state_snapshot'])
+        screenshot '14-real-first.png'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        click '下一页'
+        assert eval (book_page_index==11 and book_story['state']['version']==_qa_version)
+        screenshot '15-real-last.png'
+        click '发现、帮助与家庭回顾'
+        pause until screen 'book_family_review'
+        assert eval (get_current_account()['book_endings_v2'][book_story['id']]==book_story['ending'])
+        screenshot '16-real-review.png'
+        click '回到绘本'
+        click '导出离线 HTML 绘本'
+        assert eval ((book_library().path/'exports'/(book_story['id']+'.html')).is_file())
+        click '上一页'
+        assert eval (book_page_index==10 and book_story['state']['version']==_qa_version and not _book_token)
+    teardown:
+        exit
+
 testsuite local_operations:
     setup:
         $ _test.timeout = 90.0
@@ -32,6 +86,8 @@ testsuite local_operations:
         click '重新安排本页'
         assert eval (not book_operations and book_at_page()['items']['item.flag']['owner']=='unmade')
         screenshot '13-local-reset.png'
+    teardown:
+        exit
 
 testsuite picturebook:
     setup:

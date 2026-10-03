@@ -69,7 +69,7 @@ def compact_context(stage, raw):
             page.pop('interactions',None)
     context['contract_notes']=GUIDE
     if stage in {'blueprint','setup','setup_repair'}:
-        context['contract_notes'] += '\n蓝图：预置至少16条彼此不同的可探索线索或成果事实，以支持12页真实推进；资源time不少于24、materials不少于12。主线最多3项必需任务，每项均有可验证条件；其余设为可选。所有参与角色cast与selected完全一致，player名称与settings.character一致，同场伙伴能实际参与；故事允许移动到已有场景。arc必须等于selected.arc。'
+        context['contract_notes'] += '\n蓝图：按页数准备约'+str(context.get('settings',{}).get('pages',12))+'条不同的可探索线索或成果事实，避免强迫逐条收集；资源time不少于24、materials不少于12。主线最多3项必需任务，每项均有可验证条件；其余设为可选。承诺不是装饰：promises与promise_descriptions键必须相同，每项明确答应了谁、什么事、怎样兑现，能通过玩家行动落实；不需要承诺时两个字典都为空。所有参与角色cast与selected完全一致，player名称与settings.character一致，同场伙伴能实际参与；故事允许移动到已有场景。arc必须等于selected.arc。'
     if stage in {'setup','setup_repair','opening'}:
         context['contract_notes'] += '\n开场页：文字须严格符合年龄字数，先呈现待解决的问题；不要在文字中提前发现尚未知的线索。至少两条当前可执行且后果不同的动作，优先观察/对话。callbacks=[]，choices=[]。'
     if stage in {'proposal','repair'}:
@@ -84,7 +84,7 @@ def compact_context(stage, raw):
             'interaction_types_used':context.get('closure_readiness',{}).get('interaction_types_used',[])}
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
         if context.get('pace')=='resolve':
-            context['contract_notes']+='\n当前进入收束：每页至少一种办法实质推进一个未完成的必要条件，或完成所缺的第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
+            context['contract_notes']+='\n当前进入收束：closure_readiness.unmet_conditions与unfulfilled_promises列出仍欠的具体事实。每页至少一种办法实质推进这些条件（获取目标知识/物品、拿到原料、走近持有者、协商到要求的关系值、真实兑现承诺），程序会拒绝只含无关线索或刷无关关系的页面。先解决必要条件与承诺，再补第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
     if stage=='review':
         context['contract_notes'] += '\n这是独立语义审校：只输出approved与issues，不重写正文。技术字段已由程序验证；重点检查可见文字是否提前宣布未执行的动作、目标是否真实闭合、转折是否有前因、同一角色口吻，以及画面具体对象是否与文字关键对象一致。字数或未展示的未来计划不应误报为当前事件。发现关键矛盾必须拒绝，并提出精确可修订问题。'
         context['contract_notes']+='\nissues仅填写必须阻断并修复的问题。可接受的旁观描述、道具尚未写入正文或轻微措辞建议放advice。approved=true必须issues=[]，不能一面批准一面列阻断问题。'

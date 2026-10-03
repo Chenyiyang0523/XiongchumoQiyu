@@ -14,6 +14,7 @@ from service.models import CreateRequest, SubmitRequest
 from service.storage import Store
 from service.pipeline import Pipeline
 from service.provider import create_provider
+from service.pacing import progress as closure_progress
 from service.mock import MockProvider
 from storybook.engine import replay, apply_operations, VERB_KINDS, matches, validate_page, effects, page_action_contexts
 from storybook.export import export_html
@@ -59,7 +60,7 @@ def choose_operation(story, seed):
                 for condition in quest['conditions']:
                     progress+=int(matches(state,condition,story['blueprint']))-int(matches(story['state'],condition,story['blueprint']))
             variety_weight=12 if len(story['pages'])>=story['settings']['pages']-3 else 5
-            score=progress*8 + (variety_weight if VERB_KINDS[action['verb']] not in used else 0)
+            score=progress*8 + closure_progress(story['state'],state,story['blueprint'])*10 + (variety_weight if VERB_KINDS[action['verb']] not in used else 0)
             score+=min(2,len(set(state['knowledge'])-set(story['state']['knowledge'])))
             score+=int(bool(action.get('trait_use')) and not any(e.get('trait_use') for e in story['events']))*3
             options.append((score,operation))
@@ -78,7 +79,7 @@ def choose_operations(story,seed):
             operation=op({'interactions':[inter]},index)
             try:state,_=apply_operations(story,chosen+[operation])
             except ValueError:continue
-            gain=len(set(state['knowledge'])-set(story['state']['knowledge']))
+            gain=closure_progress(story['state'],state,story['blueprint'])*10 + len(set(state['knowledge'])-set(story['state']['knowledge']))
             gain+=sum(state['quests'][k]=='complete' and v!='complete' for k,v in story['state']['quests'].items())*8
             candidates.append((gain,operation))
         if candidates:

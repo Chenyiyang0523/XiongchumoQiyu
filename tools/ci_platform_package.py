@@ -100,7 +100,14 @@ def main():
         local_output=(EVIDENCE/'local-operations-qa.txt').read_text(encoding='utf-8',errors='replace')
         if '[rpytest] Status: PASSED' not in local_output or not re.search(r'Assertions\s*:\s*4\s*\|\s*4 passed',local_output):
             raise RuntimeError('Native local collection/crafting did not pass all 4 assertions')
-        receipt.update(verified=True,assertions_passed=18,screenshots=len(list((EVIDENCE/'screenshots').glob('*.png'))))
+        qa_env['XCMQY_REAL_QA_BOOK']=str(ROOT/'docs/v2/examples/real-glm-book.json')
+        run([*command,'--savedir',WORK/'saves','test','live_book_reader','--overwrite-screenshots','--report-detailed'],
+            'real-book-reader-qa.txt',env=qa_env,timeout=120)
+        real_output=(EVIDENCE/'real-book-reader-qa.txt').read_text(encoding='utf-8',errors='replace')
+        if '[rpytest] Status: PASSED' not in real_output or not re.search(r'Assertions\s*:\s*6\s*\|\s*6 passed',real_output):
+            raise RuntimeError('Reading the real GLM book offline did not pass all 6 assertions')
+        receipt.update(verified=True,assertions_passed=24,live_book_read_offline=True,
+                       screenshots=len(list((EVIDENCE/'screenshots').glob('*.png'))))
     except Exception as exc:
         receipt['failure']=str(exc)
         raise
@@ -111,7 +118,7 @@ def main():
             except subprocess.TimeoutExpired:service.kill();service.wait()
         (EVIDENCE/'platform.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
         if not receipt['verified']:
-            for name in ['package-resources.json','package-qa.txt','local-operations-qa.txt','build.txt']:
+            for name in ['package-resources.json','package-qa.txt','local-operations-qa.txt','real-book-reader-qa.txt','build.txt']:
                 path=EVIDENCE/name
                 if path.exists():print(name+'\n'+'\n'.join(path.read_text(encoding='utf-8',errors='replace').splitlines()[-65:]))
         print(json.dumps(receipt,ensure_ascii=False,indent=2),flush=True)

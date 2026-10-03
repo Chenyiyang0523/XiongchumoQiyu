@@ -19,7 +19,8 @@ def world():
     authored={'title':old['title'],'goal':old['goal'],'conflict':old['conflict'],'scene':'scene.forest',
         'profiles':{cid:{k:next(c for c in old['characters'] if c['name']==name)[k] for k in ['motivation','strength','weakness']} for cid,name in roles.items()},
         'clues':old['clues'],'items':old['items'],'tasks':[{'id':'quest.route','title':'找到路线','knowledge':['clue.solution']}],
-        'closure':old['closure'],'solution_tag':old['solution_tag'],'promises':old['promises']}
+        'closure':old['closure'],'solution_tag':old['solution_tag'],'promises':old['promises'],
+        'promise_descriptions':{key:'查明路线以后，与伙伴一起安全返回。' for key in old['promises']}}
     model=wire.ModelBlueprint.model_validate(authored).model_dump()
     b=StoryBlueprint.model_validate(wire.blueprint(model,settings,selected)).model_dump()
     return b,initial_state(b,manifest),manifest,settings,selected,model

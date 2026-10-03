@@ -9,6 +9,7 @@ from service.models import Concepts, StoryBlueprint, StoryOpening, BookPage, Tur
 from service.provider import BudgetExceeded, ModelError
 from service.context import for_generation, review_preview
 from service.prompts import compact_context
+from service.pacing import validate_resolution_page
 from service import model_protocol
 from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError, effects, page_action_contexts
 
@@ -246,6 +247,8 @@ class Pipeline:
                         if request.get('confirmed_understanding') and request.get('text') and proposal.get('resolved_action') != request['confirmed_understanding']:
                             raise RuleError('confirmed understanding must be executed exactly')
                         story = accept_proposal(source, request, proposal)
+                        if story is not None:
+                            validate_resolution_page(story,context)
                         review = invoke('review', {**context, 'proposal': proposal, 'confirmed_preview': review_preview(story),
                                                   'check': ['facts', 'causes', 'negation', 'voice', 'repetition', 'illustration']}, Review)
                         if not review['approved'] or review['issues']:

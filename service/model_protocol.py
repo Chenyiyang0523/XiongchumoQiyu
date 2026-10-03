@@ -46,6 +46,7 @@ class ModelBlueprint(Contract):
     initial_knowledge:dict[str,list[str]]=Field(default_factory=dict)
     resources:dict[str,int]=Field(default_factory=lambda:{'time':24,'materials':12})
     promises:dict[str,bool]=Field(default_factory=dict)
+    promise_descriptions:dict[str,str]=Field(default_factory=dict,description='每个承诺ID对应具体约定与可验证的兑现办法，键与promises完全一致')
     twists:list[str]=Field(default_factory=list)
     closure:str
     solution_tag:str
@@ -134,7 +135,10 @@ def character_reference(key,state):
 def blueprint(value,settings,selected):
     mapping=roles(settings,selected)
     if set(value['profiles'])!=set(mapping):raise ValueError('profiles must use exactly the provided role IDs')
+    if set(value['promise_descriptions'])!=set(value['promises']):
+        raise ValueError('every promise needs a concrete description and fulfilment condition')
     return {k:deepcopy(value[k]) for k in ['title','goal','conflict','clues','items','resources','promises','twists','closure','solution_tag']}|{
+        'promise_descriptions':deepcopy(value['promise_descriptions']),
         'schema_version':2,'theme':settings['theme'],'arc':selected['arc'],
         'characters':[{'id':cid,'name':name,'location':value['locations'].get(cid,value['scene']),
             'knowledge':value['initial_knowledge'].get(cid,[]),**value['profiles'][cid]} for cid,name in mapping.items()],

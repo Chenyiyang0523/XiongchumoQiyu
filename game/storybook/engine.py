@@ -315,7 +315,7 @@ def validate_page(page, s, b, manifest, event_ids, assets, age, confirmed_events
     require(all(a in manifest and a in assets for a in used), 'asset unavailable to client')
     require(set(page['callbacks']) <= set(event_ids), 'callback refers to unknown event')
     limit = (60, 120) if age == '6-8' else (100, 180)
-    require(limit[0] <= len(page['text']) <= limit[1], 'page text outside age band')
+    require(limit[0] <= len(page['text']) <= limit[1], 'page text outside age band: '+str(len(page['text']))+' characters; allowed '+str(limit[0])+'..'+str(limit[1]))
     for interaction in page['interactions']:
         require(interaction['kind'] in KINDS, 'unsupported interaction')
         require(len(set(interaction.get('order', []))) == len(interaction.get('order', [])), 'duplicate evidence card')
