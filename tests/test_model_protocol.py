@@ -92,3 +92,15 @@ def test_take_then_move_compiles_in_physical_order_and_sprite_alias_is_exact():
     assert wire.page(authored,state,m)['illustration']['characters']['player']=='character.xiongda.thinking'
     authored['characters']['player']='character.xionger.thinking'
     with pytest.raises(ValueError,match='wrong character'):wire.page(authored,state,m)
+
+
+def test_confirmed_hotspot_requests_its_physical_layer_without_inventing_ownership():
+    b,state,m,*_=world();authored=opening(state,m)
+    authored['items']=[]
+    p=BookPage.model_validate(wire.page(authored,state,m)).model_dump()
+    assert p['illustration']['props']==['prop.footprint']
+    validate_page(p,state,b,m,[],list(m),'6-8')
+    state['items']['item.footprint']['owner']='scene.cave'
+    p=BookPage.model_validate(wire.page(authored,state,m)).model_dump()
+    assert p['illustration']['props']==[]
+    with pytest.raises(RuleError,match='hotspot object absent'):validate_page(p,state,b,m,[],list(m),'6-8')

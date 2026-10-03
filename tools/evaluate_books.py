@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Reproducible 60-book corpus. Fixture runs can never satisfy live release gates."""
 import argparse
+import hashlib
+import subprocess
 import csv
 import json
 import sys
@@ -136,6 +138,15 @@ def checks(story):
             'counterfactuals_valid':True,'human_checked':False,'critical_contradictions':None,
             'omitted_tasks':None,'image_object_conflicts':None}
 
+def measured_usage(metrics):
+    return {'calls':len(metrics),'tokens':None if any(not m.get('usage_known',m.get('mock',False)) for m in metrics) else sum(m['input_tokens']+m['output_tokens'] for m in metrics),
+            'known_tokens':sum(m['input_tokens']+m['output_tokens'] for m in metrics),
+            'unknown_usage_calls':sum(not m.get('usage_known',m.get('mock',False)) for m in metrics),
+            'revisions':sum(m['stage'] in {'repair','setup_repair'} for m in metrics),
+            'model_wait_seconds':round(sum(m.get('seconds',0) for m in metrics),3),
+            'cost_usd':None if any(m['cost_usd'] is None for m in metrics) else sum(m['cost_usd'] for m in metrics),
+            'cost_basis':sorted({m.get('cost_basis','unknown') for m in metrics})}
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mode',choices=['live','mock'],required=True)
@@ -158,11 +169,21 @@ def main():
         print('未运行真实生成：请在本机配置 XCMQY_LLM_ENDPOINT、XCMQY_LLM_MODEL、XCMQY_LLM_KEY。',file=sys.stderr)
         return 2
     store=Store(args.output/'evaluation.sqlite')
+    store.recover()
     pipeline=Pipeline(store,provider)
+    sources=sorted([*ROOT.joinpath('service').glob('*.py'),*ROOT.joinpath('game/storybook').glob('*.py'),Path(__file__)])
+    metadata={'mode':args.mode,'model':getattr(provider,'model','fixture-v2'),'reasoning_effort':getattr(provider,'reasoning_effort',None),
+              'started_unix':time.time(),'pages':args.pages,'attempts_per_request':args.attempts,'workers':args.workers,
+              'source_sha256':hashlib.sha256(b''.join(p.read_bytes() for p in sources)).hexdigest(),
+              'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()}
+    run_path=args.output/'run-history.json'
+    runs=json.loads(run_path.read_text(encoding='utf-8')) if run_path.exists() else []
+    runs.append(metadata);run_path.write_text(json.dumps(runs,ensure_ascii=False,indent=2),encoding='utf-8')
     prior=json.loads((args.output/'results.json').read_text(encoding='utf-8')) if (args.output/'results.json').exists() else []
     rows={r['id']:r for r in prior}
     def run_case(case):
         start=time.monotonic()
+        story=None
         try:
             settings={k:case[k] for k in ['theme','character','age','arc']}
             settings.update(pages=args.pages,assets=list(pipeline.manifest),parent_mode=True)
@@ -178,13 +199,24 @@ def main():
             result=checks(story)
             (args.output/(case['id']+'.json')).write_text(json.dumps(story,ensure_ascii=False,indent=2), encoding='utf-8')
             export_html(story,args.output/(case['id']+'.html'),lambda p:(ROOT/'game'/p).read_bytes())
-            metrics=story['usage']
-            result.update(calls=len(metrics),tokens=None if any(not m.get('usage_known',m.get('mock',False)) for m in metrics) else sum(m['input_tokens']+m['output_tokens'] for m in metrics),
-                revisions=sum(m['stage'] in {'repair','setup_repair'} for m in metrics),model_wait_seconds=round(sum(m.get('seconds',0) for m in metrics),3),cost_usd=None if any(m['cost_usd'] is None for m in metrics) else sum(m['cost_usd'] for m in metrics),cost_basis=sorted({m.get('cost_basis','unknown') for m in metrics}))
+            result.update(measured_usage(store.usage(story['id'])))
             row={**case,'result':result,'status':'complete' if result['completed'] else 'continued'}
         except Exception as exc:
             row={**case,'status':'failed','error':str(exc)[:400]}
+            with store.db() as db:
+                creation=db.execute('SELECT id FROM jobs WHERE account=? AND ikey=?',('evaluation','evaluation-'+case['id'])).fetchone()
+            if creation:
+                metrics=store.usage(creation['id'])
+                row['usage']=measured_usage(metrics)
+                try:
+                    partial=store.story(creation['id']);partial['usage']=metrics
+                    row['confirmed_pages']=len(partial['pages']);row['story_id']=partial['id']
+                    (args.output/(case['id']+'.partial.json')).write_text(json.dumps(partial,ensure_ascii=False,indent=2),encoding='utf-8')
+                    export_html(partial,args.output/(case['id']+'.partial.html'),lambda p:(ROOT/'game'/p).read_bytes())
+                    row['confirmed_state_checks']=checks(partial)
+                except KeyError:pass
         row['seconds']=round(time.monotonic()-start,3)
+        row['source_commit']=metadata['source_commit']
         return row
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures=[pool.submit(run_case,c) for c in cases if rows.get(c['id'],{}).get('status')!='complete']
@@ -199,9 +231,12 @@ def main():
         columns=['id','reviewer','critical_contradictions','omitted_tasks','image_object_conflicts','coherence','fun','choice_consequences','image_consistency','notes']
         writer=csv.DictWriter(output,fieldnames=columns);writer.writeheader()
         writer.writerows(previous.get(c['id'],{'id':c['id']}) for c in corpus())
-    summary={'mode':args.mode,'status':'awaiting_human_review' if args.mode=='live' else 'fixture_only',
-             'books_generated':sum(r['status']=='complete' for r in rows),'cases':60,'new_themes':36,
-             'live_release_eligible':False,'comparison_pairs_required':20,'platforms_verified':[]}
+    completed=sum(r['status']=='complete' for r in rows)
+    summary={'mode':args.mode,'status':('awaiting_human_review' if completed==60 else 'technical_checks_incomplete') if args.mode=='live' else 'fixture_only',
+             'books_generated':completed,'cases':len(cases),'cases_attempted':len(rows),'new_themes':sum(c['new_theme'] for c in cases),
+             'failed':sum(r['status']=='failed' for r in rows),'continued':sum(r['status']=='continued' for r in rows),
+             'technical_corpus_passed':args.mode=='live' and completed==60,
+             'live_release_eligible':False,'human_review_status':'pending','comparison_pairs_required':20,'platforms_verified':[]}
     (args.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2), encoding='utf-8')
     return 0 if summary['books_generated']==60 else 1
 if __name__=='__main__':sys.exit(main())

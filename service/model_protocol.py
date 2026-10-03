@@ -198,6 +198,16 @@ def page(value,state,manifest):
         if iid not in state['items']:raise ValueError('unknown pictured item')
     visible=[iid for iid in value['items'] if state['items'][iid]['owner'] in {'player',state['location']}
              or state['items'][iid]['owner'] in state['characters'] and state['characters'][state['items'][iid]['owner']]['location']==state['location']]
+    # A hotspot explicitly requests a rendered, confirmed physical instance.
+    # Binding it here avoids a contradictory model-authored decoration list;
+    # inaccessible/unknown objects still cannot be made visible or operable.
+    for interaction in value['interactions']:
+        for option in interaction['actions']:
+            iid=option.get('hotspot')
+            if iid in state['items']:
+                owner=state['items'][iid]['owner']
+                accessible=owner in {'player',state['location']} or owner in state['characters'] and state['characters'][owner]['location']==state['location']
+                if accessible and iid not in visible:visible.append(iid)
     interactions=[]
     for inter in value['interactions']:
         interactions.append({k:deepcopy(inter[k]) for k in ['id','kind','instruction','order','order_action']}|

@@ -82,6 +82,15 @@ def compact_context(stage, raw):
             'visible_items':[k for k,v in state.get('items',{}).items() if v['owner'] in {state.get('location'),'player'} or v['owner'] in state.get('characters',{}) and state['characters'][v['owner']]['location']==state.get('location')],
             'present_characters':[k for k,v in state.get('characters',{}).items() if v['location']==state.get('location')],
             'interaction_types_used':context.get('closure_readiness',{}).get('interaction_types_used',[])}
+        constraints=context['next_action_constraints']
+        constraints['legal_targets']={'use':constraints['owned_items'],
+            'ask_or_negotiate':[cid for cid in constraints['present_characters'] if cid!='player'],
+            'allocate':[key for key,amount in state.get('resources',{}).items() if amount>0]}
+        constraints['recipes']=[{'craft':key,'target_must_be_one_of':item.get('recipe',[]),
+            'inputs_must_equal':item.get('recipe',[]),
+            'missing_materials':[{'id':iid,'owner':state['items'][iid]['owner']} for iid in item.get('recipe',[]) if state['items'][iid]['owner']!='player']}
+            for key,item in state.get('items',{}).items() if item['owner']=='unmade']
+        context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target必须是原料ID而非未制作的产物ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
         if context.get('pace')=='resolve':
             context['contract_notes']+='\n当前进入收束：closure_readiness.unmet_conditions与unfulfilled_promises列出仍欠的具体事实。每页至少一种办法实质推进这些条件（获取目标知识/物品、拿到原料、走近持有者、协商到要求的关系值、真实兑现承诺），程序会拒绝只含无关线索或刷无关关系的页面。先解决必要条件与承诺，再补第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
