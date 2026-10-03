@@ -75,7 +75,7 @@ class ModelInteraction(Contract):
     kind:Literal['observe','evidence','items','dialogue','allocation']
     instruction:str
     actions:list[ModelAction]=Field(min_length=1,max_length=4)
-    order:list[str]=Field(default_factory=list)
+    order:list[str]=Field(default_factory=list,description='已发现线索的稳定ID数组，不是中文线索文本；没有排序时留空')
     order_action:str|None=None
 
 class ModelPage(Contract):
@@ -150,9 +150,9 @@ def action(value,state):
     changes=[]
     changes += [{'op':'learn','target':k,'value':True} for k in value['learn']]
     changes += [{'op':'transfer','target':k,'value':'player'} for k in value['take']]
+    changes += [{'op':'craft','target':k,'value':True} for k in value['craft']]
     changes += [{'op':'transfer','target':k,'value':character_id(v)} for k,v in value['give'].items()]
     changes += [{'op':'consume','target':k,'value':True} for k in value['consume']]
-    changes += [{'op':'craft','target':k,'value':True} for k in value['craft']]
     if any(type(v)!=int or v<=0 for v in value['spend'].values()):raise ValueError('spend amounts must be positive integers')
     changes += [{'op':'resource','target':k,'value':-v} for k,v in value['spend'].items()]
     changes += [{'op':'relationship','target':character_id(k),'value':v} for k,v in value['relationships'].items()]
@@ -236,6 +236,15 @@ def turn(value,source,request,manifest):
             'action_id':e['id'],'verb':'observe','effects':changes,'reason':'','trait_use':None,'interaction_kind':None,'expansion':None}
         effects(state,{'verb':'observe','target':'player','effects':changes},working['blueprint'],manifest,'compilation')
         events.append(event)
+    clarification=[action(a,state) for a in value['clarification']]
+    # An informational question is not an executable interpretation. Preserve
+    # the concrete alternatives, each still checked by the canonical reducer.
+    clarification=[a for a in clarification if a['effects']]
+    if value['clarification'] and len(clarification)<2:
+        raise ValueError('clarification needs two concrete executable meanings; keep action/page null and do not guess')
+    ending=deepcopy(value['ending'])
+    if ending:
+        ending['helped']=[character_reference(key,state) for key in ending['helped']]
     return {'schema_version':2,'page':page(value['page'],state,manifest) if value['page'] else None,
-            'events':events,'resolved_action':resolved,'clarification':[action(a,state) for a in value['clarification']],
-            'ending':value['ending'],'expansion':expansion}
+            'events':events,'resolved_action':resolved,'clarification':clarification,
+            'ending':ending,'expansion':expansion}

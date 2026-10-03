@@ -93,6 +93,8 @@ def compact_context(stage, raw):
         context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target可为产物或原料ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
         context['contract_notes']+='\n最后一页仍可执行操作。closure_readiness.pages_remaining=0时禁止增加页面：满足收尾条件则page=null并返回ending；仍欠任务/承诺/有效互动则page=null、ending=null，程序记录最后行动并保存待续，不能编造任务完成。'
+        if context.get('request',{}).get('text'):
+            context['contract_notes']+='\n自由表达：先理解动作、对象、意图和否定，不归为A/B/C。像“把它给他”这样的指代有歧义时，action/page/ending必须null、events=[]，clarification提供2–3个对象明确且条件合法、后果不同的完整动作，不自动猜测或执行。仅“问他是谁”没有事实后果，不能充当候选动作。条件不满足时也可让玩家确认改变了条件的替代办法；确认前世界状态保持不变。'
         if context.get('pace')=='resolve':
             context['contract_notes']+='\n当前进入收束：closure_readiness.unmet_conditions与unfulfilled_promises列出仍欠的具体事实。每页至少一种办法实质推进这些条件（获取目标知识/物品、拿到原料、走近持有者、协商到要求的关系值、真实兑现承诺），程序会拒绝只含无关线索或刷无关关系的页面。先解决必要条件与承诺，再补第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
     if stage=='review':

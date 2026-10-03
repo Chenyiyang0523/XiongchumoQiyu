@@ -155,6 +155,10 @@ class Pipeline:
                     if facts['items']:defs['ModelPage']['properties']['items']['items']['enum']=list(facts['items'])
                     else:defs['ModelPage']['properties']['items']['maxItems']=0
                     props['hotspot']['enum']=list(facts['items'])+[None]
+                    if facts['knowledge']:
+                        defs['ModelInteraction']['properties']['order']['items']['enum']=facts['knowledge']
+                    else:
+                        defs['ModelInteraction']['properties']['order']['maxItems']=0
                 if wire_model==model_protocol.ModelTurn:
                     npc_ids=[cid for cid in ids if cid!='player']
                     defs['ModelEvent']['properties']['move']['propertyNames']={'enum':npc_ids}
@@ -176,7 +180,10 @@ class Pipeline:
                     raise RuleError('; '.join('.'.join(map(str,e['loc']))+': '+e['msg'] for e in exc.errors())[:1200]) from exc
                 except ValueError as exc:
                     raise RuleError(str(exc)) from exc
-            return model.model_validate(answer).model_dump()
+            try:
+                return model.model_validate(answer).model_dump()
+            except ValidationError as exc:
+                raise RuleError('; '.join('.'.join(map(str,e['loc']))+': '+e['msg'] for e in exc.errors())[:1200]) from exc
         try:
             if job['kind'] == 'create':
                 settings = request['settings']

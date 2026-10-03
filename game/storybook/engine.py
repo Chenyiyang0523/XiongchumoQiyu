@@ -130,9 +130,9 @@ def effects(s, action, b, manifest, event_id):
     for c in action.get('prerequisites', []):
         require(matches(s, c, b), 'action prerequisites not met')
     if action['verb'] in {'ask', 'negotiate'}:
-        require(target in s['characters'] and s['characters'][target]['location'] == s['location'], 'character absent')
+        require(target in s['characters'] and s['characters'][target]['location'] == s['location'], 'character absent: '+target+' is not at '+s['location'])
     if action['verb']=='use':
-        require(target in s['items'] and s['items'][target]['owner'] == 'player', 'item not owned')
+        require(target in s['items'] and s['items'][target]['owner'] == 'player', 'item not owned: '+target+'; use observe+take before use')
     if action['verb']=='combine':
         outputs={e['target'] for e in action['effects'] if e['op']=='craft'}
         require(target in s['items'] and (s['items'][target]['owner']=='player' or target in outputs and s['items'][target]['owner']=='unmade'), 'item not owned or a declared craft output')
@@ -166,7 +166,7 @@ def effects(s, action, b, manifest, event_id):
         elif op == 'craft':
             require(action['verb'] == 'combine' and key in s['items'] and s['items'][key]['owner'] == 'unmade' and value is True, 'invalid crafting')
             ingredients = s['items'][key].get('recipe', [])
-            require(len(ingredients) >= 2 and all(s['items'][i]['owner'] == actor for i in ingredients), 'craft ingredients missing')
+            require(len(ingredients) >= 2 and all(s['items'][i]['owner'] == actor for i in ingredients), 'craft ingredients missing: '+', '.join(i+' owned by '+s['items'][i]['owner'] for i in ingredients if s['items'][i]['owner']!=actor))
             require(set(action.get('inputs', []))==set(ingredients) and action['target'] in set(ingredients)|{key},'craft recipe differs from selected inputs')
             for ingredient in ingredients:
                 s['items'][ingredient]['owner'] = 'consumed'
@@ -176,7 +176,7 @@ def effects(s, action, b, manifest, event_id):
         elif op in {'transfer', 'consume'}:
             require(key in s['items'] and s['items'][key]['owner'] not in {'consumed','unmade'}, 'item unavailable')
             owner = s['items'][key]['owner']
-            require(owner == actor or owner == s['location'] or (owner in s['characters'] and s['characters'][owner]['location'] == s['location']), 'item inaccessible')
+            require(owner == actor or owner == s['location'] or (owner in s['characters'] and s['characters'][owner]['location'] == s['location']), 'item inaccessible: '+key+' owned by '+owner+'; player is at '+s['location'])
             if op == 'consume':
                 require(owner == actor, 'cannot consume unowned item')
                 value = 'consumed'
@@ -323,7 +323,7 @@ def validate_page(page, s, b, manifest, event_ids, assets, age, confirmed_events
         require(interaction['kind'] in KINDS, 'unsupported interaction')
         require(len(set(interaction.get('order', []))) == len(interaction.get('order', [])), 'duplicate evidence card')
         if interaction.get('order'):
-            require(set(interaction['order']) <= set(b['clues']), 'unknown evidence card')
+            require(set(interaction['order']) <= set(b['clues']), 'unknown evidence card: '+', '.join(str(k) for k in interaction['order'] if k not in b['clues'])[:160])
             require(all(k in s['knowledge'] for k in interaction['order']), 'evidence not yet discovered')
             require(interaction.get('order_action') in [a['id'] for a in interaction['actions']], 'unknown order action')
         for action in interaction['actions']:
