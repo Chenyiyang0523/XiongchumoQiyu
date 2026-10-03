@@ -23,6 +23,14 @@ def frontier(state, blueprint):
                 conditions.append({'quest':qid,'title':quest['title'],**deepcopy(condition)})
     promises=[{'id':key,'description':blueprint.get('promise_descriptions',{}).get(key,key)}
               for key,done in state['promises'].items() if not done]
+    for promise in promises:
+        goals=blueprint.get('promise_conditions',{}).get(promise['id'],[])
+        if goals:
+            promise['conditions']=deepcopy(goals)
+            promise['facts_satisfied']=all(matches(state,c,blueprint) for c in goals)
+            for condition in goals:
+                if not matches(state,condition,blueprint):
+                    conditions.append({'quest':promise['id'],'title':promise['description'],**deepcopy(condition)})
     return {'unmet_conditions':conditions,'unfulfilled_promises':promises}
 
 

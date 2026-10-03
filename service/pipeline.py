@@ -138,12 +138,14 @@ class Pipeline:
                     'if':{'properties':{'verb':{'enum':['ask','negotiate']}}},
                     'then':{'properties':{'target':{'enum':ids}}}})
                 if wire_model==model_protocol.ModelOpening:
+                    defs['ModelBlueprint']['required']+=['promises','promise_descriptions','promise_goals']
                     defs['ModelBlueprint']['properties']['profiles']['propertyNames']={'enum':ids}
                     defs['ModelBlueprint']['properties']['scene']['enum']=scenes
                     defs['ModelBlueprint']['properties']['locations']['propertyNames']={'enum':ids}
                     defs['ModelBlueprint']['properties']['locations']['additionalProperties']['enum']=scenes
-                    defs['ModelTask']['properties']['relationships']['propertyNames']={'enum':[cid for cid in ids if cid!='player']}
-                    defs['ModelTask']['properties']['owners']['additionalProperties']['enum']=ids+model_context['asset_catalog']['scenes']
+                    for goal_type in ['ModelTask','ModelPromiseGoal']:
+                        defs[goal_type]['properties']['relationships']['propertyNames']={'enum':[cid for cid in ids if cid!='player']}
+                        defs[goal_type]['properties']['owners']['additionalProperties']['enum']=ids+model_context['asset_catalog']['scenes']
                 elif not request.get('text'):
                     facts=context['post_action_state'];props=defs['ModelAction']['properties']
                     props['learn']['items']['enum']=list(context['story']['blueprint']['clues'])

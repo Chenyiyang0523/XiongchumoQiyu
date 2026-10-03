@@ -20,7 +20,8 @@ def world():
         'profiles':{cid:{k:next(c for c in old['characters'] if c['name']==name)[k] for k in ['motivation','strength','weakness']} for cid,name in roles.items()},
         'clues':old['clues'],'items':old['items'],'tasks':[{'id':'quest.route','title':'找到路线','knowledge':['clue.solution']}],
         'closure':old['closure'],'solution_tag':old['solution_tag'],'promises':old['promises'],
-        'promise_descriptions':{key:'查明路线以后，与伙伴一起安全返回。' for key in old['promises']}}
+        'promise_descriptions':{key:'查明路线以后，与伙伴一起安全返回。' for key in old['promises']},
+        'promise_goals':{key:{'knowledge':['clue.solution']} for key in old['promises']}}
     model=wire.ModelBlueprint.model_validate(authored).model_dump()
     b=StoryBlueprint.model_validate(wire.blueprint(model,settings,selected)).model_dump()
     return b,initial_state(b,manifest),manifest,settings,selected,model
@@ -97,6 +98,31 @@ def test_model_cannot_place_an_item_at_a_remote_scene():
     before=copy.deepcopy(state)
     with pytest.raises(ValueError,match='unknown or ambiguous'):wire.action(authored,state)
     assert state==before
+
+
+def test_consumed_item_diagnostic_identifies_the_immutable_instance():
+    b,state,m,*_=world();state['items']['item.map']['owner']='consumed'
+    action=wire.ModelAction(id='action.retake',label='取回地图',verb='observe',target='item.map',
+        take=['item.map'],feedback='拿起地图。').model_dump()
+    before=copy.deepcopy(state)
+    with pytest.raises(ValueError,match='item already consumed: item.map'):wire.action(action,state)
+    assert state==before
+
+
+def test_promise_flag_cannot_replace_actual_delivery_and_bad_goal_is_rejected():
+    b,state,m,settings,selected,model=world()
+    model['promise_goals']={'promise.return':{'owners':{'item.map':'npc.zhaolin'},'knowledge':[],'relationships':{}}}
+    b=StoryBlueprint.model_validate(wire.blueprint(model,settings,selected)).model_dump();state=initial_state(b,m)
+    state['items']['item.map']['owner']='player'
+    flag=wire.ModelAction(id='action.empty.promise',label='说已经交还地图',verb='ask',target='npc.zhaolin',
+        promises={'promise.return':True},feedback='说已经交还地图。').model_dump()
+    with pytest.raises(RuleError,match='promise fulfilment facts missing'):effects(copy.deepcopy(state),wire.action(flag,state),b,m,'false.claim')
+    assert state['promises']['promise.return'] is False and state['items']['item.map']['owner']=='player'
+    flag['give']={'item.map':'npc.zhaolin'}
+    effects(state,wire.action(flag,state),b,m,'real.delivery')
+    assert state['items']['item.map']['owner']=='npc.zhaolin' and state['promises']['promise.return'] is True
+    model['promise_goals']={}
+    with pytest.raises(ValueError,match='typed factual goals'):wire.blueprint(model,settings,selected)
 
 def test_take_then_move_compiles_in_physical_order_and_sprite_alias_is_exact():
     b,state,m,*_=world()

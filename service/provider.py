@@ -56,7 +56,7 @@ class Provider:
                        'messages': [{'role': 'system', 'content': getattr(self,'system',SYSTEM)},
                                     {'role': 'user', 'content': json.dumps({'stage': stage, 'context': context, 'schema': schema}, ensure_ascii=False)}],
                        **(self.payload_options(stage) if hasattr(self,'payload_options') else getattr(self,'extra_payload',{}))}
-            with httpx.Client(timeout=self.timeout, follow_redirects=False) as client:
+            with httpx.Client(timeout=self.timeout, follow_redirects=False,proxy=os.environ.get('XCMQY_LLM_PROXY') or None) as client:
                 with client.stream('POST', self.endpoint, json=payload,
                                    headers={'Authorization': 'Bearer ' + self.key} if self.key else {}) as response:
                     metric['http_status']=response.status_code

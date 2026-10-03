@@ -82,6 +82,7 @@ class StoryBlueprint(Contract):
     resources: dict[ID, int] = Field(default_factory=lambda: {'time': 12, 'materials': 6})
     promises: dict[ID, bool] = Field(default_factory=dict)
     promise_descriptions: dict[ID, str] = Field(default_factory=dict)
+    promise_conditions: dict[ID, list[Condition]] = Field(default_factory=dict)
     twists: list[str] = Field(default_factory=list)
     closure: str
     solution_tag: str

@@ -35,6 +35,11 @@ class ModelTask(Contract):
     promises:list[str]=Field(default_factory=list)
     dependencies:list[str]=Field(default_factory=list)
 
+class ModelPromiseGoal(Contract):
+    knowledge:list[str]=Field(default_factory=list)
+    owners:dict[str,str]=Field(default_factory=dict)
+    relationships:dict[str,int]=Field(default_factory=dict)
+
 class ModelBlueprint(Contract):
     title:str
     goal:str
@@ -49,6 +54,7 @@ class ModelBlueprint(Contract):
     resources:dict[str,int]=Field(default_factory=lambda:{'time':24,'materials':12})
     promises:dict[str,bool]=Field(default_factory=dict)
     promise_descriptions:dict[str,str]=Field(default_factory=dict,description='每个承诺ID对应具体约定与可验证的兑现办法，键与promises完全一致')
+    promise_goals:dict[str,ModelPromiseGoal]=Field(default_factory=dict,description='键与promises相同；每个承诺的实际兑现条件，至少一项knowledge/owners/relationships。例如交还蜂蜜用owners={item.honey:npc.xionger}')
     twists:list[str]=Field(default_factory=list)
     closure:str
     solution_tag:str
@@ -139,8 +145,14 @@ def blueprint(value,settings,selected):
     if set(value['profiles'])!=set(mapping):raise ValueError('profiles must use exactly the provided role IDs')
     if set(value['promise_descriptions'])!=set(value['promises']):
         raise ValueError('every promise needs a concrete description and fulfilment condition')
+    if set(value['promise_goals'])!=set(value['promises']):
+        raise ValueError('every promise needs typed factual goals; promise_goals keys must equal promises')
+    promise_conditions={pid:task({'id':pid,'title':value['promise_descriptions'][pid],'required':False,
+        'dependencies':[],'promises':[],**goals})['conditions'] for pid,goals in value['promise_goals'].items()}
+    if any(not goals for goals in promise_conditions.values()):raise ValueError('promise goals cannot be empty')
     return {k:deepcopy(value[k]) for k in ['title','goal','conflict','clues','items','resources','promises','twists','closure','solution_tag']}|{
         'promise_descriptions':deepcopy(value['promise_descriptions']),
+        'promise_conditions':promise_conditions,
         'schema_version':2,'theme':settings['theme'],'arc':selected['arc'],
         'characters':[{'id':cid,'name':name,'location':value['locations'].get(cid,value['scene']),
             'knowledge':value['initial_knowledge'].get(cid,[]),**value['profiles'][cid]} for cid,name in mapping.items()],
@@ -149,6 +161,9 @@ def blueprint(value,settings,selected):
 def action(value,state):
     def character_id(key):
         return character_reference(key,state)
+    for iid in dict.fromkeys(value['take']+list(value['give'])+value['consume']+value['inputs']):
+        if iid in state['items'] and state['items'][iid]['owner']=='consumed':
+            raise ValueError('item already consumed: '+iid+'; this stable instance cannot be taken, given, consumed or used again')
     changes=[]
     changes += [{'op':'learn','target':k,'value':True} for k in value['learn']]
     changes += [{'op':'transfer','target':k,'value':'player'} for k in value['take']]

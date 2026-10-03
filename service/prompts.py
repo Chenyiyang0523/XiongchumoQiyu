@@ -72,6 +72,7 @@ def compact_context(stage, raw):
         context['contract_notes'] += '\n蓝图：按页数准备约'+str(context.get('settings',{}).get('pages',12))+'条不同的可探索线索或成果事实，避免强迫逐条收集；资源time不少于24、materials不少于12。主线最多3项必需任务，每项均有可验证条件；其余设为可选。承诺不是装饰：promises与promise_descriptions键必须相同，每项明确答应了谁、什么事、怎样兑现，能通过玩家行动落实；不需要承诺时两个字典都为空。所有参与角色cast与selected完全一致，player名称与settings.character一致，同场伙伴能实际参与；故事允许移动到已有场景。arc必须等于selected.arc。'
     if stage in {'setup','setup_repair','opening'}:
         context['contract_notes'] += '\n开场页：文字须严格符合年龄字数，先呈现待解决的问题；不要在文字中提前发现尚未知的线索。至少两条当前可执行且后果不同的动作，优先观察/对话。callbacks=[]，choices=[]。'
+        context['contract_notes']+='\n每个承诺必须提供promise_goals，与promises和promise_descriptions使用完全相同的键。至少一个实际owners、knowledge或relationships条件；例如答应给熊二蜂蜜，owners必须要求蜂蜜归熊二，不能只用一句“答应了”或完成标志代替。没有承诺时三项字典都为空。'
     if stage in {'proposal','repair'}:
         context['contract_notes']+='\n通常events=[]，玩家行动已经action_events确认，不得重复注册它们。额外events只能改变已有NPC的位置/知识；id必须全新，cause只用已有event ID，禁止page/action ID，禁止player的learn或move。'
         context['contract_notes']+='\n正文以最近action_events的实际feedback为主要素材，回应刚做过的具体行动；之后只提出下一步疑问或邀请，不要抄写下一按钮feedback里的未发现答案。场景氛围与人物神态可创造，玩家操作结果不能提前发生。'
@@ -93,6 +94,7 @@ def compact_context(stage, raw):
         context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target可为产物或原料ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
         context['contract_notes']+='\n物品交付支持give={物品ID:在场人物ID或当前场景ID}。修好的桥、布置好的舞台等实际产物可以放在当前场景，不能只learn“已修好”代替交付，也不能隔空放在远处。'
         context['contract_notes']+='\nclosure_readiness.physical_prerequisite_hints只列事实所要求的物理前提，不规定剧情：核心物品已可及就让玩家获得；制作缺料则去真实材料所在地；产物已拥有则送往真实接收者或布置地点。不要用一个无关支线制作替代尚未满足的核心条件。'
+        context['contract_notes']+='\n新故事的承诺绑定promise_conditions。只有这些实际事实满足后才能把promises标为true；可在同一动作先交付物品，再标记兑现。unfulfilled_promises.facts_satisfied=true表示实事已做，只差通过具体回应确认兑现；不要再重复转移物品。'
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
         context['contract_notes']+='\n最后一页仍可执行操作。closure_readiness.pages_remaining=0时禁止增加页面：满足收尾条件则page=null并返回ending；仍欠任务/承诺/有效互动则page=null、ending=null，程序记录最后行动并保存待续，不能编造任务完成。'
         if context.get('request',{}).get('text'):
@@ -105,4 +107,5 @@ def compact_context(stage, raw):
         context['contract_notes'] += '\n这是独立语义审校：只输出approved与issues，不重写正文。技术字段已由程序验证；重点检查可见文字是否提前宣布未执行的动作、目标是否真实闭合、转折是否有前因、同一角色口吻，以及画面具体对象是否与文字关键对象一致。字数或未展示的未来计划不应误报为当前事件。发现关键矛盾必须拒绝，并提出精确可修订问题。'
         context['contract_notes']+='\nissues仅填写必须阻断并修复的问题。可接受的旁观描述、道具尚未写入正文或轻微措辞建议放advice。approved=true必须issues=[]，不能一面批准一面列阻断问题。'
         context['contract_notes']+='\n观察画面本身可呈现疑点和实物的可见外观，获取知识可进一步辨认或解释，不应把所有看得见的线索一律视为已提前完成操作。单次观察获得同时可见且因果关联的多条线索是合法的，learn包含多个ID不构成阻断理由。阻断的是提前宣告玩家尚未做的转移/制作/任务完成、揭晓尚无依据的核心结论或违背确认事实。'
+        context['contract_notes']+='\n承诺的promise_conditions必须对应promise_descriptions所约定的实事。交付、制作或归还物品应检查真实owners，不能用一句“知道已经给了”的knowledge替代归属；履行标志也不能替代实际兑现。'
     return context

@@ -68,6 +68,10 @@ def initial_state(blueprint, manifest):
             visit(dep, stack | {qid})
     for quest in quests.values():
         visit(quest['id'], set())
+    promise_goals=blueprint.get('promise_conditions',{})
+    require(set(promise_goals)<=set(state['promises']),'conditions for unknown promise')
+    require(all(bool(c) for c in promise_goals.values()),'empty promise conditions')
+    for quest in [*quests.values(),*({'conditions':c} for c in promise_goals.values())]:
         for condition in quest['conditions']:
             condition_value(state, condition, blueprint)
             kind,value=condition['kind'],condition['value']
@@ -85,6 +89,9 @@ def initial_state(blueprint, manifest):
                 require(type(value) is bool,'non-boolean fact goal')
             elif kind=='quest':
                 require(value in {'open','complete'},'unknown quest goal status')
+    for pid,conditions in promise_goals.items():
+        require(all(c['kind']!='promise' for c in conditions),'promise goals cannot depend on promise flags')
+        require(not state['promises'][pid] or all(matches(state,c,blueprint) for c in conditions),'initial promise fulfilled without its facts')
     state['provenance'] = {key: 'initial' for key in fact_keys(state)}
     refresh_quests(state, blueprint, 'initial')
     return state
@@ -197,6 +204,8 @@ def effects(s, action, b, manifest, event_id):
             fact = ('resource:' if op == 'resource' else 'relationship:') + key
         elif op == 'promise':
             require(key in s['promises'] and type(value) is bool, 'unknown promise')
+            require(not value or all(matches(s,c,b) for c in b.get('promise_conditions',{}).get(key,[])),
+                    'promise fulfilment facts missing: '+key)
             s['promises'][key] = value
             fact = 'promise:' + key
         elif op == 'reward':

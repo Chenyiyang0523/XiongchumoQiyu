@@ -12,6 +12,20 @@ export XCMQY_DATABASE=${XCMQY_DATABASE:-$task_root/.local/glm/player.sqlite}
 export XCMQY_MODEL_TIMEOUT=${XCMQY_MODEL_TIMEOUT:-240}
 export XCMQY_BOOK_TOKEN_LIMIT=${XCMQY_BOOK_TOKEN_LIMIT:-700000}
 export XCMQY_DEVELOPMENT_MOCK=0
+if [ -z "${XCMQY_LLM_PROXY:-}" ] && [ "$(uname -s)" = "Darwin" ]; then
+  task_proxy=$("$task_root/.venv/bin/python" - <<'PY'
+import re,subprocess
+data=subprocess.check_output(['scutil','--proxy'],text=True)
+def value(key):
+    match=re.search(r'^\s*'+key+r'\s*:\s*(\S+)\s*$',data,re.M)
+    return match.group(1) if match else ''
+host,port=value('HTTPSProxy'),value('HTTPSPort')
+if value('HTTPSEnable')=='1' and re.fullmatch(r'[a-zA-Z0-9.-]+',host) and port.isdigit():
+    print('http://'+host+':'+port)
+PY
+)
+  if [ -n "$task_proxy" ]; then export XCMQY_LLM_PROXY="$task_proxy"; fi
+fi
 if [ -z "${XCMQY_GUARDIAN_CODE:-}" ]; then
   XCMQY_GUARDIAN_CODE=$("$task_root/.venv/bin/python" - <<'PY'
 from pathlib import Path
