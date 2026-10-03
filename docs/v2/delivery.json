@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0-alpha.1",
+  "formal_release_eligible": false,
+  "local_implementation_commit": "40ee3309b58cfc22b6ebe384ae9fbd0667bfb4b1",
+  "artifacts": [
+    {
+      "file": "ArtSources-2.0.0-alpha.1.zip",
+      "bytes": 238702507,
+      "sha256": "be17a0ea8360b74e6820efc3a397993acc538dd1ccb2802d33e5f1e2862c1ea7"
+    },
+    {
+      "file": "Demo-fixture-only.html",
+      "bytes": 11326690,
+      "sha256": "8437392434287176c2267310111a1852848b3a525c82b45419dff0c8f022b43c"
+    },
+    {
+      "file": "StoryService-2.0.0-alpha.1.zip",
+      "bytes": 62183,
+      "sha256": "e204a67999a5f2bc5555d9e0c7072d96cd4811449a1edb87b02efcb29c369eac"
+    },
+    {
+      "file": "StoryService-image.tar.gz",
+      "bytes": 74777219,
+      "sha256": "f96d35b43de087c4d86ee6e106a4e38a3c4652f28c43d4c1ab1cc4ec7603ea85"
+    },
+    {
+      "file": "Xiongchumo_Qiyu_Build-mac.zip",
+      "bytes": 226655904,
+      "sha256": "3bd495cfe84ccbe44ed9b4986cfb284774e02741db2f98f28bb30b0105e02d41"
+    },
+    {
+      "file": "Xiongchumo_Qiyu_Build-pc.zip",
+      "bytes": 232342600,
+      "sha256": "b1bfbc8dee82162d50951bf9aa09ed1c0d6f88f0181c5c253823ca688c3ff3de"
+    }
+  ]
+}

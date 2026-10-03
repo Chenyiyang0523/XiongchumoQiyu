@@ -1,0 +1,31 @@
+{
+  "id": "key_06",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_workshop.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_kite.png"
+  ],
+  "spec": {
+    "characters": [
+      "光头强",
+      "熊二"
+    ],
+    "scenes": [
+      "scene.workshop"
+    ],
+    "props": [
+      "prop.kite"
+    ],
+    "event_verbs": [
+      "combine"
+    ],
+    "conditions": [],
+    "situation": "making",
+    "regions": [
+      "full"
+    ]
+  },
+  "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 熊二; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The man and bear proudly make a small finished yellow diamond kite at a wooden workbench, each supports one side while inspecting the red frame and bow tail. No tools or extra craft supplies visible. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-fa398ceb-4763-4442-a59c-3f07b1973d30.png"
+}

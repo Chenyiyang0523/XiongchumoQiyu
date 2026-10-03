@@ -1,0 +1,10 @@
+{
+  "id": "zhaolin_worried",
+  "character": "zhaolin",
+  "emotion": "worried",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png"
+  ],
+  "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-758cc463-9d61-4e1a-91a7-2af709ea97cc.png"
+}

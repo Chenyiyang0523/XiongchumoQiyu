@@ -1,0 +1,716 @@
+[
+  {
+    "asset": "game/images/v2/damahou_calm.webp",
+    "original_bytes": 1532753,
+    "encoded_bytes": 945496,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/damahou_determined.webp",
+    "original_bytes": 1625727,
+    "encoded_bytes": 996180,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/damahou_happy.webp",
+    "original_bytes": 1627523,
+    "encoded_bytes": 997432,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/damahou_surprised.webp",
+    "original_bytes": 1638935,
+    "encoded_bytes": 1007938,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/damahou_thinking.webp",
+    "original_bytes": 1540977,
+    "encoded_bytes": 939254,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/damahou_worried.webp",
+    "original_bytes": 1456153,
+    "encoded_bytes": 886606,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/ergou_calm.webp",
+    "original_bytes": 1747590,
+    "encoded_bytes": 1087052,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/ergou_determined.webp",
+    "original_bytes": 1824656,
+    "encoded_bytes": 1131382,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/ergou_happy.webp",
+    "original_bytes": 1927768,
+    "encoded_bytes": 1203112,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/ergou_surprised.webp",
+    "original_bytes": 1862316,
+    "encoded_bytes": 1160892,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/ergou_thinking.webp",
+    "original_bytes": 1885528,
+    "encoded_bytes": 1164936,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/ergou_worried.webp",
+    "original_bytes": 1782484,
+    "encoded_bytes": 1096576,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_calm.webp",
+    "original_bytes": 1678269,
+    "encoded_bytes": 1059532,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_calm_clean.webp",
+    "original_bytes": 1741392,
+    "encoded_bytes": 1113686,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_determined.webp",
+    "original_bytes": 1848468,
+    "encoded_bytes": 1193270,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_happy.webp",
+    "original_bytes": 1932838,
+    "encoded_bytes": 1243024,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_surprised.webp",
+    "original_bytes": 1756888,
+    "encoded_bytes": 1116494,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_thinking.webp",
+    "original_bytes": 1751425,
+    "encoded_bytes": 1130970,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/guangtouqiang_worried.webp",
+    "original_bytes": 1719141,
+    "encoded_bytes": 1093560,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_calm.webp",
+    "original_bytes": 1861192,
+    "encoded_bytes": 1173350,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_calm_clean.webp",
+    "original_bytes": 1808236,
+    "encoded_bytes": 1161286,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_determined.webp",
+    "original_bytes": 1954813,
+    "encoded_bytes": 1280130,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_happy.webp",
+    "original_bytes": 1978637,
+    "encoded_bytes": 1288268,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_surprised.webp",
+    "original_bytes": 1886031,
+    "encoded_bytes": 1225748,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_thinking.webp",
+    "original_bytes": 1881282,
+    "encoded_bytes": 1218698,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/jijiguowang_worried.webp",
+    "original_bytes": 1834912,
+    "encoded_bytes": 1182064,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_00.webp",
+    "original_bytes": 2560848,
+    "encoded_bytes": 1869476,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_01.webp",
+    "original_bytes": 2620437,
+    "encoded_bytes": 2034450,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_02.webp",
+    "original_bytes": 2732522,
+    "encoded_bytes": 2127382,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_03.webp",
+    "original_bytes": 2273606,
+    "encoded_bytes": 1766120,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_04.webp",
+    "original_bytes": 2706497,
+    "encoded_bytes": 2106622,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_05.webp",
+    "original_bytes": 2495036,
+    "encoded_bytes": 1913742,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_06.webp",
+    "original_bytes": 2328410,
+    "encoded_bytes": 1780930,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_07.webp",
+    "original_bytes": 2604374,
+    "encoded_bytes": 2000312,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_08.webp",
+    "original_bytes": 2576321,
+    "encoded_bytes": 1946302,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_09.webp",
+    "original_bytes": 2613707,
+    "encoded_bytes": 2001102,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_10.webp",
+    "original_bytes": 2478646,
+    "encoded_bytes": 1861594,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/key_11.webp",
+    "original_bytes": 2793043,
+    "encoded_bytes": 2216572,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_calm.webp",
+    "original_bytes": 1734844,
+    "encoded_bytes": 1081632,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_calm_clean.webp",
+    "original_bytes": 1875737,
+    "encoded_bytes": 1179736,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_determined.webp",
+    "original_bytes": 1898397,
+    "encoded_bytes": 1198100,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_happy.webp",
+    "original_bytes": 1923060,
+    "encoded_bytes": 1216544,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_surprised.webp",
+    "original_bytes": 1911761,
+    "encoded_bytes": 1205240,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_thinking.webp",
+    "original_bytes": 1884128,
+    "encoded_bytes": 1188208,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/maomao_worried.webp",
+    "original_bytes": 1893585,
+    "encoded_bytes": 1179812,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_apple.webp",
+    "original_bytes": 1897290,
+    "encoded_bytes": 1334132,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_bamboo.webp",
+    "original_bytes": 1132716,
+    "encoded_bytes": 756268,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_basket.webp",
+    "original_bytes": 1637887,
+    "encoded_bytes": 1100072,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_bell.webp",
+    "original_bytes": 1120869,
+    "encoded_bytes": 724598,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_brush.webp",
+    "original_bytes": 2012962,
+    "encoded_bytes": 1263828,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_bucket.webp",
+    "original_bytes": 1784734,
+    "encoded_bytes": 1298198,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_clay.webp",
+    "original_bytes": 1676762,
+    "encoded_bytes": 1130038,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_cloth.webp",
+    "original_bytes": 1832483,
+    "encoded_bytes": 1261436,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_compass.webp",
+    "original_bytes": 1646360,
+    "encoded_bytes": 1064146,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_drum.webp",
+    "original_bytes": 1865722,
+    "encoded_bytes": 1245990,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_feather.webp",
+    "original_bytes": 1307708,
+    "encoded_bytes": 851464,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_flag.webp",
+    "original_bytes": 1529024,
+    "encoded_bytes": 962188,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_flower.webp",
+    "original_bytes": 2165107,
+    "encoded_bytes": 1385302,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_footprint.webp",
+    "original_bytes": 2351583,
+    "encoded_bytes": 1531336,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_hammer.webp",
+    "original_bytes": 937710,
+    "encoded_bytes": 573860,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_honey.webp",
+    "original_bytes": 1865745,
+    "encoded_bytes": 1297494,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_key.webp",
+    "original_bytes": 967207,
+    "encoded_bytes": 628960,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_kite.webp",
+    "original_bytes": 873576,
+    "encoded_bytes": 590098,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_lantern.webp",
+    "original_bytes": 2288671,
+    "encoded_bytes": 1508158,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_leaf.webp",
+    "original_bytes": 2120203,
+    "encoded_bytes": 1337776,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_letter.webp",
+    "original_bytes": 1928449,
+    "encoded_bytes": 1220014,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_magnifier.webp",
+    "original_bytes": 1164347,
+    "encoded_bytes": 761166,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_map.webp",
+    "original_bytes": 1510149,
+    "encoded_bytes": 1060186,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_map_approved.webp",
+    "original_bytes": 2455086,
+    "encoded_bytes": 1630928,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_mask.webp",
+    "original_bytes": 2186050,
+    "encoded_bytes": 1462794,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_paint.webp",
+    "original_bytes": 1993869,
+    "encoded_bytes": 1369288,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_paper.webp",
+    "original_bytes": 1800953,
+    "encoded_bytes": 1160210,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_pinecone.webp",
+    "original_bytes": 1647037,
+    "encoded_bytes": 1087156,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_plank.webp",
+    "original_bytes": 1814055,
+    "encoded_bytes": 1185610,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_ribbon.webp",
+    "original_bytes": 1787934,
+    "encoded_bytes": 1229110,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_rope.webp",
+    "original_bytes": 1812757,
+    "encoded_bytes": 1167902,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_scissors.webp",
+    "original_bytes": 979297,
+    "encoded_bytes": 619612,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_seed.webp",
+    "original_bytes": 1873772,
+    "encoded_bytes": 1206242,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_shovel.webp",
+    "original_bytes": 1164797,
+    "encoded_bytes": 768432,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_star.webp",
+    "original_bytes": 1371343,
+    "encoded_bytes": 909018,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_string.webp",
+    "original_bytes": 1749834,
+    "encoded_bytes": 1167466,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_wheel.webp",
+    "original_bytes": 1725498,
+    "encoded_bytes": 1159616,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_bamboo.webp",
+    "original_bytes": 2571837,
+    "encoded_bytes": 1985638,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_bamboo_approved.webp",
+    "original_bytes": 2566445,
+    "encoded_bytes": 1929790,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_bridge.webp",
+    "original_bytes": 2535114,
+    "encoded_bytes": 1939524,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_camp.webp",
+    "original_bytes": 2465186,
+    "encoded_bytes": 1908876,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_flowers.webp",
+    "original_bytes": 2564228,
+    "encoded_bytes": 1981654,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_lakeside.webp",
+    "original_bytes": 2728639,
+    "encoded_bytes": 2124232,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_library.webp",
+    "original_bytes": 2319188,
+    "encoded_bytes": 1786494,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_market.webp",
+    "original_bytes": 2509381,
+    "encoded_bytes": 1963556,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_orchard.webp",
+    "original_bytes": 2519370,
+    "encoded_bytes": 1930772,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_sports.webp",
+    "original_bytes": 2589308,
+    "encoded_bytes": 1983418,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_stage.webp",
+    "original_bytes": 2545400,
+    "encoded_bytes": 1950522,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_treehouse.webp",
+    "original_bytes": 2692547,
+    "encoded_bytes": 2042060,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/scene_workshop.webp",
+    "original_bytes": 2236159,
+    "encoded_bytes": 1708296,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/tiancaiwei_calm.webp",
+    "original_bytes": 1624261,
+    "encoded_bytes": 997302,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/tiancaiwei_determined.webp",
+    "original_bytes": 1694378,
+    "encoded_bytes": 1044320,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/tiancaiwei_happy.webp",
+    "original_bytes": 1784266,
+    "encoded_bytes": 1099102,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/tiancaiwei_surprised.webp",
+    "original_bytes": 1614736,
+    "encoded_bytes": 996628,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/tiancaiwei_thinking.webp",
+    "original_bytes": 1537821,
+    "encoded_bytes": 942528,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/tiancaiwei_worried.webp",
+    "original_bytes": 1512606,
+    "encoded_bytes": 923254,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xiongda_calm.webp",
+    "original_bytes": 1895533,
+    "encoded_bytes": 1217416,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xiongda_determined.webp",
+    "original_bytes": 2212096,
+    "encoded_bytes": 1428306,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xiongda_happy.webp",
+    "original_bytes": 2082452,
+    "encoded_bytes": 1327602,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xiongda_surprised.webp",
+    "original_bytes": 2086146,
+    "encoded_bytes": 1342442,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xiongda_thinking.webp",
+    "original_bytes": 2073526,
+    "encoded_bytes": 1320672,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xiongda_worried.webp",
+    "original_bytes": 2123774,
+    "encoded_bytes": 1366108,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xionger_calm.webp",
+    "original_bytes": 2014506,
+    "encoded_bytes": 1293084,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xionger_determined.webp",
+    "original_bytes": 2101281,
+    "encoded_bytes": 1347072,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xionger_happy.webp",
+    "original_bytes": 2164329,
+    "encoded_bytes": 1392602,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xionger_surprised.webp",
+    "original_bytes": 2074893,
+    "encoded_bytes": 1333352,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xionger_thinking.webp",
+    "original_bytes": 2104376,
+    "encoded_bytes": 1335218,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/xionger_worried.webp",
+    "original_bytes": 2111936,
+    "encoded_bytes": 1350210,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/zhaolin_calm.webp",
+    "original_bytes": 1551070,
+    "encoded_bytes": 960848,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/zhaolin_determined.webp",
+    "original_bytes": 1702785,
+    "encoded_bytes": 1053110,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/zhaolin_happy.webp",
+    "original_bytes": 1736990,
+    "encoded_bytes": 1075720,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/zhaolin_surprised.webp",
+    "original_bytes": 1663215,
+    "encoded_bytes": 1037062,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/zhaolin_thinking.webp",
+    "original_bytes": 1639495,
+    "encoded_bytes": 1015594,
+    "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/zhaolin_worried.webp",
+    "original_bytes": 1599285,
+    "encoded_bytes": 990706,
+    "rgba_identical": true
+  }
+]

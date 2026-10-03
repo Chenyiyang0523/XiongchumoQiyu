@@ -1,0 +1,1974 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "熊出没奇遇互动绘本",
+    "version": "2.0.0-alpha.1"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/sessions": {
+      "post": {
+        "summary": "Session",
+        "operationId": "session_v2_sessions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionToken"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/stories": {
+      "post": {
+        "summary": "Create",
+        "operationId": "create_v2_stories_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTicket"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v2/stories/{sid}/actions": {
+      "post": {
+        "summary": "Submit",
+        "operationId": "submit_v2_stories__sid__actions_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "sid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Sid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTicket"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/jobs/{jid}": {
+      "get": {
+        "summary": "Job",
+        "operationId": "job_v2_jobs__jid__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "jid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Jid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/jobs/{jid}/retry": {
+      "post": {
+        "summary": "Retry",
+        "operationId": "retry_v2_jobs__jid__retry_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "jid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Jid"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTicket"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/stories/{sid}": {
+      "get": {
+        "summary": "Restore",
+        "operationId": "restore_v2_stories__sid__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "sid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Sid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoryRecord"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/books": {
+      "get": {
+        "summary": "Books",
+        "operationId": "books_v2_books_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/BookSummary"
+                  },
+                  "type": "array",
+                  "title": "Response Books V2 Books Get"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v2/books/{sid}": {
+      "get": {
+        "summary": "Book",
+        "operationId": "book_v2_books__sid__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "sid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Sid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoryRecord"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete",
+        "operationId": "delete_v2_books__sid__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "sid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Sid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Action": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "verb": {
+            "type": "string",
+            "enum": [
+              "observe",
+              "move",
+              "ask",
+              "use",
+              "combine",
+              "allocate",
+              "negotiate",
+              "reason"
+            ],
+            "title": "Verb"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Label"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "prerequisites": {
+            "items": {
+              "$ref": "#/components/schemas/Condition"
+            },
+            "type": "array",
+            "maxItems": 12,
+            "title": "Prerequisites"
+          },
+          "effects": {
+            "items": {
+              "$ref": "#/components/schemas/Effect"
+            },
+            "type": "array",
+            "maxItems": 12,
+            "title": "Effects"
+          },
+          "feedback": {
+            "type": "string",
+            "maxLength": 240,
+            "minLength": 1,
+            "title": "Feedback"
+          },
+          "alternatives": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "title": "Alternatives"
+          },
+          "inputs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Inputs"
+          },
+          "trait_use": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TraitUse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hotspot": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hotspot"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "verb",
+          "label",
+          "target",
+          "feedback"
+        ],
+        "title": "Action"
+      },
+      "BookSummary": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "complete",
+              "continued"
+            ],
+            "title": "Status"
+          },
+          "pages": {
+            "type": "integer",
+            "title": "Pages"
+          },
+          "mock": {
+            "type": "boolean",
+            "title": "Mock"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "status",
+          "pages",
+          "mock"
+        ],
+        "title": "BookSummary"
+      },
+      "Character": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "location": {
+            "type": "string",
+            "title": "Location"
+          },
+          "motivation": {
+            "type": "string",
+            "title": "Motivation"
+          },
+          "strength": {
+            "type": "string",
+            "title": "Strength"
+          },
+          "weakness": {
+            "type": "string",
+            "title": "Weakness"
+          },
+          "knowledge": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Knowledge"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "location",
+          "motivation",
+          "strength",
+          "weakness"
+        ],
+        "title": "Character"
+      },
+      "Concept": {
+        "properties": {
+          "arc": {
+            "type": "string",
+            "enum": [
+              "mystery",
+              "comedy",
+              "craft",
+              "journey",
+              "negotiation",
+              "festival"
+            ],
+            "title": "Arc"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "conflict": {
+            "type": "string",
+            "title": "Conflict"
+          },
+          "solution_tag": {
+            "type": "string",
+            "title": "Solution Tag"
+          },
+          "cast": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 2,
+            "title": "Cast"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "arc",
+          "title",
+          "conflict",
+          "solution_tag",
+          "cast"
+        ],
+        "title": "Concept"
+      },
+      "Condition": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "knowledge",
+              "owner",
+              "location",
+              "resource",
+              "relationship",
+              "quest",
+              "promise"
+            ],
+            "title": "Kind"
+          },
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              }
+            ],
+            "title": "Value"
+          },
+          "actor": {
+            "type": "string",
+            "title": "Actor",
+            "default": "player"
+          },
+          "comparison": {
+            "type": "string",
+            "enum": [
+              "eq",
+              "gte",
+              "lte"
+            ],
+            "title": "Comparison",
+            "default": "eq"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "kind",
+          "key",
+          "value"
+        ],
+        "title": "Condition"
+      },
+      "ConfirmedPage": {
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "const": 2,
+            "title": "Schema Version",
+            "default": 2
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 60,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 260,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "illustration": {
+            "$ref": "#/components/schemas/Illustration"
+          },
+          "interactions": {
+            "items": {
+              "$ref": "#/components/schemas/Interaction"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Interactions"
+          },
+          "callbacks": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 5,
+            "title": "Callbacks"
+          },
+          "choices": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "maxItems": 16,
+            "title": "Choices"
+          },
+          "state_snapshot": {
+            "$ref": "#/components/schemas/WorldState"
+          },
+          "discussion": {
+            "type": "string",
+            "title": "Discussion",
+            "default": ""
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "text",
+          "illustration",
+          "state_snapshot"
+        ],
+        "title": "ConfirmedPage"
+      },
+      "CreateRequest": {
+        "properties": {
+          "settings": {
+            "$ref": "#/components/schemas/StorySettings"
+          },
+          "idempotency_key": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 8,
+            "title": "Idempotency Key"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "settings",
+          "idempotency_key"
+        ],
+        "title": "CreateRequest"
+      },
+      "Effect": {
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "learn",
+              "move",
+              "transfer",
+              "consume",
+              "craft",
+              "resource",
+              "relationship",
+              "promise",
+              "reward"
+            ],
+            "title": "Op"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              }
+            ],
+            "title": "Value"
+          },
+          "actor": {
+            "type": "string",
+            "title": "Actor",
+            "default": "player"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "op",
+          "target",
+          "value"
+        ],
+        "title": "Effect"
+      },
+      "Ending": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Evidence"
+          },
+          "discoveries": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Discoveries"
+          },
+          "helped": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Helped"
+          },
+          "solution": {
+            "type": "string",
+            "title": "Solution"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "title",
+          "text",
+          "evidence",
+          "discoveries",
+          "helped",
+          "solution"
+        ],
+        "title": "Ending"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Illustration": {
+        "properties": {
+          "scene": {
+            "type": "string",
+            "title": "Scene"
+          },
+          "characters": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "maxProperties": 4,
+            "title": "Characters"
+          },
+          "props": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Props"
+          },
+          "key_art": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Key Art"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "scene"
+        ],
+        "title": "Illustration"
+      },
+      "Interaction": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "observe",
+              "evidence",
+              "items",
+              "dialogue",
+              "allocation"
+            ],
+            "title": "Kind"
+          },
+          "instruction": {
+            "type": "string",
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Instruction"
+          },
+          "actions": {
+            "items": {
+              "$ref": "#/components/schemas/Action"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "minItems": 1,
+            "title": "Actions"
+          },
+          "order": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "title": "Order"
+          },
+          "order_action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Order Action"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "instruction",
+          "actions"
+        ],
+        "title": "Interaction"
+      },
+      "Item": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "owner": {
+            "type": "string",
+            "title": "Owner"
+          },
+          "asset": {
+            "type": "string",
+            "title": "Asset"
+          },
+          "recipe": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Recipe"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "owner",
+          "asset"
+        ],
+        "title": "Item"
+      },
+      "JobStatus": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "story": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Story"
+          },
+          "phase": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "planning",
+              "generating",
+              "reviewing",
+              "committing",
+              "complete",
+              "failed"
+            ],
+            "title": "Phase"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Result"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "metrics": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Metrics"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "story",
+          "phase",
+          "result",
+          "error",
+          "metrics"
+        ],
+        "title": "JobStatus"
+      },
+      "JobTicket": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "title": "Job Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "job_id"
+        ],
+        "title": "JobTicket"
+      },
+      "Operation": {
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "title": "Action Id"
+          },
+          "order": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "title": "Order"
+          },
+          "amount": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 20.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Amount"
+          },
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "action_id"
+        ],
+        "title": "Operation"
+      },
+      "PendingAction": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "title": "Job Id"
+          },
+          "request": {
+            "$ref": "#/components/schemas/SubmitRequest"
+          },
+          "phase": {
+            "type": "string",
+            "title": "Phase"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "job_id",
+          "request",
+          "phase"
+        ],
+        "title": "PendingAction"
+      },
+      "Quest": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "required": {
+            "type": "boolean",
+            "title": "Required",
+            "default": true
+          },
+          "dependencies": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Dependencies"
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Conditions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "conditions"
+        ],
+        "title": "Quest"
+      },
+      "SessionRequest": {
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{16,80}$",
+            "title": "Account Id"
+          },
+          "account_secret": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 32,
+            "title": "Account Secret"
+          },
+          "guardian_code": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Guardian Code"
+          },
+          "consent": {
+            "type": "boolean",
+            "const": true,
+            "title": "Consent"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "account_id",
+          "account_secret",
+          "guardian_code",
+          "consent"
+        ],
+        "title": "SessionRequest"
+      },
+      "SessionToken": {
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "title": "Access Token"
+          },
+          "expires_at": {
+            "type": "number",
+            "title": "Expires At"
+          },
+          "mock": {
+            "type": "boolean",
+            "title": "Mock"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "access_token",
+          "expires_at",
+          "mock"
+        ],
+        "title": "SessionToken"
+      },
+      "StoryBlueprint": {
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "const": 2,
+            "title": "Schema Version",
+            "default": 2
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 60,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "theme": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Theme"
+          },
+          "arc": {
+            "type": "string",
+            "enum": [
+              "mystery",
+              "comedy",
+              "craft",
+              "journey",
+              "negotiation",
+              "festival"
+            ],
+            "title": "Arc"
+          },
+          "goal": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Goal"
+          },
+          "conflict": {
+            "type": "string",
+            "title": "Conflict"
+          },
+          "characters": {
+            "items": {
+              "$ref": "#/components/schemas/Character"
+            },
+            "type": "array",
+            "maxItems": 9,
+            "minItems": 2,
+            "title": "Characters"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "type": "array",
+            "maxItems": 64,
+            "title": "Items"
+          },
+          "clues": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "maxProperties": 80,
+            "minProperties": 2,
+            "title": "Clues"
+          },
+          "quests": {
+            "items": {
+              "$ref": "#/components/schemas/Quest"
+            },
+            "type": "array",
+            "maxItems": 24,
+            "minItems": 1,
+            "title": "Quests"
+          },
+          "resources": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Resources"
+          },
+          "promises": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "type": "object",
+            "title": "Promises"
+          },
+          "twists": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Twists"
+          },
+          "closure": {
+            "type": "string",
+            "title": "Closure"
+          },
+          "solution_tag": {
+            "type": "string",
+            "title": "Solution Tag"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "title",
+          "theme",
+          "arc",
+          "goal",
+          "conflict",
+          "characters",
+          "clues",
+          "quests",
+          "closure",
+          "solution_tag"
+        ],
+        "title": "StoryBlueprint"
+      },
+      "StoryEvent": {
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "const": 2,
+            "title": "Schema Version",
+            "default": 2
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "turn": {
+            "type": "integer",
+            "title": "Turn"
+          },
+          "cause": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Cause"
+          },
+          "action_id": {
+            "type": "string",
+            "title": "Action Id"
+          },
+          "verb": {
+            "type": "string",
+            "enum": [
+              "observe",
+              "move",
+              "ask",
+              "use",
+              "combine",
+              "allocate",
+              "negotiate",
+              "reason"
+            ],
+            "title": "Verb",
+            "default": "observe"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "effects": {
+            "items": {
+              "$ref": "#/components/schemas/Effect"
+            },
+            "type": "array",
+            "title": "Effects"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason",
+            "default": ""
+          },
+          "trait_use": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TraitUse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "interaction_kind": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "observe",
+                  "evidence",
+                  "items",
+                  "dialogue",
+                  "allocation"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interaction Kind"
+          },
+          "expansion": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WorldExpansion"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "turn",
+          "cause",
+          "action_id",
+          "description",
+          "effects"
+        ],
+        "title": "StoryEvent"
+      },
+      "StoryRecord": {
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "const": 2,
+            "title": "Schema Version",
+            "default": 2
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/StorySettings"
+          },
+          "blueprint": {
+            "$ref": "#/components/schemas/StoryBlueprint"
+          },
+          "initial_blueprint": {
+            "$ref": "#/components/schemas/StoryBlueprint"
+          },
+          "state": {
+            "$ref": "#/components/schemas/WorldState"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/StoryEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/ConfirmedPage"
+            },
+            "type": "array",
+            "title": "Pages"
+          },
+          "manifest": {
+            "additionalProperties": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "object",
+            "title": "Manifest"
+          },
+          "ending": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Ending"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "complete",
+              "continued"
+            ],
+            "title": "Status"
+          },
+          "mock": {
+            "type": "boolean",
+            "title": "Mock"
+          },
+          "concepts": {
+            "items": {
+              "$ref": "#/components/schemas/Concept"
+            },
+            "type": "array",
+            "title": "Concepts"
+          },
+          "selected_concept": {
+            "$ref": "#/components/schemas/Concept"
+          },
+          "usage": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Usage"
+          },
+          "pending": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PendingAction"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "settings",
+          "blueprint",
+          "initial_blueprint",
+          "state",
+          "events",
+          "pages",
+          "manifest",
+          "ending",
+          "status",
+          "mock",
+          "concepts",
+          "selected_concept",
+          "usage"
+        ],
+        "title": "StoryRecord"
+      },
+      "StorySettings": {
+        "properties": {
+          "theme": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Theme"
+          },
+          "character": {
+            "type": "string",
+            "title": "Character"
+          },
+          "age": {
+            "type": "string",
+            "enum": [
+              "6-8",
+              "9-12"
+            ],
+            "title": "Age",
+            "default": "6-8"
+          },
+          "pages": {
+            "type": "integer",
+            "enum": [
+              8,
+              12,
+              16,
+              20
+            ],
+            "title": "Pages",
+            "default": 12
+          },
+          "parent_mode": {
+            "type": "boolean",
+            "title": "Parent Mode",
+            "default": false
+          },
+          "arc": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "mystery",
+                  "comedy",
+                  "craft",
+                  "journey",
+                  "negotiation",
+                  "festival"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Arc"
+          },
+          "assets": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 300,
+            "minItems": 1,
+            "title": "Assets"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "theme",
+          "character",
+          "assets"
+        ],
+        "title": "StorySettings"
+      },
+      "SubmitRequest": {
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Version"
+          },
+          "idempotency_key": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 8,
+            "title": "Idempotency Key"
+          },
+          "operations": {
+            "items": {
+              "$ref": "#/components/schemas/Operation"
+            },
+            "type": "array",
+            "maxItems": 16,
+            "title": "Operations"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Text",
+            "default": ""
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Reason",
+            "default": ""
+          },
+          "clarification_job": {
+            "type": "string",
+            "maxLength": 32,
+            "title": "Clarification Job",
+            "default": ""
+          },
+          "clarification_action": {
+            "type": "string",
+            "title": "Clarification Action",
+            "default": ""
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "version",
+          "idempotency_key"
+        ],
+        "title": "SubmitRequest"
+      },
+      "TraitUse": {
+        "properties": {
+          "character": {
+            "type": "string",
+            "title": "Character"
+          },
+          "aspect": {
+            "type": "string",
+            "enum": [
+              "strength",
+              "weakness"
+            ],
+            "title": "Aspect"
+          },
+          "explanation": {
+            "type": "string",
+            "maxLength": 180,
+            "minLength": 3,
+            "title": "Explanation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "character",
+          "aspect",
+          "explanation"
+        ],
+        "title": "TraitUse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "WorldExpansion": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "type": "array",
+            "maxItems": 4,
+            "title": "Items"
+          },
+          "clues": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "maxProperties": 4,
+            "title": "Clues"
+          },
+          "quests": {
+            "items": {
+              "$ref": "#/components/schemas/Quest"
+            },
+            "type": "array",
+            "maxItems": 2,
+            "title": "Quests"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "WorldExpansion"
+      },
+      "WorldState": {
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "const": 2,
+            "title": "Schema Version",
+            "default": 2
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "location": {
+            "type": "string",
+            "title": "Location"
+          },
+          "characters": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Character"
+            },
+            "type": "object",
+            "title": "Characters"
+          },
+          "items": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "type": "object",
+            "title": "Items"
+          },
+          "resources": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Resources"
+          },
+          "relationships": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Relationships"
+          },
+          "knowledge": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Knowledge"
+          },
+          "quests": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Quests"
+          },
+          "promises": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "type": "object",
+            "title": "Promises"
+          },
+          "rewards": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rewards"
+          },
+          "provenance": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Provenance"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "version",
+          "location",
+          "characters",
+          "items",
+          "resources",
+          "relationships",
+          "knowledge",
+          "quests",
+          "promises",
+          "rewards",
+          "provenance"
+        ],
+        "title": "WorldState"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

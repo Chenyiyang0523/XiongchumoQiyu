@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "光头强",
+    "赵琳"
+  ],
+  "scenes": [
+    "scene.stage"
+  ],
+  "props": [
+    "prop.drum"
+  ],
+  "event_verbs": [
+    "negotiate",
+    "ask"
+  ],
+  "conditions": [],
+  "situation": "reunion",
+  "regions": [
+    "full"
+  ]
+}

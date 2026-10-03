@@ -1,0 +1,1707 @@
+[
+  {
+    "id": "scene_lakeside",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. calm clear lake shore with reeds, reflection of forest canopy and gentle golden afternoon light. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-c3425bdb-2fa2-4af5-85bf-05f4fc7e2d7d.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_lakeside.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_bridge",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. a small wooden footbridge across a shallow forest stream, two clear paths on either side. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6286407d-d790-4081-814d-3ef8c797142d.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_bridge.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_flowers",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. colorful wildflower meadow beside forest, softly rolling hills and a clear grassy central area. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-7d7b787c-8a1d-45a1-ae4e-4f3e387eec79.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_flowers.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_orchard",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. small apple orchard, trees laden with red apples, tidy grass path and rustic fence. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-5ce4fd98-35ee-474b-81b1-56d7c726d018.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_orchard.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_treehouse",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. whimsical wooden treehouse built safely around a large oak, rope-free solid stairs and forest clearing. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-cdeedb01-c850-46f0-80ef-ec9c3e6ad8e6.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_treehouse.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_camp",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. cozy forest campsite, unlit stone-ring firepit, canvas tents along sides, central open clearing. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-0ab821c6-cc77-473d-bfd2-7b381db05eb7.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_camp.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_workshop",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. warm rustic craft workshop interior with a wooden workbench on the side, shelves of simple tools and clear central floor. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-96679e62-14ca-4f37-8cb0-d5453eb73362.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_workshop.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_library",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. cozy forest cabin reading corner, curved wood shelves and colorful unlettered book spines, sunlit window. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a92ce712-5463-4c5e-980c-ad2a19252798.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_library.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_market",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. friendly forest village outdoor market, empty wooden stalls with colorful fabric awnings, spacious central path. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-8398a487-74da-4a0a-a962-44c892fc6b4b.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_market.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_stage",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. outdoor forest festival stage with curtains tied aside, leafy backdrop, simple colorful unlettered bunting. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a2f91547-12c0-43c6-a5ec-148b7812cd27.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_stage.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "scene_sports",
+    "prompt": "Production background for 熊出没奇遇 children's picturebook. cheerful small forest sports field, natural grass, running lanes and safe wooden benches, morning sunlight. Match reference style: refined warm hand-drawn cartoon, clean dark brown outlines, soft painterly shading, lush jade greens, honey light, detailed yet readable. Wide 16:9, full bleed. Leave central lower area clear for character sprites. No people, animals, text, numerals, letters, watermark, collage or UI. Opaque background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2732be67-5ac5-4bd8-a981-04d4d8dd2106.png",
+    "reference": "game/images/bg/bg_forest.webp",
+    "final_asset": "game/images/v2/scene_sports.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "guangtouqiang_calm",
+    "character": "guangtouqiang",
+    "prompt": "Create a production full-body neutral/calm character sprite for 熊出没奇遇. Reference 1 gives the exact character identity, face, hairstyle, clothing and body proportions. Reference 2 is ONLY the art style guide: refined warm hand-drawn cartoon picturebook, crisp soft brown outlines, gentle painterly shading, no 3D rendering. Redraw this recognizable character standing calmly in a three-quarter front view with relaxed hands and a kind neutral expression. Preserve identity and costume colors. If reference is cropped, extend to a complete plausible full body. Remove ALL subtitles and lettering. Entire body including feet fully inside frame with generous transparent margins. One character only, no extra objects, no scenery, no floor or surface shadow, no collage, no words or watermark. Real alpha transparency, not a checkerboard or black background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-79b59ec2-92f9-4220-bcb7-10db5c82967d.png",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/guangtouqiang_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "final_asset": null,
+    "archived_references": [
+      "game/images/sprites/guangtouqiang_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "jijiguowang_calm",
+    "character": "jijiguowang",
+    "prompt": "Create a production full-body neutral/calm character sprite for 熊出没奇遇. Reference 1 gives the exact character identity, face, hairstyle, clothing and body proportions. Reference 2 is ONLY the art style guide: refined warm hand-drawn cartoon picturebook, crisp soft brown outlines, gentle painterly shading, no 3D rendering. Redraw this recognizable character standing calmly in a three-quarter front view with relaxed hands and a kind neutral expression. Preserve identity and costume colors. If reference is cropped, extend to a complete plausible full body. Remove ALL subtitles and lettering. Entire body including feet fully inside frame with generous transparent margins. One character only, no extra objects, no scenery, no floor or surface shadow, no collage, no words or watermark. Real alpha transparency, not a checkerboard or black background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-420546f0-23a9-47cf-8e13-cc12bfc40f04.png",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/jijiguowang_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "final_asset": null,
+    "archived_references": [
+      "game/images/sprites/jijiguowang_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "maomao_calm",
+    "character": "maomao",
+    "prompt": "Create a production full-body neutral/calm character sprite for 熊出没奇遇. Reference 1 gives the exact character identity, face, hairstyle, clothing and body proportions. Reference 2 is ONLY the art style guide: refined warm hand-drawn cartoon picturebook, crisp soft brown outlines, gentle painterly shading, no 3D rendering. Redraw this recognizable character standing calmly in a three-quarter front view with relaxed hands and a kind neutral expression. Preserve identity and costume colors. If reference is cropped, extend to a complete plausible full body. Remove ALL subtitles and lettering. Entire body including feet fully inside frame with generous transparent margins. One character only, no extra objects, no scenery, no floor or surface shadow, no collage, no words or watermark. Real alpha transparency, not a checkerboard or black background.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-8c92a85c-82ba-4d27-96d7-f9dcbd6a0fb4.png",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/maomao_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "final_asset": null,
+    "archived_references": [
+      "game/images/sprites/maomao_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "maomao_calm_clean",
+    "prompt": "Edit this character sprite by completely removing the entire background AND the broad colored glow/halo surrounding the figure. Preserve the full-body character itself exactly, its face, clothes, pose, proportions, clean outlines, color and shading. Keep all feet, hands and accessories. Outside the precise outer silhouette every pixel must have alpha 0. Character interior must be opaque. Hair/fur edge antialiasing may be slightly transparent only at the immediate edge. No colored haze, no shadow, no gradient, no black or white background, no checkerboard. Return one genuinely transparent production cutout.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-33caa26b-b9c6-4f87-8ebd-81ab0ab718f3.png",
+    "reference": "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm.png",
+    "final_asset": "game/images/v2/maomao_calm_clean.webp",
+    "archived_references": [
+      "assets-source/v2/raw/maomao_calm.png"
+    ]
+  },
+  {
+    "id": "jijiguowang_calm_clean",
+    "prompt": "Edit this character sprite by completely removing the entire background AND the broad colored glow/halo surrounding the figure. Preserve the full-body character itself exactly, its face, clothes, pose, proportions, clean outlines, color and shading. Keep all feet, hands and accessories. Outside the precise outer silhouette every pixel must have alpha 0. Character interior must be opaque. Hair/fur edge antialiasing may be slightly transparent only at the immediate edge. No colored haze, no shadow, no gradient, no black or white background, no checkerboard. Return one genuinely transparent production cutout.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2b89f7e6-5cf9-4fb9-9cf9-9f0a9acca2b1.png",
+    "reference": "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm.png",
+    "final_asset": "game/images/v2/jijiguowang_calm_clean.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm.png"
+    ]
+  },
+  {
+    "id": "guangtouqiang_calm_clean",
+    "prompt": "Edit this character sprite by completely removing the entire background AND the broad colored glow/halo surrounding the figure. Preserve the full-body character itself exactly, its face, clothes, pose, proportions, clean outlines, color and shading. Keep all feet, hands and accessories. Outside the precise outer silhouette every pixel must have alpha 0. Character interior must be opaque. Hair/fur edge antialiasing may be slightly transparent only at the immediate edge. No colored haze, no shadow, no gradient, no black or white background, no checkerboard. Return one genuinely transparent production cutout.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-de8a1280-8703-47d0-b1e5-dbd7d3b9c369.png",
+    "reference": "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm.png",
+    "final_asset": "game/images/v2/guangtouqiang_calm_clean.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm.png"
+    ]
+  },
+  {
+    "id": "zhaolin_calm",
+    "character": "zhaolin",
+    "prompt": "Create a polished standalone character sprite for a Chinese children's forest picturebook ages 6 to 12. Character is 赵琳. A friendly young Chinese girl with long dark brown hair in a high ponytail, pink short sleeve shirt, blue backpack, dark shorts and practical walking shoes. Use the first reference ONLY for recognizable identity, costume and colors, discard subtitles, cropping and old rendering. Use the forest reference for a unified warm hand drawn cartoon picturebook style, soft textured colors, clean expressive linework. Calm neutral welcoming expression, relaxed standing pose in three quarter front view. Show complete head, hands, feet with generous transparent margin around all sides, centered full body fitting the vertical canvas. Strong readable silhouette, consistent believable anatomy. Actual transparent RGBA background. Nothing behind character, no floor, no shadow, no glow, no captions, no letters, no labels, no watermark.",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/zhaolin_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-97a00e46-12dc-4038-a621-b9a9ccbf301d.png",
+    "final_asset": "game/images/v2/zhaolin_calm.webp",
+    "archived_references": [
+      "game/images/sprites/zhaolin_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "tiancaiwei_calm",
+    "character": "tiancaiwei",
+    "prompt": "Create a polished standalone character sprite for a Chinese children's forest picturebook ages 6 to 12. Character is 天才威. An eccentric slim young inventor with angular black pompadour hair, round clear glasses, white lab coat, red T shirt with a small plain yellow geometric badge, dark trousers. Use the first reference ONLY for recognizable identity, costume and colors, discard subtitles, cropping and old rendering. Use the forest reference for a unified warm hand drawn cartoon picturebook style, soft textured colors, clean expressive linework. Calm neutral welcoming expression, relaxed standing pose in three quarter front view. Show complete head, hands, feet with generous transparent margin around all sides, centered full body fitting the vertical canvas. Strong readable silhouette, consistent believable anatomy. Actual transparent RGBA background. Nothing behind character, no floor, no shadow, no glow, no captions, no letters, no labels, no watermark.",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/tiancaiwei_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ddb9343f-ef7e-43a5-8c0f-e1c8e00f4dd8.png",
+    "final_asset": "game/images/v2/tiancaiwei_calm.webp",
+    "archived_references": [
+      "game/images/sprites/tiancaiwei_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "damahou_calm",
+    "character": "damahou",
+    "prompt": "Create a polished standalone character sprite for a Chinese children's forest picturebook ages 6 to 12. Character is 大马猴. A lanky comic adult man with elongated friendly face, black hair, green zip jacket with small plain round yellow badge, dark trousers, sturdy shoes. Use the first reference ONLY for recognizable identity, costume and colors, discard subtitles, cropping and old rendering. Use the forest reference for a unified warm hand drawn cartoon picturebook style, soft textured colors, clean expressive linework. Calm neutral welcoming expression, relaxed standing pose in three quarter front view. Show complete head, hands, feet with generous transparent margin around all sides, centered full body fitting the vertical canvas. Strong readable silhouette, consistent believable anatomy. Actual transparent RGBA background. Nothing behind character, no floor, no shadow, no glow, no captions, no letters, no labels, no watermark.",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/damahou_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-08599b5c-6e8d-4ee6-8e01-e01672518c2f.png",
+    "final_asset": "game/images/v2/damahou_calm.webp",
+    "archived_references": [
+      "game/images/sprites/damahou_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "ergou_calm",
+    "character": "ergou",
+    "prompt": "Create a polished standalone character sprite for a Chinese children's forest picturebook ages 6 to 12. Character is 二狗. A stocky comic adult man with short black buzzcut hair, broad face, dark grey T shirt, brown trousers and sturdy shoes. Use the first reference ONLY for recognizable identity, costume and colors, discard subtitles, cropping and old rendering. Use the forest reference for a unified warm hand drawn cartoon picturebook style, soft textured colors, clean expressive linework. Calm neutral welcoming expression, relaxed standing pose in three quarter front view. Show complete head, hands, feet with generous transparent margin around all sides, centered full body fitting the vertical canvas. Strong readable silhouette, consistent believable anatomy. Actual transparent RGBA background. Nothing behind character, no floor, no shadow, no glow, no captions, no letters, no labels, no watermark.",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/ergou_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a918a8ae-193a-4853-9eae-4ba5d31ffd29.png",
+    "final_asset": "game/images/v2/ergou_calm.webp",
+    "archived_references": [
+      "game/images/sprites/ergou_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "xiongda_calm",
+    "character": "xiongda",
+    "prompt": "Create a polished standalone character sprite for a Chinese children's forest picturebook ages 6 to 12. Character is 熊大. A confident friendly red brown bear with cream muzzle and cream chest, brown red nose, sturdy body. Familiar Boonie Bears Xiong Da appearance. Use the first reference ONLY for recognizable identity, costume and colors, discard subtitles, cropping and old rendering. Use the forest reference for a unified warm hand drawn cartoon picturebook style, soft textured colors, clean expressive linework. Calm neutral welcoming expression, relaxed standing pose in three quarter front view. Show complete head, hands, feet with generous transparent margin around all sides, centered full body fitting the vertical canvas. Strong readable silhouette, consistent believable anatomy. Actual transparent RGBA background. Nothing behind character, no floor, no shadow, no glow, no captions, no letters, no labels, no watermark.",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/xiongda_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-23f89afe-de70-4a69-ac10-516ff6f1af4c.png",
+    "final_asset": "game/images/v2/xiongda_calm.webp",
+    "archived_references": [
+      "game/images/sprites/xiongda_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "xionger_calm",
+    "character": "xionger",
+    "prompt": "Create a polished standalone character sprite for a Chinese children's forest picturebook ages 6 to 12. Character is 熊二. A warm funny golden yellow bear with cream muzzle and broad cream belly, grey green nose, round heavy body. Familiar Boonie Bears Xiong Er appearance. Use the first reference ONLY for recognizable identity, costume and colors, discard subtitles, cropping and old rendering. Use the forest reference for a unified warm hand drawn cartoon picturebook style, soft textured colors, clean expressive linework. Calm neutral welcoming expression, relaxed standing pose in three quarter front view. Show complete head, hands, feet with generous transparent margin around all sides, centered full body fitting the vertical canvas. Strong readable silhouette, consistent believable anatomy. Actual transparent RGBA background. Nothing behind character, no floor, no shadow, no glow, no captions, no letters, no labels, no watermark.",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/sprites/xionger_normal.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-3cdfd815-48b2-4717-b134-2402247cefad.png",
+    "final_asset": "game/images/v2/xionger_calm.webp",
+    "archived_references": [
+      "game/images/sprites/xionger_normal.png",
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "damahou_determined",
+    "character": "damahou",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: firm kind eyes, purposeful confident posture with one hand on hip. Emotion: determined. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-031199e3-5b40-40a6-b929-c3a6b50ec4b1.png",
+    "final_asset": "game/images/v2/damahou_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/damahou_calm.png"
+    ]
+  },
+  {
+    "id": "damahou_happy",
+    "character": "damahou",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: bright joyful smile and raised arms celebrating. Emotion: happy. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2d648ddf-5cae-45ee-bd26-e375a9b6097f.png",
+    "final_asset": "game/images/v2/damahou_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/damahou_calm.png"
+    ]
+  },
+  {
+    "id": "damahou_surprised",
+    "character": "damahou",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: wide eyes, gently surprised open mouth and hands lifted at chest. Emotion: surprised. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-70bc29ed-9deb-42af-8ac2-113422c54871.png",
+    "final_asset": "game/images/v2/damahou_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/damahou_calm.png"
+    ]
+  },
+  {
+    "id": "damahou_thinking",
+    "character": "damahou",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: thoughtful curious face with one hand gently at chin. Emotion: thinking. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-d66d4e93-f075-42ec-baa9-93be5d3c7dcd.png",
+    "final_asset": "game/images/v2/damahou_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/damahou_calm.png"
+    ]
+  },
+  {
+    "id": "damahou_worried",
+    "character": "damahou",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-3861220b-9a3b-4c61-a8d1-3c66de25abe8.png",
+    "final_asset": "game/images/v2/damahou_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/damahou_calm.png"
+    ]
+  },
+  {
+    "id": "ergou_determined",
+    "character": "ergou",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: firm kind eyes, purposeful confident posture with one hand on hip. Emotion: determined. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-cffd1acf-7e6e-4ad9-b2c5-09ed2410c854.png",
+    "final_asset": "game/images/v2/ergou_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/ergou_calm.png"
+    ]
+  },
+  {
+    "id": "ergou_happy",
+    "character": "ergou",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: bright joyful smile and raised arms celebrating. Emotion: happy. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-5081a2ff-d5b3-4872-92de-4ff09601174a.png",
+    "final_asset": "game/images/v2/ergou_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/ergou_calm.png"
+    ]
+  },
+  {
+    "id": "ergou_surprised",
+    "character": "ergou",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: wide eyes, gently surprised open mouth and hands lifted at chest. Emotion: surprised. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f3cb5e9c-9266-4e6c-afa1-c90d0ecee39a.png",
+    "final_asset": "game/images/v2/ergou_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/ergou_calm.png"
+    ]
+  },
+  {
+    "id": "ergou_thinking",
+    "character": "ergou",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: thoughtful curious face with one hand gently at chin. Emotion: thinking. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-3a72704a-1039-4595-b085-b016b2ef79c5.png",
+    "final_asset": "game/images/v2/ergou_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/ergou_calm.png"
+    ]
+  },
+  {
+    "id": "ergou_worried",
+    "character": "ergou",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-713d9447-34cb-4fab-bb79-f73be2cf3aee.png",
+    "final_asset": "game/images/v2/ergou_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/ergou_calm.png"
+    ]
+  },
+  {
+    "id": "guangtouqiang_determined",
+    "character": "guangtouqiang",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a firm kind expression, standing with purposeful confident posture and one hand on hip. Emotion determined. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-fd9983d4-7f38-4f65-9d80-d0fb5e4b9e9a.png",
+    "final_asset": "game/images/v2/guangtouqiang_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "guangtouqiang_happy",
+    "character": "guangtouqiang",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a bright joyful smile, gently celebrating with both arms raised. Emotion happy. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-15ec4855-8001-4c8b-859d-1d187e55c448.png",
+    "final_asset": "game/images/v2/guangtouqiang_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "guangtouqiang_surprised",
+    "character": "guangtouqiang",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to wide eyes and open mouth in gentle surprise, hands lifted near chest. Emotion surprised. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-c5eff011-5563-4796-95ea-04b46b9efcd8.png",
+    "final_asset": "game/images/v2/guangtouqiang_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "guangtouqiang_thinking",
+    "character": "guangtouqiang",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a thoughtful curious expression, one hand touching chin, other arm relaxed. Emotion thinking. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-0ad54c48-9b0a-48e2-9160-022d7ff4ea92.png",
+    "final_asset": "game/images/v2/guangtouqiang_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "guangtouqiang_worried",
+    "character": "guangtouqiang",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a concerned sympathetic expression with slightly furrowed brow, hands clasped. Emotion worried. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2be1d111-cbcb-4022-98d2-e046ff8e2524.png",
+    "final_asset": "game/images/v2/guangtouqiang_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "jijiguowang_determined",
+    "character": "jijiguowang",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a firm kind expression, standing with purposeful confident posture and one hand on hip. Emotion determined. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f8df584b-2865-4683-9e2c-90466a418083.png",
+    "final_asset": "game/images/v2/jijiguowang_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "jijiguowang_happy",
+    "character": "jijiguowang",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a bright joyful smile, gently celebrating with both arms raised. Emotion happy. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ed9c1d83-3d35-4c60-bae0-b30659974f0f.png",
+    "final_asset": "game/images/v2/jijiguowang_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "jijiguowang_surprised",
+    "character": "jijiguowang",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to wide eyes and open mouth in gentle surprise, hands lifted near chest. Emotion surprised. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-3c9591dd-b096-48ee-8969-1070bfc4995a.png",
+    "final_asset": "game/images/v2/jijiguowang_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "jijiguowang_thinking",
+    "character": "jijiguowang",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a thoughtful curious expression, one hand touching chin, other arm relaxed. Emotion thinking. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6fdc2c93-c80c-4550-aec4-96bc90f4e470.png",
+    "final_asset": "game/images/v2/jijiguowang_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "jijiguowang_worried",
+    "character": "jijiguowang",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a concerned sympathetic expression with slightly furrowed brow, hands clasped. Emotion worried. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-50ad8565-8de7-45ec-a398-e2371ae96ea1.png",
+    "final_asset": "game/images/v2/jijiguowang_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png"
+    ]
+  },
+  {
+    "id": "key_00",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_footprint.png"
+    ],
+    "spec": {
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "props": [
+        "prop.footprint"
+      ],
+      "event_verbs": [
+        "observe"
+      ],
+      "conditions": [],
+      "situation": "discovery",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 熊大; reference image 2 is 赵琳; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The bear and young explorer crouch together, noticing the two pawprints in the small mud patch on the forest path, curious faces, fingers pointing toward the clue. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-0236cf77-788f-4fec-b22a-dbe1dbd105db.png",
+    "final_asset": "game/images/v2/key_00.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png",
+      "assets-source/v2/raw/zhaolin_calm.png",
+      "game/images/bg/bg_forest.webp",
+      "assets-source/v2/raw/prop_footprint.png"
+    ]
+  },
+  {
+    "id": "key_01",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_bamboo.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_letter.png"
+    ],
+    "spec": {
+      "characters": [
+        "光头强",
+        "毛毛"
+      ],
+      "scenes": [
+        "scene.bamboo"
+      ],
+      "props": [
+        "prop.letter"
+      ],
+      "event_verbs": [
+        "observe"
+      ],
+      "conditions": [],
+      "situation": "discovery",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 毛毛; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The man and small monkey discover a sealed blank envelope resting beside a bamboo root. Both look surprised and curious, gently pointing at the envelope without opening it. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ec9363f3-7ebd-4afa-ba35-11779e1c8e78.png",
+    "final_asset": "game/images/v2/key_01.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png",
+      "assets-source/v2/raw/maomao_calm_clean.png",
+      "assets-source/v2/raw/scene_bamboo.png",
+      "assets-source/v2/raw/prop_letter.png"
+    ]
+  },
+  {
+    "id": "key_02",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_bridge.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_plank.png"
+    ],
+    "spec": {
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.bridge"
+      ],
+      "props": [
+        "prop.plank"
+      ],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "cooperation",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 熊大; reference image 2 is 熊二; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two bears carefully support a single wooden plank at the near end of the low little bridge, helping each other align it. Both stand securely on dry ground. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-df53b05f-21e7-425f-b893-447900d67067.png",
+    "final_asset": "game/images/v2/key_02.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png",
+      "assets-source/v2/raw/xionger_calm.png",
+      "assets-source/v2/raw/scene_bridge.png",
+      "assets-source/v2/raw/prop_plank.png"
+    ]
+  },
+  {
+    "id": "key_03",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_workshop.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_compass.png"
+    ],
+    "spec": {
+      "characters": [
+        "光头强",
+        "天才威"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "props": [
+        "prop.compass"
+      ],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "cooperation",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 天才威; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two men lean over a workbench together, checking a pocket compass, one steadies it and the other points to its needle. Friendly concentration, no extra tools on the bench. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-833a68f5-4442-43f6-abee-025bc5b1ea33.png",
+    "final_asset": "game/images/v2/key_03.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png",
+      "assets-source/v2/raw/tiancaiwei_calm.png",
+      "assets-source/v2/raw/scene_workshop.png",
+      "assets-source/v2/raw/prop_compass.png"
+    ]
+  },
+  {
+    "id": "key_04",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_orchard.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_basket.png"
+    ],
+    "spec": {
+      "characters": [
+        "吉吉国王",
+        "毛毛"
+      ],
+      "scenes": [
+        "scene.orchard"
+      ],
+      "props": [
+        "prop.basket"
+      ],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "conditions": [],
+      "situation": "misunderstanding",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 吉吉国王; reference image 2 is 毛毛; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The larger monkey proudly offers an empty woven basket while the small monkey peers inside with a puzzled smile, both pause to clarify a funny misunderstanding beside orchard trees. No fruit inside the basket. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-b5753ad7-8270-483a-a64e-2d073f322415.png",
+    "final_asset": "game/images/v2/key_04.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png",
+      "assets-source/v2/raw/maomao_calm_clean.png",
+      "assets-source/v2/raw/scene_orchard.png",
+      "assets-source/v2/raw/prop_basket.png"
+    ]
+  },
+  {
+    "id": "key_05",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_market.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_ribbon.png"
+    ],
+    "spec": {
+      "characters": [
+        "大马猴",
+        "二狗"
+      ],
+      "scenes": [
+        "scene.market"
+      ],
+      "props": [
+        "prop.ribbon"
+      ],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "conditions": [],
+      "situation": "misunderstanding",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 大马猴; reference image 2 is 二狗; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two men hold opposite ends of one red ribbon, realize they were pointing in different directions, and exchange sheepish amused expressions at an outdoor woodland market. Stalls are empty with no signs. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-c07f3508-c4b9-4155-9d8a-3dcf67308417.png",
+    "final_asset": "game/images/v2/key_05.webp",
+    "archived_references": [
+      "assets-source/v2/raw/damahou_calm.png",
+      "assets-source/v2/raw/ergou_calm.png",
+      "assets-source/v2/raw/scene_market.png",
+      "assets-source/v2/raw/prop_ribbon.png"
+    ]
+  },
+  {
+    "id": "key_06",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_workshop.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_kite.png"
+    ],
+    "spec": {
+      "characters": [
+        "光头强",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "props": [
+        "prop.kite"
+      ],
+      "event_verbs": [
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "making",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 熊二; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The man and bear proudly make a small finished yellow diamond kite at a wooden workbench, each supports one side while inspecting the red frame and bow tail. No tools or extra craft supplies visible. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-fa398ceb-4763-4442-a59c-3f07b1973d30.png",
+    "final_asset": "game/images/v2/key_06.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png",
+      "assets-source/v2/raw/xionger_calm.png",
+      "assets-source/v2/raw/scene_workshop.png",
+      "assets-source/v2/raw/prop_kite.png"
+    ]
+  },
+  {
+    "id": "key_07",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_camp.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_lantern.png"
+    ],
+    "spec": {
+      "characters": [
+        "赵琳",
+        "毛毛"
+      ],
+      "scenes": [
+        "scene.camp"
+      ],
+      "props": [
+        "prop.lantern"
+      ],
+      "event_verbs": [
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "making",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 赵琳; reference image 2 is 毛毛; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The young explorer and little monkey work together on a camping lantern, checking its handle and body at the campsite, satisfied careful expressions. Lantern gently lit, no fire or extra equipment. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a1a9d98c-a696-46b5-a784-b87d1291db8a.png",
+    "final_asset": "game/images/v2/key_07.webp",
+    "archived_references": [
+      "assets-source/v2/raw/zhaolin_calm.png",
+      "assets-source/v2/raw/maomao_calm_clean.png",
+      "assets-source/v2/raw/scene_camp.png",
+      "assets-source/v2/raw/prop_lantern.png"
+    ]
+  },
+  {
+    "id": "key_08",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_mountain.webp",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_flag.png"
+    ],
+    "spec": {
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "scenes": [
+        "scene.mountain"
+      ],
+      "props": [
+        "prop.flag"
+      ],
+      "event_verbs": [
+        "allocate",
+        "use"
+      ],
+      "conditions": [],
+      "situation": "challenge",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 熊大; reference image 2 is 赵琳; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The bear and young explorer carefully plant a small green triangular flag beside the safe broad mountain path to mark their route. They stand well away from the slope, determined faces. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-5ec4b13e-7aae-40c5-a63b-9a16d3d6b055.png",
+    "final_asset": "game/images/v2/key_08.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png",
+      "assets-source/v2/raw/zhaolin_calm.png",
+      "game/images/bg/bg_mountain.webp",
+      "assets-source/v2/raw/prop_flag.png"
+    ]
+  },
+  {
+    "id": "key_09",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/jijiguowang_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_sports.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_flag.png"
+    ],
+    "spec": {
+      "characters": [
+        "吉吉国王",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.sports"
+      ],
+      "props": [
+        "prop.flag"
+      ],
+      "event_verbs": [
+        "move",
+        "allocate"
+      ],
+      "conditions": [],
+      "situation": "challenge",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 吉吉国王; reference image 2 is 熊二; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The monkey and bear practice taking turns passing one little green triangular flag on a grassy sports field, one hands it over while the other reaches forward, cheerful concentration. No crowd or extra equipment. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-86b9b9a4-6d36-45a0-884a-4267bb766254.png",
+    "final_asset": "game/images/v2/key_09.webp",
+    "archived_references": [
+      "assets-source/v2/raw/jijiguowang_calm_clean.png",
+      "assets-source/v2/raw/xionger_calm.png",
+      "assets-source/v2/raw/scene_sports.png",
+      "assets-source/v2/raw/prop_flag.png"
+    ]
+  },
+  {
+    "id": "key_10",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_bell.png"
+    ],
+    "spec": {
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "props": [
+        "prop.bell"
+      ],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "conditions": [],
+      "situation": "reunion",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 熊大; reference image 2 is 熊二; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two bears reunite on the woodland path and smile warmly at one another, one holds a small hand bell between them, shoulders relaxed, welcoming gestures. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f7d51cd3-f02a-44e7-bc44-6112e4f9ffc3.png",
+    "final_asset": "game/images/v2/key_10.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png",
+      "assets-source/v2/raw/xionger_calm.png",
+      "game/images/bg/bg_forest.webp",
+      "assets-source/v2/raw/prop_bell.png"
+    ]
+  },
+  {
+    "id": "key_11",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_stage.png",
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_drum.png"
+    ],
+    "spec": {
+      "characters": [
+        "光头强",
+        "赵琳"
+      ],
+      "scenes": [
+        "scene.stage"
+      ],
+      "props": [
+        "prop.drum"
+      ],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "conditions": [],
+      "situation": "reunion",
+      "regions": [
+        "full"
+      ]
+    },
+    "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 赵琳; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The man and young explorer celebrate coming together beside one small hand drum on the woodland stage. They smile and wave to one another, warm gentle joy. No crowd, no signs, no other instruments. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-127f5133-0345-4870-927a-f304735b91bd.png",
+    "final_asset": "game/images/v2/key_11.webp",
+    "archived_references": [
+      "assets-source/v2/raw/guangtouqiang_calm_clean.png",
+      "assets-source/v2/raw/zhaolin_calm.png",
+      "assets-source/v2/raw/scene_stage.png",
+      "assets-source/v2/raw/prop_drum.png"
+    ]
+  },
+  {
+    "id": "maomao_determined",
+    "character": "maomao",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a firm kind expression, standing with purposeful confident posture and one hand on hip. Emotion determined. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-845d4748-a681-4f2c-8eba-fe0c0b5589e8.png",
+    "final_asset": "game/images/v2/maomao_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/maomao_calm_clean.png"
+    ]
+  },
+  {
+    "id": "maomao_happy",
+    "character": "maomao",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a bright joyful smile, gently celebrating with both arms raised. Emotion happy. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-b4d8635c-3ca6-4afa-9620-edb4c897127d.png",
+    "final_asset": "game/images/v2/maomao_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/maomao_calm_clean.png"
+    ]
+  },
+  {
+    "id": "maomao_surprised",
+    "character": "maomao",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to wide eyes and open mouth in gentle surprise, hands lifted near chest. Emotion surprised. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-38ef4028-6e32-46cc-9d69-71a5456bc400.png",
+    "final_asset": "game/images/v2/maomao_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/maomao_calm_clean.png"
+    ]
+  },
+  {
+    "id": "maomao_thinking",
+    "character": "maomao",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a thoughtful curious expression, one hand touching chin, other arm relaxed. Emotion thinking. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-360c433f-f8dc-4563-8ca4-8d34e54241b1.png",
+    "final_asset": "game/images/v2/maomao_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/maomao_calm_clean.png"
+    ]
+  },
+  {
+    "id": "maomao_worried",
+    "character": "maomao",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a concerned sympathetic expression with slightly furrowed brow, hands clasped. Emotion worried. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-d404e1d3-7f38-4981-9f19-2e77fb7d49ec.png",
+    "final_asset": "game/images/v2/maomao_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/maomao_calm_clean.png"
+    ]
+  },
+  {
+    "id": "prop_apple",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one fresh red apple with a green leaf. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-9030c84e-cf06-407c-82c9-99fa8f414a50.png",
+    "final_asset": "game/images/v2/prop_apple.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_bamboo",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one short green bamboo tube with two visible joints. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f7bcba9d-c31e-43e4-8198-e40e9deb41ba.png",
+    "final_asset": "game/images/v2/prop_bamboo.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_basket",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one empty warm brown woven basket with a curved handle. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-72759c87-23d8-4607-9c87-d46012c9945c.png",
+    "final_asset": "game/images/v2/prop_basket.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_bell",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small golden hand bell with a wooden handle. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ecdb43e2-e8cb-4ba5-811a-cb3cf954746b.png",
+    "final_asset": "game/images/v2/prop_bell.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_brush",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one wide wooden paintbrush with clean bristles and a touch of green paint. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f1646505-b055-459e-bc8d-534b16f1943b.png",
+    "final_asset": "game/images/v2/prop_brush.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_bucket",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small blue metal bucket with a curved handle. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-3b3879ce-1324-420a-8382-9e07c98edb61.png",
+    "final_asset": "game/images/v2/prop_bucket.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_clay",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one soft terracotta clay lump with a little fingerprint texture. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f892e7c7-02c1-489a-816b-698505f708a3.png",
+    "final_asset": "game/images/v2/prop_clay.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_cloth",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one folded square of cheerful yellow cotton cloth. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6c94b05d-18d3-4e4e-82c3-c5779ed96d4d.png",
+    "final_asset": "game/images/v2/prop_cloth.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_compass",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one brass pocket compass with a simple needle and tick marks, no letters or numbers. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ab0a3a6d-6d6b-4151-89e7-fdab4528d715.png",
+    "final_asset": "game/images/v2/prop_compass.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_drum",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small cheerful wooden hand drum with a taut cream drumhead. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-53c4e3b9-3858-4b8e-8ce2-060facbca208.png",
+    "final_asset": "game/images/v2/prop_drum.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_feather",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small striped bird feather with a gently curved shaft. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6dfa57cd-8e8f-4ffc-a023-a2093ed3c8e7.png",
+    "final_asset": "game/images/v2/prop_feather.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_flag",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one little green triangular flag on a short wooden pole, no emblem. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-d31d2fa7-2fbc-4c00-93fc-7c7199e22e7e.png",
+    "final_asset": "game/images/v2/prop_flag.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_flower",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one wild daisy flower with stem and two leaves. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2f34ba4d-d2c9-43e6-b160-78aeb377c05b.png",
+    "final_asset": "game/images/v2/prop_flower.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_footprint",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: a small earthy mud patch holding two readable animal pawprints, as a single clue object. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-71d60cc0-a391-489c-8f8c-bea99e7c42cd.png",
+    "final_asset": "game/images/v2/prop_footprint.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_hammer",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small carpenter hammer with a wood handle and smooth steel head. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6cf5e042-ae59-4156-a1a8-2a0257e60151.png",
+    "final_asset": "game/images/v2/prop_hammer.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_honey",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one squat glass honey jar with a wooden lid, golden honey visible, no label. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6f5768af-9a10-4b4f-9711-3fe298394451.png",
+    "final_asset": "game/images/v2/prop_honey.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_key",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one rounded antique brass key with a big circular handle. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a8674866-572b-4849-8ffe-f0aae9dc6bb9.png",
+    "final_asset": "game/images/v2/prop_key.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_kite",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small diamond kite of yellow paper with a red cross frame and a short bow tail. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-4a2c31ff-3a1c-44ba-827b-e1f68a0a656a.png",
+    "final_asset": "game/images/v2/prop_kite.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_lantern",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one warm camping lantern with a sturdy top handle. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-295551a4-6792-44a6-beba-ea6dedf560f4.png",
+    "final_asset": "game/images/v2/prop_lantern.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_leaf",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one large fresh green oak-shaped leaf with readable veins. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-3cd5e399-d7e0-445c-8204-6b0a2af39ff6.png",
+    "final_asset": "game/images/v2/prop_leaf.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_letter",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one folded cream envelope with a small green leaf seal, no writing. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a0cbeb6d-5f64-4893-9e96-0468c5af2466.png",
+    "final_asset": "game/images/v2/prop_letter.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_magnifier",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one friendly wooden-handled magnifying glass. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6e932fc2-57a1-479a-904b-e227e6a7e64f.png",
+    "final_asset": "game/images/v2/prop_magnifier.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_map_approved",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. ONE folded cream forest trail map with a green winding trail, tiny drawn trees, a simple blue river and wooden bridge symbol, no words or letters. Warm hand-drawn cartoon picturebook, deep brown contours, soft forest-green and honey-gold palette, subtle paper texture, three-quarter perspective. Complete object, clear silhouette, generous margin. Real transparent alpha background, no floor, no outside shadow, glow, checkerboard, UI or watermark.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-7237dbe6-0af4-4de6-9ad1-74e2b4e732c1.png",
+    "final_asset": "game/images/v2/prop_map_approved.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_mask",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one friendly smiling fox-shaped paper festival mask without ties covering the face. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-b3646af3-343f-4a6f-a08e-3ff975d173b5.png",
+    "final_asset": "game/images/v2/prop_mask.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_paint",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one open small tin of blue paint with a blank label. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-28faa892-0d3e-4eac-a16f-0f4570fe72d5.png",
+    "final_asset": "game/images/v2/prop_paint.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_paper",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one folded blank cream sheet of paper, no writing. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6fc4466c-4296-4cd0-b2aa-11a1cc40f248.png",
+    "final_asset": "game/images/v2/prop_paper.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_pinecone",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small warm brown pinecone. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f7ed2a71-b2a2-448c-844b-1b71901321b1.png",
+    "final_asset": "game/images/v2/prop_pinecone.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_plank",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one smooth wooden plank with softly rounded ends. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a82eb744-c322-49a3-a14f-e210bcaee3b0.png",
+    "final_asset": "game/images/v2/prop_plank.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_ribbon",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one cheerful red ribbon tied in a loose bow. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-5a1ce85e-90c2-44ce-892e-b1584f37002d.png",
+    "final_asset": "game/images/v2/prop_ribbon.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_rope",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one neatly coiled thick hemp rope. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-16b4067a-f10e-42ed-b2ec-97e451d26847.png",
+    "final_asset": "game/images/v2/prop_rope.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_scissors",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one pair of child-friendly rounded-tip craft scissors with green handles. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-87a102da-1ce4-41f1-adad-9d130da6e2d4.png",
+    "final_asset": "game/images/v2/prop_scissors.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_seed",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: three large sunflower seeds grouped as one inventory object. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f627eab9-aaeb-41e0-a4bb-af68c02bb2bd.png",
+    "final_asset": "game/images/v2/prop_seed.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_shovel",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one small gardening shovel with a short wooden grip. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-bafad7e8-9b6a-4dad-8d8e-881fc38945ce.png",
+    "final_asset": "game/images/v2/prop_shovel.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_star",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one golden five-point paper star ornament with a small thread loop. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-31a22f6c-da7d-41ed-8da5-53b9a222a8bc.png",
+    "final_asset": "game/images/v2/prop_star.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_string",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one wooden spool of thin cotton craft string. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-0dc979ad-c864-42a3-ba32-32fc2767e55e.png",
+    "final_asset": "game/images/v2/prop_string.webp",
+    "archived_references": []
+  },
+  {
+    "id": "prop_wheel",
+    "transparent": true,
+    "reference": [],
+    "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one sturdy small wooden wheel with a central hole. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f53123c0-f56a-469d-a4ea-e5e5dc5945d7.png",
+    "final_asset": "game/images/v2/prop_wheel.webp",
+    "archived_references": []
+  },
+  {
+    "id": "scene_bamboo_approved",
+    "transparent": false,
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+    ],
+    "prompt": "Use case: game-background. Paint a beautiful warm cartoon picturebook bamboo grove within this forest world. Borrow linework, palette, gentle golden sunlight and tactile paint texture from the reference. Tall green bamboo on both sides, a small curving path to the distant grove, scattered leaves and a few smooth stones. Quiet inviting morning, layered depth, broad open lower central foreground for characters and interactive props. Landscape 16:9 composition, no characters, no writing, UI, border or watermark.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2b869c01-d211-4827-8628-f9209ca48729.png",
+    "final_asset": "game/images/v2/scene_bamboo_approved.webp",
+    "archived_references": [
+      "game/images/bg/bg_forest.webp"
+    ]
+  },
+  {
+    "id": "tiancaiwei_determined",
+    "character": "tiancaiwei",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: firm kind eyes, purposeful confident posture with one hand on hip. Emotion: determined. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-5c26ebf1-bed1-4fa1-8115-832f68afafd2.png",
+    "final_asset": "game/images/v2/tiancaiwei_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/tiancaiwei_calm.png"
+    ]
+  },
+  {
+    "id": "tiancaiwei_happy",
+    "character": "tiancaiwei",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: bright joyful smile and raised arms celebrating. Emotion: happy. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-57104678-9b4a-4d5b-a707-f12623060a63.png",
+    "final_asset": "game/images/v2/tiancaiwei_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/tiancaiwei_calm.png"
+    ]
+  },
+  {
+    "id": "tiancaiwei_surprised",
+    "character": "tiancaiwei",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: wide eyes, gently surprised open mouth and hands lifted at chest. Emotion: surprised. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6a782214-822b-43bc-9c3e-f0c8fcc1839e.png",
+    "final_asset": "game/images/v2/tiancaiwei_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/tiancaiwei_calm.png"
+    ]
+  },
+  {
+    "id": "tiancaiwei_thinking",
+    "transparent": true,
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Create ONE transparent full-body thinking sprite from this reference character. Preserve exact identity, proportions, hairstyle, clothing, colors, costume details and warm hand-drawn cartoon rendering. Thoughtful expression, one hand at chin, other hand holding elbow, friendly concentration. Entire head, hands and feet with generous margins, same full-body scale, three-quarter front view. True transparent alpha background, no backdrop, floor, shadows, glow, writing or watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-542f3dd0-a738-409c-ac52-00d02ea4f732.png",
+    "final_asset": "game/images/v2/tiancaiwei_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/tiancaiwei_calm.png"
+    ]
+  },
+  {
+    "id": "tiancaiwei_worried",
+    "character": "tiancaiwei",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-7290e2fb-4a86-4186-be13-22c6dafdf602.png",
+    "final_asset": "game/images/v2/tiancaiwei_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/tiancaiwei_calm.png"
+    ]
+  },
+  {
+    "id": "xiongda_determined",
+    "character": "xiongda",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: firm kind eyes, purposeful confident posture with one hand on hip. Emotion: determined. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-1bbb27b3-55dd-4979-af06-99104559c039.png",
+    "final_asset": "game/images/v2/xiongda_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png"
+    ]
+  },
+  {
+    "id": "xiongda_happy",
+    "character": "xiongda",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: bright joyful smile and raised arms celebrating. Emotion: happy. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2ed1ee7b-1b8b-43fd-8eba-3e86c6002cca.png",
+    "final_asset": "game/images/v2/xiongda_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png"
+    ]
+  },
+  {
+    "id": "xiongda_surprised",
+    "character": "xiongda",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: wide eyes, gently surprised open mouth and hands lifted at chest. Emotion: surprised. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-08ba9b63-a807-4582-b4d9-7af15415bb8c.png",
+    "final_asset": "game/images/v2/xiongda_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png"
+    ]
+  },
+  {
+    "id": "xiongda_thinking",
+    "character": "xiongda",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: thoughtful curious face with one hand gently at chin. Emotion: thinking. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-698fc503-391e-4f23-a5dd-5d4ff8bd0a70.png",
+    "final_asset": "game/images/v2/xiongda_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png"
+    ]
+  },
+  {
+    "id": "xiongda_worried",
+    "character": "xiongda",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-9d3ad1b4-6d48-47b5-adb7-8c6f9f25eeec.png",
+    "final_asset": "game/images/v2/xiongda_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xiongda_calm.png"
+    ]
+  },
+  {
+    "id": "xionger_determined",
+    "character": "xionger",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: firm kind eyes, purposeful confident posture with one hand on hip. Emotion: determined. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a4d4a84a-02f9-4d45-a01a-6a65db62954f.png",
+    "final_asset": "game/images/v2/xionger_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xionger_calm.png"
+    ]
+  },
+  {
+    "id": "xionger_happy",
+    "character": "xionger",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: bright joyful smile and raised arms celebrating. Emotion: happy. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-a5e5976c-75b2-4609-b541-3ebc2a676916.png",
+    "final_asset": "game/images/v2/xionger_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xionger_calm.png"
+    ]
+  },
+  {
+    "id": "xionger_surprised",
+    "character": "xionger",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: wide eyes, gently surprised open mouth and hands lifted at chest. Emotion: surprised. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-69665385-dd00-4246-926a-a41967776835.png",
+    "final_asset": "game/images/v2/xionger_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xionger_calm.png"
+    ]
+  },
+  {
+    "id": "xionger_thinking",
+    "character": "xionger",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: thoughtful curious face with one hand gently at chin. Emotion: thinking. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-7adcd63c-3725-44fe-a91a-19b92f831214.png",
+    "final_asset": "game/images/v2/xionger_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xionger_calm.png"
+    ]
+  },
+  {
+    "id": "xionger_worried",
+    "character": "xionger",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-cfa3c7f8-49de-4c08-afe8-9f1a0ea444af.png",
+    "final_asset": "game/images/v2/xionger_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/xionger_calm.png"
+    ]
+  },
+  {
+    "id": "zhaolin_determined",
+    "character": "zhaolin",
+    "emotion": "determined",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: firm kind eyes, purposeful confident posture with one hand on hip. Emotion: determined. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-4c1133f5-5c33-4a5f-816a-ce50528615d7.png",
+    "final_asset": "game/images/v2/zhaolin_determined.webp",
+    "archived_references": [
+      "assets-source/v2/raw/zhaolin_calm.png"
+    ]
+  },
+  {
+    "id": "zhaolin_happy",
+    "character": "zhaolin",
+    "emotion": "happy",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: bright joyful smile and raised arms celebrating. Emotion: happy. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-061ad9f1-8b92-4d33-86e3-ec71502afa5e.png",
+    "final_asset": "game/images/v2/zhaolin_happy.webp",
+    "archived_references": [
+      "assets-source/v2/raw/zhaolin_calm.png"
+    ]
+  },
+  {
+    "id": "zhaolin_surprised",
+    "character": "zhaolin",
+    "emotion": "surprised",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: wide eyes, gently surprised open mouth and hands lifted at chest. Emotion: surprised. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-459c9b33-2261-4822-ba0a-5237dfb0e441.png",
+    "final_asset": "game/images/v2/zhaolin_surprised.webp",
+    "archived_references": [
+      "assets-source/v2/raw/zhaolin_calm.png"
+    ]
+  },
+  {
+    "id": "zhaolin_thinking",
+    "character": "zhaolin",
+    "emotion": "thinking",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: thoughtful curious face with one hand gently at chin. Emotion: thinking. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-65f7207e-08e4-45d4-9734-9b1d1d6b6f5c.png",
+    "final_asset": "game/images/v2/zhaolin_thinking.webp",
+    "archived_references": [
+      "assets-source/v2/raw/zhaolin_calm.png"
+    ]
+  },
+  {
+    "id": "zhaolin_worried",
+    "character": "zhaolin",
+    "emotion": "worried",
+    "reference": [
+      "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/zhaolin_calm.png"
+    ],
+    "prompt": "Use case: identity-preserve. Make ONE transparent full body sprite variant from this reference character. Preserve exact identity, head and body proportions, clothing, hair or fur colors and all costume details. Preserve the same warm hand drawn cartoon picturebook rendering. Change only expression and pose to: concerned sympathetic face and hands clasped together. Emotion: worried. Show entire head, hands, feet with generous margins, similar full body scale, three quarter front view, recognizable friendly face. Actual transparent alpha background, no backdrop, no floor, no shadows or glow, no typography or captions, no watermark. One character.",
+    "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-758cc463-9d61-4e1a-91a7-2af709ea97cc.png",
+    "final_asset": "game/images/v2/zhaolin_worried.webp",
+    "archived_references": [
+      "assets-source/v2/raw/zhaolin_calm.png"
+    ]
+  }
+]

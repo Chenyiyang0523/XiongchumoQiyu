@@ -14,7 +14,7 @@ init python:
     # --------------------------------------------------------
     def _make_empty_account_data(name, is_guest=False, slot_index=0):
         return {
-            "schema_version": 2,
+            "schema_version": 3,
             "name": name,
             "created_date": _account_time.strftime("%Y-%m-%d"),
             "is_guest": is_guest,
@@ -30,6 +30,11 @@ init python:
             },
             "parent_reports": [],
             "committed_runs": [],
+            "books_v2": {},
+            "family_reviews_v2": {},
+            "book_badges_v2": {},
+            "book_endings_v2": {},
+            "recent_books_v2": [],
         }
 
     def _safe_list(value):
@@ -49,7 +54,12 @@ init python:
         if not isinstance(account, dict):
             account = _make_empty_account_data("恢复账户", slot_index=0)
             persistent.accounts[account_key] = account
-        account["schema_version"] = 2
+        account["schema_version"] = 3
+        account["books_v2"] = _safe_dict(account.get("books_v2"))
+        account["family_reviews_v2"] = _safe_dict(account.get("family_reviews_v2"))
+        account["book_badges_v2"] = _safe_dict(account.get("book_badges_v2"))
+        account["book_endings_v2"] = _safe_dict(account.get("book_endings_v2"))
+        account["recent_books_v2"] = _safe_list(account.get("recent_books_v2"))[-10:]
         account["name"] = str(account.get("name") or "未命名账户")[:6]
         account["created_date"] = str(account.get("created_date") or _account_time.strftime("%Y-%m-%d"))
         account["is_guest"] = bool(account.get("is_guest", False))
@@ -142,13 +152,15 @@ init python:
     # --------------------------------------------------------
     # 存档页码计算
     # --------------------------------------------------------
-    def get_user_page_range(account_key):
+    def get_user_page_range(account_key, picturebook=None):
         """返回 (start_page, end_page)，每个账户分配 4 页存档"""
         if not account_key or account_key not in persistent.accounts:
             return (1, 4)
+        if picturebook is None:
+            picturebook = globals().get("book_v2_mode", False)
         slot_index = persistent.accounts[account_key].get("slot_index", 0)
-        start = slot_index * 4 + 1
-        end = slot_index * 4 + 4
+        start = slot_index * 4 + 1 + (10000 if picturebook else 0)
+        end = start + 3
         return (start, end)
 
     def get_account_quick_page(account_key=None):
@@ -247,15 +259,15 @@ init python:
 
     def delete_saves_for_account(account_key):
         """删除指定账户存档页范围内的所有存档文件"""
-        start_page, end_page = get_user_page_range(account_key)
         slots_per_page = 12
-        for page in range(start_page, end_page + 1):
-            for slot in range(1, slots_per_page + 1):
-                slot_name = str(page) + "-" + str(slot)
-                try:
-                    renpy.unlink_save(slot_name)
-                except Exception:
-                    pass
+        for picturebook in (False, True):
+            start_page, end_page = get_user_page_range(account_key, picturebook)
+            for page in range(start_page, end_page + 1):
+                for slot in range(1, slots_per_page + 1):
+                    try:
+                        renpy.unlink_save(str(page) + "-" + str(slot))
+                    except Exception:
+                        pass
 
     def get_current_user_name():
         """获取当前账户显示名称"""

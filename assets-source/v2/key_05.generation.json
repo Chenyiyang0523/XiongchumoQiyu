@@ -1,0 +1,32 @@
+{
+  "id": "key_05",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/damahou_calm.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/ergou_calm.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_market.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_ribbon.png"
+  ],
+  "spec": {
+    "characters": [
+      "大马猴",
+      "二狗"
+    ],
+    "scenes": [
+      "scene.market"
+    ],
+    "props": [
+      "prop.ribbon"
+    ],
+    "event_verbs": [
+      "ask",
+      "negotiate"
+    ],
+    "conditions": [],
+    "situation": "misunderstanding",
+    "regions": [
+      "full"
+    ]
+  },
+  "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 大马猴; reference image 2 is 二狗; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two men hold opposite ends of one red ribbon, realize they were pointing in different directions, and exchange sheepish amused expressions at an outdoor woodland market. Stalls are empty with no signs. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-c07f3508-c4b9-4155-9d8a-3dcf67308417.png"
+}

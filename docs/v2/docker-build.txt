@@ -1,0 +1,24 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 500B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 ERROR: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp 75.126.150.210:443: i/o timeout
+------
+ > [internal] load metadata for docker.io/library/python:3.12-slim:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM python:3.12-slim
+   2 |     WORKDIR /app
+   3 |     COPY service/requirements.txt /app/requirements.txt
+--------------------
+ERROR: failed to build: failed to solve: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp 75.126.150.210:443: i/o timeout

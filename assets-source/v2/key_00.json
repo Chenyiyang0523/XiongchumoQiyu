@@ -1,0 +1,20 @@
+{
+  "characters": [
+    "熊大",
+    "赵琳"
+  ],
+  "scenes": [
+    "scene.forest"
+  ],
+  "props": [
+    "prop.footprint"
+  ],
+  "event_verbs": [
+    "observe"
+  ],
+  "conditions": [],
+  "situation": "discovery",
+  "regions": [
+    "full"
+  ]
+}

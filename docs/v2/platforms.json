@@ -1,0 +1,28 @@
+{
+  "mac": {
+    "verified": true,
+    "installed_package": true,
+    "package_sha256": "3bd495cfe84ccbe44ed9b4986cfb284774e02741db2f98f28bb30b0105e02d41",
+    "evidence": "docs/v2/package-qa/mac.txt",
+    "method": "Freshly extracted .app, bundled native runtime, isolated save directory, injected QA suite only; 14 assertions and full book UI path passed against explicit mock HTTP service.",
+    "human_manual_play": false,
+    "real_model": false,
+    "signed_or_notarized": false
+  },
+  "windows": {
+    "verified": false,
+    "installed_package": false,
+    "package_sha256": "b1bfbc8dee82162d50951bf9aa09ed1c0d6f88f0181c5c253823ca688c3ff3de",
+    "evidence": "docs/v2/build-verification.txt",
+    "reason": "Windows runtime is bundled and hashes checked; no actual Windows host was available."
+  },
+  "linux": {
+    "verified": false,
+    "installed_package": true,
+    "package_sha256": "b1bfbc8dee82162d50951bf9aa09ed1c0d6f88f0181c5c253823ca688c3ff3de",
+    "evidence": "docs/v2/package-qa/linux-current.txt; docs/v2/package-qa/linux.txt; docs/v2/package-qa/linux-softpipe.txt; docs/v2/package-qa/linux-gles2.txt; docs/v2/package-qa/linux-sw.txt",
+    "environment": "Docker Debian bookworm linux/amd64 under Rosetta emulation, Linux 7.0.14, Xvfb, bundled RenPy 8.5.2 Python 3.12.8",
+    "reason": "Process exited 139 during initial rendering before gameplay with GL2 llvmpipe, GL2 softpipe, GLES2 and SW. Actual Linux desktop verification is still required; cause is not conclusively assigned to game code or emulation. Final delivery archive reproduced exit 139 with GL2.",
+    "previous_candidate_sha256": "c5fab472df963f11c5a8163ba379d2665c3a2b1767125b540cdba10dcfdb005b"
+  }
+}

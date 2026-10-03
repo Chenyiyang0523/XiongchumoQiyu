@@ -29,3 +29,10 @@ traceback.txt
 /.qoder/
 __pycache__/
 *.py[cod]
+/.venv/
+/service-data/
+/.pytest_cache/
+/assets-source/v2/raw/
+/docs/v2/*-evaluation/*.html
+/docs/v2/*-evaluation/*.sqlite*
+/docs/v2/*-evaluation/case.*.json

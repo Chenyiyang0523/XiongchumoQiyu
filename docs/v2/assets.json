@@ -1,0 +1,2332 @@
+{
+  "schema_version": 2,
+  "counts": {
+    "scene": 18,
+    "character": 54,
+    "prop": 36,
+    "key_art": 12
+  },
+  "transparent_cutouts": 90,
+  "assets": {
+    "scene.forest": {
+      "kind": "scene",
+      "path": "images/bg/bg_forest.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1376,
+      "height": 768,
+      "sha256": "d47afe17e644806d99cc0a0758d9eebe251fe60d82b08a055fc2bb8e5fcb59e2",
+      "bytes": 178708
+    },
+    "scene.cabin": {
+      "kind": "scene",
+      "path": "images/bg/bg_cabin.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1376,
+      "height": 768,
+      "sha256": "75e830c8df1e1b47c0ff1e1978717c2eededc5a374eeec24d55b708357e3ba28",
+      "bytes": 238226
+    },
+    "scene.cave": {
+      "kind": "scene",
+      "path": "images/bg/bg_cave.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1376,
+      "height": 768,
+      "sha256": "935c293edc71d194969e4d59fc016f645ce3085b0309cc2fee11b71264df9957",
+      "bytes": 163684
+    },
+    "scene.riverside": {
+      "kind": "scene",
+      "path": "images/bg/bg_riverside.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1376,
+      "height": 768,
+      "sha256": "af19936c06eff74ea0fd745d4a4e0ffdc0600930d85598d05a187d65c76851e2",
+      "bytes": 173740
+    },
+    "scene.mountain": {
+      "kind": "scene",
+      "path": "images/bg/bg_mountain.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "sha256": "60bc03656a1b2c9db4ae1286c18956fd6befb39899b1afc4813b6abd02f18af9",
+      "bytes": 72322
+    },
+    "scene.village": {
+      "kind": "scene",
+      "path": "images/bg/bg_village.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1376,
+      "height": 768,
+      "sha256": "e69f832ec7e702dec99e0e8813e3307cfef5e6de639d3d9a49f4e7850e685bf2",
+      "bytes": 281894
+    },
+    "scene.bamboo": {
+      "kind": "scene",
+      "path": "images/v2/scene_bamboo_approved.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "23894d1cd3ecb9465411929eabf05b1deb03e1224e5b7cce9c6109f19c46eda2",
+      "bytes": 1929790
+    },
+    "scene.lakeside": {
+      "kind": "scene",
+      "path": "images/v2/scene_lakeside.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "03f967147a564a7225a35059636121e384f9592e99ff36cd247311194cfb9232",
+      "bytes": 2124232
+    },
+    "scene.bridge": {
+      "kind": "scene",
+      "path": "images/v2/scene_bridge.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "75aeea7aec40f5e6c614656d8bae75f803de3ff52815220e4059f01b7ecc4aac",
+      "bytes": 1939524
+    },
+    "scene.flowers": {
+      "kind": "scene",
+      "path": "images/v2/scene_flowers.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "e03a5e40562b0f121771358d58ec298431f62c32c6271843d71e97eca8834b01",
+      "bytes": 1981654
+    },
+    "scene.orchard": {
+      "kind": "scene",
+      "path": "images/v2/scene_orchard.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "9503bc6b136860aecc7c29de5c6a5e82c73288144ee0e987632047f9420c92a2",
+      "bytes": 1930772
+    },
+    "scene.treehouse": {
+      "kind": "scene",
+      "path": "images/v2/scene_treehouse.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "e0e91e1d6e7f451223c2873ff36d77215112ff851c756301d267e60cee25ab1f",
+      "bytes": 2042060
+    },
+    "scene.camp": {
+      "kind": "scene",
+      "path": "images/v2/scene_camp.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "8d36d90f2a08b8da022c607410075b1c56313ee38e024940471819a07a309206",
+      "bytes": 1908876
+    },
+    "scene.workshop": {
+      "kind": "scene",
+      "path": "images/v2/scene_workshop.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1678,
+      "height": 937,
+      "sha256": "a6206f428ed24a06c517d8bbcf1b8fdfa21b5daaf27c7736210fc85149e22d87",
+      "bytes": 1708296
+    },
+    "scene.library": {
+      "kind": "scene",
+      "path": "images/v2/scene_library.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "b32b24df31749c1ed2347d7c06c0442e4520722831174d5dbdc9f2db26cbee2a",
+      "bytes": 1786494
+    },
+    "scene.market": {
+      "kind": "scene",
+      "path": "images/v2/scene_market.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "2beb2e1fec33e1db429c3961679da56e87d073e1154f1fb6d66e849ecc744457",
+      "bytes": 1963556
+    },
+    "scene.stage": {
+      "kind": "scene",
+      "path": "images/v2/scene_stage.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "c2a3523d12c1e605e9691168c31a77546cab02881b159edc5eb4136833c5b13a",
+      "bytes": 1950522
+    },
+    "scene.sports": {
+      "kind": "scene",
+      "path": "images/v2/scene_sports.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "eee736e064e4734d9ee2eed7f780a60fcb0c9dcd16ccb173a0b7780efa73094c",
+      "bytes": 1983418
+    },
+    "character.xiongda.calm": {
+      "kind": "character",
+      "character": "熊大",
+      "emotion": "calm",
+      "path": "images/v2/xiongda_calm.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "02152cb0c9371049d2bd0b7cb109bf620bc4f4cdf7b9b39b42e8a6a5b6b14c2e",
+      "bytes": 1217416,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xiongda.happy": {
+      "kind": "character",
+      "character": "熊大",
+      "emotion": "happy",
+      "path": "images/v2/xiongda_happy.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "b8e35204f35f48dc6248c70b3c4c1bcf9d88e821cfc3442012f11d7dc12eb2b1",
+      "bytes": 1327602,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xiongda.thinking": {
+      "kind": "character",
+      "character": "熊大",
+      "emotion": "thinking",
+      "path": "images/v2/xiongda_thinking.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "6aa5183676e946c3f92e249e07303efd3029d29d82908d7dcb480845fae483c4",
+      "bytes": 1320672,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xiongda.surprised": {
+      "kind": "character",
+      "character": "熊大",
+      "emotion": "surprised",
+      "path": "images/v2/xiongda_surprised.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "17e163c5eebfb7046519e845cc9337186ebfaa1d5ba96983af11bf4e34319a57",
+      "bytes": 1342442,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xiongda.worried": {
+      "kind": "character",
+      "character": "熊大",
+      "emotion": "worried",
+      "path": "images/v2/xiongda_worried.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f290912435b7c334e4ba063b9ad9b2fef037856ebbabfb6e40ed6d947d5cbb44",
+      "bytes": 1366108,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xiongda.determined": {
+      "kind": "character",
+      "character": "熊大",
+      "emotion": "determined",
+      "path": "images/v2/xiongda_determined.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c6e7d12196363790ae722f7614fd034636d43e061df6d177d0e6d9ee725fde05",
+      "bytes": 1428306,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xionger.calm": {
+      "kind": "character",
+      "character": "熊二",
+      "emotion": "calm",
+      "path": "images/v2/xionger_calm.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "21cf33c743492cb102cb6d3d5f28f39901355f7072fd9d8cff6d33370475d0b1",
+      "bytes": 1293084,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xionger.happy": {
+      "kind": "character",
+      "character": "熊二",
+      "emotion": "happy",
+      "path": "images/v2/xionger_happy.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "51783b4eca8f9b054573f35596f7844b006bd7e9857d5f4b4e93067d742f6e6f",
+      "bytes": 1392602,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xionger.thinking": {
+      "kind": "character",
+      "character": "熊二",
+      "emotion": "thinking",
+      "path": "images/v2/xionger_thinking.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1f72bf32f6f06d89e4f7987232f48284e6ed13cdc9481bb78842b274df764975",
+      "bytes": 1335218,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xionger.surprised": {
+      "kind": "character",
+      "character": "熊二",
+      "emotion": "surprised",
+      "path": "images/v2/xionger_surprised.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "350b328b2ca55517f7c9859edc86860f9e7d16bcee0fd01934569861acfc6453",
+      "bytes": 1333352,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xionger.worried": {
+      "kind": "character",
+      "character": "熊二",
+      "emotion": "worried",
+      "path": "images/v2/xionger_worried.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "258f7d60d5f4138dac0826b69c1d14a5cd4d73c6747b9ea7204be89faa163e02",
+      "bytes": 1350210,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.xionger.determined": {
+      "kind": "character",
+      "character": "熊二",
+      "emotion": "determined",
+      "path": "images/v2/xionger_determined.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "06fc98b38a34cc5c8ec88802d8e14c1c04f66eb58b726c11d41d1cbd855adb14",
+      "bytes": 1347072,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.guangtouqiang.calm": {
+      "kind": "character",
+      "character": "光头强",
+      "emotion": "calm",
+      "path": "images/v2/guangtouqiang_calm_clean.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "6da90a670084556a0026dadf2bfe6d42e4ae62800c736ad930e026bd844513e7",
+      "bytes": 1113686,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.guangtouqiang.happy": {
+      "kind": "character",
+      "character": "光头强",
+      "emotion": "happy",
+      "path": "images/v2/guangtouqiang_happy.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "49ee7de60d9c6a141802b8b105619efcb0b28950dc1a18bcf85e9eabbfe6770a",
+      "bytes": 1243024,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.guangtouqiang.thinking": {
+      "kind": "character",
+      "character": "光头强",
+      "emotion": "thinking",
+      "path": "images/v2/guangtouqiang_thinking.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "9179dddacb74e48cac97077fbc6258924375e70432c7879867b951eb20891e1e",
+      "bytes": 1130970,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.guangtouqiang.surprised": {
+      "kind": "character",
+      "character": "光头强",
+      "emotion": "surprised",
+      "path": "images/v2/guangtouqiang_surprised.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "39f1c58586ac9976cb2c5bd230c69aa5b1c013ae9b648a021de24eb50d3b8e6b",
+      "bytes": 1116494,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.guangtouqiang.worried": {
+      "kind": "character",
+      "character": "光头强",
+      "emotion": "worried",
+      "path": "images/v2/guangtouqiang_worried.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "bbeb6370a4ad0457c3cc6fbbac588fb78c447a7a099040751d058701d58d80b5",
+      "bytes": 1093560,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.guangtouqiang.determined": {
+      "kind": "character",
+      "character": "光头强",
+      "emotion": "determined",
+      "path": "images/v2/guangtouqiang_determined.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "610c297b31ace13c7264f66298be481b9475763475c95a17833026e6e5f85c2f",
+      "bytes": 1193270,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.jijiguowang.calm": {
+      "kind": "character",
+      "character": "吉吉国王",
+      "emotion": "calm",
+      "path": "images/v2/jijiguowang_calm_clean.webp",
+      "scale": 0.72,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c2fdb3e741e152cf85212cb4ccd6a846658e25fb15c8fd16c404f4ab62beed1b",
+      "bytes": 1161286,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.jijiguowang.happy": {
+      "kind": "character",
+      "character": "吉吉国王",
+      "emotion": "happy",
+      "path": "images/v2/jijiguowang_happy.webp",
+      "scale": 0.72,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1b61c746eac76e2dd79c5aa4f4a5fb6e095a9dce9c2882d0ec5a2e2e679413d4",
+      "bytes": 1288268,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.jijiguowang.thinking": {
+      "kind": "character",
+      "character": "吉吉国王",
+      "emotion": "thinking",
+      "path": "images/v2/jijiguowang_thinking.webp",
+      "scale": 0.72,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "4848556711f597ece3a4583ec584ff4ae4b9ee3327fe45d58595e6cf3fc69145",
+      "bytes": 1218698,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.jijiguowang.surprised": {
+      "kind": "character",
+      "character": "吉吉国王",
+      "emotion": "surprised",
+      "path": "images/v2/jijiguowang_surprised.webp",
+      "scale": 0.72,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "de0e05800898ff6bb41464fbf24f319856374c90305eb6844915d5bdb3e6c848",
+      "bytes": 1225748,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.jijiguowang.worried": {
+      "kind": "character",
+      "character": "吉吉国王",
+      "emotion": "worried",
+      "path": "images/v2/jijiguowang_worried.webp",
+      "scale": 0.72,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "930992422ea224595375e7e78772f7e1f4f70a8830a9f99b5803bd7b6b287b43",
+      "bytes": 1182064,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.jijiguowang.determined": {
+      "kind": "character",
+      "character": "吉吉国王",
+      "emotion": "determined",
+      "path": "images/v2/jijiguowang_determined.webp",
+      "scale": 0.72,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1774bdc6c63242b2d903b1e14a63f217c8e35e38d9d1864dc5025b82531f082e",
+      "bytes": 1280130,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.maomao.calm": {
+      "kind": "character",
+      "character": "毛毛",
+      "emotion": "calm",
+      "path": "images/v2/maomao_calm_clean.webp",
+      "scale": 0.45,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5fa605a035c2bd8525ac2c5ed8afaa0a95b2463268e7e50424e398377ec0e7ff",
+      "bytes": 1179736,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.maomao.happy": {
+      "kind": "character",
+      "character": "毛毛",
+      "emotion": "happy",
+      "path": "images/v2/maomao_happy.webp",
+      "scale": 0.45,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "4b36557e225c6257e3b51db599d1452928b1424a57bfbcfb7369d8af1823d33e",
+      "bytes": 1216544,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.maomao.thinking": {
+      "kind": "character",
+      "character": "毛毛",
+      "emotion": "thinking",
+      "path": "images/v2/maomao_thinking.webp",
+      "scale": 0.45,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "e3c55b58abe588b11238087eb1918955a4579b7b664c7bd30c81df84368438ca",
+      "bytes": 1188208,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.maomao.surprised": {
+      "kind": "character",
+      "character": "毛毛",
+      "emotion": "surprised",
+      "path": "images/v2/maomao_surprised.webp",
+      "scale": 0.45,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "559f19acf03da558875b3c0ebd8fded329068cbe95ffde69a6065955cd707769",
+      "bytes": 1205240,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.maomao.worried": {
+      "kind": "character",
+      "character": "毛毛",
+      "emotion": "worried",
+      "path": "images/v2/maomao_worried.webp",
+      "scale": 0.45,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "30dbc76d04c5f0c574b4d3dc6c9f2d10318a657db0d4ec2e71029adf3c25f88f",
+      "bytes": 1179812,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.maomao.determined": {
+      "kind": "character",
+      "character": "毛毛",
+      "emotion": "determined",
+      "path": "images/v2/maomao_determined.webp",
+      "scale": 0.45,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "6bad3b8817e8a0ca3a769ebbe6678cacd3867131cf4ae3129e116dda6c7c9b7a",
+      "bytes": 1198100,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.zhaolin.calm": {
+      "kind": "character",
+      "character": "赵琳",
+      "emotion": "calm",
+      "path": "images/v2/zhaolin_calm.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c764a2fca3f4b664db959a6b493ec26226957b167b34acd7f586437a2d1c973a",
+      "bytes": 960848,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.zhaolin.happy": {
+      "kind": "character",
+      "character": "赵琳",
+      "emotion": "happy",
+      "path": "images/v2/zhaolin_happy.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "670d4685c64a9b66017c3bd0a9255353d60b2dbc0549d21234ce16578829cb91",
+      "bytes": 1075720,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.zhaolin.thinking": {
+      "kind": "character",
+      "character": "赵琳",
+      "emotion": "thinking",
+      "path": "images/v2/zhaolin_thinking.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "809d3e44f801b78883e5766f299c1c980ee0a8b3681ddfdf49edf91bacda1711",
+      "bytes": 1015594,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.zhaolin.surprised": {
+      "kind": "character",
+      "character": "赵琳",
+      "emotion": "surprised",
+      "path": "images/v2/zhaolin_surprised.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "85ca171ea4b052f208567a4ac5b152c74ef337725e1649e2d24b089e22ead1b2",
+      "bytes": 1037062,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.zhaolin.worried": {
+      "kind": "character",
+      "character": "赵琳",
+      "emotion": "worried",
+      "path": "images/v2/zhaolin_worried.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1d757eb38248459ca1039f5108476f2b341dcf59d8ea247985f47bfd7ba1522d",
+      "bytes": 990706,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.zhaolin.determined": {
+      "kind": "character",
+      "character": "赵琳",
+      "emotion": "determined",
+      "path": "images/v2/zhaolin_determined.webp",
+      "scale": 0.9,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "e903f7cffcced09342d0973537dc12eb4bbe7ad04a7923e24921061eff16018a",
+      "bytes": 1053110,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.tiancaiwei.calm": {
+      "kind": "character",
+      "character": "天才威",
+      "emotion": "calm",
+      "path": "images/v2/tiancaiwei_calm.webp",
+      "scale": 0.92,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "956665c86c8c0e286c2f99344a30b45d7f2c5296a1bd00d336fb76bd48cde308",
+      "bytes": 997302,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.tiancaiwei.happy": {
+      "kind": "character",
+      "character": "天才威",
+      "emotion": "happy",
+      "path": "images/v2/tiancaiwei_happy.webp",
+      "scale": 0.92,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "ab5fa227c2edf6977c9b52d1e8810b7d0c301cd1d58e4d803d5035c1cf5c06db",
+      "bytes": 1099102,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.tiancaiwei.thinking": {
+      "kind": "character",
+      "character": "天才威",
+      "emotion": "thinking",
+      "path": "images/v2/tiancaiwei_thinking.webp",
+      "scale": 0.92,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "ce77482756eb34c988ab3ef78ec2660e3021e13348f71519f7527d9c316c4cba",
+      "bytes": 942528,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.tiancaiwei.surprised": {
+      "kind": "character",
+      "character": "天才威",
+      "emotion": "surprised",
+      "path": "images/v2/tiancaiwei_surprised.webp",
+      "scale": 0.92,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "aa69580de57596fc67248b249f5a29d4ce4ac5fce4ff997bc00a0b366685ba2b",
+      "bytes": 996628,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.tiancaiwei.worried": {
+      "kind": "character",
+      "character": "天才威",
+      "emotion": "worried",
+      "path": "images/v2/tiancaiwei_worried.webp",
+      "scale": 0.92,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "651bcbb8156f9b13634aa9d0c0444404465839b7e72325795ee4466ac33547f6",
+      "bytes": 923254,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.tiancaiwei.determined": {
+      "kind": "character",
+      "character": "天才威",
+      "emotion": "determined",
+      "path": "images/v2/tiancaiwei_determined.webp",
+      "scale": 0.92,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "65410c4cf7a5b6de72acd8f84d982f38376c3f2688282e24595b527d9cfa7745",
+      "bytes": 1044320,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.damahou.calm": {
+      "kind": "character",
+      "character": "大马猴",
+      "emotion": "calm",
+      "path": "images/v2/damahou_calm.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "9d3967677366bb74e5810efb9ad975fc1a685dc1e49e83353dc91343ac48bd6e",
+      "bytes": 945496,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.damahou.happy": {
+      "kind": "character",
+      "character": "大马猴",
+      "emotion": "happy",
+      "path": "images/v2/damahou_happy.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "ad1653ef92bb1d5d7363a60d1d61e5cfdc69fedfc51ed3523b2e17bbcad9fe0a",
+      "bytes": 997432,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.damahou.thinking": {
+      "kind": "character",
+      "character": "大马猴",
+      "emotion": "thinking",
+      "path": "images/v2/damahou_thinking.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "12eb8b3e82576ec5e9ec0300bddf307574ab66f1473acdceff8c557c251fd321",
+      "bytes": 939254,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.damahou.surprised": {
+      "kind": "character",
+      "character": "大马猴",
+      "emotion": "surprised",
+      "path": "images/v2/damahou_surprised.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "b4a11a2f99da37baee5bda6c4b112515e174a9c35801a92dc525d852e11cfbbc",
+      "bytes": 1007938,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.damahou.worried": {
+      "kind": "character",
+      "character": "大马猴",
+      "emotion": "worried",
+      "path": "images/v2/damahou_worried.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "505ce726fe418801c1e765d5352bdd6d73b239fb6e9a3e40829dd3e7a940208d",
+      "bytes": 886606,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.damahou.determined": {
+      "kind": "character",
+      "character": "大马猴",
+      "emotion": "determined",
+      "path": "images/v2/damahou_determined.webp",
+      "scale": 1,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "cd2b17f8edafe22163f62aa77d5bdce7cc2d054c43c428146eb0e88ab25372aa",
+      "bytes": 996180,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.ergou.calm": {
+      "kind": "character",
+      "character": "二狗",
+      "emotion": "calm",
+      "path": "images/v2/ergou_calm.webp",
+      "scale": 0.85,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "e358d8ef8ae142ce7e14f210cfdf3cdb2c8f63af1e7495a6a53a35624c9d1b95",
+      "bytes": 1087052,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.ergou.happy": {
+      "kind": "character",
+      "character": "二狗",
+      "emotion": "happy",
+      "path": "images/v2/ergou_happy.webp",
+      "scale": 0.85,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "472d35756d9c99f89edd3cf9e4e4d419cefb2dce2867a81073b871cb74a4e7f2",
+      "bytes": 1203112,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.ergou.thinking": {
+      "kind": "character",
+      "character": "二狗",
+      "emotion": "thinking",
+      "path": "images/v2/ergou_thinking.webp",
+      "scale": 0.85,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "3559399e13289e4f87705b26d023e985c40f28bb6beeafe0e2fcfb2b965006ea",
+      "bytes": 1164936,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.ergou.surprised": {
+      "kind": "character",
+      "character": "二狗",
+      "emotion": "surprised",
+      "path": "images/v2/ergou_surprised.webp",
+      "scale": 0.85,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "bcd7dd1597a23b6e9025322575d5f69541103fed0d1b4e6b979cb708ba28af89",
+      "bytes": 1160892,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.ergou.worried": {
+      "kind": "character",
+      "character": "二狗",
+      "emotion": "worried",
+      "path": "images/v2/ergou_worried.webp",
+      "scale": 0.85,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "ef1cbb99386d86ec1c119e03adfde3a4103463e6aa264f4ffe48170fea34af8a",
+      "bytes": 1096576,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "character.ergou.determined": {
+      "kind": "character",
+      "character": "二狗",
+      "emotion": "determined",
+      "path": "images/v2/ergou_determined.webp",
+      "scale": 0.85,
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "width": 1024,
+      "height": 1536,
+      "sha256": "a280c64afb6027e4d66e56f3bf7d40eea4b3f631f162e4935e44e88cfe63b7fa",
+      "bytes": 1131382,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.map": {
+      "kind": "prop",
+      "path": "images/v2/prop_map_approved.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "95a744dc6eb3e907e0e98b32d2d3d2795b36cc281e260dad245b5faf8e23ff88",
+      "bytes": 1630928,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.feather": {
+      "kind": "prop",
+      "path": "images/v2/prop_feather.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1222,
+      "height": 1287,
+      "sha256": "e72a094b752155f598e61145c510a8633cf85ed3ee9514f10ef4389d5e3d72dc",
+      "bytes": 851464,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.footprint": {
+      "kind": "prop",
+      "path": "images/v2/prop_footprint.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f6ba2ff1e8041c16bc340587a1b648ae916fe2f0fb3ae1d308eeaa3d029f3d82",
+      "bytes": 1531336,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.letter": {
+      "kind": "prop",
+      "path": "images/v2/prop_letter.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5929f61b6db42ad46b0d1a7c4c6c012e15260188dfdadb1af984639cf7fce9e6",
+      "bytes": 1220014,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.bell": {
+      "kind": "prop",
+      "path": "images/v2/prop_bell.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1145,
+      "height": 1374,
+      "sha256": "43410b3b7d2f24890f0cb9ba4876eb71e7a7bbe71e1677bf5548a8ce7e8d640f",
+      "bytes": 724598,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.ribbon": {
+      "kind": "prop",
+      "path": "images/v2/prop_ribbon.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1374,
+      "height": 1145,
+      "sha256": "a0cc937ca544d810a9ddea25e65d7a05db5b368865eeb695f007ba33467bfdb7",
+      "bytes": 1229110,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.key": {
+      "kind": "prop",
+      "path": "images/v2/prop_key.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1223,
+      "height": 1286,
+      "sha256": "8a8f2fe16708e610d7cc2526893d27411b000ef2ad04ee120a5f3eb608cce3ab",
+      "bytes": 628960,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.compass": {
+      "kind": "prop",
+      "path": "images/v2/prop_compass.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1199,
+      "height": 1312,
+      "sha256": "fc8bb4e235f50b17a0ee8a98e212406608f586d81da3002588629221cd9d56e3",
+      "bytes": 1064146,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.magnifier": {
+      "kind": "prop",
+      "path": "images/v2/prop_magnifier.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1230,
+      "height": 1278,
+      "sha256": "c55e70c3c3513c72dc7753e9f5462f1008e5a196de8ab0d9e0d66bf78221d47d",
+      "bytes": 761166,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.rope": {
+      "kind": "prop",
+      "path": "images/v2/prop_rope.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1374,
+      "height": 1145,
+      "sha256": "7fdb6b57cef1feac29dda1e06628699a8772fd9f3fe5f90c60a6a0607c37329f",
+      "bytes": 1167902,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.hammer": {
+      "kind": "prop",
+      "path": "images/v2/prop_hammer.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "0cfc448cadf4317b886a7fc08df9e23b1a4274301b9615cd955e1bc018c59cfa",
+      "bytes": 573860,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.scissors": {
+      "kind": "prop",
+      "path": "images/v2/prop_scissors.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1402,
+      "height": 1122,
+      "sha256": "56c1407a4bda3ab1f39366cf100e1661e1bf4218d7336321af00a2e74b2a2d40",
+      "bytes": 619612,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.lantern": {
+      "kind": "prop",
+      "path": "images/v2/prop_lantern.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "8afa39272638a3f14ec0fc4355f6e028d4f5aea2d0485211fc461c169b2895a5",
+      "bytes": 1508158,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.bucket": {
+      "kind": "prop",
+      "path": "images/v2/prop_bucket.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1212,
+      "height": 1297,
+      "sha256": "29eefb3934bd7c6070df28556517da1ac0fbe63c55ac929832607e9c8a5232ac",
+      "bytes": 1298198,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.brush": {
+      "kind": "prop",
+      "path": "images/v2/prop_brush.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "237ac3ab8a4e57d18d7cc16a5550330723c41d59eb3b6581fe39618c7ba813f9",
+      "bytes": 1263828,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.shovel": {
+      "kind": "prop",
+      "path": "images/v2/prop_shovel.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1226,
+      "height": 1283,
+      "sha256": "df494b5fb04fde923e5c8ab8953f7385cb2b4dcf4feb55bd7c7e603c8dd0c53f",
+      "bytes": 768432,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.plank": {
+      "kind": "prop",
+      "path": "images/v2/prop_plank.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "d2e9b6492cf7eb4a3702d3c51bfb3eaad4a1dfdbb2cd0729ebc5bc356c98a6e4",
+      "bytes": 1185610,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.bamboo": {
+      "kind": "prop",
+      "path": "images/v2/prop_bamboo.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "dbb7258062e43e9be751d301c8e3c4e14d983394b3a508af2de92a33aeb78841",
+      "bytes": 756268,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.cloth": {
+      "kind": "prop",
+      "path": "images/v2/prop_cloth.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1374,
+      "height": 1145,
+      "sha256": "4f4482bf19eb4a9329448c8ed768f2eb587c87853608745a5956bf65ae8dde98",
+      "bytes": 1261436,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.paper": {
+      "kind": "prop",
+      "path": "images/v2/prop_paper.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "1bbbc1883cff3e515b54fe1701e24a0f86926a71b090aa0395f0f9320d9b7bf3",
+      "bytes": 1160210,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.clay": {
+      "kind": "prop",
+      "path": "images/v2/prop_clay.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1374,
+      "height": 1145,
+      "sha256": "74951d6ea6d953ed743bdf7f0a695ae9fe2f24311dd50cb68b270d1e17890357",
+      "bytes": 1130038,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.string": {
+      "kind": "prop",
+      "path": "images/v2/prop_string.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1226,
+      "height": 1283,
+      "sha256": "a2c07356c59b91292b1f62937a52200d141c7503864b802bb372003d30b1660d",
+      "bytes": 1167466,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.paint": {
+      "kind": "prop",
+      "path": "images/v2/prop_paint.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "96c4f0ca26388418ae89614dc40ed1989988b6e8db3a8f4fdc93ddb9a085e193",
+      "bytes": 1369288,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.wheel": {
+      "kind": "prop",
+      "path": "images/v2/prop_wheel.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1304,
+      "height": 1206,
+      "sha256": "eaf6755cba251b2ed2328410131186d0602cd7025ecc7df0496f7cf6f97930f0",
+      "bytes": 1159616,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.leaf": {
+      "kind": "prop",
+      "path": "images/v2/prop_leaf.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0d55bfdd7e036e751f2a55219ed0525b9a5b98c6a2d0c20fcb1649b41b39b070",
+      "bytes": 1337776,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.flower": {
+      "kind": "prop",
+      "path": "images/v2/prop_flower.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "575cd900e82e702520093d260bb79d97a22f4e50781bbc1dadb6121cb3610b09",
+      "bytes": 1385302,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.pinecone": {
+      "kind": "prop",
+      "path": "images/v2/prop_pinecone.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "256cf4b4d74c39e6a725ecea6f318e2936575bc469386cc1d26cfca8ba0dc3d5",
+      "bytes": 1087156,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.apple": {
+      "kind": "prop",
+      "path": "images/v2/prop_apple.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "179e25571edf2187a4f67514e81995ce9b320c62c545fee3716c94450a3b29f6",
+      "bytes": 1334132,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.honey": {
+      "kind": "prop",
+      "path": "images/v2/prop_honey.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "b01bfbae28af05bb089428765527e6bc4b88c03e4820e71db6b5cac9be566c59",
+      "bytes": 1297494,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.seed": {
+      "kind": "prop",
+      "path": "images/v2/prop_seed.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1374,
+      "height": 1145,
+      "sha256": "457d08fac1094960957ac0de0af8fd56d67f4855b83ea3c4c36ec11a2abfe50f",
+      "bytes": 1206242,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.kite": {
+      "kind": "prop",
+      "path": "images/v2/prop_kite.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1230,
+      "height": 1278,
+      "sha256": "c1dc4cd62352d2e7959c7bbc078c31fed357e51d36a33474025f39287640c8ad",
+      "bytes": 590098,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.drum": {
+      "kind": "prop",
+      "path": "images/v2/prop_drum.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "1df5261dbf36d0f5ebd1bfd4b3333f2d48f39f84e1fc8f6e04e66fa18a998b52",
+      "bytes": 1245990,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.flag": {
+      "kind": "prop",
+      "path": "images/v2/prop_flag.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c3d705426e92ee61e956234da5522f64c6b7db266188fe7cced0346e43cdd552",
+      "bytes": 962188,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha": true
+    },
+    "prop.basket": {
+      "kind": "prop",
+      "path": "images/v2/prop_basket.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "e5eb8385b947bf6983f5e768ea50494d437cdc2efcd2cba33d5db2fd4a2088a8",
+      "bytes": 1100072,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.mask": {
+      "kind": "prop",
+      "path": "images/v2/prop_mask.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "aba68e8ea5f9427e86b0f6afb6ee543348d8599932d6df6c52c3323bd88249ad",
+      "bytes": 1462794,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "prop.star": {
+      "kind": "prop",
+      "path": "images/v2/prop_star.webp",
+      "regions": [
+        "ground"
+      ],
+      "hotspot": true,
+      "width": 1309,
+      "height": 1201,
+      "sha256": "c660546403d119a9cea5866381b15e77a05f01ccab28b989eeff15e8fbb09cda",
+      "bytes": 909018,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha": true
+    },
+    "key.00": {
+      "kind": "key_art",
+      "path": "images/v2/key_00.webp",
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "props": [
+        "prop.footprint"
+      ],
+      "event_verbs": [
+        "observe"
+      ],
+      "conditions": [],
+      "situation": "discovery",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "9f7a0dc51c395136fc869481944ec0d9e5a859570e5b1960321aa686b3c1ad5e",
+      "bytes": 1869476
+    },
+    "key.01": {
+      "kind": "key_art",
+      "path": "images/v2/key_01.webp",
+      "characters": [
+        "光头强",
+        "毛毛"
+      ],
+      "scenes": [
+        "scene.bamboo"
+      ],
+      "props": [
+        "prop.letter"
+      ],
+      "event_verbs": [
+        "observe"
+      ],
+      "conditions": [],
+      "situation": "discovery",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "5a46c48bc77bc25304c8e37570099dbfadf7d84c51eadd55a627a10e1f05c125",
+      "bytes": 2034450
+    },
+    "key.02": {
+      "kind": "key_art",
+      "path": "images/v2/key_02.webp",
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.bridge"
+      ],
+      "props": [
+        "prop.plank"
+      ],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "cooperation",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "06859a4c2d95e2c2a82475776d7938a72c8a15fdc1dde9e96ef79ddc40a07677",
+      "bytes": 2127382
+    },
+    "key.03": {
+      "kind": "key_art",
+      "path": "images/v2/key_03.webp",
+      "characters": [
+        "光头强",
+        "天才威"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "props": [
+        "prop.compass"
+      ],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "cooperation",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "650cb353579b9b83b04cd83bec50d2392fce23c4739c7df4874e0e41b745cd08",
+      "bytes": 1766120
+    },
+    "key.04": {
+      "kind": "key_art",
+      "path": "images/v2/key_04.webp",
+      "characters": [
+        "吉吉国王",
+        "毛毛"
+      ],
+      "scenes": [
+        "scene.orchard"
+      ],
+      "props": [
+        "prop.basket"
+      ],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "conditions": [],
+      "situation": "misunderstanding",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "34e2d3ef8964a4128cf717e4be1ef87682231be410f195a6e18e520e07266d9d",
+      "bytes": 2106622
+    },
+    "key.05": {
+      "kind": "key_art",
+      "path": "images/v2/key_05.webp",
+      "characters": [
+        "大马猴",
+        "二狗"
+      ],
+      "scenes": [
+        "scene.market"
+      ],
+      "props": [
+        "prop.ribbon"
+      ],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "conditions": [],
+      "situation": "misunderstanding",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "530510cea4f8b8e4afee0d26f6ef947e096ba2def5f415dae862027061dfa145",
+      "bytes": 1913742
+    },
+    "key.06": {
+      "kind": "key_art",
+      "path": "images/v2/key_06.webp",
+      "characters": [
+        "光头强",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "props": [
+        "prop.kite"
+      ],
+      "event_verbs": [
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "making",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "6b0a0d1189c19859273df96de06f0d2afb5b9763bedf4807c1423137cb809ab1",
+      "bytes": 1780930
+    },
+    "key.07": {
+      "kind": "key_art",
+      "path": "images/v2/key_07.webp",
+      "characters": [
+        "赵琳",
+        "毛毛"
+      ],
+      "scenes": [
+        "scene.camp"
+      ],
+      "props": [
+        "prop.lantern"
+      ],
+      "event_verbs": [
+        "combine"
+      ],
+      "conditions": [],
+      "situation": "making",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "c5d94c6ef48da9195980e31b9a7dd6268c38343c0da2ab8e030021b51b239618",
+      "bytes": 2000312
+    },
+    "key.08": {
+      "kind": "key_art",
+      "path": "images/v2/key_08.webp",
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "scenes": [
+        "scene.mountain"
+      ],
+      "props": [
+        "prop.flag"
+      ],
+      "event_verbs": [
+        "allocate",
+        "use"
+      ],
+      "conditions": [],
+      "situation": "challenge",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "67e80dbfe2eb033bbc1287f64bb981f6e9e4767a88275b7b6ff8ca6a2644cc0b",
+      "bytes": 1946302
+    },
+    "key.09": {
+      "kind": "key_art",
+      "path": "images/v2/key_09.webp",
+      "characters": [
+        "吉吉国王",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.sports"
+      ],
+      "props": [
+        "prop.flag"
+      ],
+      "event_verbs": [
+        "move",
+        "allocate"
+      ],
+      "conditions": [],
+      "situation": "challenge",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "0f525e2fbc1388c9165df84ac7494553694823f4fcd578fbb93f6383c589d872",
+      "bytes": 2001102
+    },
+    "key.10": {
+      "kind": "key_art",
+      "path": "images/v2/key_10.webp",
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "props": [
+        "prop.bell"
+      ],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "conditions": [],
+      "situation": "reunion",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "f42a6e237e5fec249e61d223160486e8af7c30c874cfe63ce31d58bb7390486f",
+      "bytes": 1861594
+    },
+    "key.11": {
+      "kind": "key_art",
+      "path": "images/v2/key_11.webp",
+      "characters": [
+        "光头强",
+        "赵琳"
+      ],
+      "scenes": [
+        "scene.stage"
+      ],
+      "props": [
+        "prop.drum"
+      ],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "conditions": [],
+      "situation": "reunion",
+      "regions": [
+        "full"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "394ab4bfdfca9437aa000a8b07feb83a86bdb19faac137500e4192e894c98b14",
+      "bytes": 2216572
+    }
+  },
+  "visual_check": "generated images inspected individually",
+  "encoding": "lossless WebP; exact RGBA match verified"
+}

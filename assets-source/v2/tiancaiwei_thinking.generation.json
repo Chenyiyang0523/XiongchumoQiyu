@@ -1,0 +1,9 @@
+{
+  "id": "tiancaiwei_thinking",
+  "transparent": true,
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png"
+  ],
+  "prompt": "Use case: identity-preserve. Create ONE transparent full-body thinking sprite from this reference character. Preserve exact identity, proportions, hairstyle, clothing, colors, costume details and warm hand-drawn cartoon rendering. Thoughtful expression, one hand at chin, other hand holding elbow, friendly concentration. Entire head, hands and feet with generous margins, same full-body scale, three-quarter front view. True transparent alpha background, no backdrop, floor, shadows, glow, writing or watermark. One character.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-542f3dd0-a738-409c-ac52-00d02ea4f732.png"
+}

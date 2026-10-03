@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "熊大",
+    "赵琳"
+  ],
+  "scenes": [
+    "scene.mountain"
+  ],
+  "props": [
+    "prop.flag"
+  ],
+  "event_verbs": [
+    "allocate",
+    "use"
+  ],
+  "conditions": [],
+  "situation": "challenge",
+  "regions": [
+    "full"
+  ]
+}

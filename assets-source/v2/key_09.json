@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "吉吉国王",
+    "熊二"
+  ],
+  "scenes": [
+    "scene.sports"
+  ],
+  "props": [
+    "prop.flag"
+  ],
+  "event_verbs": [
+    "move",
+    "allocate"
+  ],
+  "conditions": [],
+  "situation": "challenge",
+  "regions": [
+    "full"
+  ]
+}

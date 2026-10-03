@@ -1,0 +1,15 @@
+{
+  "health": {
+    "version": 2,
+    "mock": true,
+    "assets": 120
+  },
+  "story_id": "ee97355ed27c42fda5a69f9ed59605bc",
+  "version": 9,
+  "pages": 8,
+  "events": 8,
+  "ending": "铃声里的约定",
+  "idempotency_verified": true,
+  "restart_restore_verified": true,
+  "mock": true
+}

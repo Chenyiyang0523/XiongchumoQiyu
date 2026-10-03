@@ -1,0 +1,7 @@
+{
+  "mock": true,
+  "books": 60,
+  "pages": 720,
+  "replay_and_page_rules_passed": true,
+  "engine_sha256": "cf45b46b6cd5fd4a49b33275faec9f1130fa27ea7833ecccedb7b02df626ff05"
+}

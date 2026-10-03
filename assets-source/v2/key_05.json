@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "大马猴",
+    "二狗"
+  ],
+  "scenes": [
+    "scene.market"
+  ],
+  "props": [
+    "prop.ribbon"
+  ],
+  "event_verbs": [
+    "ask",
+    "negotiate"
+  ],
+  "conditions": [],
+  "situation": "misunderstanding",
+  "regions": [
+    "full"
+  ]
+}

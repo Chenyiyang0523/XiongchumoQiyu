@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "熊大",
+    "熊二"
+  ],
+  "scenes": [
+    "scene.forest"
+  ],
+  "props": [
+    "prop.bell"
+  ],
+  "event_verbs": [
+    "negotiate",
+    "ask"
+  ],
+  "conditions": [],
+  "situation": "reunion",
+  "regions": [
+    "full"
+  ]
+}

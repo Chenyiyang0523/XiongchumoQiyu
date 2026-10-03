@@ -1,0 +1,10 @@
+{
+  "mode": "mock",
+  "status": "fixture_only",
+  "books_generated": 60,
+  "cases": 60,
+  "new_themes": 36,
+  "live_release_eligible": false,
+  "comparison_pairs_required": 20,
+  "platforms_verified": []
+}

@@ -1,0 +1,20 @@
+{
+  "characters": [
+    "光头强",
+    "毛毛"
+  ],
+  "scenes": [
+    "scene.bamboo"
+  ],
+  "props": [
+    "prop.letter"
+  ],
+  "event_verbs": [
+    "observe"
+  ],
+  "conditions": [],
+  "situation": "discovery",
+  "regions": [
+    "full"
+  ]
+}
