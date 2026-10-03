@@ -3,6 +3,9 @@ import json
 import os
 import re
 import uuid
+import tempfile
+import threading
+import time
 from pathlib import Path
 from urllib.request import Request, build_opener, HTTPRedirectHandler
 from urllib.parse import urlparse
@@ -10,6 +13,13 @@ from urllib.error import HTTPError
 
 class ClientError(ValueError):
     pass
+
+_library_locks = {}
+_library_locks_guard = threading.Lock()
+
+def _file_lock(path):
+    with _library_locks_guard:
+        return _library_locks.setdefault(str(path.resolve()), threading.RLock())
 
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
@@ -66,16 +76,32 @@ class Library:
 
     def save(self, record):
         target = self.filename(record['id'])
-        temporary = target.with_suffix('.tmp')
-        with temporary.open('w', encoding='utf-8') as output:
-            json.dump(record, output, ensure_ascii=False)
-            output.flush()
-            os.fsync(output.fileno())
-        os.replace(temporary, target)
+        with _file_lock(target):
+            temporary = None
+            try:
+                with tempfile.NamedTemporaryFile(mode='w',encoding='utf-8',dir=target.parent,
+                                                 prefix=target.stem+'.',suffix='.tmp',delete=False) as output:
+                    temporary = output.name
+                    json.dump(record, output, ensure_ascii=False)
+                    output.flush()
+                    os.fsync(output.fileno())
+                # Windows can briefly deny replacement while a file scanner
+                # holds the destination. Keep the previous checkpoint intact.
+                for attempt in range(8):
+                    try:
+                        os.replace(temporary, target)
+                        break
+                    except PermissionError:
+                        if attempt == 7:raise
+                        time.sleep(0.02*(attempt+1))
+            finally:
+                if temporary and os.path.exists(temporary):os.unlink(temporary)
 
     def load(self, sid):
-        with self.filename(sid).open(encoding='utf-8') as source:
-            result = json.load(source)
+        target = self.filename(sid)
+        with _file_lock(target):
+            with target.open(encoding='utf-8') as source:
+                result = json.load(source)
         if result.get('schema_version') != 2:
             raise ClientError('绘本版本不兼容，原文件已保留。')
         return result

@@ -221,7 +221,56 @@ def effects(s, action, b, manifest, event_id):
 def available_actions(page):
     return {a['id']: a for i in page['interactions'] for a in i['actions']}
 
-def page_action_contexts(page, state, blueprint, manifest, require_all=True):
+def blocked_goals(state, blueprint):
+    """Physical impossibilities, without guessing goals from narrative text."""
+    quests={q['id']:q for q in blueprint['quests']}
+    needed={k for k,q in quests.items() if q['required'] and state['quests'][k]!='complete'}
+    todo=list(needed)
+    while todo:
+        for dep in quests[todo.pop()]['dependencies']:
+            if state['quests'][dep]!='complete' and dep not in needed:
+                needed.add(dep);todo.append(dep)
+    goals={k:quests[k]['conditions'] for k in needed}
+    goals.update({k:v for k,v in blueprint.get('promise_conditions',{}).items() if not state['promises'][k]})
+    blocked={};consumers={};roots={}
+    def ingredients(iid,seen):
+        item=state['items'][iid]
+        if item['owner']=='consumed':return iid
+        if item['owner']!='unmade':return None
+        if iid in seen:return iid
+        missing=None
+        for source in item['recipe']:
+            consumers.setdefault(source,set()).add(iid)
+            unavailable=ingredients(source,seen|{iid})
+            if unavailable:missing=unavailable
+        return missing
+    for gid,conditions in goals.items():
+        for condition in conditions:
+            if matches(state,condition,blueprint):continue
+            kind,key,value=condition['kind'],condition['key'],condition['value']
+            if kind=='owner' and value not in {'consumed','unmade'}:
+                missing=ingredients(key,set())
+                if missing:blocked[gid]='required item or ingredient consumed: '+missing
+                if state['items'][key]['owner']=='unmade':roots.setdefault(gid,set()).add(key)
+            elif kind=='owner' and value=='unmade':blocked[gid]='item already made: '+key
+            elif kind=='resource' and condition.get('comparison','eq')!='lte' and state['resources'][key]<value:
+                blocked[gid]='required resource exhausted: '+key
+            elif kind=='knowledge' and value is False:blocked[gid]='knowledge cannot be forgotten: '+key
+    conflicts={iid for iid,outputs in consumers.items() if len(outputs)>1}
+    if conflicts:
+        for gid in roots:blocked[gid]='one ingredient required by multiple recipes: '+', '.join(sorted(conflicts))
+    return blocked
+
+def protect_goals(before, after, blueprint):
+    prior=blocked_goals(before,blueprint);later=blocked_goals(after,blueprint)
+    new=set(later)-set(prior)
+    require(not new,'irreversible action blocks unfinished goal: '+ '; '.join(k+' / '+later[k] for k in sorted(new)))
+
+def validate_forward_page(page,state,blueprint,manifest):
+    # Preserve historical physical replay; apply the new guard to future pages.
+    page_action_contexts(page,state,blueprint,manifest,protect=True)
+
+def page_action_contexts(page, state, blueprint, manifest, require_all=True, protect=False):
     """Find legal local sequences, choosing at most one alternative per card.
 
     A later card may use materials collected on an earlier card. Every offered
@@ -242,6 +291,7 @@ def page_action_contexts(page, state, blueprint, manifest, require_all=True):
                 trial=deepcopy(current)
                 try:
                     effects(trial,action,blueprint,manifest,'local-preview')
+                    if protect:protect_goals(current,trial,blueprint)
                     outcome={k:v for k,v in trial.items() if k!='provenance'}
                     require(outcome!={k:v for k,v in current.items() if k!='provenance'},'interaction has no state consequence')
                 except RuleError as exc:
@@ -289,6 +339,7 @@ def apply_operations(story, operations, reason='', free_action=None):
         eid = 'event.%s.%s' % (s['version'] + 1, index)
         before = deepcopy(s)
         effects(s, action, b, manifest, eid)
+        protect_goals(before,s,b)
         require({k:v for k,v in s.items() if k != 'provenance'} != {k:v for k,v in before.items() if k != 'provenance'}, 'action has no state consequence')
         events.append({'schema_version': 2, 'id': eid, 'turn': s['version'] + 1,
                        'cause': ['page:' + page['id']], 'action_id': action['id'],

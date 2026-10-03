@@ -14,6 +14,9 @@ import time
 import urllib.request
 import zipfile
 
+if hasattr(sys.stdout,'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8',errors='replace')
+
 ROOT=Path(__file__).resolve().parents[1]
 WORK=ROOT/'.local/ci-platform'
 EVIDENCE=WORK/'evidence'
@@ -85,7 +88,7 @@ def main():
                 if service.poll() is not None:raise RuntimeError('Fixture service failed to start')
                 time.sleep(.2)
         else:raise RuntimeError('Fixture service never became ready')
-        qa_env=os.environ.copy();qa_env.update(XCMQY_QA_OUTPUT=str(EVIDENCE/'screenshots'),RENPY_DISABLE_SOUND='1',RENPY_SIMPLE_EXCEPTIONS='1')
+        qa_env=os.environ.copy();qa_env.update(XCMQY_QA_OUTPUT=str(EVIDENCE/'screenshots'),RENPY_DISABLE_SOUND='1',RENPY_SIMPLE_EXCEPTIONS='1',PYTHONIOENCODING='utf-8')
         (EVIDENCE/'screenshots').mkdir(exist_ok=True)
         fixture=WORK/'local-operations.json'
         run([sys.executable,ROOT/'tools/prepare_local_fixture.py',fixture],'local-fixture.txt')

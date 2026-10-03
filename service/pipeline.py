@@ -11,7 +11,7 @@ from service.context import for_generation, review_preview
 from service.prompts import compact_context
 from service.pacing import validate_resolution_page
 from service import model_protocol
-from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError, effects, page_action_contexts
+from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError, effects, page_action_contexts, blocked_goals, validate_forward_page
 
 MANIFEST_PATH = Path(__file__).resolve().parents[1] / 'game/storybook/asset_manifest.json'
 
@@ -237,11 +237,15 @@ class Pipeline:
                         if sorted(selected['cast'])!=sorted(c['name'] for c in b['characters']):
                             raise RuleError('blueprint changed the selected character combination')
                         state=initial_state(b,manifest)
+                        impossible=blocked_goals(state,b)
+                        if impossible:
+                            raise RuleError('blueprint has impossible unfinished goals: '+str(impossible))
                         if state['characters']['player']['name']!=settings['character']:
                             raise RuleError('blueprint changed the selected player')
                         if not combined:
                             page=invoke('opening',{'settings':settings,'manifest':manifest,'blueprint':b,'state':state},BookPage)
                         validate_page(page,state,b,manifest,[],settings['assets'],settings['age'])
+                        validate_forward_page(page,state,b,manifest)
                         break
                     except (RuleError,ModelError,ValueError) as exc:
                         errors=[str(exc)[:1200]]
@@ -293,6 +297,8 @@ class Pipeline:
                             raise RuleError('confirmed understanding must be executed exactly')
                         story = accept_proposal(source, request, proposal)
                         if story is not None:
+                            if len(story['pages'])>len(source['pages']):
+                                validate_forward_page(story['pages'][-1],story['state'],story['blueprint'],story['manifest'])
                             validate_resolution_page(story,context)
                         review = invoke('review', {**context, 'proposal': proposal, 'confirmed_preview': review_preview(story),
                                                   'check': ['facts', 'causes', 'negation', 'voice', 'repetition', 'illustration']}, Review)

@@ -132,7 +132,7 @@ testsuite picturebook:
         run SetVariable('book_reason','我们先核对足迹，再决定路线。')
         click "确认行动 / 翻到下一页"
         pause until eval (not book_busy)
-        $ assert not book_error, book_diagnostic + ': ' + book_error
+        $ assert not book_error, book_diagnostic
         pause until eval (book_story["state"]["version"] == 2)
         click "请伙伴一起确认"
         click "确认行动 / 翻到下一页"
@@ -197,6 +197,6 @@ testsuite picturebook:
         assert eval (book_story['state']['version']==9 and book_story['ending'] is not None)
         assert eval (book_story['pages'][0]['discussion']=='我们先核对足迹，再决定路线。')
     teardown:
-        $ print('Native client final state:', book_diagnostic, 'busy=', book_busy, 'phase=', book_phase, 'error=', book_error, 'version=', book_story['state']['version'] if book_story else None)
+        $ print(__import__('json').dumps({'native_client_stage':book_diagnostic,'busy':book_busy,'phase':book_phase,'error':book_error,'version':book_story['state']['version'] if book_story else None},ensure_ascii=True))
         screenshot '19-final-client-state.png'
         exit
