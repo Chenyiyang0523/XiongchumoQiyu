@@ -3,9 +3,10 @@ import os
 import secrets
 import threading
 from pathlib import Path
-from service.models import Concepts, StoryBlueprint, BookPage, TurnProposal, Review, StoryRecord
+from service.models import Concepts, StoryBlueprint, StoryOpening, BookPage, TurnProposal, Review, StoryRecord
 from service.provider import BudgetExceeded, ModelError
 from service.context import for_generation, review_preview
+from service.prompts import compact_context
 from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError
 
 MANIFEST_PATH = Path(__file__).resolve().parents[1] / 'game/storybook/asset_manifest.json'
@@ -72,14 +73,19 @@ class Pipeline:
             context=json.loads(json.dumps(context))
             if 'manifest' in context:
                 context['manifest']={a:{k:v for k,v in spec.items() if k not in {'path','width','height','bytes','sha256','alpha'}} for a,spec in context['manifest'].items()}
-            return model.model_validate(self.provider.call(stage, {**context,'character_bible':self.character_bible}, model.model_json_schema(), lambda metric: self.store.metric(job['id'], metric,metric_index))).model_dump()
+            model_context={**context,'character_bible':self.character_bible}
+            if not self.provider.is_mock:
+                model_context=compact_context(stage,model_context)
+            return model.model_validate(self.provider.call(stage, model_context, model.model_json_schema(), lambda metric: self.store.metric(job['id'], metric,metric_index))).model_dump()
         try:
             if job['kind'] == 'create':
                 settings = request['settings']
                 manifest = {a: s for a, s in self.manifest.items() if a in settings['assets']}
                 recent = [fingerprint(s) for s in self.store.books(job['account']) if s.get('ending')][:10]
                 concepts = invoke('concepts', {'settings': settings, 'manifest': manifest, 'recent': recent}, Concepts)['candidates']
-                candidates=[c for c in concepts if not settings.get('arc') or c['arc']==settings['arc']]
+                known_names={s.get('character') for s in manifest.values() if s['kind']=='character'}
+                candidates=[c for c in concepts if (not settings.get('arc') or c['arc']==settings['arc'])
+                            and settings['character'] in c['cast'] and set(c['cast'])<=known_names]
                 if not candidates:
                     raise RuleError('requested story structure absent from candidates')
                 def score(c):
@@ -88,16 +94,30 @@ class Pipeline:
                     return coverage * 3 - repetition * 4 + (10 if settings.get('arc') == c['arc'] else 0)
                 high = max(score(c) for c in candidates)
                 selected = secrets.choice([c for c in candidates if score(c) == high])
-                b = invoke('blueprint', {'settings': settings, 'manifest': manifest, 'recent': recent, 'selected': selected}, StoryBlueprint)
-                if b['arc'] != selected['arc'] or b['theme'] != settings['theme']:
-                    raise RuleError('blueprint changed the selected concept or theme')
-                if sorted(selected['cast']) != sorted(c['name'] for c in b['characters']):
-                    raise RuleError('blueprint changed the selected character combination')
-                state = initial_state(b, manifest)
-                if state['characters']['player']['name'] != settings['character']:
-                    raise RuleError('blueprint changed the selected player')
-                page = invoke('opening', {'settings': settings, 'manifest': manifest, 'blueprint': b, 'state': state}, BookPage)
-                validate_page(page, state, b, manifest, [], settings['assets'], settings['age'])
+                setup_context={'settings':settings,'manifest':manifest,'recent':recent,'selected':selected}
+                errors=[]
+                combined=getattr(self.provider,'combined_setup',False)
+                for attempt in range(2 if combined else 1):
+                    try:
+                        if combined:
+                            setup=invoke('setup' if not attempt else 'setup_repair', setup_context if not attempt else {**setup_context,'previous':setup if 'setup' in locals() else None,'issues':errors},StoryOpening)
+                            b,page=setup['blueprint'],setup['page']
+                        else:
+                            b=invoke('blueprint',setup_context,StoryBlueprint)
+                        if b['arc']!=selected['arc'] or b['theme']!=settings['theme']:
+                            raise RuleError('blueprint changed the selected concept or theme')
+                        if sorted(selected['cast'])!=sorted(c['name'] for c in b['characters']):
+                            raise RuleError('blueprint changed the selected character combination')
+                        state=initial_state(b,manifest)
+                        if state['characters']['player']['name']!=settings['character']:
+                            raise RuleError('blueprint changed the selected player')
+                        if not combined:
+                            page=invoke('opening',{'settings':settings,'manifest':manifest,'blueprint':b,'state':state},BookPage)
+                        validate_page(page,state,b,manifest,[],settings['assets'],settings['age'])
+                        break
+                    except (RuleError,ModelError,ValueError) as exc:
+                        errors=[str(exc)[:1200]]
+                        if attempt or not combined or isinstance(exc,BudgetExceeded):raise
                 review = invoke('review', {'blueprint': b, 'state': state, 'draft': page, 'settings': settings, 'manifest': manifest}, Review)
                 if not review['approved'] or review['issues']:
                     raise RuleError('opening review rejected')

@@ -12,14 +12,14 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from service.models import CreateRequest, SubmitRequest, SessionRequest, StoryRecord, JobTicket, JobStatus, SessionToken, BookSummary
 from service.storage import Store, Conflict
-from service.provider import Provider
+from service.provider import create_provider
 from service.mock import MockProvider
 from service.pipeline import Pipeline
 
 def create_app(database=None, provider=None, start_worker=True, guardian_code=None, fault=None):
     store = Store(database or os.environ.get('XCMQY_DATABASE', 'service-data/storybooks.sqlite'))
     if provider is None:
-        provider = MockProvider() if os.environ.get('XCMQY_DEVELOPMENT_MOCK') == '1' else Provider()
+        provider = MockProvider() if os.environ.get('XCMQY_DEVELOPMENT_MOCK') == '1' else create_provider()
     code = guardian_code or os.environ.get('XCMQY_GUARDIAN_CODE', '')
     if len(code) < 8:
         raise ValueError('XCMQY_GUARDIAN_CODE must contain at least 8 characters')

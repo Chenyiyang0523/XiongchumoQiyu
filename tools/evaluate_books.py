@@ -11,7 +11,7 @@ sys.path[:0]=[str(ROOT),str(ROOT/'game')]
 from service.models import CreateRequest, SubmitRequest
 from service.storage import Store
 from service.pipeline import Pipeline
-from service.provider import Provider
+from service.provider import create_provider
 from service.mock import MockProvider
 from storybook.engine import replay, apply_operations
 from storybook.export import export_html
@@ -73,7 +73,7 @@ def main():
     args.output.mkdir(parents=True,exist_ok=True)
     cases=corpus()
     (args.output/'cases.json').write_text(json.dumps(cases,ensure_ascii=False,indent=2))
-    try:provider=Provider() if args.mode=='live' else MockProvider()
+    try:provider=create_provider() if args.mode=='live' else MockProvider()
     except ValueError:
         (args.output/'summary.json').write_text(json.dumps({'mode':args.mode,'live_release_eligible':False,'status':'configuration_required','books_generated':0},indent=2))
         print('未运行真实生成：请在本机配置 XCMQY_LLM_ENDPOINT、XCMQY_LLM_MODEL、XCMQY_LLM_KEY。',file=sys.stderr)

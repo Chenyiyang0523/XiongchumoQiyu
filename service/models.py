@@ -110,6 +110,10 @@ class BookPage(Contract):
     callbacks: list[ID] = Field(default_factory=list, max_length=5)
     choices: list[dict] = Field(default_factory=list, max_length=16)
 
+class StoryOpening(Contract):
+    blueprint: StoryBlueprint
+    page: BookPage
+
 class StoryEvent(Contract):
     schema_version: Literal[2] = 2
     id: ID

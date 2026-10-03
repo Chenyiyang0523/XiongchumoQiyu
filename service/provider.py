@@ -11,6 +11,18 @@ class ModelError(ValueError):
 class BudgetExceeded(ModelError):
     pass
 
+def create_provider():
+    backend = os.environ.get('XCMQY_LLM_BACKEND', 'openai')
+    if backend == 'claude-cli':
+        from service.claude_cli import ClaudeCLIProvider
+        return ClaudeCLIProvider()
+    if backend == 'claude-settings':
+        from service.anthropic_provider import ClaudeSettingsProvider
+        return ClaudeSettingsProvider()
+    if backend != 'openai':
+        raise ModelError('unknown model backend')
+    return Provider()
+
 class Provider:
     is_mock = False
     def __init__(self):
