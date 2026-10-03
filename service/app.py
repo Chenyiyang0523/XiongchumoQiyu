@@ -30,7 +30,7 @@ def create_app(database=None, provider=None, start_worker=True, guardian_code=No
             pipeline.start()
         yield
         pipeline.close()
-    app = FastAPI(title='熊出没奇遇互动绘本', version='2.0.0-alpha.1', lifespan=lifespan)
+    app = FastAPI(title='熊出没奇遇互动绘本', version='2.0.0-alpha.2', lifespan=lifespan)
     app.state.store, app.state.pipeline = store, pipeline
     security = HTTPBearer(auto_error=False)
     def account(credentials: HTTPAuthorizationCredentials | None = Depends(security)):
