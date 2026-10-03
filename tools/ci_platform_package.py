@@ -103,7 +103,7 @@ def main():
             except subprocess.TimeoutExpired:service.kill();service.wait()
         (EVIDENCE/'platform.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
         if not receipt['verified']:
-            for name in ['package-qa.txt','build.txt']:
+            for name in ['package-resources.json','package-qa.txt','build.txt']:
                 path=EVIDENCE/name
                 if path.exists():print(name+'\n'+'\n'.join(path.read_text(encoding='utf-8',errors='replace').splitlines()[-65:]))
         print(json.dumps(receipt,ensure_ascii=False,indent=2),flush=True)

@@ -10,7 +10,7 @@ import zlib
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-expected = {str(p.relative_to(root / 'game')): hashlib.sha256(p.read_bytes()).hexdigest()
+expected = {p.relative_to(root / 'game').as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in (root / 'game').rglob('*') if p.is_file() and p.suffix in ('.mp3', '.ogg', '.ttf', '.webp', '.png', '.jpg')}
 
 def read_rpa(raw):

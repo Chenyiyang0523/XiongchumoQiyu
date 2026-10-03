@@ -2,6 +2,7 @@
 from urllib.parse import urlparse
 from service.anthropic_provider import ClaudeSettingsProvider
 from service.provider import Provider, ModelError, SYSTEM
+from service.prompts import LIVE_SYSTEM
 
 
 class LocalGLMProvider(ClaudeSettingsProvider):
@@ -15,7 +16,7 @@ class LocalGLMProvider(ClaudeSettingsProvider):
             raise ModelError('glm-local requires a verified BigModel Claude Code endpoint')
         self.endpoint='https://open.bigmodel.cn/api/coding/paas/v4/chat/completions'
         self.extra_payload={'thinking':{'type':'disabled'}}
-        self.system=SYSTEM+'\n本次输出字段必须以请求schema为准。context.intention_protocol=true时只填简明意图字段，禁止输出底层effects/illustration/conditions等封装。所有必填字段都须出现，不能在字符串内使用未转义的双引号；人物对话使用中文引号。'
+        self.system=LIVE_SYSTEM
 
     def call(self,stage,context,schema,record):
         def measured(metric):

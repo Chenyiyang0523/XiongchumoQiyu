@@ -4,6 +4,7 @@ The model writes story-specific facts and consequences. Identity envelopes, effe
 syntax and display asset bindings are deterministic; the reducer remains authority.
 """
 from copy import deepcopy
+from typing import Literal
 from pydantic import Field
 from service.models import Contract, Ending, TraitUse, Arc, Verb
 
@@ -20,7 +21,7 @@ class ModelItem(Contract):
     name:str
     asset:str
     owner:str
-    recipe:list[str]=Field(default_factory=list)
+    recipe:list[str]=Field(default_factory=list,description='制作原料的已声明item ID，绝不是prop素材ID；仅owner=unmade的产物填写')
 
 class ModelTask(Contract):
     id:str
@@ -41,7 +42,7 @@ class ModelBlueprint(Contract):
     clues:dict[str,str]
     items:list[ModelItem]=Field(default_factory=list)
     tasks:list[ModelTask]
-    locations:dict[str,str]=Field(default_factory=dict)
+    locations:dict[str,str]=Field(default_factory=dict,description='人物ID到场景ID，省略时人物都在scene；不是场景到中文名称')
     initial_knowledge:dict[str,list[str]]=Field(default_factory=dict)
     resources:dict[str,int]=Field(default_factory=lambda:{'time':24,'materials':12})
     promises:dict[str,bool]=Field(default_factory=dict)
@@ -53,7 +54,7 @@ class ModelAction(Contract):
     id:str
     label:str
     verb:Verb
-    target:str
+    target:str=Field(description='observe取物时可指可及item；use/combine只能指已属于player的item；ask/negotiate指在场人物；allocate指资源')
     feedback:str
     learn:list[str]=Field(default_factory=list)
     move:dict[str,str]=Field(default_factory=dict)
@@ -66,11 +67,11 @@ class ModelAction(Contract):
     promises:dict[str,bool]=Field(default_factory=dict)
     inputs:list[str]=Field(default_factory=list)
     trait:TraitUse|None=None
-    hotspot:str|None=None
+    hotspot:str|None=Field(default=None,description='画面page.items中一个已声明的item ID；没有对应道具时省略，不写中文描述')
 
 class ModelInteraction(Contract):
     id:str
-    kind:str
+    kind:Literal['observe','evidence','items','dialogue','allocation']
     instruction:str
     actions:list[ModelAction]
     order:list[str]=Field(default_factory=list)
@@ -84,6 +85,7 @@ class ModelPage(Contract):
     items:list[str]=Field(default_factory=list,description='画面出现的物品ID，必须存在且可及')
     interactions:list[ModelInteraction]
     callbacks:list[str]=Field(default_factory=list)
+    key_art:str|None=None
 
 class ModelOpening(Contract):
     blueprint:ModelBlueprint
@@ -130,19 +132,27 @@ def blueprint(value,settings,selected):
         'quests':[task(t) for t in value['tasks']]}
 
 def action(value,state):
+    def character_id(key):
+        if key in state['characters']:return key
+        found=[cid for cid,c in state['characters'].items() if c['name']==key]
+        if len(found)==1:return found[0]
+        raise ValueError('unknown or ambiguous character reference')
     changes=[]
     changes += [{'op':'learn','target':k,'value':True} for k in value['learn']]
-    changes += [{'op':'move','target':k,'value':v} for k,v in value['move'].items()]
+    changes += [{'op':'move','target':character_id(k),'value':v} for k,v in value['move'].items()]
     changes += [{'op':'transfer','target':k,'value':'player'} for k in value['take']]
-    changes += [{'op':'transfer','target':k,'value':v} for k,v in value['give'].items()]
+    changes += [{'op':'transfer','target':k,'value':character_id(v)} for k,v in value['give'].items()]
     changes += [{'op':'consume','target':k,'value':True} for k in value['consume']]
     changes += [{'op':'craft','target':k,'value':True} for k in value['craft']]
     if any(type(v)!=int or v<=0 for v in value['spend'].values()):raise ValueError('spend amounts must be positive integers')
     changes += [{'op':'resource','target':k,'value':-v} for k,v in value['spend'].items()]
-    changes += [{'op':'relationship','target':k,'value':v} for k,v in value['relationships'].items()]
+    changes += [{'op':'relationship','target':character_id(k),'value':v} for k,v in value['relationships'].items()]
     changes += [{'op':'promise','target':k,'value':v} for k,v in value['promises'].items()]
     result={k:value[k] for k in ['id','label','verb','target','feedback','inputs']}
-    result.update(effects=changes,prerequisites=[],alternatives=[],trait_use=value['trait'])
+    trait=deepcopy(value['trait'])
+    if trait:trait['character']=character_id(trait['character'])
+    if value['verb'] in {'ask','negotiate'}:result['target']=character_id(result['target'])
+    result.update(effects=changes,prerequisites=[],alternatives=[],trait_use=trait)
     if value['hotspot']:
         target=value['hotspot']
         result['hotspot']=state['items'][target]['asset'] if target in state['items'] else target
@@ -168,7 +178,7 @@ def page(value,state,manifest):
             {'actions':[action(a,state) for a in inter['actions']]})
     return {k:deepcopy(value[k]) for k in ['id','title','text','callbacks']}|{
         'schema_version':2,'choices':[], 'illustration':{'scene':state['location'],'characters':characters,
-            'props':list(dict.fromkeys(state['items'][i]['asset'] for i in value['items'])),'key_art':None},
+            'props':list(dict.fromkeys(state['items'][i]['asset'] for i in value['items'])),'key_art':value['key_art']},
         'interactions':interactions}
 
 def turn(value,source,request,manifest):

@@ -48,10 +48,11 @@ class Pipeline:
 
     def process(self, job):
         calls = 0
+        last_wire_answer = None
         request = json.loads(job['request'])
         source = self.store.story(job['story']) if job['kind'] == 'turn' else None
         def invoke(stage, context, model):
-            nonlocal calls
+            nonlocal calls, last_wire_answer
             if calls >= 4:
                 raise BudgetExceeded('per-attempt call limit reached')
             total = self.store.usage(job['story'] or job['id'], job['id'] if job['kind'] == 'create' else None)
@@ -88,6 +89,8 @@ class Pipeline:
                 model_context['intention_protocol']=True
                 model_context['output_notes']='本次使用简明意图协议，不输出effects/prerequisites/illustration/state_snapshot等底层字段。learn填写线索ID数组，take填写可及物品ID数组，give是物品ID到接收者ID，spend是资源ID到正数。profiles的键必须使用role_ids给出的ID。tasks用knowledge线索ID数组、owners物品ID到目标主人、relationships伙伴ID到最低值；不要输出conditions。page.characters是人物ID到表情名，page.items是物品ID列表。反馈、trait、hotspot都在action里；不要放在interaction里。必须同时输出blueprint与page，不能漏掉page。所有生成内容仍须严格符合本次工具schema。'
             answer=self.provider.call(stage,model_context,wire_model.model_json_schema(),lambda metric:self.store.metric(job['id'],metric,metric_index))
+            if stage in {'setup','setup_repair','proposal','repair'}:
+                last_wire_answer = answer
             if intent and wire_model!=model:
                 answer=wire_model.model_validate(answer).model_dump()
                 if stage in {'setup','setup_repair'}:
@@ -119,7 +122,7 @@ class Pipeline:
                 for attempt in range(2 if combined else 1):
                     try:
                         if combined:
-                            setup=invoke('setup' if not attempt else 'setup_repair', setup_context if not attempt else {**setup_context,'previous':setup if 'setup' in locals() else None,'issues':errors},StoryOpening)
+                            setup=invoke('setup' if not attempt else 'setup_repair', setup_context if not attempt else {**setup_context,'previous':last_wire_answer,'issues':errors},StoryOpening)
                             b,page=setup['blueprint'],setup['page']
                         else:
                             b=invoke('blueprint',setup_context,StoryBlueprint)
@@ -177,7 +180,7 @@ class Pipeline:
                 errors = []
                 for attempt in range(2):
                     try:
-                        proposal = invoke('proposal' if attempt == 0 else 'repair', context if attempt == 0 else {**context, 'previous': proposal if 'proposal' in locals() else None, 'issues': errors}, TurnProposal)
+                        proposal = invoke('proposal' if attempt == 0 else 'repair', context if attempt == 0 else {**context, 'previous': last_wire_answer if getattr(self.provider,'intention_protocol',False) else proposal if 'proposal' in locals() else None, 'issues': errors}, TurnProposal)
                         if request.get('confirmed_understanding') and request.get('text') and proposal.get('resolved_action') != request['confirmed_understanding']:
                             raise RuleError('confirmed understanding must be executed exactly')
                         story = accept_proposal(source, request, proposal)
