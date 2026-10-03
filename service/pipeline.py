@@ -3,13 +3,14 @@ import os
 import secrets
 import threading
 from pydantic import ValidationError
+from copy import deepcopy
 from pathlib import Path
 from service.models import Concepts, StoryBlueprint, StoryOpening, BookPage, TurnProposal, Review, StoryRecord
 from service.provider import BudgetExceeded, ModelError
 from service.context import for_generation, review_preview
 from service.prompts import compact_context
 from service import model_protocol
-from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError
+from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError, effects
 
 MANIFEST_PATH = Path(__file__).resolve().parents[1] / 'game/storybook/asset_manifest.json'
 
@@ -18,10 +19,17 @@ def page_diagnostics(page, state, blueprint, manifest, event_ids, settings):
     errors=[]
     if not page:return errors
     for inter in page['interactions']:
+        outcomes={}
         for action in inter['actions']:
             trial={**page,'interactions':[{**inter,'actions':[action],'order':[],'order_action':None}]}
             try:validate_page(trial,state,blueprint,manifest,event_ids,settings['assets'],settings['age'])
             except ValueError as exc:errors.append(action['id']+': '+str(exc))
+            else:
+                after=deepcopy(state);effects(after,action,blueprint,manifest,'diagnostic')
+                signature=json.dumps({k:v for k,v in after.items() if k!='provenance'},sort_keys=True)
+                if signature in outcomes:
+                    errors.append(outcomes[signature]+' and '+action['id']+': identical state outcomes; different wording/trait explanation is not a consequence. Change an actual knowledge/item/resource/relationship outcome.')
+                else:outcomes[signature]=action['id']
     return list(dict.fromkeys(errors))[:12]
 
 def fingerprint(story):
@@ -110,6 +118,24 @@ class Pipeline:
                 wire_schema['$defs']['ModelPage']['properties']['text'].update(
                     minLength=60 if age=='6-8' else 100,maxLength=120 if age=='6-8' else 180)
                 model_context['page_text_target']='正文目标80–100字，上限120字。' if age=='6-8' else '正文目标130–160字，上限180字。'
+                defs=wire_schema['$defs']
+                ids=list(model_context.get('role_ids') or (context.get('post_action_state') or {}).get('characters',{}))
+                defs['ModelPage']['properties']['characters']['propertyNames']={'enum':ids}
+                defs['TraitUse']['properties']['character']['enum']=ids
+                if wire_model==model_protocol.ModelOpening:
+                    defs['ModelBlueprint']['properties']['profiles']['propertyNames']={'enum':ids}
+                elif not request.get('text'):
+                    facts=context['post_action_state'];props=defs['ModelAction']['properties']
+                    props['learn']['items']['enum']=list(context['story']['blueprint']['clues'])
+                    for field in ['take','consume','craft','inputs']:
+                        if facts['items']:props[field]['items']['enum']=list(facts['items'])
+                        else:props[field]['maxItems']=0
+                    for field,keys in [('give',facts['items']),('promises',facts['promises']),('spend',facts['resources']),('relationships',facts['relationships'])]:
+                        if keys:props[field]['propertyNames']={'enum':list(keys)}
+                        else:props[field]['maxProperties']=0
+                    if facts['items']:defs['ModelPage']['properties']['items']['items']['enum']=list(facts['items'])
+                    else:defs['ModelPage']['properties']['items']['maxItems']=0
+                    model_context['output_notes']+='禁止新增未声明的承诺ID。不要把文案差异或trait说明当作状态后果；两种办法的learn/take/give/spend/relationships至少一项真实不同。'
             answer=self.provider.call(stage,model_context,wire_schema,lambda metric:self.store.metric(job['id'],metric,metric_index))
             if stage in {'setup','setup_repair','proposal','repair'}:
                 last_wire_answer = answer

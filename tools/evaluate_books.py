@@ -5,6 +5,7 @@ import csv
 import json
 import sys
 import time
+from copy import deepcopy
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 ROOT=Path(__file__).resolve().parents[1]
@@ -14,7 +15,7 @@ from service.storage import Store
 from service.pipeline import Pipeline
 from service.provider import create_provider
 from service.mock import MockProvider
-from storybook.engine import replay, apply_operations, VERB_KINDS, matches
+from storybook.engine import replay, apply_operations, VERB_KINDS, matches, validate_page, effects
 from storybook.export import export_html
 
 NEW_THEMES={
@@ -66,14 +67,39 @@ def choose_operation(story, seed):
     high=max(s for s,_ in options);best=[o for s,o in options if s==high]
     return best[(seed+story['state']['version'])%len(best)]
 
-def execute(pipeline,account,kind,request,sid=None,retry_failed=False):
+def choose_operations(story,seed):
+    chosen=[choose_operation(story,seed)]
+    used_groups={i['id'] for i in story['pages'][-1]['interactions'] if any(a['id']==chosen[0]['action_id'] for a in i['actions'])}
+    for inter in story['pages'][-1]['interactions']:
+        if inter['id'] in used_groups:continue
+        # Exactly one alternative per interaction, matching the desktop staging UI.
+        candidates=[]
+        for index,action in enumerate(inter['actions']):
+            operation=op({'interactions':[inter]},index)
+            try:state,_=apply_operations(story,chosen+[operation])
+            except ValueError:continue
+            gain=len(set(state['knowledge'])-set(story['state']['knowledge']))
+            gain+=sum(state['quests'][k]=='complete' and v!='complete' for k,v in story['state']['quests'].items())*8
+            candidates.append((gain,operation))
+        if candidates:
+            high=max(g for g,_ in candidates);best=[o for g,o in candidates if g==high]
+            chosen.append(best[(seed+story['state']['version'])%len(best)])
+    return chosen
+
+def execute(pipeline,account,kind,request,sid=None,retry_failed=False,attempts=1):
     jid=pipeline.store.enqueue(account,kind,request,sid)
     job=pipeline.store.job(jid)
     if job['phase']=='failed' and retry_failed:
         pipeline.store.retry(jid,account);job=pipeline.store.job(jid)
-    if job['phase'] not in {'complete','failed'}:
-        raw=dict(job);raw['request']=json.dumps(job['request']);raw['metrics']=json.dumps(job['metrics'])
-        pipeline.process(raw)
+    for attempt in range(attempts):
+        if job['phase'] not in {'complete','failed'}:
+            raw=dict(job);raw['request']=json.dumps(job['request']);raw['metrics']=json.dumps(job['metrics'])
+            pipeline.process(raw)
+        job=pipeline.store.job(jid)
+        if job['phase']=='complete':break
+        if attempt+1<attempts and not any(term in (job['error'] or '') for term in ['budget','limit reached']):
+            pipeline.store.retry(jid,account);job=pipeline.store.job(jid)
+        else:break
     job=pipeline.store.job(jid)
     if job['phase']!='complete':raise ValueError(job['error'])
     if job['result'].get('clarification'):raise ValueError('scripted action unexpectedly requires clarification')
@@ -81,14 +107,31 @@ def execute(pipeline,account,kind,request,sid=None,retry_failed=False):
 
 def checks(story):
     replay(story)
+    counterfactuals=0
+    for page in story['pages']:
+        snapshot=page['state_snapshot'];events=[e for e in story['events'] if e['turn']<=snapshot['version']]
+        b=deepcopy(story.get('initial_blueprint',story['blueprint']))
+        for event in events:
+            if event.get('expansion'):
+                b['items'].extend(event['expansion']['items']);b['clues'].update(event['expansion']['clues']);b['quests'].extend(event['expansion']['quests'])
+        replay({**story,'events':events,'blueprint':b,'state':snapshot})
+        validate_page(page,snapshot,b,story['manifest'],[e['id'] for e in events],story['settings']['assets'],story['settings']['age'],events)
+        for inter in page['interactions']:
+            outcomes=set()
+            for action in inter['actions']:
+                state=deepcopy(snapshot);effects(state,action,b,story['manifest'],'counterfactual')
+                signature=json.dumps({k:v for k,v in state.items() if k not in {'provenance','version'}},sort_keys=True)
+                if signature in outcomes:raise ValueError('identical counterfactual: '+action['id'])
+                outcomes.add(signature);counterfactuals+=1
     used={e['interaction_kind'] for e in story['events'] if e.get('interaction_kind')}
     for page in story['pages']:
         chosen={c['action_id'] for c in page['choices']}
         used.update(i['kind'] for i in page['interactions'] if any(a['id'] in chosen for a in i['actions']))
     actual={VERB_KINDS[e['verb']] for e in story['events'] if e.get('interaction_kind')}
-    return {'completed':bool(story['ending']),'interaction_types':sorted(used),'action_types':sorted(actual),
+    return {'completed':bool(story['ending']),'interaction_types':sorted(actual),'widget_types':sorted(used),'action_types':sorted(actual),
             'callback_pages':sum(bool(p['callbacks']) for p in story['pages']),
-            'ledger_valid':True,'human_checked':False,'critical_contradictions':None,
+            'ledger_valid':True,'page_snapshots_valid':True,'counterfactual_actions':counterfactuals,
+            'counterfactuals_valid':True,'human_checked':False,'critical_contradictions':None,
             'omitted_tasks':None,'image_object_conflicts':None}
 
 def main():
@@ -99,6 +142,7 @@ def main():
     parser.add_argument('--cases',default='',help='Comma-separated case IDs; empty selects the full corpus')
     parser.add_argument('--workers',type=int,choices=[1,2,3,4],default=1)
     parser.add_argument('--retry-failed',action='store_true',help='Explicitly retry a previously failed, uncommitted request once')
+    parser.add_argument('--attempts',type=int,choices=[1,2,3],default=1,help='Bounded recovery attempts; every failed call remains in book usage')
     args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=True)
     cases=corpus()
@@ -121,11 +165,14 @@ def main():
             settings={k:case[k] for k in ['theme','character','age','arc']}
             settings.update(pages=args.pages,assets=list(pipeline.manifest),parent_mode=True)
             req=CreateRequest(settings=settings,idempotency_key='evaluation-'+case['id']).model_dump()
-            story=execute(pipeline,'evaluation','create',req,retry_failed=args.retry_failed)
+            story=execute(pipeline,'evaluation','create',req,retry_failed=args.retry_failed,attempts=args.attempts)
             while story['status']=='active':
                 req=SubmitRequest(version=story['state']['version'],idempotency_key='evaluation-'+case['id']+'-turn-'+str(story['state']['version']),
-                                  operations=[choose_operation(story,int(case['id'].split('.')[1]))],reason='我们先核对事实，再和伙伴讨论。').model_dump()
-                story=execute(pipeline,'evaluation','turn',req,story['id'],retry_failed=args.retry_failed)
+                                  operations=choose_operations(story,int(case['id'].split('.')[1])),reason='我们先核对事实，再和伙伴讨论。').model_dump()
+                with store.db() as db:
+                    previous_request=db.execute('SELECT request FROM jobs WHERE account=? AND ikey=?',('evaluation',req['idempotency_key'])).fetchone()
+                if previous_request:req=json.loads(previous_request[0])
+                story=execute(pipeline,'evaluation','turn',req,story['id'],retry_failed=args.retry_failed,attempts=args.attempts)
             result=checks(story)
             (args.output/(case['id']+'.json')).write_text(json.dumps(story,ensure_ascii=False,indent=2), encoding='utf-8')
             export_html(story,args.output/(case['id']+'.html'),lambda p:(ROOT/'game'/p).read_bytes())

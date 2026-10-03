@@ -173,6 +173,10 @@ def page(value,state,manifest):
     for cid,mood in value['characters'].items():
         cid=character_reference(cid,state)
         if cid in characters:raise ValueError('duplicate pictured character identity')
+        # Rendering follows confirmed presence, as it follows client layout.
+        # Omitting an off-scene decoration cannot move an entity. The semantic
+        # reviewer still rejects prose that claims that absent entity acted here.
+        if state['characters'][cid]['location']!=state['location']:continue
         if mood in manifest:
             if manifest[mood].get('character')!=state['characters'][cid]['name']:
                 raise ValueError('wrong character sprite')
@@ -188,13 +192,15 @@ def page(value,state,manifest):
         characters[cid]=aid
     for iid in value['items']:
         if iid not in state['items']:raise ValueError('unknown pictured item')
+    visible=[iid for iid in value['items'] if state['items'][iid]['owner'] in {'player',state['location']}
+             or state['items'][iid]['owner'] in state['characters'] and state['characters'][state['items'][iid]['owner']]['location']==state['location']]
     interactions=[]
     for inter in value['interactions']:
         interactions.append({k:deepcopy(inter[k]) for k in ['id','kind','instruction','order','order_action']}|
             {'actions':[action(a,state) for a in inter['actions']]})
     return {k:deepcopy(value[k]) for k in ['id','title','text','callbacks']}|{
         'schema_version':2,'choices':[], 'illustration':{'scene':state['location'],'characters':characters,
-            'props':list(dict.fromkeys(state['items'][i]['asset'] for i in value['items'])),'key_art':value['key_art']},
+            'props':list(dict.fromkeys(state['items'][i]['asset'] for i in visible)),'key_art':value['key_art']},
         'interactions':interactions}
 
 def turn(value,source,request,manifest):

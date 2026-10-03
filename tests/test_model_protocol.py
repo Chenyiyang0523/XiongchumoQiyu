@@ -66,7 +66,8 @@ def test_asset_binding_cannot_invent_expression_or_unavailable_item():
     with pytest.raises(ValueError):wire.page(authored,state,m)
     authored=opening(state,m);state['items']['item.footprint']['owner']='consumed'
     p=BookPage.model_validate(wire.page(authored,state,m)).model_dump()
-    with pytest.raises(RuleError,match='inaccessible'):validate_page(p,state,b,m,[],list(m),'6-8')
+    assert 'prop.footprint' not in p['illustration']['props']
+    with pytest.raises(RuleError,match='hotspot object absent'):validate_page(p,state,b,m,[],list(m),'6-8')
 
 
 def test_task_owner_requirement_cannot_be_replaced_by_finding_a_clue():
