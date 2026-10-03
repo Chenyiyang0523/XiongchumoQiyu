@@ -87,6 +87,9 @@ def compact_context(stage, raw):
             'present_characters':[k for k,v in state.get('characters',{}).items() if v['location']==state.get('location')],
             'interaction_types_used':context.get('closure_readiness',{}).get('interaction_types_used',[])}
         constraints=context['next_action_constraints']
+        used=set(constraints['interaction_types_used'])
+        actual_kinds={'observe':['observe','move'],'dialogue':['ask','negotiate'],'items':['use','combine'],'allocation':['allocate'],'evidence':['reason']}
+        constraints['verbs_for_missing_interaction_types']={kind:verbs for kind,verbs in actual_kinds.items() if kind not in used}
         constraints['legal_targets']={'use':constraints['owned_items'],
             'ask_or_negotiate':[cid for cid in constraints['present_characters'] if cid!='player'],
             'allocate':[key for key,amount in state.get('resources',{}).items() if amount>0]}
@@ -95,6 +98,7 @@ def compact_context(stage, raw):
             'missing_materials':[{'id':iid,'owner':state['items'][iid]['owner']} for iid in item.get('recipe',[]) if state['items'][iid]['owner']!='player']}
             for key,item in state.get('items',{}).items() if item['owner']=='unmade']
         context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target可为产物或原料ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
+        context['contract_notes']+='\n有效互动类型依据实际action.verb判定，不依据卡片kind标签。verbs_for_missing_interaction_types列出尚未体验的类型和对应verb；收束时不足三类，应给至少一个可执行且有真实后果的新verb。只把kind改为allocation而action仍是ask，不会增加资源互动；allocate须以资源ID为target并spend真实时间或材料，reason须利用已有线索形成新判断或有依据的取舍。不要用卡片改名假装完成第三类互动。'
         context['contract_notes']+='\n物品交付支持give={物品ID:在场人物ID或当前场景ID}。修好的桥、布置好的舞台等实际产物可以放在当前场景，不能只learn“已修好”代替交付，也不能隔空放在远处。可先take材料，再move到明确地点，最后give给该地点或确实在场的接收者；承诺标记最后验证。use仍须开始时已拥有对象，未拥有时先用observe或move取物，或用另一卡片先拿再用。'
         context['contract_notes']+='\nclosure_readiness.physical_prerequisite_hints只列事实所要求的物理前提，不规定剧情：核心物品已可及就让玩家获得；制作缺料则去真实材料所在地；产物已拥有则送往真实接收者或布置地点。不要用一个无关支线制作替代尚未满足的核心条件。'
         context['contract_notes']+='\n新故事的承诺绑定promise_conditions。只有这些实际事实满足后才能把promises标为true；可在同一动作先交付物品，再标记兑现。unfulfilled_promises.facts_satisfied=true表示实事已做，只差通过具体回应确认兑现；不要再重复转移物品。'
