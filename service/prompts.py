@@ -17,7 +17,7 @@ GUIDE = '''所有schema必填字段都必须出现，不添加schema外字段。
 人物knowledge只填clues字典的键，绝不能填知识原文。knowledge条件value=true，owner条件value是人物/场景ID。
 只能引用asset_catalog列出的素材ID；没有放大镜素材就用已存在的道具，不能编造magnifier或placeholder。
 失物仍是存在的物品：owner是实际所在的合法场景，不可用unmade假装失踪。制作产物才用unmade，recipe列真实item ID且至少两个。
-recipe中的每件原料必须单独声明在items中，不能直接写prop素材ID。拿起地上物品用observe+take；use/combine只能操作player已拥有的物品。hotspot必须是page.items里一个物品ID，没有实物道具的声音、洞穴等观察不要填写hotspot。
+recipe中的每件原料必须单独声明在items中，不能直接写prop素材ID。拿起地上物品用observe+take；use只能操作player已拥有的物品；combine可以指要制作的产物，inputs必须是已拥有的全部原料。hotspot填写一个可及物品ID，没有实物道具的声音、洞穴等观察不要填写hotspot。
 找回物品的必要任务必须检查owner=player或指定伙伴，不能仅靠learn一条“找到了”的线索冒充完成。
 当前状态中已拥有的知识不能再作为唯一动作后果。必要任务不要依赖一个唯一选项；提供可补救的替代路径。
 叙述只能写已经确认或本次操作建立的事实，不能先写物品已转移/任务已完成，再让玩家选择是否做。
@@ -86,12 +86,13 @@ def compact_context(stage, raw):
         constraints['legal_targets']={'use':constraints['owned_items'],
             'ask_or_negotiate':[cid for cid in constraints['present_characters'] if cid!='player'],
             'allocate':[key for key,amount in state.get('resources',{}).items() if amount>0]}
-        constraints['recipes']=[{'craft':key,'target_must_be_one_of':item.get('recipe',[]),
+        constraints['recipes']=[{'craft':key,'target_must_be_one_of':[key]+item.get('recipe',[]),
             'inputs_must_equal':item.get('recipe',[]),
             'missing_materials':[{'id':iid,'owner':state['items'][iid]['owner']} for iid in item.get('recipe',[]) if state['items'][iid]['owner']!='player']}
             for key,item in state.get('items',{}).items() if item['owner']=='unmade']
-        context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target必须是原料ID而非未制作的产物ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
+        context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target可为产物或原料ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
+        context['contract_notes']+='\n最后一页仍可执行操作。closure_readiness.pages_remaining=0时禁止增加页面：满足收尾条件则page=null并返回ending；仍欠任务/承诺/有效互动则page=null、ending=null，程序记录最后行动并保存待续，不能编造任务完成。'
         if context.get('pace')=='resolve':
             context['contract_notes']+='\n当前进入收束：closure_readiness.unmet_conditions与unfulfilled_promises列出仍欠的具体事实。每页至少一种办法实质推进这些条件（获取目标知识/物品、拿到原料、走近持有者、协商到要求的关系值、真实兑现承诺），程序会拒绝只含无关线索或刷无关关系的页面。先解决必要条件与承诺，再补第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
     if stage=='review':

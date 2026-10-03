@@ -46,6 +46,17 @@ def test_mutually_exclusive_options_cannot_unlock_each_other(app):
     with pytest.raises(RuleError,match='item not owned'):
         validate_page(page,story['state'],story['blueprint'],story['manifest'],[],story['settings']['assets'],'6-8')
 
+
+def test_combination_can_target_its_product_but_cannot_skip_or_reuse_materials(app):
+    story=workshop(app);action=story['pages'][0]['interactions'][1]['actions'][0]
+    action['target']='item.flag'
+    make={'action_id':'action.make','items':['item.wood','item.string']}
+    with pytest.raises(RuleError,match='input item unavailable'):apply_operations(story,[make])
+    after,_=apply_operations(story,[{'action_id':'action.collect'},make])
+    assert after['items']['item.flag']['owner']=='player'
+    assert after['items']['item.wood']['owner']==after['items']['item.string']['owner']=='consumed'
+    with pytest.raises(RuleError):apply_operations(story,[{'action_id':'action.collect'},make,make])
+
 @pytest.mark.parametrize('condition',[
     {'kind':'owner','key':'item.map','value':'unknown-owner'},
     {'kind':'relationship','key':'buddy','value':20,'comparison':'gte'},

@@ -55,10 +55,10 @@ class ModelAction(Contract):
     id:str
     label:str
     verb:Verb
-    target:str=Field(description='observe取物时可指可及item；use/combine只能指已属于player的item；ask/negotiate指在场人物；allocate指资源')
+    target:str=Field(description='observe取物时指可及item；use指已拥有物品；combine指配方产物或原料，但inputs原料必须已拥有或由本页另一卡片收集；ask/negotiate指在场人物；allocate指资源')
     feedback:str
     learn:list[str]=Field(default_factory=list)
-    move:dict[str,str]=Field(default_factory=dict)
+    move:dict[str,str]=Field(default_factory=dict,description='人物ID到场景ID，如 {player: scene.bridge}；键不能是场景或中文名称')
     take:list[str]=Field(default_factory=list)
     give:dict[str,str]=Field(default_factory=dict)
     consume:list[str]=Field(default_factory=list)
@@ -96,7 +96,7 @@ class ModelEvent(Contract):
     id:str=Field(description='新NPC事件的唯一ID，不能重复action_events中已执行的玩家事件')
     cause:list[str]=Field(description='已存在的event ID数组，不能填page、action ID或中文')
     description:str
-    move:dict[str,str]=Field(default_factory=dict)
+    move:dict[str,str]=Field(default_factory=dict,description='已有NPC ID到场景ID，不能用场景作键或移动player')
     learn:dict[str,list[str]]=Field(default_factory=dict,description='已有NPC ID到线索ID数组，禁止修改player认知')
 
 class ModelExpansion(Contract):

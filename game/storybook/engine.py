@@ -103,7 +103,7 @@ def condition_value(s, c, b):
         return key in s['characters'][c.get('actor', 'player')]['knowledge']
     table = {'owner': 'items', 'location': 'characters', 'resource': 'resources',
              'relationship': 'relationships', 'quest': 'quests', 'promise': 'promises'}.get(kind)
-    require(table is not None and key in s[table], 'unknown condition key')
+    require(table is not None and key in s[table], 'unknown condition key: '+kind+' '+key)
     v = s[table][key]
     return v['owner'] if kind == 'owner' else v['location'] if kind == 'location' else v
 
@@ -131,8 +131,11 @@ def effects(s, action, b, manifest, event_id):
         require(matches(s, c, b), 'action prerequisites not met')
     if action['verb'] in {'ask', 'negotiate'}:
         require(target in s['characters'] and s['characters'][target]['location'] == s['location'], 'character absent')
-    if action['verb'] in {'use', 'combine'}:
+    if action['verb']=='use':
         require(target in s['items'] and s['items'][target]['owner'] == 'player', 'item not owned')
+    if action['verb']=='combine':
+        outputs={e['target'] for e in action['effects'] if e['op']=='craft'}
+        require(target in s['items'] and (s['items'][target]['owner']=='player' or target in outputs and s['items'][target]['owner']=='unmade'), 'item not owned or a declared craft output')
     if action['verb'] == 'allocate':
         expenses=[e for e in action['effects'] if e['op']=='resource']
         require(target in s['resources'] and len(expenses)==1 and expenses[0]['target']==target and type(expenses[0]['value']) is int and expenses[0]['value']<0, 'allocation must specify one actual resource expense')
@@ -164,7 +167,7 @@ def effects(s, action, b, manifest, event_id):
             require(action['verb'] == 'combine' and key in s['items'] and s['items'][key]['owner'] == 'unmade' and value is True, 'invalid crafting')
             ingredients = s['items'][key].get('recipe', [])
             require(len(ingredients) >= 2 and all(s['items'][i]['owner'] == actor for i in ingredients), 'craft ingredients missing')
-            require(set(action.get('inputs', []))==set(ingredients) and action['target'] in ingredients,'craft recipe differs from selected inputs')
+            require(set(action.get('inputs', []))==set(ingredients) and action['target'] in set(ingredients)|{key},'craft recipe differs from selected inputs')
             for ingredient in ingredients:
                 s['items'][ingredient]['owner'] = 'consumed'
                 s['provenance']['item:' + ingredient] = event_id
@@ -412,13 +415,22 @@ def accept_proposal(story, request, proposal):
         result['ending'] = ending
         result['status'] = 'complete'
     else:
+        if len(story['pages']) >= story['settings']['pages']+2:
+            require(proposal['page'] is None, 'page allowance reached: resolve the last action without adding a page')
+            ready=can_close(state,result['blueprint']) and len(kinds)>=3 and sum(bool(p['callbacks']) for p in story['pages'])>=2 and any(e.get('trait_use') for e in result['events'])
+            require(not ready,'closure is ready: an evidenced ending is required')
+            result['status']='continued'
+            return result
         validate_page(proposal['page'], state, result['blueprint'], story['manifest'], seen,
                       story['settings']['assets'], story['settings']['age'], result['events'])
         require(proposal['page']['id'] not in {p['id'] for p in story['pages']}, 'duplicate page')
         accepted_page = deepcopy(proposal['page'])
         accepted_page['state_snapshot'] = deepcopy(state)
         result['pages'].append(accepted_page)
-        result['status'] = 'continued' if len(result['pages']) >= story['settings']['pages'] + 2 else 'active'
+        # The last allowed page still has a playable interaction. The next
+        # submission either closes the book or saves its confirmed result as
+        # continued, without creating a fifteenth page for a twelve-page plan.
+        result['status'] = 'active'
     return result
 
 def replay(story):

@@ -128,8 +128,19 @@ class Pipeline:
                 ids=list(model_context.get('role_ids') or (context.get('post_action_state') or {}).get('characters',{}))
                 defs['ModelPage']['properties']['characters']['propertyNames']={'enum':ids}
                 defs['TraitUse']['properties']['character']['enum']=ids
+                scenes=model_context['asset_catalog']['scenes']
+                props=defs['ModelAction']['properties']
+                props['move']['propertyNames']={'enum':ids}
+                props['move']['additionalProperties']['enum']=scenes
+                props['give']['additionalProperties']['enum']=ids
+                defs['ModelAction'].setdefault('allOf',[]).append({
+                    'if':{'properties':{'verb':{'enum':['ask','negotiate']}}},
+                    'then':{'properties':{'target':{'enum':ids}}}})
                 if wire_model==model_protocol.ModelOpening:
                     defs['ModelBlueprint']['properties']['profiles']['propertyNames']={'enum':ids}
+                    defs['ModelBlueprint']['properties']['scene']['enum']=scenes
+                    defs['ModelBlueprint']['properties']['locations']['propertyNames']={'enum':ids}
+                    defs['ModelBlueprint']['properties']['locations']['additionalProperties']['enum']=scenes
                     defs['ModelTask']['properties']['relationships']['propertyNames']={'enum':[cid for cid in ids if cid!='player']}
                     defs['ModelTask']['properties']['owners']['additionalProperties']['enum']=ids+model_context['asset_catalog']['scenes']
                 elif not request.get('text'):
@@ -143,6 +154,12 @@ class Pipeline:
                         else:props[field]['maxProperties']=0
                     if facts['items']:defs['ModelPage']['properties']['items']['items']['enum']=list(facts['items'])
                     else:defs['ModelPage']['properties']['items']['maxItems']=0
+                    props['hotspot']['enum']=list(facts['items'])+[None]
+                if wire_model==model_protocol.ModelTurn:
+                    npc_ids=[cid for cid in ids if cid!='player']
+                    defs['ModelEvent']['properties']['move']['propertyNames']={'enum':npc_ids}
+                    defs['ModelEvent']['properties']['move']['additionalProperties']['enum']=scenes
+                    defs['ModelEvent']['properties']['learn']['propertyNames']={'enum':npc_ids}
                     model_context['output_notes']+='禁止新增未声明的承诺ID。不要把文案差异或trait说明当作状态后果；两种办法的learn/take/give/spend/relationships至少一项真实不同。'
             answer=self.provider.call(stage,model_context,wire_schema,lambda metric:self.store.metric(job['id'],metric,metric_index))
             if stage in {'setup','setup_repair','proposal','repair'}:

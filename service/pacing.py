@@ -57,7 +57,7 @@ def progress(before, after, blueprint):
 
 
 def validate_resolution_page(story, context):
-    if story.get('ending'):return
+    if story.get('ending') or story['status']=='continued':return
     if context['closure_readiness']['ending_allowed']:
         raise RuleError('all closure gates are met: return the evidenced ending, not another page')
     # Earlier resolution may legitimately prepare a discussion or spend time
