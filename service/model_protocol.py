@@ -158,7 +158,7 @@ def blueprint(value,settings,selected):
             'knowledge':value['initial_knowledge'].get(cid,[]),**value['profiles'][cid]} for cid,name in mapping.items()],
         'quests':[task(t) for t in value['tasks']]}
 
-def action(value,state):
+def action(value,state,scene_ids=()):
     def character_id(key):
         return character_reference(key,state)
     for iid in dict.fromkeys(value['take']+list(value['give'])+value['consume']+value['inputs']):
@@ -168,7 +168,9 @@ def action(value,state):
     changes += [{'op':'learn','target':k,'value':True} for k in value['learn']]
     changes += [{'op':'transfer','target':k,'value':'player'} for k in value['take']]
     changes += [{'op':'craft','target':k,'value':True} for k in value['craft']]
-    changes += [{'op':'transfer','target':k,'value':v if v==state['location'] else character_id(v)} for k,v in value['give'].items()]
+    # Page cards may first travel, then place an item at the new location.
+    # Compile known scene IDs; the reducer checks the actual enabling position.
+    changes += [{'op':'transfer','target':k,'value':v if v==state['location'] or v in scene_ids else character_id(v)} for k,v in value['give'].items()]
     changes += [{'op':'consume','target':k,'value':True} for k in value['consume']]
     if any(type(v)!=int or v<=0 for v in value['spend'].values()):raise ValueError('spend amounts must be positive integers')
     changes += [{'op':'resource','target':k,'value':-v} for k,v in value['spend'].items()]
@@ -228,7 +230,7 @@ def page(value,state,manifest):
     interactions=[]
     for inter in value['interactions']:
         interactions.append({k:deepcopy(inter[k]) for k in ['id','kind','instruction','order','order_action']}|
-            {'actions':[action(a,state) for a in inter['actions']]})
+            {'actions':[action(a,state,scene_ids={k for k,v in manifest.items() if v['kind']=='scene'}) for a in inter['actions']]})
     return {k:deepcopy(value[k]) for k in ['id','title','text','callbacks']}|{
         'schema_version':2,'choices':[], 'illustration':{'scene':state['location'],'characters':characters,
             'props':list(dict.fromkeys(state['items'][i]['asset'] for i in visible)),'key_art':value['key_art']},

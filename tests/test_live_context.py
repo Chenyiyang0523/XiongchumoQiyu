@@ -44,7 +44,9 @@ def test_glm_uses_supported_reasoning_and_exact_verified_coding_endpoint(tmp_pat
     assert p.model=='glm-5.3' and p.max_tokens==20000
     assert p.payload_options('proposal')['thinking']=={'type':'enabled'}
     assert p.payload_options('review')['reasoning_effort']=='low'
-    assert p.payload_options('repair')['reasoning_effort']=='high'
+    assert p.payload_options('repair')['reasoning_effort']=='low'
+    monkeypatch.setenv('XCMQY_GLM_REPAIR_EFFORT','high')
+    assert LocalGLMProvider().payload_options('repair')['reasoning_effort']=='high'
     assert 'local-private-test' not in json.dumps(p.payload_options('setup'))
 
 

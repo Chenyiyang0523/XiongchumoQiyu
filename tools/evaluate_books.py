@@ -176,6 +176,7 @@ def main():
     pipeline=Pipeline(store,provider)
     sources=sorted([*ROOT.joinpath('service').glob('*.py'),*ROOT.joinpath('game/storybook').glob('*.py'),Path(__file__)])
     metadata={'mode':args.mode,'model':getattr(provider,'model','fixture-v2'),'reasoning_effort':getattr(provider,'reasoning_effort',None),
+              'repair_effort':getattr(provider,'repair_effort',None),
               'started_unix':time.time(),'pages':args.pages,'attempts_per_request':args.attempts,'workers':args.workers,'story_attempt':args.story_attempt,
               'source_sha256':hashlib.sha256(b''.join(p.read_bytes() for p in sources)).hexdigest(),
               'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()}

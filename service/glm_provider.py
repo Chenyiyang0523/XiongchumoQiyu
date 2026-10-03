@@ -20,7 +20,7 @@ class LocalGLMProvider(ClaudeSettingsProvider):
         self.reasoning_effort=os.environ.get('XCMQY_GLM_REASONING_EFFORT','low')
         if self.reasoning_effort not in {'low','high','max'}:
             raise ModelError('GLM reasoning effort must be low, high or max')
-        self.repair_effort=os.environ.get('XCMQY_GLM_REPAIR_EFFORT','high')
+        self.repair_effort=os.environ.get('XCMQY_GLM_REPAIR_EFFORT',self.reasoning_effort)
         if self.repair_effort not in {'low','high','max'}:
             raise ModelError('GLM repair effort must be low, high or max')
         self.max_tokens=int(os.environ.get('XCMQY_MODEL_MAX_TOKENS','20000'))

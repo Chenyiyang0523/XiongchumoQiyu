@@ -6,7 +6,7 @@ import pytest
 
 from service import model_protocol as wire
 from service.models import StoryBlueprint, BookPage, TurnProposal
-from storybook.engine import initial_state, validate_page, effects, RuleError, accept_proposal
+from storybook.engine import initial_state, validate_page, effects, RuleError, accept_proposal, page_action_contexts
 from service.mock import blueprint as fixture_blueprint
 
 
@@ -107,6 +107,29 @@ def test_consumed_item_diagnostic_identifies_the_immutable_instance():
     before=copy.deepcopy(state)
     with pytest.raises(ValueError,match='item already consumed: item.map'):wire.action(action,state)
     assert state==before
+
+
+def test_page_can_travel_before_placing_an_item_but_cannot_place_remotely():
+    b,state,m,*_=world();state['items']['item.map']['owner']='player'
+    authored=opening(state,m)
+    authored['interactions']=[
+        wire.ModelInteraction(id='card.travel',kind='observe',instruction='带地图去小桥',actions=[
+            wire.ModelAction(id='action.travel',label='去小桥',verb='move',target='scene.bridge',
+                move={'player':'scene.bridge'},feedback='带着地图到达小桥。')]).model_dump(),
+        wire.ModelInteraction(id='card.place',kind='items',instruction='把地图铺在桥边',actions=[
+            wire.ModelAction(id='action.place',label='铺地图',verb='use',target='item.map',
+                give={'item.map':'scene.bridge'},feedback='地图铺在桥边。')]).model_dump()]
+    p=BookPage.model_validate(wire.page(authored,state,m)).model_dump()
+    contexts=page_action_contexts(p,state,b,m)
+    enabling=contexts['action.place'][0]
+    assert enabling['location']=='scene.bridge'
+    after=copy.deepcopy(enabling);effects(after,p['interactions'][1]['actions'][0],b,m,'place')
+    assert after['items']['item.map']['owner']=='scene.bridge'
+    with pytest.raises(RuleError,match='invalid recipient'):
+        effects(copy.deepcopy(state),p['interactions'][1]['actions'][0],b,m,'remote')
+    p['interactions']=p['interactions'][1:]
+    with pytest.raises(RuleError,match='invalid recipient'):
+        page_action_contexts(p,state,b,m)
 
 
 def test_promise_flag_cannot_replace_actual_delivery_and_bad_goal_is_rejected():

@@ -64,6 +64,8 @@ def compact_context(stage, raw):
                 char.pop('location',None);char.pop('knowledge',None)
     if context.get('post_action_state'):
         story.pop('state',None)
+    if context.get('relevant_events')==story.get('events'):
+        context.pop('relevant_events',None)
     if stage in {'proposal','repair','review'} and not context.get('request',{}).get('text'):
         for page in story.get('pages',[]):
             page.pop('interactions',None)
