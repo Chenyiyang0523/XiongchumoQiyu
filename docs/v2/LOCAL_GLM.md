@@ -6,7 +6,8 @@ Mac 双击 `tools/run_glm_service.command`。脚本使用项目 Python 环境，
 
 ```sh
 XCMQY_LLM_BACKEND=glm-local XCMQY_LLM_MODEL=glm-5.3 \
-XCMQY_GUARDIAN_CODE='你的私有连接码' XCMQY_MODEL_TIMEOUT=180 \
+XCMQY_GUARDIAN_CODE='你的私有连接码' XCMQY_MODEL_TIMEOUT=240 \
+XCMQY_BOOK_TOKEN_LIMIT=700000 \
 .venv/bin/python -m uvicorn service.app:create_app --factory --host 127.0.0.1 --port 8001
 ```
 
@@ -18,12 +19,14 @@ XCMQY_GUARDIAN_CODE='你的私有连接码' XCMQY_MODEL_TIMEOUT=180 \
 
 每次真实调用记录输入 / 输出 token、等待时间、修订次数与计费依据。GLM Coding 套餐接口未返回实际账单金额，金额明确为未知；CLI 的估算费用不能当作 GLM 账单。若部署者提供实际费率，可设置两项 `XCMQY_*_USD_PER_MILLION` 作 token 估算，仍需与服务商账单区分。未知费率时启用正金额预算会暂停，调用和 token 上限始终生效。
 
+使用服务商支持的开启推理模式：普通规划、提案与审校默认low，遇到明确错误的有限修订默认high。可以分别配置 XCMQY_GLM_REASONING_EFFORT 和 XCMQY_GLM_REPAIR_EFFORT，值为low/high/max。不使用该模型已不支持的关闭推理参数。推理内容不展示、不进入作品，评测仅保存用量及最终结构化响应。单次请求超时240秒，每本默认120次调用 / 700000 token，达到预算会保留已确认进度。
+
 真实评测可断点恢复，失败原行动保持不变：
 
 ```sh
 XCMQY_LLM_BACKEND=glm-local XCMQY_LLM_MODEL=glm-5.3 \
 .venv/bin/python tools/evaluate_books.py --mode live \
-  --output docs/v2/glm-evaluation --workers 3
+  --output docs/v2/acceptance-evaluation --workers 4
 ```
 
 修复后显式添加 `--retry-failed` 重试未提交请求；已完成作品不会重复生成。单次生成 / 修订仍最多四次调用，失败重试的历史用量保留。`--cases case.03,case.08` 可选择小规模试验，完整验收仍要求全部 60 本。人工检查表保留空白，等待实际审阅者填写。

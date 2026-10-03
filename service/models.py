@@ -146,9 +146,9 @@ class WorldState(Contract):
 class Ending(Contract):
     title: str
     text: str = Field(min_length=1, max_length=500)
-    evidence: list[ID] = Field(min_length=1)
-    discoveries: list[ID]
-    helped: list[ID]
+    evidence: list[ID] = Field(min_length=1,description='已确认StoryEvent的稳定ID，不是页码、action ID或中文说明')
+    discoveries: list[ID] = Field(description='当前state.knowledge中的线索ID，不是线索的中文文本')
+    helped: list[ID] = Field(description='参与故事的character ID，例如player或npc.xionger，不是新角色')
     solution: str
 
 class TurnProposal(Contract):

@@ -84,7 +84,7 @@ class Pipeline:
             total = self.store.usage(job['story'] or job['id'], job['id'] if job['kind'] == 'create' else None)
             if len(total) >= int(os.environ.get('XCMQY_BOOK_CALL_LIMIT', '120')):
                 raise BudgetExceeded('book call budget reached; progress preserved')
-            if sum(m['input_tokens'] + m['output_tokens'] for m in total) >= int(os.environ.get('XCMQY_BOOK_TOKEN_LIMIT', '300000')):
+            if sum(m['input_tokens'] + m['output_tokens'] for m in total) >= int(os.environ.get('XCMQY_BOOK_TOKEN_LIMIT', '700000')):
                 raise BudgetExceeded('book token budget reached; progress preserved')
             dollar_limit = float(os.environ.get('XCMQY_BOOK_USD_LIMIT', '0'))
             if dollar_limit and (any(m['cost_usd'] is None for m in total) or sum(m['cost_usd'] or 0 for m in total) >= dollar_limit):
@@ -157,8 +157,13 @@ class Pipeline:
                     props['hotspot']['enum']=list(facts['items'])+[None]
                     if facts['knowledge']:
                         defs['ModelInteraction']['properties']['order']['items']['enum']=facts['knowledge']
+                        defs['Ending']['properties']['discoveries']['items']['enum']=facts['knowledge']
                     else:
                         defs['ModelInteraction']['properties']['order']['maxItems']=0
+                        defs['Ending']['properties']['discoveries']['maxItems']=0
+                    defs['Ending']['properties']['helped']['items']['enum']=ids
+                    known_events=[e['id'] for e in context['story']['events']+context['action_events']]
+                    if known_events:defs['Ending']['properties']['evidence']['items']['enum']=known_events
                 if wire_model==model_protocol.ModelTurn:
                     npc_ids=[cid for cid in ids if cid!='player']
                     defs['ModelEvent']['properties']['move']['propertyNames']={'enum':npc_ids}
