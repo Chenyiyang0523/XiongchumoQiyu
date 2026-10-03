@@ -1,4 +1,38 @@
 # Native Ren'Py integration test, injected only into an isolated QA copy.
+testsuite local_operations:
+    setup:
+        $ _test.timeout = 90.0
+        $ _test.screenshot_directory = __import__('os').environ['XCMQY_QA_OUTPUT']
+        $ persistent.accounts = {'user_0': _make_empty_account_data('页内操作测试', slot_index=0)}
+        $ persistent.account_order = ['user_0']
+        $ persistent.current_user = 'user_0'
+        $ game = StoryGame()
+        run MainMenu(confirm=False)
+        pause until screen 'main_menu'
+
+    testcase collect_and_craft:
+        run Start()
+        pause until screen 'character_select'
+        click '熊大'
+        pause until screen 'book_setup'
+        $ book_story = __import__('json').loads(__import__('pathlib').Path(__import__('os').environ['XCMQY_LOCAL_OPS_BOOK']).read_text(encoding='utf-8'))
+        $ book_owner = book_identity()[0]
+        $ book_page_index = 0
+        $ book_reset_operations()
+        run Hide('book_setup')
+        run Show('book_reader')
+        assert eval (not book_action_available(book_story['pages'][0]['interactions'][1]['actions'][0],book_story['pages'][0]['interactions'][1]))
+        click '收好木板和绳子'
+        assert eval (book_at_page()['items']['item.wood']['owner']=='player' and book_story['state']['items']['item.wood']['owner']=='scene.forest')
+        click '物品：木板'
+        click '物品：绳子'
+        click '组合成小旗'
+        assert eval (book_at_page()['items']['item.flag']['owner']=='player' and book_at_page()['items']['item.wood']['owner']=='consumed' and book_story['state']['items']['item.flag']['owner']=='unmade')
+        screenshot '12-local-craft.png'
+        click '重新安排本页'
+        assert eval (not book_operations and book_at_page()['items']['item.flag']['owner']=='unmade')
+        screenshot '13-local-reset.png'
+
 testsuite picturebook:
     setup:
         $ _test.timeout = 90.0

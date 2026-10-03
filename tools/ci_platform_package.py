@@ -87,12 +87,20 @@ def main():
         else:raise RuntimeError('Fixture service never became ready')
         qa_env=os.environ.copy();qa_env.update(XCMQY_QA_OUTPUT=str(EVIDENCE/'screenshots'),RENPY_DISABLE_SOUND='1',RENPY_SIMPLE_EXCEPTIONS='1')
         (EVIDENCE/'screenshots').mkdir(exist_ok=True)
+        fixture=WORK/'local-operations.json'
+        run([sys.executable,ROOT/'tools/prepare_local_fixture.py',fixture],'local-fixture.txt')
+        qa_env['XCMQY_LOCAL_OPS_BOOK']=str(fixture)
         run([*command,'--savedir',WORK/'saves','test','picturebook','--overwrite-screenshots','--report-detailed'],
             'package-qa.txt',env=qa_env,timeout=300)
         output=(EVIDENCE/'package-qa.txt').read_text(errors='replace', encoding='utf-8')
         if '[rpytest] Status: PASSED' not in output or not re.search(r'Assertions\s*:\s*14\s*\|\s*14 passed',output):
             raise RuntimeError('Native package did not report all 14 assertions passing')
-        receipt.update(verified=True,assertions_passed=14,screenshots=len(list((EVIDENCE/'screenshots').glob('*.png'))))
+        run([*command,'--savedir',WORK/'saves','test','local_operations','--overwrite-screenshots','--report-detailed'],
+            'local-operations-qa.txt',env=qa_env,timeout=120)
+        local_output=(EVIDENCE/'local-operations-qa.txt').read_text(encoding='utf-8',errors='replace')
+        if '[rpytest] Status: PASSED' not in local_output or not re.search(r'Assertions\s*:\s*4\s*\|\s*4 passed',local_output):
+            raise RuntimeError('Native local collection/crafting did not pass all 4 assertions')
+        receipt.update(verified=True,assertions_passed=18,screenshots=len(list((EVIDENCE/'screenshots').glob('*.png'))))
     except Exception as exc:
         receipt['failure']=str(exc)
         raise
@@ -103,7 +111,7 @@ def main():
             except subprocess.TimeoutExpired:service.kill();service.wait()
         (EVIDENCE/'platform.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
         if not receipt['verified']:
-            for name in ['package-resources.json','package-qa.txt','build.txt']:
+            for name in ['package-resources.json','package-qa.txt','local-operations-qa.txt','build.txt']:
                 path=EVIDENCE/name
                 if path.exists():print(name+'\n'+'\n'.join(path.read_text(encoding='utf-8',errors='replace').splitlines()[-65:]))
         print(json.dumps(receipt,ensure_ascii=False,indent=2),flush=True)
