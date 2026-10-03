@@ -170,15 +170,23 @@ def action(value,state,scene_ids=()):
     changes += [{'op':'craft','target':k,'value':True} for k in value['craft']]
     # Page cards may first travel, then place an item at the new location.
     # Compile known scene IDs; the reducer checks the actual enabling position.
-    changes += [{'op':'transfer','target':k,'value':v if v==state['location'] or v in scene_ids else character_id(v)} for k,v in value['give'].items()]
+    gifts=[{'op':'transfer','target':k,'value':v if v==state['location'] or v in scene_ids else character_id(v)} for k,v in value['give'].items()]
+    moves={character_id(k):v for k,v in value['move'].items()}
+    destination=moves.get('player',state['location'])
+    def after_travel(gift):
+        recipient=gift['value']
+        location=state['characters'][recipient]['location'] if recipient in state['characters'] else recipient
+        return location!=state['location'] and (location==destination or moves.get(recipient)==destination)
+    changes += [g for g in gifts if not after_travel(g)]
     changes += [{'op':'consume','target':k,'value':True} for k in value['consume']]
     if any(type(v)!=int or v<=0 for v in value['spend'].values()):raise ValueError('spend amounts must be positive integers')
     changes += [{'op':'resource','target':k,'value':-v} for k,v in value['spend'].items()]
     changes += [{'op':'relationship','target':character_id(k),'value':v} for k,v in value['relationships'].items()]
-    changes += [{'op':'promise','target':k,'value':v} for k,v in value['promises'].items()]
     # Take/use the accessible item before leaving its scene. This is one atomic
     # action; doing movement first would incorrectly make the same item remote.
-    changes += [{'op':'move','target':character_id(k),'value':v} for k,v in value['move'].items()]
+    changes += [{'op':'move','target':k,'value':v} for k,v in moves.items()]
+    changes += [g for g in gifts if after_travel(g)]
+    changes += [{'op':'promise','target':k,'value':v} for k,v in value['promises'].items()]
     result={k:value[k] for k in ['id','label','verb','target','feedback','inputs']}
     trait=deepcopy(value['trait'])
     if trait:trait['character']=character_id(trait['character'])
@@ -244,7 +252,8 @@ def turn(value,source,request,manifest):
         expansion={k:deepcopy(value['expansion'][k]) for k in ['items','clues']}|{'quests':[task(t) for t in value['expansion']['tasks']]}
         expand_world(working['state'],working['blueprint'],expansion,manifest,'compilation')
         state,_=apply_operations(working,request['operations'],request.get('reason',''))
-    resolved=action(value['action'],state) if value['action'] else None
+    scenes={k for k,v in manifest.items() if v['kind']=='scene'}
+    resolved=action(value['action'],state,scene_ids=scenes) if value['action'] else None
     if resolved:
         effects(state,resolved,working['blueprint'],manifest,'compilation')
     events=[]
@@ -255,7 +264,7 @@ def turn(value,source,request,manifest):
             'action_id':e['id'],'verb':'observe','effects':changes,'reason':'','trait_use':None,'interaction_kind':None,'expansion':None}
         effects(state,{'verb':'observe','target':'player','effects':changes},working['blueprint'],manifest,'compilation')
         events.append(event)
-    clarification=[action(a,state) for a in value['clarification']]
+    clarification=[action(a,state,scene_ids=scenes) for a in value['clarification']]
     # An informational question is not an executable interpretation. Preserve
     # the concrete alternatives, each still checked by the canonical reducer.
     clarification=[a for a in clarification if a['effects']]

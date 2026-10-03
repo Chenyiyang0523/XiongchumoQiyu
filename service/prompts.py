@@ -43,6 +43,7 @@ def compact_context(stage, raw):
                 catalog['characters'].setdefault(spec['character'], []).append(aid)
             elif kind=='key_art' and stage not in {'concepts','blueprint','setup','setup_repair'} and set(spec.get('characters',[]))<=cast:
                 catalog['key_art'][aid]={k:v for k,v in spec.items() if k in {'scenes','props','characters','conditions','event_verbs'}}
+        catalog['prop_descriptions']={a:s['description'] for a,s in manifest.items() if s['kind']=='prop' and s.get('description')}
         context['asset_catalog']=catalog
     for settings in [context.get('settings',{}),story.get('settings',{})]:
         settings.pop('assets',None)
@@ -94,7 +95,7 @@ def compact_context(stage, raw):
             'missing_materials':[{'id':iid,'owner':state['items'][iid]['owner']} for iid in item.get('recipe',[]) if state['items'][iid]['owner']!='player']}
             for key,item in state.get('items',{}).items() if item['owner']=='unmade']
         context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target可为产物或原料ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
-        context['contract_notes']+='\n物品交付支持give={物品ID:在场人物ID或当前场景ID}。修好的桥、布置好的舞台等实际产物可以放在当前场景，不能只learn“已修好”代替交付，也不能隔空放在远处。'
+        context['contract_notes']+='\n物品交付支持give={物品ID:在场人物ID或当前场景ID}。修好的桥、布置好的舞台等实际产物可以放在当前场景，不能只learn“已修好”代替交付，也不能隔空放在远处。可先take材料，再move到明确地点，最后give给该地点或确实在场的接收者；承诺标记最后验证。use仍须开始时已拥有对象，未拥有时先用observe或move取物，或用另一卡片先拿再用。'
         context['contract_notes']+='\nclosure_readiness.physical_prerequisite_hints只列事实所要求的物理前提，不规定剧情：核心物品已可及就让玩家获得；制作缺料则去真实材料所在地；产物已拥有则送往真实接收者或布置地点。不要用一个无关支线制作替代尚未满足的核心条件。'
         context['contract_notes']+='\n新故事的承诺绑定promise_conditions。只有这些实际事实满足后才能把promises标为true；可在同一动作先交付物品，再标记兑现。unfulfilled_promises.facts_satisfied=true表示实事已做，只差通过具体回应确认兑现；不要再重复转移物品。'
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'

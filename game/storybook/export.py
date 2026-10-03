@@ -3,11 +3,11 @@ import base64
 import html
 import json
 from pathlib import Path
-from .layout import rectangles, uses_layers
+from .layout import rectangles, uses_layers, asset_path
 
 def export_html(story, destination, read_asset):
     assets = {}
-    paths = {a: spec['path'] for a, spec in story['manifest'].items()}
+    paths = {a: asset_path(a,spec) for a, spec in story['manifest'].items()}
     used = set()
     for page in story['pages']:
         art = page['illustration']

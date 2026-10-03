@@ -207,3 +207,16 @@ def test_library_export_and_immutable_read(app,tmp_path):
     assert '<script src=' not in data
     assert story==before
     with pytest.raises(ClientError):a.load('../outside')
+
+
+def test_legacy_real_book_exports_neutral_container_without_changing_confirmed_facts(tmp_path):
+    root=Path(__file__).resolve().parents[1]
+    book=json.loads((root/'docs/v2/examples/real-glm-book.json').read_text(encoding='utf-8'))
+    assert book['mock'] is False and book['manifest']['prop.honey']['path']=='images/v2/prop_honey.webp'
+    before=copy.deepcopy(book);loaded=[]
+    def read(path):
+        loaded.append(path);return (root/'game'/path).read_bytes()
+    target=tmp_path/'archived-real.html';export_html(book,target,read)
+    assert 'images/v2/prop_honey_covered.webp' in loaded and 'images/v2/prop_honey.webp' not in loaded
+    assert 'data:image/webp;base64,' in target.read_text(encoding='utf-8')
+    assert book==before

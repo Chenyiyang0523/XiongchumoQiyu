@@ -161,6 +161,25 @@ def test_take_then_move_compiles_in_physical_order_and_sprite_alias_is_exact():
     with pytest.raises(ValueError,match='wrong character'):wire.page(authored,state,m)
 
 
+def test_collect_travel_deliver_and_fulfil_promise_follow_actual_physical_order():
+    b,state,m,settings,selected,model=world()
+    model['promise_goals']={'promise.return':{'owners':{'item.map':'scene.bridge'},'knowledge':[],'relationships':{}}}
+    b=StoryBlueprint.model_validate(wire.blueprint(model,settings,selected)).model_dump();state=initial_state(b,m)
+    state['items']['item.map']['owner']='scene.forest'
+    authored=wire.ModelAction(id='action.deliver',label='带地图去小桥并摆好',verb='move',target='scene.bridge',
+        take=['item.map'],move={'player':'scene.bridge'},give={'item.map':'scene.bridge'},
+        promises={'promise.return':True},feedback='带地图到小桥，摆好地图，兑现约定。').model_dump()
+    scenes={k for k,v in m.items() if v['kind']=='scene'}
+    compiled=wire.action(authored,state,scene_ids=scenes)
+    effects(state,compiled,b,m,'real.delivery')
+    assert state['location']=='scene.bridge' and state['items']['item.map']['owner']=='scene.bridge'
+    assert state['promises']['promise.return'] is True
+    invalid=copy.deepcopy(authored);invalid['move']={}
+    original=initial_state(b,m);original['items']['item.map']['owner']='scene.forest'
+    with pytest.raises(RuleError,match='invalid recipient'):
+        effects(original,wire.action(invalid,original,scene_ids=scenes),b,m,'remote')
+
+
 def test_confirmed_hotspot_requests_its_physical_layer_without_inventing_ownership():
     b,state,m,*_=world();authored=opening(state,m)
     authored['items']=[]

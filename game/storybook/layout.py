@@ -1,4 +1,11 @@
 """Normalized composition shared by Ren'Py and the offline reader."""
+def asset_path(asset, spec):
+    # A neutral container corrects the old filled-jar picture without editing
+    # confirmed ownership, page IDs or the archived world ledger.
+    if asset=='prop.honey' and spec['path']=='images/v2/prop_honey.webp':
+        return 'images/v2/prop_honey_covered.webp'
+    return spec['path']
+
 def uses_layers(illustration, interactions):
     # A hotspot needs the same known object bounds in play, replay and export.
     targets=set(illustration['props']) | set(illustration['characters'].values())

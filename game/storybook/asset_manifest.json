@@ -1865,20 +1865,21 @@
     },
     "prop.honey": {
       "kind": "prop",
-      "path": "images/v2/prop_honey.webp",
+      "path": "images/v2/prop_honey_covered.webp",
       "regions": [
         "ground"
       ],
       "hotspot": true,
       "width": 1312,
       "height": 1199,
-      "sha256": "b01bfbae28af05bb089428765527e6bc4b88c03e4820e71db6b5cac9be566c59",
-      "bytes": 1297494,
+      "sha256": "b85046bd6b786e44f655e5a952c65f9370e0bd01f39f2694c9854888bdeabe58",
+      "bytes": 1137442,
       "alpha_range": [
         0,
         255
       ],
-      "alpha": true
+      "alpha": true,
+      "description": "封闭的不透明蜂蜜容器，画面不表示里面是否有蜂蜜，也不表示数量。"
     },
     "prop.seed": {
       "kind": "prop",

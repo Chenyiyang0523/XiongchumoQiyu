@@ -712,5 +712,11 @@
     "original_bytes": 1599285,
     "encoded_bytes": 990706,
     "rgba_identical": true
+  },
+  {
+    "asset": "game/images/v2/prop_honey_covered.webp",
+    "original_bytes": 1678598,
+    "encoded_bytes": 1137442,
+    "rgba_identical": true
   }
 ]
