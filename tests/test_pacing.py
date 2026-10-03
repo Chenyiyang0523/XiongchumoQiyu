@@ -26,7 +26,7 @@ def test_late_filler_is_rejected_but_real_fulfilment_is_available():
     b,state,m=world();state['quests']={key:'complete' for key in state['quests']}
     filler={'id':'action.filler','verb':'ask','target':'buddy','effects':[{'op':'relationship','target':'buddy','value':1}]}
     page={'interactions':[{'id':'inter.filler','actions':[filler]}]}
-    story={'state':state,'blueprint':b,'manifest':m,'settings':{'pages':12},'pages':[{}]*10+[page]}
+    story={'status':'active','state':state,'blueprint':b,'manifest':m,'settings':{'pages':12},'pages':[{}]*10+[page]}
     context={'pace':'resolve','closure_readiness':{'ending_allowed':False,'interaction_types_used':['observe','items','dialogue']}}
     before=copy.deepcopy(story)
     with pytest.raises(RuleError,match='unfinished'):validate_resolution_page(story,context)
