@@ -34,7 +34,7 @@ def settings(tmp_path,monkeypatch,url='https://open.bigmodel.cn/api/anthropic'):
     p=tmp_path/'settings.json';p.write_text(json.dumps({'env':{'ANTHROPIC_BASE_URL':url,
        'ANTHROPIC_MODEL':'glm-5.3[1M]','ANTHROPIC_AUTH_TOKEN':'local-private-test'}},ensure_ascii=False),encoding='utf-8')
     monkeypatch.setenv('XCMQY_CLAUDE_SETTINGS',str(p))
-    for key in ['XCMQY_LLM_ENDPOINT','XCMQY_LLM_MODEL','XCMQY_LLM_KEY','XCMQY_GLM_REASONING_EFFORT','XCMQY_MODEL_MAX_TOKENS']:
+    for key in ['XCMQY_LLM_ENDPOINT','XCMQY_LLM_MODEL','XCMQY_LLM_KEY','XCMQY_GLM_REASONING_EFFORT','XCMQY_GLM_REPAIR_EFFORT','XCMQY_MODEL_MAX_TOKENS']:
         monkeypatch.delenv(key,raising=False)
 
 
@@ -44,6 +44,7 @@ def test_glm_uses_supported_reasoning_and_exact_verified_coding_endpoint(tmp_pat
     assert p.model=='glm-5.3' and p.max_tokens==20000
     assert p.payload_options('proposal')['thinking']=={'type':'enabled'}
     assert p.payload_options('review')['reasoning_effort']=='low'
+    assert p.payload_options('repair')['reasoning_effort']=='high'
     assert 'local-private-test' not in json.dumps(p.payload_options('setup'))
 
 

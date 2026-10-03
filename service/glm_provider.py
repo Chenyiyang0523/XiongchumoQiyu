@@ -19,6 +19,9 @@ class LocalGLMProvider(ClaudeSettingsProvider):
         self.reasoning_effort=os.environ.get('XCMQY_GLM_REASONING_EFFORT','low')
         if self.reasoning_effort not in {'low','high','max'}:
             raise ModelError('GLM reasoning effort must be low, high or max')
+        self.repair_effort=os.environ.get('XCMQY_GLM_REPAIR_EFFORT','high')
+        if self.repair_effort not in {'low','high','max'}:
+            raise ModelError('GLM repair effort must be low, high or max')
         self.max_tokens=int(os.environ.get('XCMQY_MODEL_MAX_TOKENS','20000'))
         self.extra_payload={'thinking':{'type':'enabled'},'reasoning_effort':self.reasoning_effort}
         self.system=LIVE_SYSTEM
@@ -26,10 +29,11 @@ class LocalGLMProvider(ClaudeSettingsProvider):
     def call(self,stage,context,schema,record):
         def measured(metric):
             metric['transport']='glm-coding-native'
-            metric['reasoning_effort']=self.reasoning_effort
+            metric['reasoning_effort']=self.payload_options(stage)['reasoning_effort']
             metric['cost_basis']='configured_token_rate_estimate' if metric['cost_usd'] is not None else 'coding_plan_charge_unknown'
             record(metric)
         return Provider.call(self,stage,context,schema,measured)
 
     def payload_options(self,stage):
-        return {**self.extra_payload,'temperature':.9 if stage=='concepts' else .2 if stage=='review' else .55}
+        return {**self.extra_payload,'reasoning_effort':self.repair_effort if stage in {'repair','setup_repair'} else self.reasoning_effort,
+                'temperature':.9 if stage=='concepts' else .2 if stage=='review' else .55}

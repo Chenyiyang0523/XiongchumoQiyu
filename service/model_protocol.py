@@ -4,6 +4,8 @@ The model writes story-specific facts and consequences. Identity envelopes, effe
 syntax and display asset bindings are deterministic; the reducer remains authority.
 """
 from copy import deepcopy
+import hashlib
+import json
 from typing import Literal
 from pydantic import Field
 from service.models import Contract, Ending, TraitUse, Arc, Verb
@@ -105,12 +107,12 @@ class ModelExpansion(Contract):
     tasks:list[ModelTask]=Field(default_factory=list,max_length=2)
 
 class ModelTurn(Contract):
-    page:ModelPage|None=None
-    events:list[ModelEvent]=Field(default_factory=list,max_length=3,description='通常留空[]；action_events已确认按钮后果，不要重复输出。仅有额外NPC移动/获知信息才新增。')
-    action:ModelAction|None=None
-    clarification:list[ModelAction]=Field(default_factory=list,max_length=3)
-    ending:Ending|None=None
-    expansion:ModelExpansion|None=None
+    page:ModelPage|None
+    events:list[ModelEvent]=Field(max_length=3,description='通常留空[]；action_events已确认按钮后果，不要重复输出。仅有额外NPC移动/获知信息才新增。')
+    action:ModelAction|None
+    clarification:list[ModelAction]=Field(max_length=3)
+    ending:Ending|None
+    expansion:ModelExpansion|None
 
 def roles(settings,selected):
     return {('player' if name==settings['character'] else 'npc.'+SLUGS[name]):name for name in selected['cast']}
@@ -242,6 +244,13 @@ def turn(value,source,request,manifest):
     clarification=[a for a in clarification if a['effects']]
     if value['clarification'] and len(clarification)<2:
         raise ValueError('clarification needs two concrete executable meanings; keep action/page null and do not guess')
+    known={a['id']:a for i in source['pages'][-1]['interactions'] for a in i['actions']}
+    for candidate in clarification+([resolved] if resolved else []):
+        if candidate['id'] in known and candidate!=known[candidate['id']]:
+            # A newly understood intention cannot redefine an existing button.
+            # Give its full meaning a deterministic ID in a separate namespace.
+            digest=hashlib.sha256(json.dumps({'story':source['id'],'version':source['state']['version'],'action':candidate},sort_keys=True,ensure_ascii=False).encode()).hexdigest()[:20]
+            candidate['id']='intent.'+digest
     ending=deepcopy(value['ending'])
     if ending:
         ending['helped']=[character_reference(key,state) for key in ending['helped']]

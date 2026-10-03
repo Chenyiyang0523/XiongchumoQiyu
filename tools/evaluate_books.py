@@ -221,7 +221,11 @@ def main():
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures=[pool.submit(run_case,c) for c in cases if rows.get(c['id'],{}).get('status')!='complete']
         for future in as_completed(futures):
-            row=future.result();rows[row['id']]=row
+            row=future.result()
+            old=rows.get(row['id'])
+            if old:
+                row['previous_runs']=[*old.get('previous_runs',[]),{k:v for k,v in old.items() if k not in {'previous_runs','result','confirmed_state_checks'}}]
+            rows[row['id']]=row
             (args.output/'results.json').write_text(json.dumps(sorted(rows.values(),key=lambda r:r['id']),ensure_ascii=False,indent=2),encoding='utf-8')
             print(row['id'],row['status'],row.get('error',''),flush=True)
     rows=sorted(rows.values(),key=lambda r:r['id'])
