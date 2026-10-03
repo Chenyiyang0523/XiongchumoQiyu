@@ -1,0 +1,17 @@
+{
+  "platform": "windows",
+  "environment": "Windows-2025Server-10.0.26100-SP0",
+  "architecture": "AMD64",
+  "installed_package": true,
+  "verified": true,
+  "mock": true,
+  "real_model": false,
+  "human_manual_play": false,
+  "source_commit": "f534a2b7976109003c2d734e802e3be5352d8011",
+  "evidence": "package-qa.txt",
+  "package_sha256": "d8e987f2590092888665fc1a1ee81d3ca4759dec6e069bc1d62cda9481caa491",
+  "package": "Xiongchumo_Qiyu_Build-pc.zip",
+  "assertions_passed": 26,
+  "live_book_read_offline": true,
+  "screenshots": 17
+}

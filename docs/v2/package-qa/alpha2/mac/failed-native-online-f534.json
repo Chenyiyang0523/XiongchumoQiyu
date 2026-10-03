@@ -1,0 +1,9 @@
+{
+  "source_commit": "f534a2b7976109003c2d734e802e3be5352d8011",
+  "native_real_model": true,
+  "passed": false,
+  "failure": "initial promise fulfilled without its facts",
+  "job_id": "00bb178bc9324293a5f2570f29eca71b",
+  "state_committed": false,
+  "fix": "Clarify promises=false means pending fulfilment; true means fulfilment facts already hold."
+}

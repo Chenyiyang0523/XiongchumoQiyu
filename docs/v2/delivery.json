@@ -1,37 +1,54 @@
 {
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
+  "date": "2026-10-03",
   "formal_release_eligible": false,
-  "local_implementation_commit": "40ee3309b58cfc22b6ebe384ae9fbd0667bfb4b1",
+  "technical_acceptance_passed": true,
+  "client_source_commit": "f534a2b7976109003c2d734e802e3be5352d8011",
+  "service_source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+  "human_review_status": "pending",
+  "blind_review_status": "pending",
+  "service_image_architecture": "arm64",
+  "model_credentials_embedded": false,
   "artifacts": [
     {
-      "file": "ArtSources-2.0.0-alpha.1.zip",
-      "bytes": 238702507,
-      "sha256": "be17a0ea8360b74e6820efc3a397993acc538dd1ccb2802d33e5f1e2862c1ea7"
+      "file": "ArtSources-2.0-alpha.2.zip",
+      "bytes": 236043510,
+      "sha256": "640297edcb5c06f7129459d2d54c2538c315e22dec75fef467689e9e822c0b18"
     },
     {
-      "file": "Demo-fixture-only.html",
-      "bytes": 11326690,
-      "sha256": "8437392434287176c2267310111a1852848b3a525c82b45419dff0c8f022b43c"
+      "file": "Real-GLM-60-books-evaluation.zip",
+      "bytes": 2337828134,
+      "sha256": "a42fb745695d768cb1af756cd402eede91004a957fa97947931db60ca7097a19"
     },
     {
-      "file": "StoryService-2.0.0-alpha.1.zip",
-      "bytes": 62183,
-      "sha256": "e204a67999a5f2bc5555d9e0c7072d96cd4811449a1edb87b02efcb29c369eac"
+      "file": "Real-GLM-picturebook.html",
+      "bytes": 33120290,
+      "sha256": "02c32d108ca55f4631a7a17303a28b9d29506edd40d779af9b75a532a1b9e5a7"
+    },
+    {
+      "file": "StoryService-2.0-alpha.2.zip",
+      "bytes": 95511,
+      "sha256": "45dd7f4bad381beebef41d78078f409a709daa50483c4b44e601531b77af6ae1"
     },
     {
       "file": "StoryService-image.tar.gz",
-      "bytes": 74777219,
-      "sha256": "f96d35b43de087c4d86ee6e106a4e38a3c4652f28c43d4c1ab1cc4ec7603ea85"
+      "bytes": 74805193,
+      "sha256": "811a5008b24f8817b2cfb57bfb3a8eacd95a47431befe1f7a821c2bb5aa895d7"
     },
     {
-      "file": "Xiongchumo_Qiyu_Build-mac.zip",
-      "bytes": 226655904,
-      "sha256": "3bd495cfe84ccbe44ed9b4986cfb284774e02741db2f98f28bb30b0105e02d41"
+      "file": "XiongchumoQiyu-2.0-alpha.2-linux.zip",
+      "bytes": 233486153,
+      "sha256": "534c6e63d127e7c048f26763f4de366bf98d79371f76d6096eb1dcd6941931fb"
     },
     {
-      "file": "Xiongchumo_Qiyu_Build-pc.zip",
-      "bytes": 232342600,
-      "sha256": "b1bfbc8dee82162d50951bf9aa09ed1c0d6f88f0181c5c253823ca688c3ff3de"
+      "file": "XiongchumoQiyu-2.0-alpha.2-mac.zip",
+      "bytes": 227798012,
+      "sha256": "288e020102a715d410d66d7727893b53adfca911931a792f01aac025c56030d4"
+    },
+    {
+      "file": "XiongchumoQiyu-2.0-alpha.2-windows.zip",
+      "bytes": 233476619,
+      "sha256": "d8e987f2590092888665fc1a1ee81d3ca4759dec6e069bc1d62cda9481caa491"
     }
   ]
 }

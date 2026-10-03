@@ -1,5 +1,6 @@
 services:
   story:
+    image: xcmqy-story:2.0-alpha.2
     build:
       context: .
       dockerfile: service/Dockerfile

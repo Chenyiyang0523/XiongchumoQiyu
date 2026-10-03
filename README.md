@@ -2,7 +2,7 @@
 
 2.0 将四个既有主题和自定义主题接入同一个互动绘本引擎：在线服务规划故事，Ren’Py 客户端呈现页面、收集行动并保存已确认内容。年龄分为 6–8 岁、9–12 岁，支持亲子共玩及 8 / 12 / 16 / 20 页。
 
-当前开发版本为 **2.0.0-alpha.2**。已经接入本机 Claude Code 配置中的 GLM，真实模型技术评测持续进行；Mac、Windows、Linux 实际安装包的自动化试玩均已通过。按用户决定，60 本逐本人工检查和 20 组同主题盲评保持待完成，正式发布门禁保持关闭。具体证据见 [验收报告](docs/v2/ACCEPTANCE.md)。
+当前开发版本为 **2.0.0-alpha.2**。已经接入本机 Claude Code 配置中的 GLM，60 本真实模型作品的技术复验已经通过；Mac、Windows、Linux 实际安装包的自动化试玩均已通过。按用户决定，60 本逐本人工检查和 20 组同主题盲评保持待完成，正式发布门禁保持关闭。具体证据见 [验收报告](docs/v2/ACCEPTANCE.md)。
 
 ## 开始使用
 
@@ -46,7 +46,7 @@ XCMQY_DEVELOPMENT_MOCK=1 XCMQY_GUARDIAN_CODE=local-dev-guardian .venv/bin/uvicor
 
 演示时在游戏中填写 `http://127.0.0.1:8000` 与连接码 `local-dev-guardian`。页面明确标注开发模拟。演示连接码应另外配置，不要沿用生产连接码。
 
-现成 ARM64 服务镜像随交付提供；其他服务器架构使用部署源码构建。可 `docker load -i dist/2.0.0-alpha.1-final/StoryService-image.tar.gz` 后以 `.env` 配置运行；该镜像没有内置模型密钥或连接码。默认 Python 基础镜像在本机拉取曾因 registry 网络超时失败，本次成功构建使用官方 `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`，也可通过 Dockerfile 的 `PYTHON_IMAGE` 构建参数指定。
+现成 ARM64 服务镜像随交付提供；其他服务器架构使用部署源码构建。可 `docker load -i dist/2.0.0-alpha.2-final/StoryService-image.tar.gz`，配置 `.env` 后运行 `docker compose up --no-build -d`；镜像没有内置模型密钥或连接码。默认 Python 基础镜像在本机拉取曾因 registry 网络超时失败，本次成功构建使用官方 `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`，也可通过 Dockerfile 的 `PYTHON_IMAGE` 构建参数指定。
 
 ## 开发与验收
 
@@ -65,7 +65,7 @@ tools/run_book_qa.sh
 
 ```sh
 XCMQY_LLM_BACKEND=glm-local XCMQY_LLM_MODEL=glm-5.3 \
-.venv/bin/python tools/evaluate_books.py --mode live --pages 12 --output docs/v2/acceptance-evaluation --workers 4
+.venv/bin/python tools/evaluate_books.py --mode live --pages 12 --output docs/v2/acceptance-evaluation --workers 2
 # 60 本：六种结构 × 两档年龄 × 每组五个主题，其中36本采用新主题
 .venv/bin/python tools/technical_gate_v2.py
 # 下项还要求人工逐本检查、20组评分和费用证据，当前应保持不通过

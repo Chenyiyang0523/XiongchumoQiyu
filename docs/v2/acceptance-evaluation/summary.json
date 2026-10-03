@@ -1,0 +1,39 @@
+{
+  "mode": "live",
+  "model": "glm-5.3",
+  "backend": "glm-local",
+  "books_generated": 60,
+  "cases": 60,
+  "new_themes": 36,
+  "status": "awaiting_human_review",
+  "technical_corpus_passed": true,
+  "live_release_eligible": false,
+  "human_review_status": "pending",
+  "comparison_pairs_required": 20,
+  "first_run_outcomes": {
+    "complete": 23,
+    "failed": 36,
+    "continued": 1
+  },
+  "story_attempts": 77,
+  "recovery_outcomes_preserved": true,
+  "total_usage_all_story_attempts": {
+    "calls": 3185,
+    "tokens": null,
+    "known_tokens": 41109847,
+    "unknown_usage_calls": 124,
+    "revisions": 639,
+    "model_wait_seconds": 49116.99,
+    "cost_usd": null,
+    "cost_basis": [
+      "coding_plan_charge_unknown",
+      "unknown"
+    ]
+  },
+  "all_attempt_statuses": {
+    "complete": 60,
+    "active": 16,
+    "continued": 1
+  },
+  "human_quality_scores": null
+}

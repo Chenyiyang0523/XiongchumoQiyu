@@ -1,0 +1,61 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.picturebook
+[rpytest] [log] - global.picturebook
+
+[rpytest] Starting test run
+[rpytest] Platform:      Windows-2022Server-10.0.26100-SP0
+[rpytest] Python:        3.12.7
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  2.0.0-alpha.2
+
+[rpytest] [exc] + global
+[rpytest] [exc]   + picturebook
+[rpytest] [exc]     - full_book
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1286, in execute
+    raise RenpyTestTimeoutError(msg)
+renpy.test.types.RenpyTestTimeoutError: Until Statement timed out after 90.0 seconds.
+
+While running game code:
+renpy.test.types.RenpyTestTimeoutError: Until Statement timed out after 90.0 seconds.
+File "game\book_v2.rpy", line 330, in script
+  call screen book_reader
+
+During testcase execution:
+  File "D:\a\XiongchumoQiyu\XiongchumoQiyu\.local\ci-platform\installed\Xiongchumo_Qiyu_Build-pc\.", line 0, in None
+    
+  File "D:\a\XiongchumoQiyu\XiongchumoQiyu\.local\ci-platform\installed\Xiongchumo_Qiyu_Build-pc\game\qa_book_v2.rpy", line 95, in testsuite global
+    testsuite picturebook:
+  File "D:\a\XiongchumoQiyu\XiongchumoQiyu\.local\ci-platform\installed\Xiongchumo_Qiyu_Build-pc\game\qa_book_v2.rpy", line 107, in testsuite picturebook
+    testcase full_book:
+  File "D:\a\XiongchumoQiyu\XiongchumoQiyu\.local\ci-platform\installed\Xiongchumo_Qiyu_Build-pc\game\qa_book_v2.rpy", line 167, in testcase full_book
+    pause until eval (book_story["state"]["version"] == 8)
+
+====================
+[rpytest] [exc]     - full_book (96.479 s [01:36])
+[rpytest] [exc]     - full_book (96.479 s [01:36])
+Native client final state: turn:save_pending:PermissionError busy= False phase=  error= 服务暂时不可用，当前绘本和待处理行动已保留。 version= 7
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] FAILED  global               - (97.660 s [01:37])
+[rpytest]   FAILED  picturebook          - (96.940 s [01:36])
+[rpytest]     FAILED  full_book            - (96.479 s [01:36])
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     4 |     0 passed |     0 xfailed |     2 failed |     0 xpassed |     2 skipped |     0 not run
+[rpytest] Test cases :     3 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     2 skipped |     0 not run
+[rpytest] Test hooks :     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     8 |     8 passed |     0 xfailed |     0 failed |     0 xpassed | 
+
+[rpytest] Time: 97.660 s [01:37]
+[rpytest] Status: FAILED 
+

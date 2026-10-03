@@ -1,0 +1,6712 @@
+{
+  "schema_version": 2,
+  "id": "f8824274e34b4007b20db5cfefdb9bd9",
+  "settings": {
+    "theme": "森林音乐会",
+    "character": "熊大",
+    "age": "6-8",
+    "pages": 8,
+    "parent_mode": false,
+    "arc": null,
+    "assets": [
+      "scene.forest",
+      "scene.cabin",
+      "scene.cave",
+      "scene.riverside",
+      "scene.mountain",
+      "scene.village",
+      "scene.bamboo",
+      "scene.lakeside",
+      "scene.bridge",
+      "scene.flowers",
+      "scene.orchard",
+      "scene.treehouse",
+      "scene.camp",
+      "scene.workshop",
+      "scene.library",
+      "scene.market",
+      "scene.stage",
+      "scene.sports",
+      "character.xiongda.calm",
+      "character.xiongda.happy",
+      "character.xiongda.thinking",
+      "character.xiongda.surprised",
+      "character.xiongda.worried",
+      "character.xiongda.determined",
+      "character.xionger.calm",
+      "character.xionger.happy",
+      "character.xionger.thinking",
+      "character.xionger.surprised",
+      "character.xionger.worried",
+      "character.xionger.determined",
+      "character.guangtouqiang.calm",
+      "character.guangtouqiang.happy",
+      "character.guangtouqiang.thinking",
+      "character.guangtouqiang.surprised",
+      "character.guangtouqiang.worried",
+      "character.guangtouqiang.determined",
+      "character.jijiguowang.calm",
+      "character.jijiguowang.happy",
+      "character.jijiguowang.thinking",
+      "character.jijiguowang.surprised",
+      "character.jijiguowang.worried",
+      "character.jijiguowang.determined",
+      "character.maomao.calm",
+      "character.maomao.happy",
+      "character.maomao.thinking",
+      "character.maomao.surprised",
+      "character.maomao.worried",
+      "character.maomao.determined",
+      "character.zhaolin.calm",
+      "character.zhaolin.happy",
+      "character.zhaolin.thinking",
+      "character.zhaolin.surprised",
+      "character.zhaolin.worried",
+      "character.zhaolin.determined",
+      "character.tiancaiwei.calm",
+      "character.tiancaiwei.happy",
+      "character.tiancaiwei.thinking",
+      "character.tiancaiwei.surprised",
+      "character.tiancaiwei.worried",
+      "character.tiancaiwei.determined",
+      "character.damahou.calm",
+      "character.damahou.happy",
+      "character.damahou.thinking",
+      "character.damahou.surprised",
+      "character.damahou.worried",
+      "character.damahou.determined",
+      "character.ergou.calm",
+      "character.ergou.happy",
+      "character.ergou.thinking",
+      "character.ergou.surprised",
+      "character.ergou.worried",
+      "character.ergou.determined",
+      "prop.map",
+      "prop.feather",
+      "prop.footprint",
+      "prop.letter",
+      "prop.bell",
+      "prop.ribbon",
+      "prop.key",
+      "prop.compass",
+      "prop.magnifier",
+      "prop.rope",
+      "prop.hammer",
+      "prop.scissors",
+      "prop.lantern",
+      "prop.bucket",
+      "prop.brush",
+      "prop.shovel",
+      "prop.plank",
+      "prop.bamboo",
+      "prop.cloth",
+      "prop.paper",
+      "prop.clay",
+      "prop.string",
+      "prop.paint",
+      "prop.wheel",
+      "prop.leaf",
+      "prop.flower",
+      "prop.pinecone",
+      "prop.apple",
+      "prop.honey",
+      "prop.seed",
+      "prop.kite",
+      "prop.drum",
+      "prop.flag",
+      "prop.basket",
+      "prop.mask",
+      "prop.star",
+      "key.00",
+      "key.01",
+      "key.02",
+      "key.03",
+      "key.04",
+      "key.05",
+      "key.06",
+      "key.07",
+      "key.08",
+      "key.09",
+      "key.10",
+      "key.11"
+    ]
+  },
+  "blueprint": {
+    "schema_version": 2,
+    "title": "失踪的大鼓声",
+    "theme": "森林音乐会",
+    "arc": "mystery",
+    "goal": "天黑前查明大鼓发不出声音的真相，找回敲鼓的伙伴，让森林音乐会顺利开场",
+    "conflict": "森林音乐会明天就要开场，可唯一的大鼓突然发不出声音了，鼓面上还留着奇怪的脚印。熊大必须带着大家在天黑前找出真相，否则音乐会就要取消。",
+    "characters": [
+      {
+        "id": "player",
+        "name": "熊大",
+        "location": "scene.stage",
+        "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+        "strength": "聪明稳重，善于观察推理，遇事不慌",
+        "weakness": "太操心，容易一个人扛下所有责任",
+        "knowledge": [
+          "clue.drumskin"
+        ]
+      },
+      {
+        "id": "npc.xionger",
+        "name": "熊二",
+        "location": "scene.stage",
+        "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+        "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+        "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+        "knowledge": []
+      },
+      {
+        "id": "npc.jijiguowang",
+        "name": "吉吉国王",
+        "location": "scene.treehouse",
+        "motivation": "想在音乐会上出风头，保住国王的面子",
+        "strength": "爬树快，消息灵通，认识森林里各处的路",
+        "weakness": "爱面子又胆小，做了错事不敢承认",
+        "knowledge": []
+      },
+      {
+        "id": "npc.maomao",
+        "name": "毛毛",
+        "location": "scene.treehouse",
+        "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+        "strength": "机灵眼尖，小角落里的东西都看得见",
+        "weakness": "只敢附和吉吉国王，不敢多说一句",
+        "knowledge": []
+      }
+    ],
+    "items": [
+      {
+        "id": "item.drum",
+        "name": "大鼓",
+        "owner": "scene.stage",
+        "asset": "prop.drum",
+        "recipe": []
+      },
+      {
+        "id": "item.footprint",
+        "name": "鼓面脚印",
+        "owner": "scene.stage",
+        "asset": "prop.footprint",
+        "recipe": []
+      },
+      {
+        "id": "item.feather",
+        "name": "彩色羽毛",
+        "owner": "scene.stage",
+        "asset": "prop.feather",
+        "recipe": []
+      },
+      {
+        "id": "item.honeyjar",
+        "name": "空蜂蜜罐",
+        "owner": "scene.stage",
+        "asset": "prop.honey",
+        "recipe": []
+      },
+      {
+        "id": "item.cloth",
+        "name": "补鼓的布",
+        "owner": "scene.cabin",
+        "asset": "prop.cloth",
+        "recipe": []
+      },
+      {
+        "id": "item.string",
+        "name": "结实的绳子",
+        "owner": "scene.cabin",
+        "asset": "prop.string",
+        "recipe": []
+      },
+      {
+        "id": "item.drumfix",
+        "name": "补好的大鼓",
+        "owner": "unmade",
+        "asset": "prop.drum",
+        "recipe": [
+          "item.drum",
+          "item.cloth",
+          "item.string"
+        ]
+      }
+    ],
+    "clues": {
+      "clue.drumskin": "鼓面被敲破了一个小洞，需要兽皮或布补好",
+      "clue.feather": "大鼓旁边掉了一根彩色羽毛，是表演用的装饰",
+      "clue.fix.plan": "用布和绳子照着补鼓的办法，能把鼓面补好",
+      "clue.footprint": "鼓面上的脚印是小猴子的脚印，比吉吉国王的小一号",
+      "clue.honeyjar": "鼓后面的草丛里有一个空的蜂蜜罐",
+      "clue.jiji.join": "吉吉国王答应归队，音乐会照常开演",
+      "clue.jiji.secret": "毛毛悄悄说，吉吉国王昨晚偷偷来过舞台练鼓",
+      "clue.jiji.sorry": "吉吉国王承认是自己半夜练鼓敲破了鼓面，躲起来不敢说"
+    },
+    "quests": [
+      {
+        "id": "task.find.clues",
+        "title": "查清鼓面脚印的真相",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.footprint",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "knowledge",
+            "key": "clue.jiji.secret",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.fix.drum",
+        "title": "补好大鼓",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "owner",
+            "key": "item.drumfix",
+            "value": "player",
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.jiji.join",
+        "title": "请吉吉国王归队演出",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "relationship",
+            "key": "npc.jijiguowang",
+            "value": 1,
+            "actor": "player",
+            "comparison": "gte"
+          },
+          {
+            "kind": "promise",
+            "key": "promise.jiji.drum",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.comfort.xionger",
+        "title": "安慰饿肚子的熊二",
+        "required": false,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "relationship",
+            "key": "npc.xionger",
+            "value": 1,
+            "actor": "player",
+            "comparison": "gte"
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "materials": 15,
+      "time": 30
+    },
+    "promises": {
+      "promise.jiji.drum": false
+    },
+    "promise_descriptions": {
+      "promise.jiji.drum": "熊大答应吉吉国王：只要他承认错误并归队，音乐会上就让他当领鼓手，由熊大当众宣布"
+    },
+    "promise_conditions": {},
+    "twists": [
+      "鼓面上的脚印和吉吉国王的脚对不上，其实是最爱模仿国王的毛毛陪他练鼓时留下的",
+      "吉吉国王半夜偷偷练鼓想一鸣惊人，却敲破了鼓面，吓得躲回树屋不敢见人"
+    ],
+    "closure": "吉吉国王当众承认错误并归队，大鼓补好，咚咚的鼓声重新响起，森林音乐会在星空下热闹开场。",
+    "solution_tag": "循着脚印与羽毛线索，查明是谁动了大鼓并请他归队演出"
+  },
+  "initial_blueprint": {
+    "schema_version": 2,
+    "title": "失踪的大鼓声",
+    "theme": "森林音乐会",
+    "arc": "mystery",
+    "goal": "天黑前查明大鼓发不出声音的真相，找回敲鼓的伙伴，让森林音乐会顺利开场",
+    "conflict": "森林音乐会明天就要开场，可唯一的大鼓突然发不出声音了，鼓面上还留着奇怪的脚印。熊大必须带着大家在天黑前找出真相，否则音乐会就要取消。",
+    "characters": [
+      {
+        "id": "player",
+        "name": "熊大",
+        "location": "scene.stage",
+        "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+        "strength": "聪明稳重，善于观察推理，遇事不慌",
+        "weakness": "太操心，容易一个人扛下所有责任",
+        "knowledge": [
+          "clue.drumskin"
+        ]
+      },
+      {
+        "id": "npc.xionger",
+        "name": "熊二",
+        "location": "scene.stage",
+        "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+        "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+        "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+        "knowledge": []
+      },
+      {
+        "id": "npc.jijiguowang",
+        "name": "吉吉国王",
+        "location": "scene.treehouse",
+        "motivation": "想在音乐会上出风头，保住国王的面子",
+        "strength": "爬树快，消息灵通，认识森林里各处的路",
+        "weakness": "爱面子又胆小，做了错事不敢承认",
+        "knowledge": []
+      },
+      {
+        "id": "npc.maomao",
+        "name": "毛毛",
+        "location": "scene.treehouse",
+        "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+        "strength": "机灵眼尖，小角落里的东西都看得见",
+        "weakness": "只敢附和吉吉国王，不敢多说一句",
+        "knowledge": []
+      }
+    ],
+    "items": [
+      {
+        "id": "item.drum",
+        "name": "大鼓",
+        "owner": "scene.stage",
+        "asset": "prop.drum",
+        "recipe": []
+      },
+      {
+        "id": "item.footprint",
+        "name": "鼓面脚印",
+        "owner": "scene.stage",
+        "asset": "prop.footprint",
+        "recipe": []
+      },
+      {
+        "id": "item.feather",
+        "name": "彩色羽毛",
+        "owner": "scene.stage",
+        "asset": "prop.feather",
+        "recipe": []
+      },
+      {
+        "id": "item.honeyjar",
+        "name": "空蜂蜜罐",
+        "owner": "scene.stage",
+        "asset": "prop.honey",
+        "recipe": []
+      },
+      {
+        "id": "item.cloth",
+        "name": "补鼓的布",
+        "owner": "scene.cabin",
+        "asset": "prop.cloth",
+        "recipe": []
+      },
+      {
+        "id": "item.string",
+        "name": "结实的绳子",
+        "owner": "scene.cabin",
+        "asset": "prop.string",
+        "recipe": []
+      },
+      {
+        "id": "item.drumfix",
+        "name": "补好的大鼓",
+        "owner": "unmade",
+        "asset": "prop.drum",
+        "recipe": [
+          "item.drum",
+          "item.cloth",
+          "item.string"
+        ]
+      }
+    ],
+    "clues": {
+      "clue.drumskin": "鼓面被敲破了一个小洞，需要兽皮或布补好",
+      "clue.feather": "大鼓旁边掉了一根彩色羽毛，是表演用的装饰",
+      "clue.fix.plan": "用布和绳子照着补鼓的办法，能把鼓面补好",
+      "clue.footprint": "鼓面上的脚印是小猴子的脚印，比吉吉国王的小一号",
+      "clue.honeyjar": "鼓后面的草丛里有一个空的蜂蜜罐",
+      "clue.jiji.join": "吉吉国王答应归队，音乐会照常开演",
+      "clue.jiji.secret": "毛毛悄悄说，吉吉国王昨晚偷偷来过舞台练鼓",
+      "clue.jiji.sorry": "吉吉国王承认是自己半夜练鼓敲破了鼓面，躲起来不敢说"
+    },
+    "quests": [
+      {
+        "id": "task.find.clues",
+        "title": "查清鼓面脚印的真相",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.footprint",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "knowledge",
+            "key": "clue.jiji.secret",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.fix.drum",
+        "title": "补好大鼓",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "owner",
+            "key": "item.drumfix",
+            "value": "player",
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.jiji.join",
+        "title": "请吉吉国王归队演出",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "relationship",
+            "key": "npc.jijiguowang",
+            "value": 1,
+            "actor": "player",
+            "comparison": "gte"
+          },
+          {
+            "kind": "promise",
+            "key": "promise.jiji.drum",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.comfort.xionger",
+        "title": "安慰饿肚子的熊二",
+        "required": false,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "relationship",
+            "key": "npc.xionger",
+            "value": 1,
+            "actor": "player",
+            "comparison": "gte"
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "materials": 15,
+      "time": 30
+    },
+    "promises": {
+      "promise.jiji.drum": false
+    },
+    "promise_descriptions": {
+      "promise.jiji.drum": "熊大答应吉吉国王：只要他承认错误并归队，音乐会上就让他当领鼓手，由熊大当众宣布"
+    },
+    "promise_conditions": {},
+    "twists": [
+      "鼓面上的脚印和吉吉国王的脚对不上，其实是最爱模仿国王的毛毛陪他练鼓时留下的",
+      "吉吉国王半夜偷偷练鼓想一鸣惊人，却敲破了鼓面，吓得躲回树屋不敢见人"
+    ],
+    "closure": "吉吉国王当众承认错误并归队，大鼓补好，咚咚的鼓声重新响起，森林音乐会在星空下热闹开场。",
+    "solution_tag": "循着脚印与羽毛线索，查明是谁动了大鼓并请他归队演出"
+  },
+  "state": {
+    "schema_version": 2,
+    "version": 11,
+    "location": "scene.stage",
+    "characters": {
+      "npc.jijiguowang": {
+        "id": "npc.jijiguowang",
+        "name": "吉吉国王",
+        "location": "scene.stage",
+        "motivation": "想在音乐会上出风头，保住国王的面子",
+        "strength": "爬树快，消息灵通，认识森林里各处的路",
+        "weakness": "爱面子又胆小，做了错事不敢承认",
+        "knowledge": []
+      },
+      "npc.maomao": {
+        "id": "npc.maomao",
+        "name": "毛毛",
+        "location": "scene.stage",
+        "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+        "strength": "机灵眼尖，小角落里的东西都看得见",
+        "weakness": "只敢附和吉吉国王，不敢多说一句",
+        "knowledge": []
+      },
+      "npc.xionger": {
+        "id": "npc.xionger",
+        "name": "熊二",
+        "location": "scene.stage",
+        "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+        "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+        "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+        "knowledge": []
+      },
+      "player": {
+        "id": "player",
+        "name": "熊大",
+        "location": "scene.stage",
+        "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+        "strength": "聪明稳重，善于观察推理，遇事不慌",
+        "weakness": "太操心，容易一个人扛下所有责任",
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather",
+          "clue.jiji.sorry",
+          "clue.jiji.secret",
+          "clue.jiji.join",
+          "clue.fix.plan"
+        ]
+      }
+    },
+    "items": {
+      "item.cloth": {
+        "id": "item.cloth",
+        "name": "补鼓的布",
+        "owner": "consumed",
+        "asset": "prop.cloth",
+        "recipe": []
+      },
+      "item.drum": {
+        "id": "item.drum",
+        "name": "大鼓",
+        "owner": "consumed",
+        "asset": "prop.drum",
+        "recipe": []
+      },
+      "item.drumfix": {
+        "id": "item.drumfix",
+        "name": "补好的大鼓",
+        "owner": "player",
+        "asset": "prop.drum",
+        "recipe": [
+          "item.drum",
+          "item.cloth",
+          "item.string"
+        ]
+      },
+      "item.feather": {
+        "id": "item.feather",
+        "name": "彩色羽毛",
+        "owner": "player",
+        "asset": "prop.feather",
+        "recipe": []
+      },
+      "item.footprint": {
+        "id": "item.footprint",
+        "name": "鼓面脚印",
+        "owner": "player",
+        "asset": "prop.footprint",
+        "recipe": []
+      },
+      "item.honeyjar": {
+        "id": "item.honeyjar",
+        "name": "空蜂蜜罐",
+        "owner": "player",
+        "asset": "prop.honey",
+        "recipe": []
+      },
+      "item.string": {
+        "id": "item.string",
+        "name": "结实的绳子",
+        "owner": "consumed",
+        "asset": "prop.string",
+        "recipe": []
+      }
+    },
+    "resources": {
+      "materials": 15,
+      "time": 30
+    },
+    "relationships": {
+      "npc.jijiguowang": 3,
+      "npc.maomao": 0,
+      "npc.xionger": 1
+    },
+    "knowledge": [
+      "clue.drumskin",
+      "clue.footprint",
+      "clue.honeyjar",
+      "clue.feather",
+      "clue.jiji.sorry",
+      "clue.jiji.secret",
+      "clue.jiji.join",
+      "clue.fix.plan"
+    ],
+    "quests": {
+      "task.comfort.xionger": "complete",
+      "task.find.clues": "complete",
+      "task.fix.drum": "complete",
+      "task.jiji.join": "complete"
+    },
+    "promises": {
+      "promise.jiji.drum": true
+    },
+    "rewards": [],
+    "provenance": {
+      "character:npc.jijiguowang": "event.10.0",
+      "character:npc.maomao": "event.10.0",
+      "character:npc.xionger": "event.10.0",
+      "character:player": "event.10.0",
+      "item:item.cloth": "event.11.0",
+      "item:item.drum": "event.11.0",
+      "item:item.drumfix": "event.11.0",
+      "item:item.feather": "event.5.0",
+      "item:item.footprint": "event.2.0",
+      "item:item.honeyjar": "event.3.0",
+      "item:item.string": "event.11.0",
+      "knowledge:clue.drumskin": "initial",
+      "knowledge:clue.feather": "event.5.0",
+      "knowledge:clue.fix.plan": "event.9.1",
+      "knowledge:clue.footprint": "event.2.0",
+      "knowledge:clue.honeyjar": "event.3.0",
+      "knowledge:clue.jiji.join": "event.8.0",
+      "knowledge:clue.jiji.secret": "event.7.1",
+      "knowledge:clue.jiji.sorry": "event.7.0",
+      "promise:promise.jiji.drum": "event.8.0",
+      "quest:task.comfort.xionger": "event.4.0",
+      "quest:task.find.clues": "event.7.1",
+      "quest:task.fix.drum": "event.11.0",
+      "quest:task.jiji.join": "event.8.0",
+      "relationship:npc.jijiguowang": "event.11.0",
+      "relationship:npc.maomao": "initial",
+      "relationship:npc.xionger": "event.4.0",
+      "resource:materials": "initial",
+      "resource:time": "initial"
+    }
+  },
+  "events": [
+    {
+      "schema_version": 2,
+      "id": "event.2.0",
+      "turn": 2,
+      "cause": [
+        "page:page.1"
+      ],
+      "action_id": "ac.look.footprint",
+      "verb": "observe",
+      "description": "熊大蹲下细看：脚印小小的，有五个脚趾，像猴子的爪印，可比吉吉国王的脚小了一号。",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.footprint",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "transfer",
+          "target": "item.footprint",
+          "value": "player",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大沉稳细心，一眼看出脚印的大小差别"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.3.0",
+      "turn": 3,
+      "cause": [
+        "page:page.2"
+      ],
+      "action_id": "ac.pick.honeyjar",
+      "verb": "observe",
+      "description": "熊二抢先扒开草丛，抱出一个空蜂蜜罐：“俺的蜂蜜罐咋在这儿？可俺昨晚一直在树洞睡觉呀！”罐子是空的，可熊二说他没来过。",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.honeyjar",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "transfer",
+          "target": "item.honeyjar",
+          "value": "player",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.xionger",
+        "aspect": "strength",
+        "explanation": "熊二鼻子灵、眼尖，一下就认出草丛里的蜂蜜罐"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.4.0",
+      "turn": 4,
+      "cause": [
+        "page:page.4"
+      ],
+      "action_id": "ac.ask.xionger.smell",
+      "verb": "ask",
+      "description": "熊二凑近羽毛使劲嗅了嗅：“好家伙，这味儿俺认得，是吉吉国王和毛毛身上的香蕉味！”熊大夸熊二鼻子真灵，熊二乐得直拍肚子。",
+      "effects": [
+        {
+          "op": "relationship",
+          "target": "npc.xionger",
+          "value": 1,
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.xionger",
+        "aspect": "strength",
+        "explanation": "熊二鼻子灵，一下就闻出羽毛上猴子特有的香蕉味"
+      },
+      "interaction_kind": "dialogue",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.5.0",
+      "turn": 5,
+      "cause": [
+        "page:page.5"
+      ],
+      "action_id": "ac.take.feather",
+      "verb": "observe",
+      "description": "熊大轻轻捡起彩色羽毛：“这是表演时戴的装饰，收好它，见到吉吉国王就是证据。”",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.feather",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "transfer",
+          "target": "item.feather",
+          "value": "player",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大细心稳重，知道羽毛是重要证据，先收好再行动"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.6.0",
+      "turn": 6,
+      "cause": [
+        "page:page.6"
+      ],
+      "action_id": "ac.move.treehouse",
+      "verb": "move",
+      "description": "熊大带着熊二快步走到大树下。树屋的门关得紧紧的，窗帘晃了一下，门口的树枝也抖了抖，好像有个小影子正偷偷往外看。",
+      "effects": [
+        {
+          "op": "move",
+          "target": "player",
+          "value": "scene.treehouse",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.xionger",
+          "value": "scene.treehouse",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大善于推理，认定香蕉味和羽毛都指向树屋，决定先找吉吉国王问个明白"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.7.0",
+      "turn": 7,
+      "cause": [
+        "page:page.7"
+      ],
+      "action_id": "ac.negotiate.jiji.sorry",
+      "verb": "negotiate",
+      "description": "熊大温和地说：“犯错不可怕，可怕的是不敢认。大鼓能补，伙伴不能少。”吉吉国王红着脸打开门：“是……是本王半夜练鼓敲破了鼓面，对不起！”",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.jiji.sorry",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "relationship",
+          "target": "npc.jijiguowang",
+          "value": 1,
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大稳重善劝，不指责而是给台阶，让爱面子的吉吉国王敢于认错"
+      },
+      "interaction_kind": "dialogue",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.7.1",
+      "turn": 7,
+      "cause": [
+        "page:page.7"
+      ],
+      "action_id": "ac.ask.maomao.secret",
+      "verb": "ask",
+      "description": "毛毛左右看看，压低声音说：“对对对……其实昨晚吉吉国王偷偷来舞台练鼓，想今天一鸣惊人，俺陪着他来着。”熊大心里有数了。",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.jiji.secret",
+          "value": true,
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.maomao",
+        "aspect": "weakness",
+        "explanation": "毛毛只敢附和吉吉国王，但心地善良，被熊大悄悄一问就忍不住说了实话"
+      },
+      "interaction_kind": "dialogue",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.8.0",
+      "turn": 8,
+      "cause": [
+        "page:page.8"
+      ],
+      "action_id": "ac.promise.jiji.drum",
+      "verb": "negotiate",
+      "description": "熊大当着大家的面说：“认错才是真勇敢。音乐会你当领鼓手，我来宣布！”吉吉国王挺起胸脯：“好！本王这就归队，把鼓打得咚咚响！”",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.jiji.join",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "relationship",
+          "target": "npc.jijiguowang",
+          "value": 1,
+          "actor": "player"
+        },
+        {
+          "op": "promise",
+          "target": "promise.jiji.drum",
+          "value": true,
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大稳重大气，懂得给爱面子的吉吉国王台阶和荣誉，让他安心归队"
+      },
+      "interaction_kind": "dialogue",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.8.1",
+      "turn": 8,
+      "cause": [
+        "page:page.8"
+      ],
+      "action_id": "ac.move.cabin",
+      "verb": "move",
+      "description": "熊大领着大家快步跑到小木屋。吉吉国王消息灵通，抢先喊道：“布和绳子就在里屋的木箱上，本王带路！”",
+      "effects": [
+        {
+          "op": "move",
+          "target": "player",
+          "value": "scene.cabin",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.xionger",
+          "value": "scene.cabin",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.jijiguowang",
+          "value": "scene.cabin",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.maomao",
+          "value": "scene.cabin",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.jijiguowang",
+        "aspect": "strength",
+        "explanation": "吉吉国王消息灵通，认识森林各处的路，归队后马上带大家找到放材料的木箱"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.9.0",
+      "turn": 9,
+      "cause": [
+        "page:page.9"
+      ],
+      "action_id": "ac.take.materials",
+      "verb": "observe",
+      "description": "熊大接过布和绳子，仔细卷好夹在腋下：“材料齐了，天黑前赶到舞台，就能补鼓！”熊二咧嘴笑：“俺有力气，俺来扛！”",
+      "effects": [
+        {
+          "op": "transfer",
+          "target": "item.cloth",
+          "value": "player",
+          "actor": "player"
+        },
+        {
+          "op": "transfer",
+          "target": "item.string",
+          "value": "player",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": null,
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.9.1",
+      "turn": 9,
+      "cause": [
+        "page:page.9"
+      ],
+      "action_id": "ac.ask.jiji.fixplan",
+      "verb": "ask",
+      "description": "吉吉国王挺起胸脯：“这有何难！用布蒙住破洞，绳子绕鼓一圈扎紧，敲起来照样咚咚响！本王可是打鼓高手！”熊大听完心里有了底。",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.fix.plan",
+          "value": true,
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.jijiguowang",
+        "aspect": "strength",
+        "explanation": "吉吉国王消息灵通又常玩鼓，一眼就说出用布蒙洞、绳子扎紧的补鼓办法"
+      },
+      "interaction_kind": "dialogue",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.10.0",
+      "turn": 10,
+      "cause": [
+        "page:page.10"
+      ],
+      "action_id": "ac.move.stage",
+      "verb": "move",
+      "description": "熊大领着大家一路小跑回到舞台，那面破了洞的大鼓还静静立在台上。",
+      "effects": [
+        {
+          "op": "move",
+          "target": "player",
+          "value": "scene.stage",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.xionger",
+          "value": "scene.stage",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.jijiguowang",
+          "value": "scene.stage",
+          "actor": "player"
+        },
+        {
+          "op": "move",
+          "target": "npc.maomao",
+          "value": "scene.stage",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.xionger",
+        "aspect": "strength",
+        "explanation": "熊二力气大，一路扛着布和绳子，帮大家省了不少力气，很快赶到舞台"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.10.1",
+      "turn": 10,
+      "cause": [
+        "page:page.10"
+      ],
+      "action_id": "ac.take.drum",
+      "verb": "observe",
+      "description": "熊大和熊二一起小心抬过大鼓，破洞朝上放好，正好可以动手补了。",
+      "effects": [
+        {
+          "op": "transfer",
+          "target": "item.drum",
+          "value": "player",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大细心稳重，抬鼓时先看清破洞位置，把鼓放得稳稳当当"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    },
+    {
+      "schema_version": 2,
+      "id": "event.11.0",
+      "turn": 11,
+      "cause": [
+        "page:page.11"
+      ],
+      "action_id": "ac.craft.drumfix.jiji",
+      "verb": "combine",
+      "description": "吉吉国王红着脸补鼓：“敲破的鼓本王来修！”毛毛帮着拉绳——咚！鼓声咚咚响，大家为他鼓掌，熊大夸他是敢担当的国王！",
+      "effects": [
+        {
+          "op": "craft",
+          "target": "item.drumfix",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "relationship",
+          "target": "npc.jijiguowang",
+          "value": 1,
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "npc.jijiguowang",
+        "aspect": "strength",
+        "explanation": "吉吉国王常玩鼓懂鼓性，亲手补鼓弥补过错，熊大的信任让他更有担当"
+      },
+      "interaction_kind": "items",
+      "expansion": null
+    }
+  ],
+  "pages": [
+    {
+      "schema_version": 2,
+      "id": "page.1",
+      "title": "哑了的大鼓",
+      "text": "森林音乐会明天就要开场啦！可是舞台上唯一的大鼓，怎么敲都发不出声音。熊大凑近一看，鼓面上破了个小洞，还印着几个奇怪的脚印。熊二着急地喊：“好家伙，是谁干的呀？”熊大拍拍胸脯：“别怕，交给我，天黑前一定查清楚！”",
+      "illustration": {
+        "scene": "scene.stage",
+        "characters": {
+          "npc.xionger": "character.xionger.worried",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.drum",
+          "prop.footprint"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "it.observe.drum",
+          "kind": "observe",
+          "instruction": "先看看大鼓和它旁边的线索，从哪里开始查？",
+          "actions": [
+            {
+              "id": "ac.look.footprint",
+              "verb": "observe",
+              "label": "仔细观察鼓面上的脚印",
+              "target": "item.footprint",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.footprint",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.footprint",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大蹲下细看：脚印小小的，有五个脚趾，像猴子的爪印，可比吉吉国王的脚小了一号。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大沉稳细心，一眼看出脚印的大小差别"
+              },
+              "hotspot": "prop.footprint"
+            },
+            {
+              "id": "ac.look.around",
+              "verb": "observe",
+              "label": "在舞台四周找找别的东西",
+              "target": "item.drum",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.feather",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.feather",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大绕着大鼓转了一圈，在鼓旁的草地上发现一根彩色羽毛，闪亮亮的，像表演服上的装饰。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": null
+            },
+            {
+              "id": "ac.smell.xionger",
+              "verb": "ask",
+              "label": "让熊二用鼻子闻一闻",
+              "target": "npc.xionger",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.honeyjar",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.honeyjar",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊二凑上去使劲一嗅：“俺闻到蜂蜜味儿！鼓后面草丛里还有个空蜂蜜罐呢！”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.xionger",
+                "aspect": "strength",
+                "explanation": "熊二的鼻子灵，一下子闻出了草丛里的蜂蜜罐"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "ac.look.footprint",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 1,
+        "location": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.stage",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.stage",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "scene.stage",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "scene.stage",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "scene.stage",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.maomao": 0,
+          "npc.xionger": 0
+        },
+        "knowledge": [
+          "clue.drumskin"
+        ],
+        "quests": {
+          "task.comfort.xionger": "open",
+          "task.find.clues": "open",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "initial",
+          "character:player": "initial",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "initial",
+          "item:item.footprint": "initial",
+          "item:item.honeyjar": "initial",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "initial",
+          "quest:task.find.clues": "initial",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "initial",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.2",
+      "title": "羽毛与蜂蜜罐",
+      "text": "熊大看着鼓面上的小脚印，心里想：脚印这么小，到底是谁的呢？熊二凑过来闻了闻：“好家伙，俺闻到一股蜂蜜味！”舞台周围还有两样东西引起注意——大鼓旁边掉着一根彩色羽毛，鼓后面的草丛里好像藏着什么。先查哪一样呢？",
+      "illustration": {
+        "scene": "scene.stage",
+        "characters": {
+          "npc.xionger": "character.xionger.surprised",
+          "player": "character.xiongda.thinking"
+        },
+        "props": [
+          "prop.drum",
+          "prop.feather",
+          "prop.honey"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "int.page2.clue",
+          "kind": "observe",
+          "instruction": "你想先查看哪条线索？",
+          "actions": [
+            {
+              "id": "ac.pick.feather",
+              "verb": "observe",
+              "label": "捡起彩色羽毛",
+              "target": "item.feather",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.feather",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.feather",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大轻轻捏起羽毛：“这是表演时戴在头上的装饰羽毛，猴子们最喜欢用它！”看来昨晚有猴子来过舞台。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大观察细心，认出这是表演装饰羽毛，推断出有猴子来过"
+              },
+              "hotspot": "prop.feather"
+            },
+            {
+              "id": "ac.pick.honeyjar",
+              "verb": "observe",
+              "label": "扒开草丛看蜂蜜罐",
+              "target": "item.honeyjar",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.honeyjar",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.honeyjar",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊二抢先扒开草丛，抱出一个空蜂蜜罐：“俺的蜂蜜罐咋在这儿？可俺昨晚一直在树洞睡觉呀！”罐子是空的，可熊二说他没来过。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.xionger",
+                "aspect": "strength",
+                "explanation": "熊二鼻子灵、眼尖，一下就认出草丛里的蜂蜜罐"
+              },
+              "hotspot": "prop.honey"
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "ac.pick.honeyjar",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 2,
+        "location": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.stage",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.stage",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "scene.stage",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "scene.stage",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.maomao": 0,
+          "npc.xionger": 0
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint"
+        ],
+        "quests": {
+          "task.comfort.xionger": "open",
+          "task.find.clues": "open",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "initial",
+          "character:player": "initial",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "initial",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "initial",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.footprint": "event.2.0",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "initial",
+          "quest:task.find.clues": "initial",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "initial",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.4",
+      "title": "羽毛的线索",
+      "text": "熊大捧着空蜂蜜罐想：熊二说昨晚一直在睡觉，那罐子是谁放到这儿的？他又看看鼓边的彩色羽毛——这是表演时才戴的装饰呀！熊二挠挠头：“俺闻见羽毛上有股香蕉味，像是猴子身上的。”要不要再仔细看看这根羽毛？",
+      "illustration": {
+        "scene": "scene.stage",
+        "characters": {
+          "npc.xionger": "character.xionger.thinking",
+          "player": "character.xiongda.thinking"
+        },
+        "props": [
+          "prop.drum",
+          "prop.feather",
+          "prop.honey"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "int.page4.clue",
+          "kind": "observe",
+          "instruction": "接下来查哪条线索？",
+          "actions": [
+            {
+              "id": "ac.look.feather",
+              "verb": "observe",
+              "label": "仔细查看彩色羽毛",
+              "target": "item.feather",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.feather",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.feather",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大捡起羽毛，羽根上沾着一小块香蕉皮屑，羽毛边缘还缠着细细的猴毛。熊大心里有数了：这是猴子表演帽上的装饰。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大细心观察，从羽毛上的香蕉屑和猴毛判断出它的主人是猴子"
+              },
+              "hotspot": "prop.feather"
+            },
+            {
+              "id": "ac.ask.xionger.smell",
+              "verb": "ask",
+              "label": "请熊二再闻闻罐子和羽毛",
+              "target": "npc.xionger",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "relationship",
+                  "target": "npc.xionger",
+                  "value": 1,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊二凑近羽毛使劲嗅了嗅：“好家伙，这味儿俺认得，是吉吉国王和毛毛身上的香蕉味！”熊大夸熊二鼻子真灵，熊二乐得直拍肚子。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.xionger",
+                "aspect": "strength",
+                "explanation": "熊二鼻子灵，一下就闻出羽毛上猴子特有的香蕉味"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "ac.ask.xionger.smell",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 3,
+        "location": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.stage",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.stage",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "scene.stage",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.maomao": 0,
+          "npc.xionger": 0
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar"
+        ],
+        "quests": {
+          "task.comfort.xionger": "open",
+          "task.find.clues": "open",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "initial",
+          "character:player": "initial",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "initial",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "initial",
+          "quest:task.find.clues": "initial",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "initial",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.5",
+      "title": "香蕉味的秘密",
+      "text": "熊二拍着肚子说：“好家伙，羽毛上是香蕉味，猴子上树前最爱吃香蕉！”熊大点点头：小脚印、香蕉味，都指向猴子一家。可吉吉国王的脚要大一号，脚印到底是谁的？熊大想了想：是先把羽毛收好当证据，还是直接去树屋找吉吉国王问个明白？",
+      "illustration": {
+        "scene": "scene.stage",
+        "characters": {
+          "npc.xionger": "character.xionger.happy",
+          "player": "character.xiongda.thinking"
+        },
+        "props": [
+          "prop.feather",
+          "prop.honey"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "it.page5.clue",
+          "kind": "observe",
+          "instruction": "下一步怎么办？",
+          "actions": [
+            {
+              "id": "ac.take.feather",
+              "verb": "observe",
+              "label": "捡起彩色羽毛收好",
+              "target": "item.feather",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.feather",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.feather",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大轻轻捡起彩色羽毛：“这是表演时戴的装饰，收好它，见到吉吉国王就是证据。”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大细心稳重，知道羽毛是重要证据，先收好再行动"
+              },
+              "hotspot": "prop.feather"
+            },
+            {
+              "id": "ac.go.treehouse",
+              "verb": "move",
+              "label": "去树屋找吉吉国王",
+              "target": "scene.treehouse",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "move",
+                  "target": "npc.xionger",
+                  "value": "scene.treehouse",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "player",
+                  "value": "scene.treehouse",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大招呼熊二：“别磨蹭，我们去树屋！”兄弟俩顺着小路，来到吉吉国王住的大树屋底下。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "ac.take.feather",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 4,
+        "location": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.stage",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.stage",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "scene.stage",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "open",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "initial",
+          "character:player": "initial",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "initial",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "initial",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.6",
+      "title": "下一步去哪儿",
+      "text": "熊大把彩色羽毛小心收进怀里，线索越来越多：小脚印、香蕉味、表演的羽毛，全都和猴子有关。他抬头看看天色：“天黑前得找到吉吉国王问清楚，还得拿补鼓的布和绳子。”熊二挠挠头：“好家伙，先去树屋找猴子，还是先去小木屋拿材料？”",
+      "illustration": {
+        "scene": "scene.stage",
+        "characters": {
+          "npc.xionger": "character.xionger.happy",
+          "player": "character.xiongda.thinking"
+        },
+        "props": [
+          "prop.feather",
+          "prop.honey",
+          "prop.drum"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "int.6.1",
+          "kind": "observe",
+          "instruction": "选择下一步去哪里",
+          "actions": [
+            {
+              "id": "ac.move.treehouse",
+              "verb": "move",
+              "label": "去树屋找吉吉国王",
+              "target": "scene.treehouse",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "move",
+                  "target": "player",
+                  "value": "scene.treehouse",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.xionger",
+                  "value": "scene.treehouse",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大带着熊二快步走到大树下。树屋的门关得紧紧的，窗帘晃了一下，门口的树枝也抖了抖，好像有个小影子正偷偷往外看。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大善于推理，认定香蕉味和羽毛都指向树屋，决定先找吉吉国王问个明白"
+              },
+              "hotspot": null
+            },
+            {
+              "id": "ac.move.cabin",
+              "verb": "move",
+              "label": "先去小木屋拿补鼓材料",
+              "target": "scene.cabin",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "move",
+                  "target": "player",
+                  "value": "scene.cabin",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.xionger",
+                  "value": "scene.cabin",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊二一拍肚子，想起小木屋的角落里收着布和绳子。两人赶到小木屋，架子上果然摆着厚布和结实的绳子，把它们带回舞台就能补鼓啦。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "ac.move.treehouse",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 5,
+        "location": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.stage",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.stage",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar",
+              "clue.feather"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "player",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "open",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "initial",
+          "character:player": "initial",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "event.5.0",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.feather": "event.5.0",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "initial",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.7",
+      "title": "树屋门后的秘密",
+      "text": "熊大在树下喊：“吉吉国王，大鼓出事了，你知道什么吗？”屋里声音发抖：“本王什么都不知道！”窗帘一晃，毛毛探出小脑袋。熊大举起羽毛：“这是鼓边捡到的！”熊二吸吸鼻子：“里面全是香蕉味！”先悄悄问毛毛，还是请吉吉国王说清楚？",
+      "illustration": {
+        "scene": "scene.treehouse",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.worried",
+          "npc.maomao": "character.maomao.worried",
+          "npc.xionger": "character.xionger.thinking",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.feather"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "int.ask.maomao",
+          "kind": "dialogue",
+          "instruction": "想找知道内情又不嘴硬的伙伴，先悄悄问问毛毛",
+          "actions": [
+            {
+              "id": "ac.ask.maomao.secret",
+              "verb": "ask",
+              "label": "悄悄问毛毛昨晚的事",
+              "target": "npc.maomao",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.jiji.secret",
+                  "value": true,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "毛毛左右看看，压低声音说：“对对对……其实昨晚吉吉国王偷偷来舞台练鼓，想今天一鸣惊人，俺陪着他来着。”熊大心里有数了。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.maomao",
+                "aspect": "weakness",
+                "explanation": "毛毛只敢附和吉吉国王，但心地善良，被熊大悄悄一问就忍不住说了实话"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        },
+        {
+          "id": "int.negotiate.jiji",
+          "kind": "dialogue",
+          "instruction": "拿着羽毛证据，当面请吉吉国王把话说清楚",
+          "actions": [
+            {
+              "id": "ac.negotiate.jiji.sorry",
+              "verb": "negotiate",
+              "label": "举出羽毛请吉吉国王承认",
+              "target": "npc.jijiguowang",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.jiji.sorry",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "relationship",
+                  "target": "npc.jijiguowang",
+                  "value": 1,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大温和地说：“犯错不可怕，可怕的是不敢认。大鼓能补，伙伴不能少。”吉吉国王红着脸打开门：“是……是本王半夜练鼓敲破了鼓面，对不起！”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大稳重善劝，不指责而是给台阶，让爱面子的吉吉国王敢于认错"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "ac.negotiate.jiji.sorry",
+          "amount": null,
+          "items": [],
+          "order": []
+        },
+        {
+          "action_id": "ac.ask.maomao.secret",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 6,
+        "location": "scene.treehouse",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.treehouse",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.treehouse",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar",
+              "clue.feather"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "player",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "open",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "event.6.0",
+          "character:player": "event.6.0",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "event.5.0",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.feather": "event.5.0",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "initial",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.8",
+      "title": "领鼓手的约定",
+      "text": "吉吉国王红着脸认了错，毛毛小声说出了昨晚练鼓的秘密。熊大拍拍他的肩膀：“认错才是真勇敢，归队吧！”毛毛拍手：“对对对！”天色不早了，是先请国王归队，还是先赶去小木屋拿补鼓的材料？",
+      "illustration": {
+        "scene": "scene.treehouse",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.happy",
+          "npc.maomao": "character.maomao.happy",
+          "npc.xionger": "character.xionger.calm",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.feather"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "it.promise.jiji",
+          "kind": "dialogue",
+          "instruction": "怎么让爱面子的吉吉国王放心归队？",
+          "actions": [
+            {
+              "id": "ac.promise.jiji.drum",
+              "verb": "negotiate",
+              "label": "郑重承诺让他当领鼓手",
+              "target": "npc.jijiguowang",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.jiji.join",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "relationship",
+                  "target": "npc.jijiguowang",
+                  "value": 1,
+                  "actor": "player"
+                },
+                {
+                  "op": "promise",
+                  "target": "promise.jiji.drum",
+                  "value": true,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大当着大家的面说：“认错才是真勇敢。音乐会你当领鼓手，我来宣布！”吉吉国王挺起胸脯：“好！本王这就归队，把鼓打得咚咚响！”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大稳重大气，懂得给爱面子的吉吉国王台阶和荣誉，让他安心归队"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        },
+        {
+          "id": "it.move.cabin",
+          "kind": "observe",
+          "instruction": "天快黑了，补鼓的材料在哪里？",
+          "actions": [
+            {
+              "id": "ac.move.cabin",
+              "verb": "move",
+              "label": "带大家赶去小木屋拿布和绳子",
+              "target": "scene.cabin",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "move",
+                  "target": "player",
+                  "value": "scene.cabin",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.xionger",
+                  "value": "scene.cabin",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.jijiguowang",
+                  "value": "scene.cabin",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.maomao",
+                  "value": "scene.cabin",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大领着大家快步跑到小木屋。吉吉国王消息灵通，抢先喊道：“布和绳子就在里屋的木箱上，本王带路！”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.jijiguowang",
+                "aspect": "strength",
+                "explanation": "吉吉国王消息灵通，认识森林各处的路，归队后马上带大家找到放材料的木箱"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [
+        "event.7.0",
+        "event.7.1"
+      ],
+      "choices": [
+        {
+          "action_id": "ac.promise.jiji.drum",
+          "amount": null,
+          "items": [],
+          "order": []
+        },
+        {
+          "action_id": "ac.move.cabin",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 7,
+        "location": "scene.treehouse",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.treehouse",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.treehouse",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.treehouse",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.treehouse",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar",
+              "clue.feather",
+              "clue.jiji.sorry",
+              "clue.jiji.secret"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "player",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 1,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather",
+          "clue.jiji.sorry",
+          "clue.jiji.secret"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "complete",
+          "task.fix.drum": "open",
+          "task.jiji.join": "open"
+        },
+        "promises": {
+          "promise.jiji.drum": false
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.maomao": "initial",
+          "character:npc.xionger": "event.6.0",
+          "character:player": "event.6.0",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "event.5.0",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.feather": "event.5.0",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "knowledge:clue.jiji.secret": "event.7.1",
+          "knowledge:clue.jiji.sorry": "event.7.0",
+          "promise:promise.jiji.drum": "initial",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "event.7.1",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "initial",
+          "relationship:npc.jijiguowang": "event.7.0",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.9",
+      "title": "木箱里的材料",
+      "text": "到了小木屋，吉吉国王领着大家找到木箱。他把布和绳子高高举起来：“看，材料都在这儿！”毛毛拍手：“对对对，国王记性最好！”熊大点点头：“材料有了，大鼓还在舞台等着咱们。可补鼓该怎么补才结实呢？”",
+      "illustration": {
+        "scene": "scene.cabin",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.happy",
+          "npc.maomao": "character.maomao.happy",
+          "npc.xionger": "character.xionger.happy",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.cloth",
+          "prop.string"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "int.9.1",
+          "kind": "items",
+          "instruction": "把补鼓的材料拿到手",
+          "actions": [
+            {
+              "id": "ac.take.materials",
+              "verb": "observe",
+              "label": "收好布和绳子",
+              "target": "item.cloth",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "transfer",
+                  "target": "item.cloth",
+                  "value": "player",
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.string",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大接过布和绳子，仔细卷好夹在腋下：“材料齐了，天黑前赶到舞台，就能补鼓！”熊二咧嘴笑：“俺有力气，俺来扛！”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": "prop.cloth"
+            }
+          ],
+          "order": [],
+          "order_action": null
+        },
+        {
+          "id": "int.9.2",
+          "kind": "dialogue",
+          "instruction": "问问见多识广的吉吉国王怎么补鼓",
+          "actions": [
+            {
+              "id": "ac.ask.jiji.fixplan",
+              "verb": "ask",
+              "label": "请教补鼓的办法",
+              "target": "npc.jijiguowang",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.fix.plan",
+                  "value": true,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "吉吉国王挺起胸脯：“这有何难！用布蒙住破洞，绳子绕鼓一圈扎紧，敲起来照样咚咚响！本王可是打鼓高手！”熊大听完心里有了底。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.jijiguowang",
+                "aspect": "strength",
+                "explanation": "吉吉国王消息灵通又常玩鼓，一眼就说出用布蒙洞、绳子扎紧的补鼓办法"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [
+        "event.8.0",
+        "event.8.1"
+      ],
+      "choices": [
+        {
+          "action_id": "ac.take.materials",
+          "amount": null,
+          "items": [],
+          "order": []
+        },
+        {
+          "action_id": "ac.ask.jiji.fixplan",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 8,
+        "location": "scene.cabin",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.cabin",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.cabin",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.cabin",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.cabin",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar",
+              "clue.feather",
+              "clue.jiji.sorry",
+              "clue.jiji.secret",
+              "clue.jiji.join"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "scene.cabin",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "player",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "scene.cabin",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 2,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather",
+          "clue.jiji.sorry",
+          "clue.jiji.secret",
+          "clue.jiji.join"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "complete",
+          "task.fix.drum": "open",
+          "task.jiji.join": "complete"
+        },
+        "promises": {
+          "promise.jiji.drum": true
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "event.8.1",
+          "character:npc.maomao": "event.8.1",
+          "character:npc.xionger": "event.8.1",
+          "character:player": "event.8.1",
+          "item:item.cloth": "initial",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "event.5.0",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "initial",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.feather": "event.5.0",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "knowledge:clue.jiji.join": "event.8.0",
+          "knowledge:clue.jiji.secret": "event.7.1",
+          "knowledge:clue.jiji.sorry": "event.7.0",
+          "promise:promise.jiji.drum": "event.8.0",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "event.7.1",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "event.8.0",
+          "relationship:npc.jijiguowang": "event.8.0",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.10",
+      "title": "赶回舞台",
+      "text": "布和绳子都拿到了，吉吉国王还讲清了补鼓的办法。熊大一挥手：“材料齐了，咱们马上回舞台！”熊二扛起布卷：“俺有力气，俺来扛！”毛毛蹦蹦跳跳：“对对对，大鼓还在等着呢！”大家朝舞台快步走去。",
+      "illustration": {
+        "scene": "scene.cabin",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.happy",
+          "npc.maomao": "character.maomao.happy",
+          "npc.xionger": "character.xionger.happy",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.cloth",
+          "prop.string"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "it.move.stage",
+          "kind": "observe",
+          "instruction": "带着材料和伙伴们赶回舞台，去找那面等着修补的大鼓",
+          "actions": [
+            {
+              "id": "ac.move.stage",
+              "verb": "move",
+              "label": "大家一起赶回舞台",
+              "target": "scene.stage",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "move",
+                  "target": "player",
+                  "value": "scene.stage",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.xionger",
+                  "value": "scene.stage",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.jijiguowang",
+                  "value": "scene.stage",
+                  "actor": "player"
+                },
+                {
+                  "op": "move",
+                  "target": "npc.maomao",
+                  "value": "scene.stage",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大领着大家一路小跑回到舞台，那面破了洞的大鼓还静静立在台上。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "npc.xionger",
+                "aspect": "strength",
+                "explanation": "熊二力气大，一路扛着布和绳子，帮大家省了不少力气，很快赶到舞台"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        },
+        {
+          "id": "it.take.drum",
+          "kind": "items",
+          "instruction": "到了舞台，把大鼓取过来，准备动手修补",
+          "actions": [
+            {
+              "id": "ac.take.drum",
+              "verb": "observe",
+              "label": "搬过大鼓",
+              "target": "item.drum",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "transfer",
+                  "target": "item.drum",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大和熊二一起小心抬过大鼓，破洞朝上放好，正好可以动手补了。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大细心稳重，抬鼓时先看清破洞位置，把鼓放得稳稳当当"
+              },
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [
+        "event.9.0",
+        "event.9.1"
+      ],
+      "choices": [
+        {
+          "action_id": "ac.move.stage",
+          "amount": null,
+          "items": [],
+          "order": []
+        },
+        {
+          "action_id": "ac.take.drum",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 9,
+        "location": "scene.cabin",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.cabin",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.cabin",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.cabin",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.cabin",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar",
+              "clue.feather",
+              "clue.jiji.sorry",
+              "clue.jiji.secret",
+              "clue.jiji.join",
+              "clue.fix.plan"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "player",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "scene.stage",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "player",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "player",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 2,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather",
+          "clue.jiji.sorry",
+          "clue.jiji.secret",
+          "clue.jiji.join",
+          "clue.fix.plan"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "complete",
+          "task.fix.drum": "open",
+          "task.jiji.join": "complete"
+        },
+        "promises": {
+          "promise.jiji.drum": true
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "event.8.1",
+          "character:npc.maomao": "event.8.1",
+          "character:npc.xionger": "event.8.1",
+          "character:player": "event.8.1",
+          "item:item.cloth": "event.9.0",
+          "item:item.drum": "initial",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "event.5.0",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "event.9.0",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.feather": "event.5.0",
+          "knowledge:clue.fix.plan": "event.9.1",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "knowledge:clue.jiji.join": "event.8.0",
+          "knowledge:clue.jiji.secret": "event.7.1",
+          "knowledge:clue.jiji.sorry": "event.7.0",
+          "promise:promise.jiji.drum": "event.8.0",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "event.7.1",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "event.8.0",
+          "relationship:npc.jijiguowang": "event.8.0",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.11",
+      "title": "补好大鼓",
+      "text": "大鼓放稳了，破洞朝上，布和绳子都摆在旁边。吉吉国王撸起袖子：“照本王说的办法，准能行！”毛毛递上绳子：“对对对！”熊大点点头：布蒙住洞，绳子绕鼓扎紧就行。可这活儿该谁来做才又快又结实呢？",
+      "illustration": {
+        "scene": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.determined",
+          "npc.maomao": "character.maomao.happy",
+          "npc.xionger": "character.xionger.happy",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.drum",
+          "prop.cloth",
+          "prop.string"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "it.fix.drum",
+          "kind": "items",
+          "instruction": "选择谁来动手补鼓",
+          "actions": [
+            {
+              "id": "ac.craft.drumfix.xiongda",
+              "verb": "combine",
+              "label": "熊大亲手扎紧绳子",
+              "target": "item.drumfix",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "craft",
+                  "target": "item.drumfix",
+                  "value": true,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大细心地把布蒙平，一圈圈绕紧绳子，最后用力一拉——咚！鼓声又响又亮！",
+              "alternatives": [],
+              "inputs": [
+                "item.drum",
+                "item.cloth",
+                "item.string"
+              ],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大稳重细心，蒙布绕绳一丝不苟，补好的鼓面又平又结实"
+              },
+              "hotspot": "prop.drum"
+            },
+            {
+              "id": "ac.craft.drumfix.jiji",
+              "verb": "combine",
+              "label": "让吉吉国王动手补",
+              "target": "item.drumfix",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "craft",
+                  "target": "item.drumfix",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "relationship",
+                  "target": "npc.jijiguowang",
+                  "value": 1,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "吉吉国王红着脸补鼓：“敲破的鼓本王来修！”毛毛帮着拉绳——咚！鼓声咚咚响，大家为他鼓掌，熊大夸他是敢担当的国王！",
+              "alternatives": [],
+              "inputs": [
+                "item.drum",
+                "item.cloth",
+                "item.string"
+              ],
+              "trait_use": {
+                "character": "npc.jijiguowang",
+                "aspect": "strength",
+                "explanation": "吉吉国王常玩鼓懂鼓性，亲手补鼓弥补过错，熊大的信任让他更有担当"
+              },
+              "hotspot": "prop.drum"
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [
+        "event.10.1",
+        "event.9.1"
+      ],
+      "choices": [
+        {
+          "action_id": "ac.craft.drumfix.jiji",
+          "amount": null,
+          "items": [
+            "item.drum",
+            "item.cloth",
+            "item.string"
+          ],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 10,
+        "location": "scene.stage",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.stage",
+            "motivation": "想在音乐会上出风头，保住国王的面子",
+            "strength": "爬树快，消息灵通，认识森林里各处的路",
+            "weakness": "爱面子又胆小，做了错事不敢承认",
+            "knowledge": []
+          },
+          "npc.maomao": {
+            "id": "npc.maomao",
+            "name": "毛毛",
+            "location": "scene.stage",
+            "motivation": "忠心跟着吉吉国王，也希望音乐会别取消",
+            "strength": "机灵眼尖，小角落里的东西都看得见",
+            "weakness": "只敢附和吉吉国王，不敢多说一句",
+            "knowledge": []
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.stage",
+            "motivation": "想吃蜂蜜，也想帮哥哥办好音乐会",
+            "strength": "鼻子灵，闻得出蜂蜜和食物的味道，力气大",
+            "weakness": "贪吃糊涂，容易被蜂蜜引走注意力",
+            "knowledge": []
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.stage",
+            "motivation": "守护森林，让音乐会顺利举行，不让大家失望",
+            "strength": "聪明稳重，善于观察推理，遇事不慌",
+            "weakness": "太操心，容易一个人扛下所有责任",
+            "knowledge": [
+              "clue.drumskin",
+              "clue.footprint",
+              "clue.honeyjar",
+              "clue.feather",
+              "clue.jiji.sorry",
+              "clue.jiji.secret",
+              "clue.jiji.join",
+              "clue.fix.plan"
+            ]
+          }
+        },
+        "items": {
+          "item.cloth": {
+            "id": "item.cloth",
+            "name": "补鼓的布",
+            "owner": "player",
+            "asset": "prop.cloth",
+            "recipe": []
+          },
+          "item.drum": {
+            "id": "item.drum",
+            "name": "大鼓",
+            "owner": "player",
+            "asset": "prop.drum",
+            "recipe": []
+          },
+          "item.drumfix": {
+            "id": "item.drumfix",
+            "name": "补好的大鼓",
+            "owner": "unmade",
+            "asset": "prop.drum",
+            "recipe": [
+              "item.drum",
+              "item.cloth",
+              "item.string"
+            ]
+          },
+          "item.feather": {
+            "id": "item.feather",
+            "name": "彩色羽毛",
+            "owner": "player",
+            "asset": "prop.feather",
+            "recipe": []
+          },
+          "item.footprint": {
+            "id": "item.footprint",
+            "name": "鼓面脚印",
+            "owner": "player",
+            "asset": "prop.footprint",
+            "recipe": []
+          },
+          "item.honeyjar": {
+            "id": "item.honeyjar",
+            "name": "空蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.string": {
+            "id": "item.string",
+            "name": "结实的绳子",
+            "owner": "player",
+            "asset": "prop.string",
+            "recipe": []
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 2,
+          "npc.maomao": 0,
+          "npc.xionger": 1
+        },
+        "knowledge": [
+          "clue.drumskin",
+          "clue.footprint",
+          "clue.honeyjar",
+          "clue.feather",
+          "clue.jiji.sorry",
+          "clue.jiji.secret",
+          "clue.jiji.join",
+          "clue.fix.plan"
+        ],
+        "quests": {
+          "task.comfort.xionger": "complete",
+          "task.find.clues": "complete",
+          "task.fix.drum": "open",
+          "task.jiji.join": "complete"
+        },
+        "promises": {
+          "promise.jiji.drum": true
+        },
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "event.10.0",
+          "character:npc.maomao": "event.10.0",
+          "character:npc.xionger": "event.10.0",
+          "character:player": "event.10.0",
+          "item:item.cloth": "event.9.0",
+          "item:item.drum": "event.10.1",
+          "item:item.drumfix": "initial",
+          "item:item.feather": "event.5.0",
+          "item:item.footprint": "event.2.0",
+          "item:item.honeyjar": "event.3.0",
+          "item:item.string": "event.9.0",
+          "knowledge:clue.drumskin": "initial",
+          "knowledge:clue.feather": "event.5.0",
+          "knowledge:clue.fix.plan": "event.9.1",
+          "knowledge:clue.footprint": "event.2.0",
+          "knowledge:clue.honeyjar": "event.3.0",
+          "knowledge:clue.jiji.join": "event.8.0",
+          "knowledge:clue.jiji.secret": "event.7.1",
+          "knowledge:clue.jiji.sorry": "event.7.0",
+          "promise:promise.jiji.drum": "event.8.0",
+          "quest:task.comfort.xionger": "event.4.0",
+          "quest:task.find.clues": "event.7.1",
+          "quest:task.fix.drum": "initial",
+          "quest:task.jiji.join": "event.8.0",
+          "relationship:npc.jijiguowang": "event.8.0",
+          "relationship:npc.maomao": "initial",
+          "relationship:npc.xionger": "event.4.0",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    }
+  ],
+  "manifest": {
+    "character.damahou.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 945496,
+      "character": "大马猴",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "9d3967677366bb74e5810efb9ad975fc1a685dc1e49e83353dc91343ac48bd6e",
+      "width": 1024
+    },
+    "character.damahou.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 996180,
+      "character": "大马猴",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "cd2b17f8edafe22163f62aa77d5bdce7cc2d054c43c428146eb0e88ab25372aa",
+      "width": 1024
+    },
+    "character.damahou.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 997432,
+      "character": "大马猴",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "ad1653ef92bb1d5d7363a60d1d61e5cfdc69fedfc51ed3523b2e17bbcad9fe0a",
+      "width": 1024
+    },
+    "character.damahou.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1007938,
+      "character": "大马猴",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "b4a11a2f99da37baee5bda6c4b112515e174a9c35801a92dc525d852e11cfbbc",
+      "width": 1024
+    },
+    "character.damahou.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 939254,
+      "character": "大马猴",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "12eb8b3e82576ec5e9ec0300bddf307574ab66f1473acdceff8c557c251fd321",
+      "width": 1024
+    },
+    "character.damahou.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 886606,
+      "character": "大马猴",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "505ce726fe418801c1e765d5352bdd6d73b239fb6e9a3e40829dd3e7a940208d",
+      "width": 1024
+    },
+    "character.ergou.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1087052,
+      "character": "二狗",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "e358d8ef8ae142ce7e14f210cfdf3cdb2c8f63af1e7495a6a53a35624c9d1b95",
+      "width": 1024
+    },
+    "character.ergou.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1131382,
+      "character": "二狗",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "a280c64afb6027e4d66e56f3bf7d40eea4b3f631f162e4935e44e88cfe63b7fa",
+      "width": 1024
+    },
+    "character.ergou.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1203112,
+      "character": "二狗",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "472d35756d9c99f89edd3cf9e4e4d419cefb2dce2867a81073b871cb74a4e7f2",
+      "width": 1024
+    },
+    "character.ergou.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1160892,
+      "character": "二狗",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "bcd7dd1597a23b6e9025322575d5f69541103fed0d1b4e6b979cb708ba28af89",
+      "width": 1024
+    },
+    "character.ergou.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1164936,
+      "character": "二狗",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "3559399e13289e4f87705b26d023e985c40f28bb6beeafe0e2fcfb2b965006ea",
+      "width": 1024
+    },
+    "character.ergou.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1096576,
+      "character": "二狗",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "ef1cbb99386d86ec1c119e03adfde3a4103463e6aa264f4ffe48170fea34af8a",
+      "width": 1024
+    },
+    "character.guangtouqiang.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1113686,
+      "character": "光头强",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_calm_clean.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "6da90a670084556a0026dadf2bfe6d42e4ae62800c736ad930e026bd844513e7",
+      "width": 1024
+    },
+    "character.guangtouqiang.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1193270,
+      "character": "光头强",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "610c297b31ace13c7264f66298be481b9475763475c95a17833026e6e5f85c2f",
+      "width": 1024
+    },
+    "character.guangtouqiang.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1243024,
+      "character": "光头强",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "49ee7de60d9c6a141802b8b105619efcb0b28950dc1a18bcf85e9eabbfe6770a",
+      "width": 1024
+    },
+    "character.guangtouqiang.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1116494,
+      "character": "光头强",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "39f1c58586ac9976cb2c5bd230c69aa5b1c013ae9b648a021de24eb50d3b8e6b",
+      "width": 1024
+    },
+    "character.guangtouqiang.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1130970,
+      "character": "光头强",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "9179dddacb74e48cac97077fbc6258924375e70432c7879867b951eb20891e1e",
+      "width": 1024
+    },
+    "character.guangtouqiang.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1093560,
+      "character": "光头强",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "bbeb6370a4ad0457c3cc6fbbac588fb78c447a7a099040751d058701d58d80b5",
+      "width": 1024
+    },
+    "character.jijiguowang.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1161286,
+      "character": "吉吉国王",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_calm_clean.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "c2fdb3e741e152cf85212cb4ccd6a846658e25fb15c8fd16c404f4ab62beed1b",
+      "width": 1024
+    },
+    "character.jijiguowang.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1280130,
+      "character": "吉吉国王",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "1774bdc6c63242b2d903b1e14a63f217c8e35e38d9d1864dc5025b82531f082e",
+      "width": 1024
+    },
+    "character.jijiguowang.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1288268,
+      "character": "吉吉国王",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "1b61c746eac76e2dd79c5aa4f4a5fb6e095a9dce9c2882d0ec5a2e2e679413d4",
+      "width": 1024
+    },
+    "character.jijiguowang.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1225748,
+      "character": "吉吉国王",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "de0e05800898ff6bb41464fbf24f319856374c90305eb6844915d5bdb3e6c848",
+      "width": 1024
+    },
+    "character.jijiguowang.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1218698,
+      "character": "吉吉国王",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "4848556711f597ece3a4583ec584ff4ae4b9ee3327fe45d58595e6cf3fc69145",
+      "width": 1024
+    },
+    "character.jijiguowang.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1182064,
+      "character": "吉吉国王",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "930992422ea224595375e7e78772f7e1f4f70a8830a9f99b5803bd7b6b287b43",
+      "width": 1024
+    },
+    "character.maomao.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1179736,
+      "character": "毛毛",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_calm_clean.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "5fa605a035c2bd8525ac2c5ed8afaa0a95b2463268e7e50424e398377ec0e7ff",
+      "width": 1024
+    },
+    "character.maomao.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1198100,
+      "character": "毛毛",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "6bad3b8817e8a0ca3a769ebbe6678cacd3867131cf4ae3129e116dda6c7c9b7a",
+      "width": 1024
+    },
+    "character.maomao.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1216544,
+      "character": "毛毛",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "4b36557e225c6257e3b51db599d1452928b1424a57bfbcfb7369d8af1823d33e",
+      "width": 1024
+    },
+    "character.maomao.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1205240,
+      "character": "毛毛",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "559f19acf03da558875b3c0ebd8fded329068cbe95ffde69a6065955cd707769",
+      "width": 1024
+    },
+    "character.maomao.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1188208,
+      "character": "毛毛",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "e3c55b58abe588b11238087eb1918955a4579b7b664c7bd30c81df84368438ca",
+      "width": 1024
+    },
+    "character.maomao.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1179812,
+      "character": "毛毛",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "30dbc76d04c5f0c574b4d3dc6c9f2d10318a657db0d4ec2e71029adf3c25f88f",
+      "width": 1024
+    },
+    "character.tiancaiwei.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 997302,
+      "character": "天才威",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "956665c86c8c0e286c2f99344a30b45d7f2c5296a1bd00d336fb76bd48cde308",
+      "width": 1024
+    },
+    "character.tiancaiwei.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1044320,
+      "character": "天才威",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "65410c4cf7a5b6de72acd8f84d982f38376c3f2688282e24595b527d9cfa7745",
+      "width": 1024
+    },
+    "character.tiancaiwei.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1099102,
+      "character": "天才威",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "ab5fa227c2edf6977c9b52d1e8810b7d0c301cd1d58e4d803d5035c1cf5c06db",
+      "width": 1024
+    },
+    "character.tiancaiwei.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 996628,
+      "character": "天才威",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "aa69580de57596fc67248b249f5a29d4ce4ac5fce4ff997bc00a0b366685ba2b",
+      "width": 1024
+    },
+    "character.tiancaiwei.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 942528,
+      "character": "天才威",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "ce77482756eb34c988ab3ef78ec2660e3021e13348f71519f7527d9c316c4cba",
+      "width": 1024
+    },
+    "character.tiancaiwei.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 923254,
+      "character": "天才威",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "651bcbb8156f9b13634aa9d0c0444404465839b7e72325795ee4466ac33547f6",
+      "width": 1024
+    },
+    "character.xiongda.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1217416,
+      "character": "熊大",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "02152cb0c9371049d2bd0b7cb109bf620bc4f4cdf7b9b39b42e8a6a5b6b14c2e",
+      "width": 1024
+    },
+    "character.xiongda.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1428306,
+      "character": "熊大",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "c6e7d12196363790ae722f7614fd034636d43e061df6d177d0e6d9ee725fde05",
+      "width": 1024
+    },
+    "character.xiongda.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1327602,
+      "character": "熊大",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "b8e35204f35f48dc6248c70b3c4c1bcf9d88e821cfc3442012f11d7dc12eb2b1",
+      "width": 1024
+    },
+    "character.xiongda.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1342442,
+      "character": "熊大",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "17e163c5eebfb7046519e845cc9337186ebfaa1d5ba96983af11bf4e34319a57",
+      "width": 1024
+    },
+    "character.xiongda.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1320672,
+      "character": "熊大",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "6aa5183676e946c3f92e249e07303efd3029d29d82908d7dcb480845fae483c4",
+      "width": 1024
+    },
+    "character.xiongda.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1366108,
+      "character": "熊大",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "f290912435b7c334e4ba063b9ad9b2fef037856ebbabfb6e40ed6d947d5cbb44",
+      "width": 1024
+    },
+    "character.xionger.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1293084,
+      "character": "熊二",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "21cf33c743492cb102cb6d3d5f28f39901355f7072fd9d8cff6d33370475d0b1",
+      "width": 1024
+    },
+    "character.xionger.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1347072,
+      "character": "熊二",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "06fc98b38a34cc5c8ec88802d8e14c1c04f66eb58b726c11d41d1cbd855adb14",
+      "width": 1024
+    },
+    "character.xionger.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1392602,
+      "character": "熊二",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "51783b4eca8f9b054573f35596f7844b006bd7e9857d5f4b4e93067d742f6e6f",
+      "width": 1024
+    },
+    "character.xionger.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1333352,
+      "character": "熊二",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "350b328b2ca55517f7c9859edc86860f9e7d16bcee0fd01934569861acfc6453",
+      "width": 1024
+    },
+    "character.xionger.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1335218,
+      "character": "熊二",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "1f72bf32f6f06d89e4f7987232f48284e6ed13cdc9481bb78842b274df764975",
+      "width": 1024
+    },
+    "character.xionger.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1350210,
+      "character": "熊二",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "258f7d60d5f4138dac0826b69c1d14a5cd4d73c6747b9ea7204be89faa163e02",
+      "width": 1024
+    },
+    "character.zhaolin.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 960848,
+      "character": "赵琳",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "c764a2fca3f4b664db959a6b493ec26226957b167b34acd7f586437a2d1c973a",
+      "width": 1024
+    },
+    "character.zhaolin.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1053110,
+      "character": "赵琳",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "e903f7cffcced09342d0973537dc12eb4bbe7ad04a7923e24921061eff16018a",
+      "width": 1024
+    },
+    "character.zhaolin.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1075720,
+      "character": "赵琳",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "670d4685c64a9b66017c3bd0a9255353d60b2dbc0549d21234ce16578829cb91",
+      "width": 1024
+    },
+    "character.zhaolin.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1037062,
+      "character": "赵琳",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "85ca171ea4b052f208567a4ac5b152c74ef337725e1649e2d24b089e22ead1b2",
+      "width": 1024
+    },
+    "character.zhaolin.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1015594,
+      "character": "赵琳",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "809d3e44f801b78883e5766f299c1c980ee0a8b3681ddfdf49edf91bacda1711",
+      "width": 1024
+    },
+    "character.zhaolin.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 990706,
+      "character": "赵琳",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "1d757eb38248459ca1039f5108476f2b341dcf59d8ea247985f47bfd7ba1522d",
+      "width": 1024
+    },
+    "key.00": {
+      "bytes": 1869476,
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "observe"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_00.webp",
+      "props": [
+        "prop.footprint"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "sha256": "9f7a0dc51c395136fc869481944ec0d9e5a859570e5b1960321aa686b3c1ad5e",
+      "situation": "discovery",
+      "width": 1672
+    },
+    "key.01": {
+      "bytes": 2034450,
+      "characters": [
+        "光头强",
+        "毛毛"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "observe"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_01.webp",
+      "props": [
+        "prop.letter"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.bamboo"
+      ],
+      "sha256": "5a46c48bc77bc25304c8e37570099dbfadf7d84c51eadd55a627a10e1f05c125",
+      "situation": "discovery",
+      "width": 1672
+    },
+    "key.02": {
+      "bytes": 2127382,
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_02.webp",
+      "props": [
+        "prop.plank"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.bridge"
+      ],
+      "sha256": "06859a4c2d95e2c2a82475776d7938a72c8a15fdc1dde9e96ef79ddc40a07677",
+      "situation": "cooperation",
+      "width": 1672
+    },
+    "key.03": {
+      "bytes": 1766120,
+      "characters": [
+        "光头强",
+        "天才威"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_03.webp",
+      "props": [
+        "prop.compass"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "sha256": "650cb353579b9b83b04cd83bec50d2392fce23c4739c7df4874e0e41b745cd08",
+      "situation": "cooperation",
+      "width": 1672
+    },
+    "key.04": {
+      "bytes": 2106622,
+      "characters": [
+        "吉吉国王",
+        "毛毛"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_04.webp",
+      "props": [
+        "prop.basket"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.orchard"
+      ],
+      "sha256": "34e2d3ef8964a4128cf717e4be1ef87682231be410f195a6e18e520e07266d9d",
+      "situation": "misunderstanding",
+      "width": 1672
+    },
+    "key.05": {
+      "bytes": 1913742,
+      "characters": [
+        "大马猴",
+        "二狗"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_05.webp",
+      "props": [
+        "prop.ribbon"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.market"
+      ],
+      "sha256": "530510cea4f8b8e4afee0d26f6ef947e096ba2def5f415dae862027061dfa145",
+      "situation": "misunderstanding",
+      "width": 1672
+    },
+    "key.06": {
+      "bytes": 1780930,
+      "characters": [
+        "光头强",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_06.webp",
+      "props": [
+        "prop.kite"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "sha256": "6b0a0d1189c19859273df96de06f0d2afb5b9763bedf4807c1423137cb809ab1",
+      "situation": "making",
+      "width": 1672
+    },
+    "key.07": {
+      "bytes": 2000312,
+      "characters": [
+        "赵琳",
+        "毛毛"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_07.webp",
+      "props": [
+        "prop.lantern"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.camp"
+      ],
+      "sha256": "c5d94c6ef48da9195980e31b9a7dd6268c38343c0da2ab8e030021b51b239618",
+      "situation": "making",
+      "width": 1672
+    },
+    "key.08": {
+      "bytes": 1946302,
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "allocate",
+        "use"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_08.webp",
+      "props": [
+        "prop.flag"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.mountain"
+      ],
+      "sha256": "67e80dbfe2eb033bbc1287f64bb981f6e9e4767a88275b7b6ff8ca6a2644cc0b",
+      "situation": "challenge",
+      "width": 1672
+    },
+    "key.09": {
+      "bytes": 2001102,
+      "characters": [
+        "吉吉国王",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "move",
+        "allocate"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_09.webp",
+      "props": [
+        "prop.flag"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.sports"
+      ],
+      "sha256": "0f525e2fbc1388c9165df84ac7494553694823f4fcd578fbb93f6383c589d872",
+      "situation": "challenge",
+      "width": 1672
+    },
+    "key.10": {
+      "bytes": 1861594,
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_10.webp",
+      "props": [
+        "prop.bell"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "sha256": "f42a6e237e5fec249e61d223160486e8af7c30c874cfe63ce31d58bb7390486f",
+      "situation": "reunion",
+      "width": 1672
+    },
+    "key.11": {
+      "bytes": 2216572,
+      "characters": [
+        "光头强",
+        "赵琳"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_11.webp",
+      "props": [
+        "prop.drum"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.stage"
+      ],
+      "sha256": "394ab4bfdfca9437aa000a8b07feb83a86bdb19faac137500e4192e894c98b14",
+      "situation": "reunion",
+      "width": 1672
+    },
+    "prop.apple": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1334132,
+      "height": 1254,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_apple.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "179e25571edf2187a4f67514e81995ce9b320c62c545fee3716c94450a3b29f6",
+      "width": 1254
+    },
+    "prop.bamboo": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 756268,
+      "height": 1086,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_bamboo.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "dbb7258062e43e9be751d301c8e3c4e14d983394b3a508af2de92a33aeb78841",
+      "width": 1448
+    },
+    "prop.basket": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1100072,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_basket.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "e5eb8385b947bf6983f5e768ea50494d437cdc2efcd2cba33d5db2fd4a2088a8",
+      "width": 1312
+    },
+    "prop.bell": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 724598,
+      "height": 1374,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_bell.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "43410b3b7d2f24890f0cb9ba4876eb71e7a7bbe71e1677bf5548a8ce7e8d640f",
+      "width": 1145
+    },
+    "prop.brush": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1263828,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_brush.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "237ac3ab8a4e57d18d7cc16a5550330723c41d59eb3b6581fe39618c7ba813f9",
+      "width": 1536
+    },
+    "prop.bucket": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1298198,
+      "height": 1297,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_bucket.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "29eefb3934bd7c6070df28556517da1ac0fbe63c55ac929832607e9c8a5232ac",
+      "width": 1212
+    },
+    "prop.clay": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1130038,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_clay.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "74951d6ea6d953ed743bdf7f0a695ae9fe2f24311dd50cb68b270d1e17890357",
+      "width": 1374
+    },
+    "prop.cloth": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1261436,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_cloth.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "4f4482bf19eb4a9329448c8ed768f2eb587c87853608745a5956bf65ae8dde98",
+      "width": 1374
+    },
+    "prop.compass": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1064146,
+      "height": 1312,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_compass.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "fc8bb4e235f50b17a0ee8a98e212406608f586d81da3002588629221cd9d56e3",
+      "width": 1199
+    },
+    "prop.drum": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1245990,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_drum.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "1df5261dbf36d0f5ebd1bfd4b3333f2d48f39f84e1fc8f6e04e66fa18a998b52",
+      "width": 1312
+    },
+    "prop.feather": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 851464,
+      "height": 1287,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_feather.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "e72a094b752155f598e61145c510a8633cf85ed3ee9514f10ef4389d5e3d72dc",
+      "width": 1222
+    },
+    "prop.flag": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 962188,
+      "height": 1536,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_flag.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c3d705426e92ee61e956234da5522f64c6b7db266188fe7cced0346e43cdd552",
+      "width": 1024
+    },
+    "prop.flower": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1385302,
+      "height": 1536,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_flower.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "575cd900e82e702520093d260bb79d97a22f4e50781bbc1dadb6121cb3610b09",
+      "width": 1024
+    },
+    "prop.footprint": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1531336,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_footprint.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "f6ba2ff1e8041c16bc340587a1b648ae916fe2f0fb3ae1d308eeaa3d029f3d82",
+      "width": 1536
+    },
+    "prop.hammer": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 573860,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_hammer.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "0cfc448cadf4317b886a7fc08df9e23b1a4274301b9615cd955e1bc018c59cfa",
+      "width": 1312
+    },
+    "prop.honey": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1297494,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_honey.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "b01bfbae28af05bb089428765527e6bc4b88c03e4820e71db6b5cac9be566c59",
+      "width": 1312
+    },
+    "prop.key": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 628960,
+      "height": 1286,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_key.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "8a8f2fe16708e610d7cc2526893d27411b000ef2ad04ee120a5f3eb608cce3ab",
+      "width": 1223
+    },
+    "prop.kite": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 590098,
+      "height": 1278,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_kite.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c1dc4cd62352d2e7959c7bbc078c31fed357e51d36a33474025f39287640c8ad",
+      "width": 1230
+    },
+    "prop.lantern": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1508158,
+      "height": 1536,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_lantern.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "8afa39272638a3f14ec0fc4355f6e028d4f5aea2d0485211fc461c169b2895a5",
+      "width": 1024
+    },
+    "prop.leaf": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1337776,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_leaf.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "0d55bfdd7e036e751f2a55219ed0525b9a5b98c6a2d0c20fcb1649b41b39b070",
+      "width": 1536
+    },
+    "prop.letter": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1220014,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_letter.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "5929f61b6db42ad46b0d1a7c4c6c012e15260188dfdadb1af984639cf7fce9e6",
+      "width": 1536
+    },
+    "prop.magnifier": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 761166,
+      "height": 1278,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_magnifier.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c55e70c3c3513c72dc7753e9f5462f1008e5a196de8ab0d9e0d66bf78221d47d",
+      "width": 1230
+    },
+    "prop.map": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1630928,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_map_approved.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "95a744dc6eb3e907e0e98b32d2d3d2795b36cc281e260dad245b5faf8e23ff88",
+      "width": 1536
+    },
+    "prop.mask": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1462794,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_mask.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "aba68e8ea5f9427e86b0f6afb6ee543348d8599932d6df6c52c3323bd88249ad",
+      "width": 1312
+    },
+    "prop.paint": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1369288,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_paint.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "96c4f0ca26388418ae89614dc40ed1989988b6e8db3a8f4fdc93ddb9a085e193",
+      "width": 1312
+    },
+    "prop.paper": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1160210,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_paper.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "1bbbc1883cff3e515b54fe1701e24a0f86926a71b090aa0395f0f9320d9b7bf3",
+      "width": 1536
+    },
+    "prop.pinecone": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1087156,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_pinecone.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "256cf4b4d74c39e6a725ecea6f318e2936575bc469386cc1d26cfca8ba0dc3d5",
+      "width": 1312
+    },
+    "prop.plank": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1185610,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_plank.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "d2e9b6492cf7eb4a3702d3c51bfb3eaad4a1dfdbb2cd0729ebc5bc356c98a6e4",
+      "width": 1536
+    },
+    "prop.ribbon": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1229110,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_ribbon.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "a0cc937ca544d810a9ddea25e65d7a05db5b368865eeb695f007ba33467bfdb7",
+      "width": 1374
+    },
+    "prop.rope": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1167902,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_rope.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "7fdb6b57cef1feac29dda1e06628699a8772fd9f3fe5f90c60a6a0607c37329f",
+      "width": 1374
+    },
+    "prop.scissors": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 619612,
+      "height": 1122,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_scissors.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "56c1407a4bda3ab1f39366cf100e1661e1bf4218d7336321af00a2e74b2a2d40",
+      "width": 1402
+    },
+    "prop.seed": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1206242,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_seed.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "457d08fac1094960957ac0de0af8fd56d67f4855b83ea3c4c36ec11a2abfe50f",
+      "width": 1374
+    },
+    "prop.shovel": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 768432,
+      "height": 1283,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_shovel.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "df494b5fb04fde923e5c8ab8953f7385cb2b4dcf4feb55bd7c7e603c8dd0c53f",
+      "width": 1226
+    },
+    "prop.star": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 909018,
+      "height": 1201,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_star.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c660546403d119a9cea5866381b15e77a05f01ccab28b989eeff15e8fbb09cda",
+      "width": 1309
+    },
+    "prop.string": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1167466,
+      "height": 1283,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_string.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "a2c07356c59b91292b1f62937a52200d141c7503864b802bb372003d30b1660d",
+      "width": 1226
+    },
+    "prop.wheel": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1159616,
+      "height": 1206,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_wheel.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "eaf6755cba251b2ed2328410131186d0602cd7025ecc7df0496f7cf6f97930f0",
+      "width": 1304
+    },
+    "scene.bamboo": {
+      "bytes": 1929790,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_bamboo_approved.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "23894d1cd3ecb9465411929eabf05b1deb03e1224e5b7cce9c6109f19c46eda2",
+      "width": 1672
+    },
+    "scene.bridge": {
+      "bytes": 1939524,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_bridge.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "75aeea7aec40f5e6c614656d8bae75f803de3ff52815220e4059f01b7ecc4aac",
+      "width": 1672
+    },
+    "scene.cabin": {
+      "bytes": 238226,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_cabin.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "75e830c8df1e1b47c0ff1e1978717c2eededc5a374eeec24d55b708357e3ba28",
+      "width": 1376
+    },
+    "scene.camp": {
+      "bytes": 1908876,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_camp.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "8d36d90f2a08b8da022c607410075b1c56313ee38e024940471819a07a309206",
+      "width": 1672
+    },
+    "scene.cave": {
+      "bytes": 163684,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_cave.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "935c293edc71d194969e4d59fc016f645ce3085b0309cc2fee11b71264df9957",
+      "width": 1376
+    },
+    "scene.flowers": {
+      "bytes": 1981654,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_flowers.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "e03a5e40562b0f121771358d58ec298431f62c32c6271843d71e97eca8834b01",
+      "width": 1672
+    },
+    "scene.forest": {
+      "bytes": 178708,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_forest.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "d47afe17e644806d99cc0a0758d9eebe251fe60d82b08a055fc2bb8e5fcb59e2",
+      "width": 1376
+    },
+    "scene.lakeside": {
+      "bytes": 2124232,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_lakeside.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "03f967147a564a7225a35059636121e384f9592e99ff36cd247311194cfb9232",
+      "width": 1672
+    },
+    "scene.library": {
+      "bytes": 1786494,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_library.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "b32b24df31749c1ed2347d7c06c0442e4520722831174d5dbdc9f2db26cbee2a",
+      "width": 1672
+    },
+    "scene.market": {
+      "bytes": 1963556,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_market.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "2beb2e1fec33e1db429c3961679da56e87d073e1154f1fb6d66e849ecc744457",
+      "width": 1672
+    },
+    "scene.mountain": {
+      "bytes": 72322,
+      "height": 1080,
+      "kind": "scene",
+      "path": "images/bg/bg_mountain.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "60bc03656a1b2c9db4ae1286c18956fd6befb39899b1afc4813b6abd02f18af9",
+      "width": 1920
+    },
+    "scene.orchard": {
+      "bytes": 1930772,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_orchard.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "9503bc6b136860aecc7c29de5c6a5e82c73288144ee0e987632047f9420c92a2",
+      "width": 1672
+    },
+    "scene.riverside": {
+      "bytes": 173740,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_riverside.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "af19936c06eff74ea0fd745d4a4e0ffdc0600930d85598d05a187d65c76851e2",
+      "width": 1376
+    },
+    "scene.sports": {
+      "bytes": 1983418,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_sports.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "eee736e064e4734d9ee2eed7f780a60fcb0c9dcd16ccb173a0b7780efa73094c",
+      "width": 1672
+    },
+    "scene.stage": {
+      "bytes": 1950522,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_stage.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "c2a3523d12c1e605e9691168c31a77546cab02881b159edc5eb4136833c5b13a",
+      "width": 1672
+    },
+    "scene.treehouse": {
+      "bytes": 2042060,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_treehouse.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "e0e91e1d6e7f451223c2873ff36d77215112ff851c756301d267e60cee25ab1f",
+      "width": 1672
+    },
+    "scene.village": {
+      "bytes": 281894,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_village.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "e69f832ec7e702dec99e0e8813e3307cfef5e6de639d3d9a49f4e7850e685bf2",
+      "width": 1376
+    },
+    "scene.workshop": {
+      "bytes": 1708296,
+      "height": 937,
+      "kind": "scene",
+      "path": "images/v2/scene_workshop.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "a6206f428ed24a06c517d8bbcf1b8fdfa21b5daaf27c7736210fc85149e22d87",
+      "width": 1678
+    }
+  },
+  "ending": {
+    "title": "咚咚的鼓声响起来",
+    "text": "补好的大鼓立在舞台中央，星星一颗颗亮了起来。吉吉国王深吸一口气，抡起鼓槌——咚！咚！咚！鼓声又响又亮。熊大当众宣布：“今晚的领鼓手，就是敢认错、敢担当的吉吉国王！”毛毛欢呼：“对对对！”熊二拍着肚皮直乐。森林的伙伴们围着舞台又唱又跳，森林音乐会在星空下热闹开场啦！",
+    "evidence": [
+      "event.7.0",
+      "event.7.1",
+      "event.8.0",
+      "event.11.0"
+    ],
+    "discoveries": [
+      "clue.footprint",
+      "clue.honeyjar",
+      "clue.feather",
+      "clue.jiji.sorry",
+      "clue.jiji.secret",
+      "clue.fix.plan"
+    ],
+    "helped": [
+      "npc.jijiguowang",
+      "npc.xionger",
+      "npc.maomao"
+    ],
+    "solution": "循着脚印与羽毛线索，熊大温和劝说让吉吉国王承认错误并归队，用布和绳子补好大鼓，森林音乐会顺利开场"
+  },
+  "status": "complete",
+  "mock": false,
+  "concepts": [
+    {
+      "arc": "mystery",
+      "title": "失踪的大鼓声",
+      "conflict": "森林音乐会明天就要开场，可唯一的大鼓突然发不出声音了，鼓面上还留着奇怪的脚印。熊大必须带着大家在天黑前找出真相，否则音乐会就要取消。",
+      "solution_tag": "循着脚印与羽毛线索，查明是谁动了大鼓并请他归队演出",
+      "cast": [
+        "熊大",
+        "熊二",
+        "吉吉国王",
+        "毛毛"
+      ]
+    },
+    {
+      "arc": "craft",
+      "title": "一起做乐器",
+      "conflict": "音乐会需要乐器，可森林里只有一架旧琴还坏了。熊大决定带大家就地取材，用竹子、树叶和蜂蜜桶亲手制作乐器，但熊二总忍不住偷吃材料。",
+      "solution_tag": "收集竹子、树叶等原料，分工制作出鼓和排箫完成演出",
+      "cast": [
+        "熊大",
+        "熊二",
+        "光头强",
+        "赵琳"
+      ]
+    },
+    {
+      "arc": "negotiation",
+      "title": "请回台上的国王",
+      "conflict": "吉吉国王本来要当音乐会的主唱，却因为毛毛夸了熊大的歌喉而赌气罢演，还把舞台上的彩带和铃铛都收走了。熊大要既保住国王的面子，又把演出保下来。",
+      "solution_tag": "巧妙夸赞并设计合唱环节，让国王心甘情愿重返舞台",
+      "cast": [
+        "熊大",
+        "吉吉国王",
+        "毛毛",
+        "熊二"
+      ]
+    }
+  ],
+  "selected_concept": {
+    "arc": "mystery",
+    "title": "失踪的大鼓声",
+    "conflict": "森林音乐会明天就要开场，可唯一的大鼓突然发不出声音了，鼓面上还留着奇怪的脚印。熊大必须带着大家在天黑前找出真相，否则音乐会就要取消。",
+    "solution_tag": "循着脚印与羽毛线索，查明是谁动了大鼓并请他归队演出",
+    "cast": [
+      "熊大",
+      "熊二",
+      "吉吉国王",
+      "毛毛"
+    ]
+  },
+  "usage": [
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 2711,
+      "mock": false,
+      "output_tokens": 373,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 0,
+      "seconds": 9.804,
+      "stage": "concepts",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 5239,
+      "mock": false,
+      "output_tokens": 1857,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 6,
+      "seconds": 20.194,
+      "stage": "setup",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 5283,
+      "mock": false,
+      "output_tokens": 135,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 74,
+      "seconds": 3.304,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 9475,
+      "mock": false,
+      "output_tokens": 658,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 86,
+      "seconds": 7.821,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 7251,
+      "mock": false,
+      "output_tokens": 100,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 0,
+      "seconds": 3.507,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 10033,
+      "mock": false,
+      "output_tokens": 661,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 97,
+      "seconds": 8.412,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 7966,
+      "mock": false,
+      "output_tokens": 69,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 0,
+      "seconds": 2.504,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 10490,
+      "mock": false,
+      "output_tokens": 924,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 498,
+      "seconds": 13.556,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 8524,
+      "mock": false,
+      "output_tokens": 102,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 45,
+      "seconds": 2.794,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 10902,
+      "mock": false,
+      "output_tokens": 836,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 358,
+      "seconds": 11.183,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 11360,
+      "mock": false,
+      "output_tokens": 6445,
+      "provider": "glm-5.3",
+      "reasoning_effort": "high",
+      "reasoning_tokens": 5897,
+      "seconds": 78.607,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 9203,
+      "mock": false,
+      "output_tokens": 146,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 47,
+      "seconds": 3.611,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 11498,
+      "mock": false,
+      "output_tokens": 827,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 131,
+      "seconds": 10.644,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 12129,
+      "mock": false,
+      "output_tokens": 4729,
+      "provider": "glm-5.3",
+      "reasoning_effort": "high",
+      "reasoning_tokens": 4050,
+      "seconds": 41.218,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 10065,
+      "mock": false,
+      "output_tokens": 145,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 73,
+      "seconds": 4.163,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 12047,
+      "mock": false,
+      "output_tokens": 993,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 232,
+      "seconds": 12.203,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 12733,
+      "mock": false,
+      "output_tokens": 4647,
+      "provider": "glm-5.3",
+      "reasoning_effort": "high",
+      "reasoning_tokens": 3900,
+      "seconds": 45.312,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 10845,
+      "mock": false,
+      "output_tokens": 152,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 83,
+      "seconds": 3.639,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 12869,
+      "mock": false,
+      "output_tokens": 728,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 138,
+      "seconds": 10.196,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 11479,
+      "mock": false,
+      "output_tokens": 247,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 100,
+      "seconds": 5.449,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 13791,
+      "mock": false,
+      "output_tokens": 927,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 307,
+      "seconds": 13.07,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 14334,
+      "mock": false,
+      "output_tokens": 6217,
+      "provider": "glm-5.3",
+      "reasoning_effort": "high",
+      "reasoning_tokens": 5594,
+      "seconds": 73.725,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 12426,
+      "mock": false,
+      "output_tokens": 314,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 217,
+      "seconds": 6.916,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 14549,
+      "mock": false,
+      "output_tokens": 708,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 80,
+      "seconds": 9.282,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 15156,
+      "mock": false,
+      "output_tokens": 5256,
+      "provider": "glm-5.3",
+      "reasoning_effort": "high",
+      "reasoning_tokens": 4587,
+      "seconds": 60.874,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 13120,
+      "mock": false,
+      "output_tokens": 16,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 0,
+      "seconds": 1.76,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 14574,
+      "mock": false,
+      "output_tokens": 346,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 15,
+      "seconds": 4.54,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 14912,
+      "mock": false,
+      "output_tokens": 1400,
+      "provider": "glm-5.3",
+      "reasoning_effort": "high",
+      "reasoning_tokens": 1093,
+      "seconds": 16.646,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 13049,
+      "mock": false,
+      "output_tokens": 95,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 44,
+      "seconds": 3.339,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    }
+  ],
+  "pending": null
+}

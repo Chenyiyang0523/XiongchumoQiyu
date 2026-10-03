@@ -1,0 +1,82 @@
+{
+  "cases": 60,
+  "completed": 60,
+  "ages": {
+    "6-8": 30,
+    "9-12": 30
+  },
+  "structures": {
+    "mystery": 10,
+    "comedy": 10,
+    "craft": 10,
+    "journey": 10,
+    "negotiation": 10,
+    "festival": 10
+  },
+  "new_theme_cases": 36,
+  "actual_page_counts": {
+    "12": 59,
+    "14": 1
+  },
+  "actual_interaction_type_counts": {
+    "3": 43,
+    "4": 13,
+    "5": 4
+  },
+  "minimum_callback_pages": 9,
+  "counterfactual_actions_checked": 1618,
+  "first_run": {
+    "complete": 23,
+    "failed": 36,
+    "continued": 1
+  },
+  "story_attempts": 77,
+  "model_calls_by_provider": {
+    "glm-5.3": 3176,
+    "glm-5.3-flash": 9
+  },
+  "selected_completed_books": {
+    "calls": {
+      "minimum": 29,
+      "median": 39.0,
+      "p95": 51,
+      "maximum": 62
+    },
+    "known_tokens": {
+      "minimum": 364972,
+      "median": 483777.0,
+      "p95": 645873,
+      "maximum": 688756
+    },
+    "revisions": {
+      "minimum": 1,
+      "median": 7.0,
+      "p95": 11,
+      "maximum": 13
+    },
+    "model_wait_seconds": {
+      "minimum": 238.957,
+      "median": 414.6225,
+      "p95": 981.415,
+      "maximum": 1196.3
+    }
+  },
+  "all_attempts": {
+    "calls": 3185,
+    "tokens": null,
+    "known_tokens": 41109847,
+    "unknown_usage_calls": 124,
+    "revisions": 639,
+    "model_wait_seconds": 49116.99,
+    "cost_usd": null,
+    "cost_basis": [
+      "coding_plan_charge_unknown",
+      "unknown"
+    ]
+  },
+  "billing_cost_known": false,
+  "human_reviews_completed": 0,
+  "blind_pairs_completed": 0,
+  "model_alias_note": "Nine call records/reservations used glm-5.3-flash after the local alias changed. The workers were stopped before confirming new pages, and resumed with glm-5.3 explicitly pinned. All usage/history is retained.",
+  "source_versions_note": "The completed corpus was generated while repairs were iterated across documented commits; all selected books and historical snapshots were revalidated by the final reducer. This is not a fresh sixty-book run from one final commit."
+}

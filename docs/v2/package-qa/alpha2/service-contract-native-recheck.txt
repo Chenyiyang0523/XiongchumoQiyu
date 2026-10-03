@@ -1,0 +1,9 @@
+installed-package (ubuntu-24.04)	Run deterministic checks	2026-10-03T15:36:52.8415794Z 118 passed, 1 warning in 13.21s
+installed-package (ubuntu-24.04)	Build and exercise an actual installed package	2026-10-03T15:37:55.5699612Z   "source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+installed-package (ubuntu-24.04)	Build and exercise an actual installed package	2026-10-03T15:37:55.5702215Z   "assertions_passed": 26,
+installed-package (windows-2025)	Run deterministic checks	2026-10-03T15:39:02.6171923Z 118 passed, 1 warning in 124.20s (0:02:04)
+installed-package (windows-2025)	Build and exercise an actual installed package	2026-10-03T15:39:47.9716607Z   "source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+installed-package (windows-2025)	Build and exercise an actual installed package	2026-10-03T15:39:47.9718764Z   "assertions_passed": 26,
+installed-package (macos-14)	Run deterministic checks	2026-10-03T15:37:00.9942180Z 118 passed, 1 warning in 13.28s
+installed-package (macos-14)	Build and exercise an actual installed package	2026-10-03T15:38:21.4638660Z   "source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+installed-package (macos-14)	Build and exercise an actual installed package	2026-10-03T15:38:21.4645310Z   "assertions_passed": 26,

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "熊出没奇遇互动绘本",
-    "version": "2.0.0-alpha.1"
+    "version": "2.0.0-alpha.2"
   },
   "paths": {
     "/health": {
@@ -848,21 +848,24 @@
             },
             "type": "array",
             "minItems": 1,
-            "title": "Evidence"
+            "title": "Evidence",
+            "description": "已确认StoryEvent的稳定ID，不是页码、action ID或中文说明"
           },
           "discoveries": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Discoveries"
+            "title": "Discoveries",
+            "description": "当前state.knowledge中的线索ID，不是线索的中文文本"
           },
           "helped": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Helped"
+            "title": "Helped",
+            "description": "参与故事的character ID，例如player或npc.xionger，不是新角色"
           },
           "solution": {
             "type": "string",
@@ -1377,6 +1380,23 @@
             },
             "type": "object",
             "title": "Promises"
+          },
+          "promise_descriptions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Promise Descriptions"
+          },
+          "promise_conditions": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/Condition"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Promise Conditions"
           },
           "twists": {
             "items": {

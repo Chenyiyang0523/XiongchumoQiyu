@@ -1,0 +1,90 @@
+[
+  {
+    "id": "case.03",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "不见的风铃",
+    "character": "光头强",
+    "new_theme": true
+  },
+  {
+    "id": "case.04",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "湖畔的脚印",
+    "character": "吉吉国王",
+    "new_theme": true
+  },
+  {
+    "id": "case.08",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "不见的风铃",
+    "character": "大马猴",
+    "new_theme": true
+  },
+  {
+    "id": "case.13",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "吉吉的反向指挥牌",
+    "character": "吉吉国王",
+    "new_theme": true
+  },
+  {
+    "id": "case.14",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "光头强的错位野餐",
+    "character": "毛毛",
+    "new_theme": true
+  },
+  {
+    "id": "case.23",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "小木桥修理队",
+    "character": "毛毛",
+    "new_theme": true
+  },
+  {
+    "id": "case.24",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "会转弯的风筝",
+    "character": "赵琳",
+    "new_theme": true
+  },
+  {
+    "id": "case.33",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "竹林的回声地图",
+    "character": "赵琳",
+    "new_theme": true
+  },
+  {
+    "id": "case.43",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "树屋的使用约定",
+    "character": "天才威",
+    "new_theme": true
+  },
+  {
+    "id": "case.44",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "谁来守护幼苗",
+    "character": "大马猴",
+    "new_theme": true
+  },
+  {
+    "id": "case.53",
+    "arc": "festival",
+    "age": "6-8",
+    "theme": "森林音乐会",
+    "character": "大马猴",
+    "new_theme": true
+  }
+]
