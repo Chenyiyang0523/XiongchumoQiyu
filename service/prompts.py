@@ -96,6 +96,7 @@ def compact_context(stage, raw):
         if context.get('request',{}).get('text'):
             context['contract_notes']+='\n自由表达：先理解动作、对象、意图和否定，不归为A/B/C。像“把它给他”这样的指代有歧义时，action/page/ending必须null、events=[]，clarification提供2–3个对象明确且条件合法、后果不同的完整动作，不自动猜测或执行。仅“问他是谁”没有事实后果，不能充当候选动作。条件不满足时也可让玩家确认改变了条件的替代办法；确认前世界状态保持不变。'
             context['contract_notes']+='\n明确可执行的自由输入必须同时返回完整action和执行后的新page，不能只返回action；修订page时也必须保留已正确理解的action及其否定约束，不能把action改成null。所有ModelTurn顶层字段都必须出现，即page/events/action/clarification/ending/expansion；不适用者用null或[]。'
+            context['contract_notes']+='\n自由输入的closure_readiness尚未包含本次待理解action；执行该action后若全部必要任务/承诺、三类实际互动、两页回响、特长与页数条件均满足，可返回ending且page=null。不能根据未执行的自由动作提前宣布结局。'
         if context.get('pace')=='resolve':
             context['contract_notes']+='\n当前进入收束：closure_readiness.unmet_conditions与unfulfilled_promises列出仍欠的具体事实。每页至少一种办法实质推进这些条件（获取目标知识/物品、拿到原料、走近持有者、协商到要求的关系值、真实兑现承诺），程序会拒绝只含无关线索或刷无关关系的页面。先解决必要条件与承诺，再补第三种有效互动。材料未拥有时用两张卡片先收集再组合，NPC不在场时先走到其位置或请其有依据地到场。不要再追无关线索和额外支线。必要任务已完成但未到计划页数时，用行动的后续影响、兑现承诺和伙伴回应组织余页，不重新制造主线障碍。'
     if stage=='review':

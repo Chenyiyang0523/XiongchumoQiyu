@@ -146,7 +146,7 @@ def effects(s, action, b, manifest, event_id):
         require(bool(s['characters'][trait['character']][trait['aspect']]), 'trait absent')
     if action.get('inputs'):
         require(action['verb'] in {'use','combine'} and len(set(action['inputs'])) == len(action['inputs']), 'invalid item input')
-        require(all(i in s['items'] and s['items'][i]['owner'] == 'player' for i in action['inputs']), 'input item unavailable')
+        require(all(i in s['items'] and s['items'][i]['owner'] == 'player' for i in action['inputs']), 'input item unavailable: '+', '.join(i+' owned by '+s['items'].get(i,{}).get('owner','unknown') for i in action['inputs'] if i not in s['items'] or s['items'][i]['owner']!='player'))
     for e in action.get('effects', []):
         op, key, value, actor = e['op'], e['target'], e['value'], e.get('actor', 'player')
         require(actor in s['characters'], 'unknown actor')

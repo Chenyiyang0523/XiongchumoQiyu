@@ -169,6 +169,18 @@ class Pipeline:
                     defs['ModelEvent']['properties']['move']['propertyNames']={'enum':npc_ids}
                     defs['ModelEvent']['properties']['move']['additionalProperties']['enum']=scenes
                     defs['ModelEvent']['properties']['learn']['propertyNames']={'enum':npc_ids}
+                    if not request.get('text'):
+                        wire_schema['properties']['action']={'type':'null'}
+                        wire_schema['properties']['expansion']={'type':'null'}
+                        wire_schema['properties']['clarification']['maxItems']=0
+                        closure=context.get('closure_readiness',{})
+                        if closure.get('ending_allowed'):
+                            wire_schema['properties']['page']={'type':'null'}
+                            wire_schema['properties']['ending']['type']='object'
+                            wire_schema['properties']['events']['maxItems']=0
+                        elif closure.get('pages_remaining',1)>0:
+                            wire_schema['properties']['ending']={'type':'null'}
+                            wire_schema['properties']['page']['type']='object'
                     model_context['output_notes']+='禁止新增未声明的承诺ID。不要把文案差异或trait说明当作状态后果；两种办法的learn/take/give/spend/relationships至少一项真实不同。'
             answer=self.provider.call(stage,model_context,wire_schema,lambda metric:self.store.metric(job['id'],metric,metric_index))
             if stage in {'setup','setup_repair','proposal','repair'}:
