@@ -9,7 +9,8 @@ fi
 export XCMQY_LLM_BACKEND=glm-local
 export XCMQY_LLM_MODEL=${XCMQY_LLM_MODEL:-glm-5.3}
 export XCMQY_DATABASE=${XCMQY_DATABASE:-$task_root/.local/glm/player.sqlite}
-export XCMQY_MODEL_TIMEOUT=${XCMQY_MODEL_TIMEOUT:-180}
+export XCMQY_MODEL_TIMEOUT=${XCMQY_MODEL_TIMEOUT:-240}
+export XCMQY_BOOK_TOKEN_LIMIT=${XCMQY_BOOK_TOKEN_LIMIT:-700000}
 export XCMQY_DEVELOPMENT_MOCK=0
 if [ -z "${XCMQY_GUARDIAN_CODE:-}" ]; then
   XCMQY_GUARDIAN_CODE=$("$task_root/.venv/bin/python" - <<'PY'

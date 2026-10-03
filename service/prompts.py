@@ -47,6 +47,20 @@ def compact_context(stage, raw):
         settings.pop('assets',None)
     if cast and 'character_bible' in context:
         context['character_bible']={k:v for k,v in context['character_bible'].items() if k in cast}
+    if stage in {'proposal','repair','review'}:
+        # The blueprint contains initial ownership/positions. Sending those next
+        # to the current ledger gives the model two contradictory fact sources.
+        # Keep immutable goals/motives/recipes in the stored blueprint; present
+        # mutable facts only through the authoritative current state.
+        current=context.get('confirmed_preview',{}).get('state') if context.get('confirmed_preview') else None
+        if current:
+            context['post_action_state']=current
+            context['confirmed_preview'].pop('state',None)
+            context['confirmed_preview'].get('page',{}).pop('state_snapshot',None)
+        if context.get('post_action_state') or context.get('state'):
+            blueprint.pop('items',None)
+            for char in blueprint.get('characters',[]):
+                char.pop('location',None);char.pop('knowledge',None)
     if context.get('post_action_state'):
         story.pop('state',None)
     if stage in {'proposal','repair','review'} and not context.get('request',{}).get('text'):

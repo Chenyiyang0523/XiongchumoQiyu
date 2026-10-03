@@ -55,6 +55,7 @@ class Provider:
             with httpx.Client(timeout=self.timeout, follow_redirects=False) as client:
                 with client.stream('POST', self.endpoint, json=payload,
                                    headers={'Authorization': 'Bearer ' + self.key} if self.key else {}) as response:
+                    metric['http_status']=response.status_code
                     response.raise_for_status()
                     raw = bytearray()
                     for chunk in response.iter_bytes():
@@ -66,11 +67,13 @@ class Provider:
                 path=Path(self.trace);path.mkdir(parents=True,exist_ok=True)
                 (path/(str(time.time_ns())+'-'+uuid.uuid4().hex[:8]+'-'+stage+'.json')).write_text(
                     json.dumps({'request':{'stage':stage,'context':context,'schema':schema},
-                        'response':{'choices':data.get('choices',[]),'usage':data.get('usage',{})}},ensure_ascii=False,indent=2),encoding='utf-8')
+                        'response':{'choices':[{**c,'message':{k:v for k,v in c.get('message',{}).items() if k!='reasoning_content'}} for c in data.get('choices',[])],
+                            'usage':data.get('usage',{})}},ensure_ascii=False,indent=2),encoding='utf-8')
             usage = data.get('usage', {})
             metric['usage_known']=all(k in usage for k in ['prompt_tokens','completion_tokens'])
             metric['input_tokens'] = int(usage.get('prompt_tokens', 0))
             metric['output_tokens'] = int(usage.get('completion_tokens', 0))
+            metric['reasoning_tokens']=usage.get('completion_tokens_details',{}).get('reasoning_tokens')
             if metric['usage_known'] and self.input_price and self.output_price:
                 metric['cost_usd'] = (metric['input_tokens'] * self.input_price + metric['output_tokens'] * self.output_price) / 1e6
             choice = data.get('choices', [{}])[0]
