@@ -104,9 +104,9 @@ def main():
         run([*command,'--savedir',WORK/'saves','test','live_book_reader','--overwrite-screenshots','--report-detailed'],
             'real-book-reader-qa.txt',env=qa_env,timeout=120)
         real_output=(EVIDENCE/'real-book-reader-qa.txt').read_text(encoding='utf-8',errors='replace')
-        if '[rpytest] Status: PASSED' not in real_output or not re.search(r'Assertions\s*:\s*6\s*\|\s*6 passed',real_output):
-            raise RuntimeError('Reading the real GLM book offline did not pass all 6 assertions')
-        receipt.update(verified=True,assertions_passed=24,live_book_read_offline=True,
+        if '[rpytest] Status: PASSED' not in real_output or not re.search(r'Assertions\s*:\s*8\s*\|\s*8 passed',real_output):
+            raise RuntimeError('Reading the real GLM book offline did not pass all 8 assertions')
+        receipt.update(verified=True,assertions_passed=26,live_book_read_offline=True,
                        screenshots=len(list((EVIDENCE/'screenshots').glob('*.png'))))
     except Exception as exc:
         receipt['failure']=str(exc)

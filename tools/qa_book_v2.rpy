@@ -25,8 +25,11 @@ testsuite live_book_reader:
         $ _book_token = ''
         run Hide('book_setup')
         run Show('book_reader')
+        pause 0.3
         assert eval (book_story['mock'] is False and book_story['ending'] is not None and len(book_story['pages'])==12)
         assert eval (book_at_page()==book_story['pages'][0]['state_snapshot'])
+        assert id 'book_past_choices'
+        assert not id 'book_ending_title'
         screenshot '14-real-first.png'
         click '下一页'
         click '下一页'

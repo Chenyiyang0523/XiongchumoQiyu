@@ -62,7 +62,8 @@ def main():
         else:rows.append({**case,'status':attempts[-1]['status'] if attempts else 'not_attempted','attempts':attempts})
     metrics=[m for creation in creations for m in store.usage(creation['id'])]
     complete=sum(r['status']=='complete' for r in rows)
-    first_pass=next((json.loads((d/'results.json').read_text(encoding='utf-8')) for d in args.runs if (d/'results.json').exists()),[])
+    baseline=args.output/'first-run-results.json'
+    first_pass=json.loads(baseline.read_text(encoding='utf-8')) if baseline.exists() else next((json.loads((d/'results.json').read_text(encoding='utf-8')) for d in args.runs if (d/'results.json').exists()),[])
     summary={'mode':'live','model':'glm-5.3','backend':'glm-local','books_generated':complete,'cases':60,'new_themes':36,
         'status':'awaiting_human_review' if complete==60 else 'technical_checks_incomplete',
         'technical_corpus_passed':complete==60,'live_release_eligible':False,'human_review_status':'pending',

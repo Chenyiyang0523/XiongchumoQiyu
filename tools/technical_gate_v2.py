@@ -39,8 +39,8 @@ def assess(directory, platforms):
     evidence=json.loads(platforms.read_text(encoding='utf-8')) if platforms.exists() else {}
     for name in ['mac','windows','linux']:
         item=evidence.get(name,{})
-        if not(item.get('verified') is True and item.get('installed_package') is True and item.get('assertions_passed',0)>=24 and item.get('package_sha256')):
-            failures.append(name+':缺少实际安装包的24项通过证据')
+        if not(item.get('verified') is True and item.get('installed_package') is True and item.get('assertions_passed',0)>=26 and item.get('package_sha256')):
+            failures.append(name+':缺少实际安装包的26项通过证据')
     return {'technical_corpus_and_platforms_passed':not failures,'live_books_verified':verified,
             'human_review_status':'pending','blind_review_status':'pending','formal_release_eligible':False,
             'failures':failures,'monetary_cost':'unknown unless independently supplied; not zero'}

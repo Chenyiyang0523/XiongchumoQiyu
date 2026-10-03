@@ -522,15 +522,26 @@ screen book_reader():
                                 input id "book_reason_input" value reason_value length 200 style "book_input" xfill True
                         for action in book_clarifications:
                             textbutton ("我想表达：" + book_plain(action["label"])) style "book_button" sensitive not book_busy action Function(book_confirm_understanding, action)
-                    elif book_story.get("ending"):
-                        text book_plain(book_story["ending"]["title"]) style "book_text" size 34
+                    elif book_story.get("ending") and book_page_index == len(book_story['pages'])-1:
+                        text book_plain(book_story["ending"]["title"]) id 'book_ending_title' style "book_text" size 34
                         text book_plain(book_story["ending"]["text"]) style "book_text" size 26 substitute False
                         text "发现与帮助都来自这次真实行动。" style "book_text" size 24
                         for eid in book_story["ending"]["evidence"]:
                             text book_plain(next(e["description"] for e in book_story["events"] if e["id"] == eid)) style "book_text" size 23 substitute False
-                    elif book_story["status"] == "continued":
-                        text "待续 / 已到本次页数上限。未完成的任务已保留。" style "book_text" size 28
-                    if book_feedback:
+                    elif not live:
+                        text '当时的行动' id 'book_past_choices' style 'book_text' size 28
+                        for choice in page['choices']:
+                            $ chosen_label = choice.get('label') or next((a['label'] for i in page['interactions'] for a in i['actions'] if a['id']==choice['action_id']), '自由表达')
+                            text book_plain(chosen_label) style 'book_text' size 26 substitute False
+                            for event in book_story['events']:
+                                if event.get('action_id')==choice['action_id'] and event['turn']==page['state_snapshot']['version']+1:
+                                    text book_plain(event['description']) style 'book_text' size 23 substitute False
+                        if page.get('discussion'):
+                            text '我们当时的理由' style 'book_text' size 25
+                            text book_plain(page['discussion']) style 'book_text' size 23 substitute False
+                        if book_story['status']=='continued' and book_page_index==len(book_story['pages'])-1:
+                            text '待续 / 已到本次页数上限。未完成的任务已保留。' style 'book_text' size 28
+                    if live and book_feedback:
                         text book_plain(book_feedback) style "book_text" size 23 substitute False
                     if book_busy:
                         text (book_phase + "……已有页面可以回看。") style "book_text" size 25
