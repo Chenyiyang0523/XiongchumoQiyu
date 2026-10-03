@@ -11,7 +11,7 @@ from service.provider import ModelError
 def provider(monkeypatch,tmp_path,response):
     path=tmp_path/'settings.json'
     path.write_text(json.dumps({'env':{'ANTHROPIC_BASE_URL':'https://model.example/api/anthropic',
-        'ANTHROPIC_MODEL':'glm-test[1M]','ANTHROPIC_AUTH_TOKEN':'private-local-token'}}))
+        'ANTHROPIC_MODEL':'glm-test[1M]','ANTHROPIC_AUTH_TOKEN':'private-local-token'}}), encoding='utf-8')
     monkeypatch.setenv('XCMQY_CLAUDE_SETTINGS',str(path))
     for key in ['XCMQY_LLM_MODEL','XCMQY_LLM_KEY','XCMQY_LLM_ENDPOINT']:
         monkeypatch.delenv(key,raising=False)

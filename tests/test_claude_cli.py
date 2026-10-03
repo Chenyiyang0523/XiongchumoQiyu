@@ -11,7 +11,7 @@ def configured(monkeypatch, tmp_path, response, returncode=0):
     settings = tmp_path/'settings.json'
     settings.write_text(json.dumps({'env':{'ANTHROPIC_MODEL':'glm-test',
         'ANTHROPIC_BASE_URL':'https://model.example/api/anthropic', 'ANTHROPIC_AUTH_TOKEN':'test-private-token'},
-        'hooks':{'SessionStart':['must-never-run']}}))
+        'hooks':{'SessionStart':['must-never-run']}}), encoding='utf-8')
     monkeypatch.setenv('XCMQY_CLAUDE_SETTINGS', str(settings))
     monkeypatch.setenv('XCMQY_LLM_BACKEND', 'claude-cli')
     monkeypatch.delenv('XCMQY_LLM_MODEL', raising=False)
@@ -82,7 +82,9 @@ def test_timeout_terminates_model_process_group(monkeypatch,tmp_path):
             self.attempts+=1
             if self.attempts==1:raise subprocess.TimeoutExpired('claude',timeout)
             return '', ''
+        def terminate(self):signals.append((self.pid,'terminate'))
+        def kill(self):signals.append((self.pid,'kill'))
     monkeypatch.setattr('service.claude_cli.subprocess.Popen',TimeoutProcess)
-    monkeypatch.setattr('service.claude_cli.os.killpg',lambda pid,sig:signals.append((pid,sig)))
+    monkeypatch.setattr('service.claude_cli.os.killpg',lambda pid,sig:signals.append((pid,sig)),raising=False)
     with pytest.raises(ModelError,match='timed out'):provider.call('review',{}, {},metrics.append)
     assert len(signals)==1 and not metrics[0]['success']

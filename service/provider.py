@@ -2,6 +2,8 @@
 import json
 import os
 import time
+from pathlib import Path
+import uuid
 from urllib.parse import urlparse
 import httpx
 
@@ -19,6 +21,9 @@ def create_provider():
     if backend == 'claude-settings':
         from service.anthropic_provider import ClaudeSettingsProvider
         return ClaudeSettingsProvider()
+    if backend == 'glm-local':
+        from service.glm_provider import LocalGLMProvider
+        return LocalGLMProvider()
     if backend != 'openai':
         raise ModelError('unknown model backend')
     return Provider()
@@ -42,10 +47,11 @@ class Provider:
                   'cost_usd': None, 'seconds': 0, 'success': False}
         metric['usage_known']=False
         try:
-            payload = {'model': self.model, 'stream': False, 'max_tokens': 7000,
+            payload = {'model': self.model, 'stream': False, 'max_tokens': getattr(self,'max_tokens',7000),
                        'response_format': {'type': 'json_object'},
-                       'messages': [{'role': 'system', 'content': SYSTEM},
-                                    {'role': 'user', 'content': json.dumps({'stage': stage, 'context': context, 'schema': schema}, ensure_ascii=False)}]}
+                       'messages': [{'role': 'system', 'content': getattr(self,'system',SYSTEM)},
+                                    {'role': 'user', 'content': json.dumps({'stage': stage, 'context': context, 'schema': schema}, ensure_ascii=False)}],
+                       **getattr(self,'extra_payload',{})}
             with httpx.Client(timeout=self.timeout, follow_redirects=False) as client:
                 with client.stream('POST', self.endpoint, json=payload,
                                    headers={'Authorization': 'Bearer ' + self.key} if self.key else {}) as response:
@@ -56,6 +62,11 @@ class Provider:
                         if len(raw) > 2 * 1024 * 1024:
                             raise ModelError('response too large')
             data = json.loads(raw)
+            if getattr(self,'trace',''):
+                path=Path(self.trace);path.mkdir(parents=True,exist_ok=True)
+                (path/(str(time.time_ns())+'-'+uuid.uuid4().hex[:8]+'-'+stage+'.json')).write_text(
+                    json.dumps({'request':{'stage':stage,'context':context,'schema':schema},
+                        'response':{'choices':data.get('choices',[]),'usage':data.get('usage',{})}},ensure_ascii=False,indent=2),encoding='utf-8')
             usage = data.get('usage', {})
             metric['usage_known']=all(k in usage for k in ['prompt_tokens','completion_tokens'])
             metric['input_tokens'] = int(usage.get('prompt_tokens', 0))

@@ -72,10 +72,10 @@ def main():
     args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=True)
     cases=corpus()
-    (args.output/'cases.json').write_text(json.dumps(cases,ensure_ascii=False,indent=2))
+    (args.output/'cases.json').write_text(json.dumps(cases,ensure_ascii=False,indent=2), encoding='utf-8')
     try:provider=create_provider() if args.mode=='live' else MockProvider()
     except ValueError:
-        (args.output/'summary.json').write_text(json.dumps({'mode':args.mode,'live_release_eligible':False,'status':'configuration_required','books_generated':0},indent=2))
+        (args.output/'summary.json').write_text(json.dumps({'mode':args.mode,'live_release_eligible':False,'status':'configuration_required','books_generated':0},indent=2), encoding='utf-8')
         print('未运行真实生成：请在本机配置 XCMQY_LLM_ENDPOINT、XCMQY_LLM_MODEL、XCMQY_LLM_KEY。',file=sys.stderr)
         return 2
     store=Store(args.output/'evaluation.sqlite')
@@ -93,7 +93,7 @@ def main():
                                   operations=[op(story['pages'][-1],int(case['id'].split('.')[1])%2)],reason='我们先核对事实，再和伙伴讨论。').model_dump()
                 story=execute(pipeline,'evaluation','turn',req,story['id'])
             result=checks(story)
-            (args.output/(case['id']+'.json')).write_text(json.dumps(story,ensure_ascii=False,indent=2))
+            (args.output/(case['id']+'.json')).write_text(json.dumps(story,ensure_ascii=False,indent=2), encoding='utf-8')
             export_html(story,args.output/(case['id']+'.html'),lambda p:(ROOT/'game'/p).read_bytes())
             metrics=story['usage']
             result.update(calls=len(metrics),tokens=None if any(not m.get('usage_known',m.get('mock',False)) for m in metrics) else sum(m['input_tokens']+m['output_tokens'] for m in metrics),
@@ -103,17 +103,17 @@ def main():
             row={**case,'status':'failed','error':str(exc)[:400]}
         row['seconds']=round(time.monotonic()-start,3)
         rows.append(row)
-        (args.output/'results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+        (args.output/'results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2), encoding='utf-8')
         print(case['id'],row['status'],flush=True)
     review_path=args.output/'human-review.csv'
-    previous={r['id']:r for r in csv.DictReader(review_path.open())} if review_path.exists() else {}
-    with review_path.open('w',newline='') as output:
+    previous={r['id']:r for r in csv.DictReader(review_path.open(encoding='utf-8'))} if review_path.exists() else {}
+    with review_path.open('w',newline='', encoding='utf-8') as output:
         columns=['id','reviewer','critical_contradictions','omitted_tasks','image_object_conflicts','coherence','fun','choice_consequences','image_consistency','notes']
         writer=csv.DictWriter(output,fieldnames=columns);writer.writeheader()
         writer.writerows(previous.get(c['id'],{'id':c['id']}) for c in cases)
     summary={'mode':args.mode,'status':'awaiting_human_review' if args.mode=='live' else 'fixture_only',
              'books_generated':sum(r['status']=='complete' for r in rows),'cases':60,'new_themes':36,
              'live_release_eligible':False,'comparison_pairs_required':20,'platforms_verified':[]}
-    (args.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2))
+    (args.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2), encoding='utf-8')
     return 0 if summary['books_generated']==60 else 1
 if __name__=='__main__':sys.exit(main())

@@ -7,6 +7,7 @@ from service.models import Concepts, StoryBlueprint, StoryOpening, BookPage, Tur
 from service.provider import BudgetExceeded, ModelError
 from service.context import for_generation, review_preview
 from service.prompts import compact_context
+from service import model_protocol
 from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError
 
 MANIFEST_PATH = Path(__file__).resolve().parents[1] / 'game/storybook/asset_manifest.json'
@@ -19,8 +20,8 @@ def fingerprint(story):
 class Pipeline:
     def __init__(self, store, provider, fault=None):
         self.store, self.provider, self.fault = store, provider, fault
-        self.manifest = json.loads(MANIFEST_PATH.read_text())['assets']
-        self.character_bible = json.loads(MANIFEST_PATH.with_name('character_bible.json').read_text())
+        self.manifest = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))['assets']
+        self.character_bible = json.loads(MANIFEST_PATH.with_name('character_bible.json').read_text(encoding='utf-8'))
         self.stop = threading.Event()
         self.wake = threading.Event()
         self.thread = None
@@ -74,9 +75,27 @@ class Pipeline:
             if 'manifest' in context:
                 context['manifest']={a:{k:v for k,v in spec.items() if k not in {'path','width','height','bytes','sha256','alpha'}} for a,spec in context['manifest'].items()}
             model_context={**context,'character_bible':self.character_bible}
+            wire_model=model
+            intent=getattr(self.provider,'intention_protocol',False)
+            if intent and stage in {'setup','setup_repair'}:
+                wire_model=model_protocol.ModelOpening
+                model_context['role_ids']=model_protocol.roles(context['settings'],context['selected'])
+            elif intent and stage in {'proposal','repair'}:
+                wire_model=model_protocol.ModelTurn
             if not self.provider.is_mock:
                 model_context=compact_context(stage,model_context)
-            return model.model_validate(self.provider.call(stage, model_context, model.model_json_schema(), lambda metric: self.store.metric(job['id'], metric,metric_index))).model_dump()
+            if intent and wire_model!=model:
+                model_context['intention_protocol']=True
+                model_context['output_notes']='本次使用简明意图协议，不输出effects/prerequisites/illustration/state_snapshot等底层字段。learn填写线索ID数组，take填写可及物品ID数组，give是物品ID到接收者ID，spend是资源ID到正数。profiles的键必须使用role_ids给出的ID。tasks用knowledge线索ID数组、owners物品ID到目标主人、relationships伙伴ID到最低值；不要输出conditions。page.characters是人物ID到表情名，page.items是物品ID列表。反馈、trait、hotspot都在action里；不要放在interaction里。必须同时输出blueprint与page，不能漏掉page。所有生成内容仍须严格符合本次工具schema。'
+            answer=self.provider.call(stage,model_context,wire_model.model_json_schema(),lambda metric:self.store.metric(job['id'],metric,metric_index))
+            if intent and wire_model!=model:
+                answer=wire_model.model_validate(answer).model_dump()
+                if stage in {'setup','setup_repair'}:
+                    b=model_protocol.blueprint(answer['blueprint'],context['settings'],context['selected'])
+                    state=initial_state(StoryBlueprint.model_validate(b).model_dump(),self.manifest)
+                    answer={'blueprint':b,'page':model_protocol.page(answer['page'],state,self.manifest)}
+                else:answer=model_protocol.turn(answer,source,request,self.manifest)
+            return model.model_validate(answer).model_dump()
         try:
             if job['kind'] == 'create':
                 settings = request['settings']

@@ -37,11 +37,12 @@ def decode_typed_json(value, schema):
 class ClaudeSettingsProvider:
     is_mock = False
     combined_setup = True
+    intention_protocol = True
 
     def __init__(self):
         path = Path(os.environ.get('XCMQY_CLAUDE_SETTINGS', str(Path.home()/'.claude/settings.json')))
         try:
-            settings = json.loads(path.read_text()).get('env', {})
+            settings = json.loads(path.read_text(encoding='utf-8')).get('env', {})
         except (OSError, ValueError) as exc:
             raise ModelError('Claude Code model settings are unavailable') from exc
         self.endpoint = os.environ.get('XCMQY_LLM_ENDPOINT') or settings.get('ANTHROPIC_BASE_URL', '')
@@ -69,7 +70,7 @@ class ClaudeSettingsProvider:
         data = None
         try:
             payload = {'model':self.model, 'max_tokens':self.max_tokens, 'stream':False,
-                       'thinking':{'type':'disabled'}, 'system':SYSTEM,
+                       'thinking':{'type':'disabled'}, 'system':SYSTEM+'\n当前请求的工具schema优先于上述底层封装示例。context.intention_protocol=true时，只填写简明意图字段；程序会编译为effects、人物绑定和画面布局。禁止自行补充底层字段。',
                        'messages':[{'role':'user','content':json.dumps(request,ensure_ascii=False)}],
                        'tools':[{'name':'submit_story','description':'提交本次故事JSON；必须包含所有必填字段，且不能添加字段。','input_schema':wire_schema}],
                        'tool_choice':{'type':'tool','name':'submit_story'}}
@@ -110,4 +111,4 @@ class ClaudeSettingsProvider:
                 safe_response={k:data[k] for k in ['usage','stop_reason','model'] if k in data} if isinstance(data,dict) else None
                 if safe_response is not None:safe_response['content']=[b for b in data.get('content',[]) if b.get('type')=='tool_use']
                 (path/(str(time.time_ns())+'-'+uuid.uuid4().hex[:8]+'-'+stage+'.json')).write_text(
-                    json.dumps({'request':request,'response':safe_response,'metric':metric},ensure_ascii=False,indent=2))
+                    json.dumps({'request':request,'response':safe_response,'metric':metric},ensure_ascii=False,indent=2), encoding='utf-8')

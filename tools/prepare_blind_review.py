@@ -10,7 +10,7 @@ DIMENSIONS = ['coherence', 'fun', 'choice_consequences', 'image_consistency']
 
 
 def prepare(pairs_path, output, seed):
-    pairs = json.loads(pairs_path.read_text())
+    pairs = json.loads(pairs_path.read_text(encoding='utf-8'))
     if len(pairs) != 20 or len({r['id'] for r in pairs}) != 20:
         raise ValueError('需要20组不同编号的实际同主题作品')
     if (output/'scores.csv').exists():
@@ -30,16 +30,16 @@ def prepare(pairs_path, output, seed):
             mapping.append({'id':pair['id'], 'label':label, 'version':version,
                             'source':str(path), 'theme':pair['theme']})
             rows.append({'id':pair['id'], 'label':label, 'book':target.name})
-    (output/'reviewer-mapping.private.json').write_text(json.dumps(mapping, ensure_ascii=False, indent=2)+'\n')
-    with (output/'scores.csv').open('w', newline='') as f:
+    (output/'reviewer-mapping.private.json').write_text(json.dumps(mapping, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    with (output/'scores.csv').open('w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=['id', 'label', 'book', 'reviewer']+DIMENSIONS+['notes'])
         w.writeheader(); w.writerows(rows)
     print('已生成40份匿名作品与评分表。映射文件须在审阅结束前由组织者保管。')
 
 
 def decode(directory, output):
-    mapping = json.loads((directory/'reviewer-mapping.private.json').read_text())
-    scores = list(csv.DictReader((directory/'scores.csv').open()))
+    mapping = json.loads((directory/'reviewer-mapping.private.json').read_text(encoding='utf-8'))
+    scores = list(csv.DictReader((directory/'scores.csv').open(encoding='utf-8')))
     by_key = {(r['id'], r['label']):r for r in scores}
     if len(scores) != 40 or len(by_key) != 40:
         raise ValueError('需要40份独立的人工评分')
@@ -55,7 +55,7 @@ def decode(directory, output):
         else:
             row['legacy_scores'] = json.dumps({k:score[k] for k in DIMENSIONS})
     if len(pairs) != 20: raise ValueError('版本映射不完整')
-    with output.open('w', newline='') as f:
+    with output.open('w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=['id', 'theme', 'reviewer', 'legacy_evidence', 'v2_evidence']+DIMENSIONS+['notes', 'legacy_scores'])
         w.writeheader(); w.writerows(pairs.values())
     print('已解盲并保留两版评分。发布门禁按真实2.0作品分数判断。')

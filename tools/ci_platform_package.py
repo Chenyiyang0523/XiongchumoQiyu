@@ -34,7 +34,7 @@ def run(command,name,env=None,cwd=ROOT,timeout=600):
     if sys.platform.startswith('linux'):
         command=['xvfb-run','-a','--server-args=-screen 0 1920x1080x24',*map(str,command)]
     else:command=list(map(str,command))
-    with (EVIDENCE/name).open('w') as output:
+    with (EVIDENCE/name).open('w', encoding='utf-8') as output:
         result=subprocess.run(command,cwd=cwd,env=env,stdout=output,stderr=subprocess.STDOUT,timeout=timeout)
     if result.returncode:raise RuntimeError(name+' exited '+str(result.returncode))
 
@@ -67,14 +67,14 @@ def main():
         installed=WORK/'installed';extract(package,installed)
         if sys.platform=='darwin':
             app=next(installed.glob('*.app'));root=app/'Contents/Resources/autorun'
-            command=[app/'Contents/MacOS'/app.stem]
+            command=[app/'Contents/MacOS'/app.stem,root]
         else:
             root=next(p for p in installed.iterdir() if p.is_dir())
-            command=[root/'XiongchumoQiyu.exe'] if os.name=='nt' else [root/'XiongchumoQiyu.sh']
+            command=[root/'XiongchumoQiyu.exe',root] if os.name=='nt' else [root/'XiongchumoQiyu.sh',root]
         receipt['installed_package']=True
         shutil.copy2(ROOT/'tools/qa_book_v2.rpy',root/'game/qa_book_v2.rpy')
         # Tests are injected only into this extracted QA copy, never into the distribution.
-        log=(EVIDENCE/'service.txt').open('w')
+        log=(EVIDENCE/'service.txt').open('w', encoding='utf-8')
         service_env=os.environ.copy();service_env.update(XCMQY_DEVELOPMENT_MOCK='1',XCMQY_GUARDIAN_CODE='local-dev-guardian',XCMQY_DATABASE=str(WORK/'mock.sqlite'))
         service=subprocess.Popen([sys.executable,'-m','uvicorn','service.app:create_app','--factory','--host','127.0.0.1','--port','8000'],cwd=ROOT,env=service_env,stdout=log,stderr=subprocess.STDOUT)
         for _ in range(100):
@@ -89,7 +89,7 @@ def main():
         (EVIDENCE/'screenshots').mkdir(exist_ok=True)
         run([*command,'--savedir',WORK/'saves','test','picturebook','--overwrite-screenshots','--report-detailed'],
             'package-qa.txt',env=qa_env,timeout=300)
-        output=(EVIDENCE/'package-qa.txt').read_text(errors='replace')
+        output=(EVIDENCE/'package-qa.txt').read_text(errors='replace', encoding='utf-8')
         if '[rpytest] Status: PASSED' not in output or not re.search(r'Assertions\s*:\s*14\s*\|\s*14 passed',output):
             raise RuntimeError('Native package did not report all 14 assertions passing')
         receipt.update(verified=True,assertions_passed=14,screenshots=len(list((EVIDENCE/'screenshots').glob('*.png'))))
@@ -101,7 +101,11 @@ def main():
             service.terminate()
             try:service.wait(timeout=5)
             except subprocess.TimeoutExpired:service.kill();service.wait()
-        (EVIDENCE/'platform.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n')
+        (EVIDENCE/'platform.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
+        if not receipt['verified']:
+            for name in ['package-qa.txt','build.txt']:
+                path=EVIDENCE/name
+                if path.exists():print(name+'\n'+'\n'.join(path.read_text(encoding='utf-8',errors='replace').splitlines()[-65:]))
         print(json.dumps(receipt,ensure_ascii=False,indent=2),flush=True)
 
 

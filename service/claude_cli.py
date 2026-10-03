@@ -21,7 +21,7 @@ class ClaudeCLIProvider:
             raise ModelError('Claude Code CLI is not installed on this service host')
         path = Path(os.environ.get('XCMQY_CLAUDE_SETTINGS', str(Path.home()/'.claude/settings.json')))
         try:
-            settings = json.loads(path.read_text())
+            settings = json.loads(path.read_text(encoding='utf-8'))
         except (OSError, ValueError) as exc:
             raise ModelError('Claude Code settings are unavailable') from exc
         self.env = os.environ.copy()
@@ -53,15 +53,17 @@ class ClaudeCLIProvider:
         try:
             with tempfile.TemporaryDirectory(prefix='xcmqy-model-') as cwd:
                 process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE, text=True, env=self.env, cwd=cwd, start_new_session=True)
+                    stderr=subprocess.PIPE, text=True, encoding='utf-8', env=self.env, cwd=cwd, start_new_session=True)
                 try:
                     stdout, _ = process.communicate(json.dumps(request, ensure_ascii=False), timeout=self.timeout)
                 except subprocess.TimeoutExpired as exc:
-                    os.killpg(process.pid, signal.SIGTERM)
+                    if os.name=='nt':process.terminate()
+                    else:os.killpg(process.pid, signal.SIGTERM)
                     try:
                         process.communicate(timeout=3)
                     except subprocess.TimeoutExpired:
-                        os.killpg(process.pid, signal.SIGKILL)
+                        if os.name=='nt':process.kill()
+                        else:os.killpg(process.pid, signal.SIGKILL)
                         process.communicate()
                     raise ModelError('Claude Code model call timed out; confirmed state preserved') from exc
             if len(stdout.encode()) > 2*1024*1024:
@@ -102,4 +104,4 @@ class ClaudeCLIProvider:
                 path.mkdir(parents=True, exist_ok=True)
                 safe_response = {k:data[k] for k in ['result','usage','stop_reason','subtype','is_error','num_turns'] if k in data} if isinstance(data, dict) else None
                 (path/(str(time.time_ns())+'-'+uuid.uuid4().hex[:8]+'-'+stage+'.json')).write_text(
-                    json.dumps({'request':request,'response':safe_response,'metric':metric}, ensure_ascii=False, indent=2))
+                    json.dumps({'request':request,'response':safe_response,'metric':metric}, ensure_ascii=False, indent=2), encoding='utf-8')

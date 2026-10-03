@@ -83,8 +83,8 @@ def test_snapshots_reflection_and_completion_are_consistent(app,tmp_path):
     assert all(a['reason']=='为了伙伴安全返回。' for a in reflection(story)['actions'])
     target=tmp_path/'book.html'
     export_html(story,target,lambda path:(Path('game')/path).read_bytes())
-    script=target.read_text().split('</script><script>')[1].split('</script>')[0]
-    (tmp_path/'book.js').write_text(script)
+    script=target.read_text(encoding='utf-8').split('</script><script>')[1].split('</script>')[0]
+    (tmp_path/'book.js').write_text(script, encoding='utf-8')
     # Parse actual exported JavaScript; do not merely assert that markup contains a title.
     result=subprocess.run(['node','--check',str(tmp_path/'book.js')],capture_output=True,text=True)
     assert result.returncode==0,result.stderr

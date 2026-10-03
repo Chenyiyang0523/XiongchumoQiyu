@@ -202,7 +202,7 @@ def test_library_export_and_immutable_read(app,tmp_path):
     root=Path(__file__).resolve().parents[1]/'game'
     target=tmp_path/'offline.html'
     export_html(story,target,lambda p:(root/p).read_bytes())
-    data=target.read_text()
+    data=target.read_text(encoding='utf-8')
     assert 'data:image/webp;base64,' in data and 'data:font/ttf;base64,' in data
     assert '<script src=' not in data
     assert story==before
