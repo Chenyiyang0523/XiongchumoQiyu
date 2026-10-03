@@ -19,7 +19,7 @@ def main():
             if (dest/'platform.json').exists():
                 old=json.loads((dest/'platform.json').read_text())
                 package=dest/'packages'/old['package']
-                if old['source_commit']==expected_commit and package.exists() and hashlib.sha256(package.read_bytes()).hexdigest()==old['package_sha256']:
+                if old.get('verified') is True and old['source_commit']==expected_commit and package.exists() and hashlib.sha256(package.read_bytes()).hexdigest()==old['package_sha256']:
                     print(name,'already retained',flush=True);continue
             archive=a.output/(name+'.zip')
             metadata=a.output/(name+'.download.json')

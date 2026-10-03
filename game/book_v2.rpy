@@ -109,7 +109,8 @@ init -5 python:
             checkpoint["pending_client"] = {"operation": operation, "payload": payload, "endpoint": endpoint}
             library.save(checkpoint)
         def work():
-            global _book_token, _book_token_account, _book_token_endpoint
+            global _book_token, _book_token_account, _book_token_endpoint, book_diagnostic
+            book_diagnostic = operation + ':start'
             try:
                 if operation == "connect":
                     session = client.request("/v2/sessions", payload)
@@ -134,8 +135,10 @@ init -5 python:
                     client.request("/v2/jobs/" + jid + "/retry", {})
                 else:
                     route = "/v2/stories" if operation == "create" else "/v2/stories/" + stable["id"] + "/actions"
+                    book_diagnostic = operation + ':request'
                     jid = client.request(route, payload)["job_id"]
                     checkpoint["pending_client"]["job_id"] = jid
+                    book_diagnostic = operation + ':save_pending'
                     library.save(checkpoint)
                 deadline = _book_time.monotonic() + float(_book_os.environ.get('XCMQY_JOB_POLL_TIMEOUT', '600'))
                 while True:
@@ -143,6 +146,7 @@ init -5 python:
                         return
                     if _book_time.monotonic() > deadline:
                         raise _BookError('等待新页超时；行动已保留，可以恢复或重试。')
+                    book_diagnostic = operation + ':poll'
                     job = client.request("/v2/jobs/" + jid)
                     renpy.invoke_in_main_thread(book_status, epoch, aid, job["phase"])
                     if job["phase"] == "failed":
@@ -154,8 +158,10 @@ init -5 python:
                                 library.save(stable)
                             renpy.invoke_in_main_thread(book_deliver, epoch, aid, result, "")
                             return
+                        book_diagnostic = operation + ':fetch_result'
                         restored = client.request("/v2/stories/" + result["story_id"])
                         restored["saved_at"] = _book_time.time()
+                        book_diagnostic = operation + ':save_result'
                         library.save(restored)
                         if checkpoint["id"] != restored["id"]:
                             library.filename(checkpoint["id"]).unlink(missing_ok=True)
@@ -164,6 +170,8 @@ init -5 python:
                     _book_time.sleep(0.5)
             except Exception as exc:
                 # Do not expose remote messages or credentials. Keep checkpoint and stable book.
+                book_diagnostic += ':' + type(exc).__name__
+                renpy.log('Picturebook transport stage: ' + book_diagnostic)
                 renpy.invoke_in_main_thread(book_deliver, epoch, aid, None, str(exc) if isinstance(exc, _BookError) else "服务暂时不可用，当前绘本和待处理行动已保留。")
         renpy.invoke_in_thread(work)
 
@@ -283,6 +291,7 @@ default book_page_index = 0
 default book_busy = False
 default book_error = ""
 default book_phase = ""
+default book_diagnostic = ""
 default book_operations = []
 default book_input = ""
 default book_reason = ""
