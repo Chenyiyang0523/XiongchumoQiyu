@@ -80,6 +80,24 @@ def test_task_owner_requirement_cannot_be_replaced_by_finding_a_clue():
     effects(state,{'verb':'observe','target':'item.map','effects':[{'op':'transfer','target':'item.map','value':'player'}]},b,m,'recovered')
     assert state['quests']['quest.recover']=='complete'
 
+
+def test_model_can_place_a_real_owned_item_in_the_current_scene():
+    b,state,m,*_=world();state['items']['item.map']['owner']='player'
+    authored=wire.ModelAction(id='action.place',label='把地图铺在集合点',verb='use',target='item.map',
+        give={'item.map':state['location']},feedback='地图铺在集合点，大家可以一起核对。').model_dump()
+    compiled=wire.action(authored,state)
+    effects(state,compiled,b,m,'placed')
+    assert state['items']['item.map']['owner']=='scene.forest'
+
+
+def test_model_cannot_place_an_item_at_a_remote_scene():
+    b,state,m,*_=world();state['items']['item.map']['owner']='player'
+    authored=wire.ModelAction(id='action.remote',label='把地图放在远处',verb='use',target='item.map',
+        give={'item.map':'scene.bridge'},feedback='放置地图。').model_dump()
+    before=copy.deepcopy(state)
+    with pytest.raises(ValueError,match='unknown or ambiguous'):wire.action(authored,state)
+    assert state==before
+
 def test_take_then_move_compiles_in_physical_order_and_sprite_alias_is_exact():
     b,state,m,*_=world()
     state['items']['item.map']['owner']=state['location']

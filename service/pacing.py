@@ -41,11 +41,42 @@ def condition_distance(state, condition, blueprint):
             missing=[i for i in ingredients if i['owner']!='player']
             locations=[state['characters'][i['owner']]['location'] if i['owner'] in state['characters'] else i['owner'] for i in missing]
             return 2+len(missing)+int(bool(locations) and state['location'] not in locations)
-        if owner=='player' and condition['value'] in state['characters']:
-            return 1+(state['characters'][condition['value']]['location']!=state['location'])
+        if owner=='player':
+            destination=condition['value']
+            location=state['characters'][destination]['location'] if destination in state['characters'] else destination
+            return 1+(location!=state['location'])
         location=state['characters'][owner]['location'] if owner in state['characters'] else owner
         return 1+(location!=state['location'])
     return 1
+
+
+def prerequisite_hints(state, blueprint):
+    """Physical routes implied by facts, with no invented solution or dialogue."""
+    result=[]
+    def obtain(iid, seen):
+        if iid in seen:return [{'item':iid,'blocked':'cyclic recipe'}]
+        item=state['items'][iid];owner=item['owner']
+        if owner=='player':return []
+        if owner=='consumed':return [{'item':iid,'blocked':'already consumed; cannot recreate this instance'}]
+        if owner=='unmade':
+            return [step for ingredient in item['recipe'] for step in obtain(ingredient,seen|{iid})]+[
+                {'operation':'combine','item':iid,'inputs':item['recipe']}]
+        location=state['characters'][owner]['location'] if owner in state['characters'] else owner
+        return [{'operation':'obtain','item':iid,'holder':owner,'location':location,'travel_required':location!=state['location']}]
+    for condition in frontier(state,blueprint)['unmet_conditions']:
+        kind,key=condition['kind'],condition['key']
+        hint={'quest':condition['quest'],'condition':condition,'physical_prerequisites':[]}
+        if kind=='owner':
+            hint['physical_prerequisites']=obtain(key,set())
+            if condition['value']!='player':
+                destination=condition['value']
+                location=state['characters'][destination]['location'] if destination in state['characters'] else destination
+                hint['physical_prerequisites'].append({'operation':'place_or_give','item':key,'recipient':destination,'location':location})
+        elif kind=='relationship':
+            hint['physical_prerequisites']=[{'operation':'negotiate','character':key,
+                'location':state['characters'][key]['location'],'current':state['relationships'][key],'required':condition['value']}]
+        result.append(hint)
+    return result
 
 
 def progress(before, after, blueprint):
@@ -60,8 +91,9 @@ def validate_resolution_page(story, context):
     if story.get('ending') or story['status']=='continued':return
     if context['closure_readiness']['ending_allowed']:
         raise RuleError('all closure gates are met: return the evidenced ending, not another page')
-    # Earlier resolution may legitimately prepare a discussion or spend time
-    # testing an idea. The final three planned pages must offer direct progress.
+    # Earlier resolution can prepare a discussion or test an idea. Facts-based
+    # prerequisite hints start earlier; the final three planned pages must offer
+    # at least one direct route towards unfinished tasks or promises.
     if context.get('pace')!='resolve' or len(story['pages'])<story['settings']['pages']-1:return
     state=story['state'];blueprint=story['blueprint'];page=story['pages'][-1]
     demand=frontier(state,blueprint)

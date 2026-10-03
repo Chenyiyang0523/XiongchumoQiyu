@@ -157,7 +157,9 @@ def main():
     parser.add_argument('--workers',type=int,choices=[1,2,3,4],default=1)
     parser.add_argument('--retry-failed',action='store_true',help='Explicitly retry a previously failed, uncommitted request once')
     parser.add_argument('--attempts',type=int,choices=[1,2,3],default=1,help='Bounded recovery attempts; every failed call remains in book usage')
+    parser.add_argument('--story-attempt',type=int,default=1,help='Explicit benchmark replay as a NEW story, keeping the original continued/failed book unchanged; record and aggregate both attempts')
     args=parser.parse_args()
+    if args.story_attempt<1:parser.error('story-attempt must be positive')
     args.output.mkdir(parents=True,exist_ok=True)
     cases=corpus()
     if args.cases:
@@ -174,7 +176,7 @@ def main():
     pipeline=Pipeline(store,provider)
     sources=sorted([*ROOT.joinpath('service').glob('*.py'),*ROOT.joinpath('game/storybook').glob('*.py'),Path(__file__)])
     metadata={'mode':args.mode,'model':getattr(provider,'model','fixture-v2'),'reasoning_effort':getattr(provider,'reasoning_effort',None),
-              'started_unix':time.time(),'pages':args.pages,'attempts_per_request':args.attempts,'workers':args.workers,
+              'started_unix':time.time(),'pages':args.pages,'attempts_per_request':args.attempts,'workers':args.workers,'story_attempt':args.story_attempt,
               'source_sha256':hashlib.sha256(b''.join(p.read_bytes() for p in sources)).hexdigest(),
               'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()}
     run_path=args.output/'run-history.json'
@@ -185,13 +187,14 @@ def main():
     def run_case(case):
         start=time.monotonic()
         story=None
+        creation_key='evaluation-'+case['id']+('-attempt-'+str(args.story_attempt) if args.story_attempt>1 else '')
         try:
             settings={k:case[k] for k in ['theme','character','age','arc']}
             settings.update(pages=args.pages,assets=list(pipeline.manifest),parent_mode=True)
-            req=CreateRequest(settings=settings,idempotency_key='evaluation-'+case['id']).model_dump()
+            req=CreateRequest(settings=settings,idempotency_key=creation_key).model_dump()
             story=execute(pipeline,'evaluation','create',req,retry_failed=args.retry_failed,attempts=args.attempts)
             while story['status']=='active':
-                req=SubmitRequest(version=story['state']['version'],idempotency_key='evaluation-'+case['id']+'-turn-'+str(story['state']['version']),
+                req=SubmitRequest(version=story['state']['version'],idempotency_key=creation_key+'-turn-'+str(story['state']['version']),
                                   operations=choose_operations(story,int(case['id'].split('.')[1])),reason='我们先核对事实，再和伙伴讨论。').model_dump()
                 with store.db() as db:
                     previous_request=db.execute('SELECT request FROM jobs WHERE account=? AND ikey=?',('evaluation',req['idempotency_key'])).fetchone()
@@ -201,11 +204,11 @@ def main():
             (args.output/(case['id']+'.json')).write_text(json.dumps(story,ensure_ascii=False,indent=2), encoding='utf-8')
             export_html(story,args.output/(case['id']+'.html'),lambda p:(ROOT/'game'/p).read_bytes())
             result.update(measured_usage(store.usage(story['id'])))
-            row={**case,'result':result,'status':'complete' if result['completed'] else 'continued'}
+            row={**case,'story_id':story['id'],'result':result,'status':'complete' if result['completed'] else 'continued'}
         except Exception as exc:
             row={**case,'status':'failed','error':str(exc)[:400]}
             with store.db() as db:
-                creation=db.execute('SELECT id FROM jobs WHERE account=? AND ikey=?',('evaluation','evaluation-'+case['id'])).fetchone()
+                creation=db.execute('SELECT id FROM jobs WHERE account=? AND ikey=?',('evaluation',creation_key)).fetchone()
             if creation:
                 metrics=store.usage(creation['id'])
                 row['usage']=measured_usage(metrics)
@@ -218,6 +221,7 @@ def main():
                 except KeyError:pass
         row['seconds']=round(time.monotonic()-start,3)
         row['source_commit']=metadata['source_commit']
+        row['story_attempt']=args.story_attempt
         return row
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures=[pool.submit(run_case,c) for c in cases if rows.get(c['id'],{}).get('status')!='complete']

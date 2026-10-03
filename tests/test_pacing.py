@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import pytest
 from service.mock import blueprint
-from service.pacing import frontier, progress, validate_resolution_page
+from service.pacing import frontier, progress, validate_resolution_page, prerequisite_hints
 from storybook.engine import initial_state, RuleError
 
 
@@ -53,3 +53,21 @@ def test_travelling_to_actual_holder_advances_ownership_prerequisite():
     assert progress(state,after,b)>0
     after=copy.deepcopy(state);after['location']='scene.cave';after['characters']['player']['location']='scene.cave'
     assert progress(state,after,b)==0
+
+
+def test_delivery_travel_and_recipe_hints_follow_the_actual_ledger():
+    b,state,_=world()
+    b['quests']=[{'id':'quest.place','title':'在小桥布置地图','required':True,'dependencies':[],
+                 'conditions':[{'kind':'owner','key':'item.map','value':'scene.bridge'}]}]
+    state['quests']={'quest.place':'open'};state['items']['item.map']['owner']='player'
+    after=copy.deepcopy(state);after['location']='scene.bridge';after['characters']['player']['location']='scene.bridge'
+    assert progress(state,after,b)>0
+    hint=prerequisite_hints(state,b)[0]['physical_prerequisites']
+    assert hint==[{'operation':'place_or_give','item':'item.map','recipient':'scene.bridge','location':'scene.bridge'}]
+    state['items']['item.map']['owner']='unmade';state['items']['item.map']['recipe']=['item.footprint','item.lantern']
+    state['items']['item.footprint']['owner']='scene.bridge'
+    state['items']['item.lantern']={**copy.deepcopy(state['items']['item.footprint']),'id':'item.lantern','owner':'player','asset':'prop.lantern'}
+    before=copy.deepcopy(state);hint=prerequisite_hints(state,b)[0]['physical_prerequisites']
+    assert hint[0]['item']=='item.footprint' and hint[0]['travel_required'] is True
+    assert hint[1]['operation']=='combine' and hint[1]['inputs']==['item.footprint','item.lantern']
+    assert state==before

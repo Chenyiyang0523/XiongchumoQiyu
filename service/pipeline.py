@@ -132,7 +132,8 @@ class Pipeline:
                 props=defs['ModelAction']['properties']
                 props['move']['propertyNames']={'enum':ids}
                 props['move']['additionalProperties']['enum']=scenes
-                props['give']['additionalProperties']['enum']=ids
+                current_scene=(context.get('post_action_state') or {}).get('location')
+                props['give']['additionalProperties']['enum']=ids+([current_scene] if current_scene else scenes)
                 defs['ModelAction'].setdefault('allOf',[]).append({
                     'if':{'properties':{'verb':{'enum':['ask','negotiate']}}},
                     'then':{'properties':{'target':{'enum':ids}}}})

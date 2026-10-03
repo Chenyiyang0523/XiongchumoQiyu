@@ -91,6 +91,8 @@ def compact_context(stage, raw):
             'missing_materials':[{'id':iid,'owner':state['items'][iid]['owner']} for iid in item.get('recipe',[]) if state['items'][iid]['owner']!='player']}
             for key,item in state.get('items',{}).items() if item['owner']=='unmade']
         context['contract_notes']+='\nnext_action_constraints给出合法对象和制作配方。use的target必须已在owned_items；combine的target可为产物或原料ID，inputs严格等于配方，craft填写产物ID；缺料时先用另一卡片observe+take，不得用use去拿未拥有的材料。已兑现的promises不要反复false/true刷分。'
+        context['contract_notes']+='\n物品交付支持give={物品ID:在场人物ID或当前场景ID}。修好的桥、布置好的舞台等实际产物可以放在当前场景，不能只learn“已修好”代替交付，也不能隔空放在远处。'
+        context['contract_notes']+='\nclosure_readiness.physical_prerequisite_hints只列事实所要求的物理前提，不规定剧情：核心物品已可及就让玩家获得；制作缺料则去真实材料所在地；产物已拥有则送往真实接收者或布置地点。不要用一个无关支线制作替代尚未满足的核心条件。'
         context['contract_notes']+='\nclosure_readiness是程序根据全部已确认记录计算的收尾进度。ending_allowed=false时不能返回ending；剩余页数较少时先给未完成必要任务或缺少的互动类型提供真实办法。ending_allowed=true时返回ending且page=null，以已有event ID为evidence，兑现目标，不再引入新核心任务。'
         context['contract_notes']+='\n最后一页仍可执行操作。closure_readiness.pages_remaining=0时禁止增加页面：满足收尾条件则page=null并返回ending；仍欠任务/承诺/有效互动则page=null、ending=null，程序记录最后行动并保存待续，不能编造任务完成。'
         if context.get('request',{}).get('text'):

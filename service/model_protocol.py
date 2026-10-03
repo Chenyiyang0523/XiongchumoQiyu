@@ -62,7 +62,7 @@ class ModelAction(Contract):
     learn:list[str]=Field(default_factory=list)
     move:dict[str,str]=Field(default_factory=dict,description='人物ID到场景ID，如 {player: scene.bridge}；键不能是场景或中文名称')
     take:list[str]=Field(default_factory=list)
-    give:dict[str,str]=Field(default_factory=dict)
+    give:dict[str,str]=Field(default_factory=dict,description='物品ID到接收人物ID或当前场景ID；可交给在场伙伴，也可把物品放在当前地点，不能隔空放置')
     consume:list[str]=Field(default_factory=list)
     craft:list[str]=Field(default_factory=list)
     spend:dict[str,int]=Field(default_factory=dict)
@@ -153,7 +153,7 @@ def action(value,state):
     changes += [{'op':'learn','target':k,'value':True} for k in value['learn']]
     changes += [{'op':'transfer','target':k,'value':'player'} for k in value['take']]
     changes += [{'op':'craft','target':k,'value':True} for k in value['craft']]
-    changes += [{'op':'transfer','target':k,'value':character_id(v)} for k,v in value['give'].items()]
+    changes += [{'op':'transfer','target':k,'value':v if v==state['location'] else character_id(v)} for k,v in value['give'].items()]
     changes += [{'op':'consume','target':k,'value':True} for k in value['consume']]
     if any(type(v)!=int or v<=0 for v in value['spend'].values()):raise ValueError('spend amounts must be positive integers')
     changes += [{'op':'resource','target':k,'value':-v} for k,v in value['spend'].items()]
