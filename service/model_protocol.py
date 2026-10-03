@@ -52,7 +52,7 @@ class ModelBlueprint(Contract):
     locations:dict[str,str]=Field(default_factory=dict,description='人物ID到场景ID，省略时人物都在scene；不是场景到中文名称')
     initial_knowledge:dict[str,list[str]]=Field(default_factory=dict)
     resources:dict[str,int]=Field(default_factory=lambda:{'time':24,'materials':12})
-    promises:dict[str,bool]=Field(default_factory=dict)
+    promises:dict[str,bool]=Field(default_factory=dict,description='承诺ID到兑现状态：false=已答应但尚未兑现，true=实际条件已满足并已兑现。开场新约定必须false；不是是否存在承诺的标记')
     promise_descriptions:dict[str,str]=Field(default_factory=dict,description='每个承诺ID对应具体约定与可验证的兑现办法，键与promises完全一致')
     promise_goals:dict[str,ModelPromiseGoal]=Field(default_factory=dict,description='键与promises相同；每个承诺的实际兑现条件，至少一项knowledge/owners/relationships。例如交还蜂蜜用owners={item.honey:npc.xionger}')
     twists:list[str]=Field(default_factory=list)
@@ -73,7 +73,7 @@ class ModelAction(Contract):
     craft:list[str]=Field(default_factory=list)
     spend:dict[str,int]=Field(default_factory=dict)
     relationships:dict[str,int]=Field(default_factory=dict)
-    promises:dict[str,bool]=Field(default_factory=dict)
+    promises:dict[str,bool]=Field(default_factory=dict,description='只在实际promise_goals满足后标true，表示已经兑现；口头答应或计划交付不能标true。不改变兑现状态时留空')
     inputs:list[str]=Field(default_factory=list)
     trait:TraitUse|None=None
     hotspot:str|None=Field(default=None,description='画面page.items中一个已声明的item ID；没有对应道具时省略，不写中文描述')

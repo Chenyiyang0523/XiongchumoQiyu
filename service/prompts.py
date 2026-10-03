@@ -17,6 +17,7 @@ GUIDE = '''所有schema必填字段都必须出现，不添加schema外字段。
 人物knowledge只填clues字典的键，绝不能填知识原文。knowledge条件value=true，owner条件value是人物/场景ID。
 只能引用asset_catalog列出的素材ID；没有放大镜素材就用已存在的道具，不能编造magnifier或placeholder。
 失物仍是存在的物品：owner是实际所在的合法场景，不可用unmade假装失踪。制作产物才用unmade，recipe列真实item ID且至少两个。
+promises是兑现状态，不是有没有答应：false表示已答应但尚未兑现，true表示实事已经完成且promise_goals全部满足。开场提出的新约定一律false；后续口头答应、安排未来任务不能标true。
 recipe中的每件原料必须单独声明在items中，不能直接写prop素材ID。拿起地上物品用observe+take；use只能操作player已拥有的物品；combine可以指要制作的产物，inputs必须是已拥有的全部原料。hotspot填写一个可及物品ID，没有实物道具的声音、洞穴等观察不要填写hotspot。
 找回物品的必要任务必须检查owner=player或指定伙伴，不能仅靠learn一条“找到了”的线索冒充完成。
 当前状态中已拥有的知识不能再作为唯一动作后果。必要任务不要依赖一个唯一选项；提供可补救的替代路径。
