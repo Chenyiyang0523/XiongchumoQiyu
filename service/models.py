@@ -195,8 +195,9 @@ class SessionRequest(Contract):
     consent: Literal[True]
 
 class Review(Contract):
-    approved: bool
-    issues: list[str] = Field(default_factory=list, max_length=12)
+    approved: bool = Field(description='存在必须修复的事实/因果/关键图文/严重重复问题才false；true时issues必须为空')
+    issues: list[str] = Field(default_factory=list, max_length=12,description='阻断提交、必须修复的具体问题，不填写可接受的观察或小建议')
+    advice: list[str] = Field(default_factory=list,max_length=8,description='不阻断提交的小建议，与issues明确分开')
 
 class Concept(Contract):
     arc: Arc

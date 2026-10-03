@@ -51,7 +51,7 @@ class Provider:
                        'response_format': {'type': 'json_object'},
                        'messages': [{'role': 'system', 'content': getattr(self,'system',SYSTEM)},
                                     {'role': 'user', 'content': json.dumps({'stage': stage, 'context': context, 'schema': schema}, ensure_ascii=False)}],
-                       **getattr(self,'extra_payload',{})}
+                       **(self.payload_options(stage) if hasattr(self,'payload_options') else getattr(self,'extra_payload',{}))}
             with httpx.Client(timeout=self.timeout, follow_redirects=False) as client:
                 with client.stream('POST', self.endpoint, json=payload,
                                    headers={'Authorization': 'Bearer ' + self.key} if self.key else {}) as response:
@@ -106,5 +106,5 @@ callbacks用旧事件id明确回应前面的行动或理由，标准故事至少
 story.page_count表示实际已有页数，pages只携带最后一页。先收束必要任务和承诺，达到设定页数才可返回ending而page=null；结局、帮助名单及回顾引用实际事件。若页数达到加两页仍未完成，保存待续，不编造结局。
 玩家提出蓝图之外的新办法时可用expansion追加最多4个新物品、4条新线索、2个可选支线任务；不能覆盖旧ID、角色、资源或核心任务。发现物品只能在当前场景或尚未制作(unmade)，需要resolved_action按真实条件获取或制作；所有新事实经审校后进入同一账本。
 生成页的illustration.scene必须当前player位置，角色使用真实在场角色id与对应sprite asset id。props仅当前可及物品asset，key_art仅manifest适用条件满足，不能为了画面编造事实。
-review阶段独立检查事实矛盾、因果、否定意图、角色语气、重复、具体画面对象、年龄与安全用词，只返回approved和issues。任何关键矛盾必须驳回，不能以JSON正确代表故事正确。
+review阶段独立检查事实矛盾、因果、否定意图、角色语气、重复、具体画面对象、年龄与安全用词，返回approved、阻断问题issues和可选非阻断advice。批准时issues必须为空，任何关键矛盾必须驳回，不能以JSON正确代表故事正确。
 repair阶段只修订未提交的草稿；过去事件、state和blueprint不可改变。'''

@@ -234,7 +234,7 @@ def apply_operations(story, operations, reason='', free_action=None):
                        'cause': ['page:' + page['id']], 'action_id': action['id'],
                        'verb':action['verb'],
                        'description': action['feedback'], 'effects': action['effects'], 'reason': reason,
-                       'interaction_kind':interaction['kind'] if interaction else VERB_KINDS[action['verb']],
+                       'interaction_kind':VERB_KINDS[action['verb']],
                        'trait_use':action.get('trait_use')})
     return s, events
 

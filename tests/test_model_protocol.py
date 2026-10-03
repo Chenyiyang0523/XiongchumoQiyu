@@ -77,3 +77,16 @@ def test_task_owner_requirement_cannot_be_replaced_by_finding_a_clue():
     assert state['quests']['quest.recover']=='open'
     effects(state,{'verb':'observe','target':'item.map','effects':[{'op':'transfer','target':'item.map','value':'player'}]},b,m,'recovered')
     assert state['quests']['quest.recover']=='complete'
+
+def test_take_then_move_compiles_in_physical_order_and_sprite_alias_is_exact():
+    b,state,m,*_=world()
+    state['items']['item.map']['owner']=state['location']
+    a=wire.ModelAction(id='action.depart',label='拿地图去小桥',verb='move',target='scene.bridge',
+        feedback='带上地图再出发',take=['item.map'],move={'player':'scene.bridge'}).model_dump()
+    compiled=wire.action(a,state);effects(state,compiled,b,m,'departure')
+    assert state['location']=='scene.bridge' and state['items']['item.map']['owner']=='player'
+    state['characters']['npc.zhaolin']['location']='scene.bridge'
+    authored=opening(state,m);authored['characters']['player']='character.xiongda.thinking'
+    assert wire.page(authored,state,m)['illustration']['characters']['player']=='character.xiongda.thinking'
+    authored['characters']['player']='character.xionger.thinking'
+    with pytest.raises(ValueError,match='wrong character'):wire.page(authored,state,m)

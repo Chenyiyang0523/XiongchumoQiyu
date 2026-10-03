@@ -1,5 +1,6 @@
 """Keep canonical facts, causal evidence and unfinished tasks; bound prose history."""
 from copy import deepcopy
+from storybook.engine import can_close
 
 def for_generation(story, state, events):
     prior = story['events']
@@ -13,7 +14,15 @@ def for_generation(story, state, events):
     compact['page_count'] = len(story['pages'])
     compact['events'] = deepcopy(relevant)
     compact['previous_prose'] = [{'id':p['id'], 'text':p['text'], 'choices':p['choices'], 'discussion':p.get('discussion','')} for p in story['pages'][-3:-1]]
-    return {'story': compact, 'post_action_state': state, 'action_events': events,
+    all_events=prior+events
+    kinds=sorted({e['interaction_kind'] for e in all_events if e.get('interaction_kind')})
+    callback_pages=sum(bool(p['callbacks']) for p in story['pages'])
+    traits=any(e.get('trait_use') for e in all_events)
+    closure={'core_tasks_and_promises_complete':can_close(state,story['blueprint']),
+             'pages_read':len(story['pages']),'planned_pages':story['settings']['pages'],
+             'interaction_types_used':kinds,'callback_pages':callback_pages,'trait_used':traits}
+    closure['ending_allowed']=closure['core_tasks_and_promises_complete'] and len(story['pages'])>=story['settings']['pages'] and len(kinds)>=3 and callback_pages>=2 and traits
+    return {'story': compact, 'post_action_state': state, 'action_events': events,'closure_readiness':closure,
             'pace': 'resolve' if len(story['pages']) >= story['settings']['pages']-2 else 'explore',
             'relevant_events': relevant, 'unresolved': [q for q in story['blueprint']['quests'] if state['quests'][q['id']] != 'complete']}
 

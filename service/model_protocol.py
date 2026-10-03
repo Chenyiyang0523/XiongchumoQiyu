@@ -73,7 +73,7 @@ class ModelInteraction(Contract):
     id:str
     kind:Literal['observe','evidence','items','dialogue','allocation']
     instruction:str
-    actions:list[ModelAction]
+    actions:list[ModelAction]=Field(min_length=1,max_length=4)
     order:list[str]=Field(default_factory=list)
     order_action:str|None=None
 
@@ -81,9 +81,9 @@ class ModelPage(Contract):
     id:str
     title:str
     text:str
-    characters:dict[str,str]=Field(default_factory=dict,description='人物ID到表情名：calm/happy/thinking/surprised/worried/determined')
-    items:list[str]=Field(default_factory=list,description='画面出现的物品ID，必须存在且可及')
-    interactions:list[ModelInteraction]
+    characters:dict[str,str]=Field(default_factory=dict,max_length=4,description='人物ID到表情名：calm/happy/thinking/surprised/worried/determined')
+    items:list[str]=Field(default_factory=list,max_length=6,description='画面出现的物品ID，必须存在且可及，消耗或未制作物品不能出现')
+    interactions:list[ModelInteraction]=Field(min_length=1,max_length=2)
     callbacks:list[str]=Field(default_factory=list)
     key_art:str|None=None
 
@@ -92,11 +92,11 @@ class ModelOpening(Contract):
     page:ModelPage
 
 class ModelEvent(Contract):
-    id:str
-    cause:list[str]
+    id:str=Field(description='新NPC事件的唯一ID，不能重复action_events中已执行的玩家事件')
+    cause:list[str]=Field(description='已存在的event ID数组，不能填page、action ID或中文')
     description:str
     move:dict[str,str]=Field(default_factory=dict)
-    learn:dict[str,list[str]]=Field(default_factory=dict)
+    learn:dict[str,list[str]]=Field(default_factory=dict,description='已有NPC ID到线索ID数组，禁止修改player认知')
 
 class ModelExpansion(Contract):
     items:list[ModelItem]=Field(default_factory=list,max_length=4)
@@ -105,7 +105,7 @@ class ModelExpansion(Contract):
 
 class ModelTurn(Contract):
     page:ModelPage|None=None
-    events:list[ModelEvent]=Field(default_factory=list,max_length=3)
+    events:list[ModelEvent]=Field(default_factory=list,max_length=3,description='通常留空[]；action_events已确认按钮后果，不要重复输出。仅有额外NPC移动/获知信息才新增。')
     action:ModelAction|None=None
     clarification:list[ModelAction]=Field(default_factory=list,max_length=3)
     ending:Ending|None=None
@@ -122,6 +122,15 @@ def task(value):
     conditions += [{'kind':'promise','key':k,'value':True} for k in value['promises']]
     return {k:value[k] for k in ['id','title','required','dependencies']}|{'conditions':conditions}
 
+def character_reference(key,state):
+    if key in state['characters']:return key
+    names={key}
+    if key.startswith('npc.'):
+        names.update(name for name,slug in SLUGS.items() if key=='npc.'+slug)
+    found=[cid for cid,c in state['characters'].items() if c['name'] in names]
+    if len(found)==1:return found[0]
+    raise ValueError('unknown or ambiguous character reference '+key)
+
 def blueprint(value,settings,selected):
     mapping=roles(settings,selected)
     if set(value['profiles'])!=set(mapping):raise ValueError('profiles must use exactly the provided role IDs')
@@ -133,13 +142,9 @@ def blueprint(value,settings,selected):
 
 def action(value,state):
     def character_id(key):
-        if key in state['characters']:return key
-        found=[cid for cid,c in state['characters'].items() if c['name']==key]
-        if len(found)==1:return found[0]
-        raise ValueError('unknown or ambiguous character reference')
+        return character_reference(key,state)
     changes=[]
     changes += [{'op':'learn','target':k,'value':True} for k in value['learn']]
-    changes += [{'op':'move','target':character_id(k),'value':v} for k,v in value['move'].items()]
     changes += [{'op':'transfer','target':k,'value':'player'} for k in value['take']]
     changes += [{'op':'transfer','target':k,'value':character_id(v)} for k,v in value['give'].items()]
     changes += [{'op':'consume','target':k,'value':True} for k in value['consume']]
@@ -148,6 +153,9 @@ def action(value,state):
     changes += [{'op':'resource','target':k,'value':-v} for k,v in value['spend'].items()]
     changes += [{'op':'relationship','target':character_id(k),'value':v} for k,v in value['relationships'].items()]
     changes += [{'op':'promise','target':k,'value':v} for k,v in value['promises'].items()]
+    # Take/use the accessible item before leaving its scene. This is one atomic
+    # action; doing movement first would incorrectly make the same item remote.
+    changes += [{'op':'move','target':character_id(k),'value':v} for k,v in value['move'].items()]
     result={k:value[k] for k in ['id','label','verb','target','feedback','inputs']}
     trait=deepcopy(value['trait'])
     if trait:trait['character']=character_id(trait['character'])
@@ -159,9 +167,17 @@ def action(value,state):
     return result
 
 def page(value,state,manifest):
+    if sum(len(i['actions']) for i in value['interactions'])<2:
+        raise ValueError('page must offer at least two consequential approaches')
     characters={}
     for cid,mood in value['characters'].items():
-        if cid not in state['characters']:raise ValueError('unknown pictured character')
+        cid=character_reference(cid,state)
+        if cid in characters:raise ValueError('duplicate pictured character identity')
+        if mood in manifest:
+            if manifest[mood].get('character')!=state['characters'][cid]['name']:
+                raise ValueError('wrong character sprite')
+            characters[cid]=mood
+            continue
         name=state['characters'][cid]['name'];suffix='normal' if mood=='calm' else mood
         aid='character.'+SLUGS[name]+'.'+suffix
         # Asset IDs are resolved from the manifest, never invented by a generator.

@@ -2,6 +2,7 @@ import json
 import os
 import secrets
 import threading
+from pydantic import ValidationError
 from pathlib import Path
 from service.models import Concepts, StoryBlueprint, StoryOpening, BookPage, TurnProposal, Review, StoryRecord
 from service.provider import BudgetExceeded, ModelError
@@ -11,6 +12,17 @@ from service import model_protocol
 from storybook.engine import initial_state, validate_page, apply_operations, accept_proposal, replay, RuleError
 
 MANIFEST_PATH = Path(__file__).resolve().parents[1] / 'game/storybook/asset_manifest.json'
+
+def page_diagnostics(page, state, blueprint, manifest, event_ids, settings):
+    """Return independent hard errors together so the single repair can fix them."""
+    errors=[]
+    if not page:return errors
+    for inter in page['interactions']:
+        for action in inter['actions']:
+            trial={**page,'interactions':[{**inter,'actions':[action],'order':[],'order_action':None}]}
+            try:validate_page(trial,state,blueprint,manifest,event_ids,settings['assets'],settings['age'])
+            except ValueError as exc:errors.append(action['id']+': '+str(exc))
+    return list(dict.fromkeys(errors))[:12]
 
 def fingerprint(story):
     b = story['blueprint']
@@ -87,17 +99,32 @@ class Pipeline:
                 model_context=compact_context(stage,model_context)
             if intent and wire_model!=model:
                 model_context['intention_protocol']=True
-                model_context['output_notes']='本次使用简明意图协议，不输出effects/prerequisites/illustration/state_snapshot等底层字段。learn填写线索ID数组，take填写可及物品ID数组，give是物品ID到接收者ID，spend是资源ID到正数。profiles的键必须使用role_ids给出的ID。tasks用knowledge线索ID数组、owners物品ID到目标主人、relationships伙伴ID到最低值；不要输出conditions。page.characters是人物ID到表情名，page.items是物品ID列表。反馈、trait、hotspot都在action里；不要放在interaction里。必须同时输出blueprint与page，不能漏掉page。所有生成内容仍须严格符合本次工具schema。'
-            answer=self.provider.call(stage,model_context,wire_model.model_json_schema(),lambda metric:self.store.metric(job['id'],metric,metric_index))
+                model_context['output_notes']='本次使用简明意图协议，不输出effects/prerequisites/illustration/state_snapshot等底层字段。learn填写线索ID数组，take填写可及物品ID数组，give是物品ID到接收者ID，spend是资源ID到正数。page.characters是人物ID到表情名calm/happy/thinking/surprised/worried/determined，page.items是物品ID列表。反馈、trait、hotspot都在action里；不要放在interaction里。所有生成内容仍须严格符合本次schema。'
+                if stage in {'setup','setup_repair'}:
+                    model_context['output_notes']+='profiles的键必须使用role_ids给出的ID。tasks用knowledge线索ID数组、owners物品ID到目标主人、relationships伙伴ID到最低值；不要输出conditions。必须同时输出blueprint与page。'
+                else:
+                    model_context['output_notes']+='本轮只输出ModelTurn，不能输出blueprint。page的新动作不能重复post_action_state已有信息；page.text只描述action_events或events已确认的事实，不能提前叙述下一步按钮的未执行后果。'
+            wire_schema=wire_model.model_json_schema()
+            age=(context.get('settings') or context.get('story',{}).get('settings') or {}).get('age')
+            if wire_model in {model_protocol.ModelOpening,model_protocol.ModelTurn} and age:
+                wire_schema['$defs']['ModelPage']['properties']['text'].update(
+                    minLength=60 if age=='6-8' else 100,maxLength=120 if age=='6-8' else 180)
+                model_context['page_text_target']='正文目标80–100字，上限120字。' if age=='6-8' else '正文目标130–160字，上限180字。'
+            answer=self.provider.call(stage,model_context,wire_schema,lambda metric:self.store.metric(job['id'],metric,metric_index))
             if stage in {'setup','setup_repair','proposal','repair'}:
                 last_wire_answer = answer
             if intent and wire_model!=model:
-                answer=wire_model.model_validate(answer).model_dump()
-                if stage in {'setup','setup_repair'}:
-                    b=model_protocol.blueprint(answer['blueprint'],context['settings'],context['selected'])
-                    state=initial_state(StoryBlueprint.model_validate(b).model_dump(),self.manifest)
-                    answer={'blueprint':b,'page':model_protocol.page(answer['page'],state,self.manifest)}
-                else:answer=model_protocol.turn(answer,source,request,self.manifest)
+                try:
+                    answer=wire_model.model_validate(answer).model_dump()
+                    if stage in {'setup','setup_repair'}:
+                        b=model_protocol.blueprint(answer['blueprint'],context['settings'],context['selected'])
+                        state=initial_state(StoryBlueprint.model_validate(b).model_dump(),self.manifest)
+                        answer={'blueprint':b,'page':model_protocol.page(answer['page'],state,self.manifest)}
+                    else:answer=model_protocol.turn(answer,source,request,self.manifest)
+                except ValidationError as exc:
+                    raise RuleError('; '.join('.'.join(map(str,e['loc']))+': '+e['msg'] for e in exc.errors())[:1200]) from exc
+                except ValueError as exc:
+                    raise RuleError(str(exc)) from exc
             return model.model_validate(answer).model_dump()
         try:
             if job['kind'] == 'create':
@@ -139,6 +166,8 @@ class Pipeline:
                         break
                     except (RuleError,ModelError,ValueError) as exc:
                         errors=[str(exc)[:1200]]
+                        if 'page' in locals() and 'state' in locals() and 'b' in locals():
+                            errors+=page_diagnostics(page,state,b,manifest,[],settings)
                         if attempt or not combined or isinstance(exc,BudgetExceeded):raise
                 review = invoke('review', {'blueprint': b, 'state': state, 'draft': page, 'settings': settings, 'manifest': manifest}, Review)
                 if not review['approved'] or review['issues']:
@@ -191,6 +220,9 @@ class Pipeline:
                         break
                     except (RuleError, ModelError, ValueError) as exc:
                         errors = [str(exc)[:500]]
+                        if 'proposal' in locals() and not proposal.get('resolved_action') and not proposal.get('events'):
+                            errors+=page_diagnostics(proposal.get('page'),state,source['blueprint'],source['manifest'],
+                                [e['id'] for e in source['events']+events],source['settings'])
                         if attempt or isinstance(exc, BudgetExceeded):
                             raise
                 if story is None:

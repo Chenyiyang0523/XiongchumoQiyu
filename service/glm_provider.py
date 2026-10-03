@@ -24,3 +24,6 @@ class LocalGLMProvider(ClaudeSettingsProvider):
             metric['cost_basis']='configured_token_rate_estimate' if metric['cost_usd'] is not None else 'coding_plan_charge_unknown'
             record(metric)
         return Provider.call(self,stage,context,schema,measured)
+
+    def payload_options(self,stage):
+        return {**self.extra_payload,'temperature':.9 if stage=='concepts' else .2 if stage=='review' else .55}
