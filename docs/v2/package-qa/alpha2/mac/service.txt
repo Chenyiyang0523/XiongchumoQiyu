@@ -1,0 +1,37 @@
+INFO:     Started server process [9190]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49181 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49182 - "POST /v2/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49183 - "POST /v2/stories HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49184 - "GET /v2/jobs/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49185 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49187 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49188 - "GET /v2/jobs/162f23a6285b42fe948b77d9c194dc28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49189 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49190 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49191 - "GET /v2/jobs/c284c85d4e104a7480db49026559daba HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49192 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49193 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49194 - "GET /v2/jobs/1b1f405ba43940cbb2282ab0c9b1a76c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49195 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49196 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49197 - "GET /v2/jobs/0fba3395c80d442cae8c8559bffb11cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49198 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49199 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49200 - "GET /v2/jobs/4fe8ce096eb743da9ba8ca3e37f3870e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49201 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49202 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49203 - "GET /v2/jobs/5eb2924952f244bf8d91324e656a0d9a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49205 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49206 - "GET /v2/jobs/bc1f820eb76b47a2ab82fc1c48f11bde HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49207 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49208 - "POST /v2/stories/cb64965f83c34d5e94633b2ee8ff0852/actions HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49209 - "GET /v2/jobs/a27f7ced55464f648b9304361c116591 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49210 - "GET /v2/stories/cb64965f83c34d5e94633b2ee8ff0852 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [9190]

@@ -1,0 +1,9 @@
+{
+  "id": "scene_bamboo_approved",
+  "transparent": false,
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp"
+  ],
+  "prompt": "Use case: game-background. Paint a beautiful warm cartoon picturebook bamboo grove within this forest world. Borrow linework, palette, gentle golden sunlight and tactile paint texture from the reference. Tall green bamboo on both sides, a small curving path to the distant grove, scattered leaves and a few smooth stones. Quiet inviting morning, layered depth, broad open lower central foreground for characters and interactive props. Landscape 16:9 composition, no characters, no writing, UI, border or watermark.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2b869c01-d211-4827-8628-f9209ca48729.png"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "key_10",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xiongda_calm.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/xionger_calm.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/bg/bg_forest.webp",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_bell.png"
+  ],
+  "spec": {
+    "characters": [
+      "熊大",
+      "熊二"
+    ],
+    "scenes": [
+      "scene.forest"
+    ],
+    "props": [
+      "prop.bell"
+    ],
+    "event_verbs": [
+      "negotiate",
+      "ask"
+    ],
+    "conditions": [],
+    "situation": "reunion",
+    "regions": [
+      "full"
+    ]
+  },
+  "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 熊大; reference image 2 is 熊二; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two bears reunite on the woodland path and smile warmly at one another, one holds a small hand bell between them, shoulders relaxed, welcoming gestures. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-f7d51cd3-f02a-44e7-bc44-6112e4f9ffc3.png"
+}

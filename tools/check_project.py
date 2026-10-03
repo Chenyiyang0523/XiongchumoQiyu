@@ -102,8 +102,8 @@ def check_tree(issues: list[str]) -> None:
             fail(issues, f"历史发行物位于工程根目录: {child.name}")
 
     game_size = sum(p.stat().st_size for p in GAME.rglob("*") if p.is_file())
-    if game_size > 100 * 1024 * 1024:
-        fail(issues, f"game/ 超过 100 MiB 预算: {game_size / 1024 / 1024:.1f} MiB")
+    if game_size > 256 * 1024 * 1024:
+        fail(issues, f"game/ 超过 256 MiB 绘本素材预算: {game_size / 1024 / 1024:.1f} MiB")
 
 
 def check_duplicate_declarations(issues: list[str]) -> None:

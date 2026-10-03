@@ -1,0 +1,68 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.live_online
+[rpytest] [log] - global.live_online
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-27.0.1-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  2.0.0-alpha.2
+
+[rpytest] [exc] + global
+[rpytest] [exc]   + live_online
+[rpytest] [exc]     - real_first_action
+Native online QA: explicitly retrying the preserved opening request
+Native online QA: explicitly retrying the preserved opening request
+File "/tmp/xcmqy-live.SPOZhM/game/qa_live_service.rpy", line 40, in global.live_online::real_first_action
+AssertionError: assert eval (book_story is not None and book_story['mock'] is False and book_story['state']['version']==1)
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1417, in execute
+    renpy.test.testreporter.reporter.log_assert(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/test/testreporter.py", line 888, in log_assert
+    raise RenpyTestAssertionError(f"{status.value}: {assert_node}")
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_live_service.rpy:40)>
+
+While running game code:
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_live_service.rpy:40)>
+File "/tmp/xcmqy-live.SPOZhM/game/book_v2.rpy", line 330, in script
+  call screen book_reader
+
+During testcase execution:
+  File "/tmp/xcmqy-live.SPOZhM/.", line 0, in None
+    
+  File "/tmp/xcmqy-live.SPOZhM/game/qa_live_service.rpy", line 3, in testsuite global
+    testsuite live_online:
+  File "/tmp/xcmqy-live.SPOZhM/game/qa_live_service.rpy", line 15, in testsuite live_online
+    testcase real_first_action:
+  File "/tmp/xcmqy-live.SPOZhM/game/qa_live_service.rpy", line 40, in testcase real_first_action
+    assert eval (book_story is not None and book_story['mock'] is False and book_story['state']['version']==1)
+
+====================
+[rpytest] [exc]     - real_first_action (48.513 s)
+[rpytest] [exc]     - real_first_action (48.513 s)
+{"native_stage": "create:poll:ClientError", "error": "\u65b0\u9875\u672a\u901a\u8fc7\u751f\u6210\u6216\u68c0\u67e5\uff0c\u5f53\u524d\u9875\u9762\u5df2\u4fdd\u5b58\u3002\u53ef\u4ee5\u91cd\u8bd5\u8fd9\u6b21\u884c\u52a8\u3002", "version": null}
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] FAILED  global               - (49.476 s)
+[rpytest]   FAILED  live_online          - (48.703 s)
+[rpytest]     FAILED  real_first_action    - (48.513 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     2 |     0 passed |     0 xfailed |     2 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test hooks :     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     2 |     1 passed |     0 xfailed |     1 failed |     0 xpassed | 
+
+[rpytest] Time: 49.476 s
+[rpytest] Status: FAILED 
+

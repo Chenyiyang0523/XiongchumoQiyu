@@ -1,0 +1,68 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.live_online
+[rpytest] [log] - global.live_online
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-27.0.1-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  2.0.0-alpha.2
+
+[rpytest] [exc] + global
+2026-10-03 08:50:05.399 renpy[70281:4075811] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+2026-10-03 08:50:05.407 renpy[70281:4075811] error messaging the mach port for IMKCFRunLoopWakeUpReliable
+[rpytest] [exc]   + live_online
+[rpytest] [exc]     - real_first_action
+File "/tmp/xcmqy-live.eybUJ0/game/qa_live_service.rpy", line 82, in global.live_online::real_first_action
+AssertionError: assert eval (book_page_index==0 and book_story['state']['version']==2)
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1417, in execute
+    renpy.test.testreporter.reporter.log_assert(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/test/testreporter.py", line 888, in log_assert
+    raise RenpyTestAssertionError(f"{status.value}: {assert_node}")
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_live_service.rpy:82)>
+
+While running game code:
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_live_service.rpy:82)>
+File "/tmp/xcmqy-live.eybUJ0/game/book_v2.rpy", line 330, in script
+  call screen book_reader
+
+During testcase execution:
+  File "/tmp/xcmqy-live.eybUJ0/.", line 0, in None
+    
+  File "/tmp/xcmqy-live.eybUJ0/game/qa_live_service.rpy", line 3, in testsuite global
+    testsuite live_online:
+  File "/tmp/xcmqy-live.eybUJ0/game/qa_live_service.rpy", line 15, in testsuite live_online
+    testcase real_first_action:
+  File "/tmp/xcmqy-live.eybUJ0/game/qa_live_service.rpy", line 82, in testcase real_first_action
+    assert eval (book_page_index==0 and book_story['state']['version']==2)
+
+====================
+[rpytest] [exc]     - real_first_action (59.224 s)
+[rpytest] [exc]     - real_first_action (59.224 s)
+{"native_stage": "turn:save_result", "error": "", "pending_records": 0, "owner_matches": true, "version": 2}
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] FAILED  global               - (60.279 s [01:00])
+[rpytest]   FAILED  live_online          - (59.380 s)
+[rpytest]     FAILED  real_first_action    - (59.224 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     2 |     0 passed |     0 xfailed |     2 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test hooks :     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     6 |     5 passed |     0 xfailed |     1 failed |     0 xpassed | 
+
+[rpytest] Time: 60.279 s [01:00]
+[rpytest] Status: FAILED 
+

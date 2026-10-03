@@ -6,7 +6,8 @@
 # 游戏入口
 # ============================================================
 
-label start:
+label legacy_start:
+    $ book_v2_mode = False
 
     $ quick_menu = False
 

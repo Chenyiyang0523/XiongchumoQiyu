@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0-alpha.2",
+  "date": "2026-10-03",
+  "formal_release_eligible": false,
+  "technical_acceptance_passed": true,
+  "client_source_commit": "f534a2b7976109003c2d734e802e3be5352d8011",
+  "service_source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+  "human_review_status": "pending",
+  "blind_review_status": "pending",
+  "service_image_architecture": "arm64",
+  "model_credentials_embedded": false,
+  "artifacts": [
+    {
+      "file": "ArtSources-2.0-alpha.2.zip",
+      "bytes": 236043510,
+      "sha256": "640297edcb5c06f7129459d2d54c2538c315e22dec75fef467689e9e822c0b18"
+    },
+    {
+      "file": "Real-GLM-60-books-evaluation.zip",
+      "bytes": 2337828134,
+      "sha256": "a42fb745695d768cb1af756cd402eede91004a957fa97947931db60ca7097a19"
+    },
+    {
+      "file": "Real-GLM-picturebook.html",
+      "bytes": 33120290,
+      "sha256": "02c32d108ca55f4631a7a17303a28b9d29506edd40d779af9b75a532a1b9e5a7"
+    },
+    {
+      "file": "StoryService-2.0-alpha.2.zip",
+      "bytes": 95511,
+      "sha256": "45dd7f4bad381beebef41d78078f409a709daa50483c4b44e601531b77af6ae1"
+    },
+    {
+      "file": "StoryService-image.tar.gz",
+      "bytes": 74805193,
+      "sha256": "811a5008b24f8817b2cfb57bfb3a8eacd95a47431befe1f7a821c2bb5aa895d7"
+    },
+    {
+      "file": "XiongchumoQiyu-2.0-alpha.2-linux.zip",
+      "bytes": 233486153,
+      "sha256": "534c6e63d127e7c048f26763f4de366bf98d79371f76d6096eb1dcd6941931fb"
+    },
+    {
+      "file": "XiongchumoQiyu-2.0-alpha.2-mac.zip",
+      "bytes": 227798012,
+      "sha256": "288e020102a715d410d66d7727893b53adfca911931a792f01aac025c56030d4"
+    },
+    {
+      "file": "XiongchumoQiyu-2.0-alpha.2-windows.zip",
+      "bytes": 233476619,
+      "sha256": "d8e987f2590092888665fc1a1ee81d3ca4759dec6e069bc1d62cda9481caa491"
+    }
+  ]
+}

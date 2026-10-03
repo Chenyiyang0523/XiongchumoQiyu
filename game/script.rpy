@@ -1548,6 +1548,8 @@ C. 8勺"""
 
     def story_state_is_stable():
         """只在完整响应已提交、队列已渲染完时允许存读档。"""
+        if globals().get("book_busy", False):
+            return False
         try:
             return bool(
                 (not game.started)

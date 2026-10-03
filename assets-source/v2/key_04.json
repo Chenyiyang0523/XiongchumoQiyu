@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "吉吉国王",
+    "毛毛"
+  ],
+  "scenes": [
+    "scene.orchard"
+  ],
+  "props": [
+    "prop.basket"
+  ],
+  "event_verbs": [
+    "ask",
+    "negotiate"
+  ],
+  "conditions": [],
+  "situation": "misunderstanding",
+  "regions": [
+    "full"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "completed": true,
+  "interaction_types": [
+    "dialogue",
+    "items",
+    "observe"
+  ],
+  "widget_types": [
+    "dialogue",
+    "items",
+    "observe"
+  ],
+  "action_types": [
+    "dialogue",
+    "items",
+    "observe"
+  ],
+  "callback_pages": 4,
+  "ledger_valid": true,
+  "page_snapshots_valid": true,
+  "counterfactual_actions": 21,
+  "counterfactuals_valid": true,
+  "human_checked": false,
+  "critical_contradictions": null,
+  "omitted_tasks": null,
+  "image_object_conflicts": null,
+  "calls": 29,
+  "tokens": 358066,
+  "known_tokens": 358066,
+  "unknown_usage_calls": 0,
+  "revisions": 6,
+  "model_wait_seconds": 488.273,
+  "cost_usd": null,
+  "cost_basis": [
+    "coding_plan_charge_unknown"
+  ],
+  "health": {
+    "version": 2,
+    "mock": false,
+    "assets": 120
+  },
+  "story_id": "f8824274e34b4007b20db5cfefdb9bd9",
+  "version": 11,
+  "pages": 10,
+  "events": 14,
+  "ending": "咚咚的鼓声响起来",
+  "idempotency_verified": true,
+  "restart_restore_verified": true,
+  "mock": false,
+  "http_service": true,
+  "latest_service_source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+  "verification_note": "Existing real GLM book restored and revalidated on the rebuilt candidate image; no new model generation in this restore run.",
+  "latest_service_restore_reverified": true
+}

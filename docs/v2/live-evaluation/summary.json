@@ -1,0 +1,13 @@
+{
+  "mode": "live",
+  "status": "stopped_for_pipeline_fixes",
+  "reason": "Continued and blocked drafts exposed promise/progression, ingredients and hotspot binding issues; run retained as the regression baseline.",
+  "books_generated": 4,
+  "cases_attempted": 32,
+  "cases_planned": 60,
+  "failed": 15,
+  "continued": 13,
+  "live_release_eligible": false,
+  "human_review_status": "pending",
+  "stopped_unix": 1791007557.1742342
+}

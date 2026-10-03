@@ -1,0 +1,119 @@
+"""Expose unfinished facts and verify a route towards them, without writing a plot.
+
+The model chooses the event, voice and solution. These checks only prevent late
+pages from offering nothing but unrelated facts while a promised goal is stuck.
+"""
+from copy import deepcopy
+from storybook.engine import matches, effects, page_action_contexts, VERB_KINDS, RuleError
+
+
+def frontier(state, blueprint):
+    quests={q['id']:q for q in blueprint['quests']}
+    needed={q['id'] for q in quests.values() if q['required'] and state['quests'][q['id']]!='complete'}
+    pending=list(needed)
+    while pending:
+        for dep in quests[pending.pop()]['dependencies']:
+            if state['quests'][dep]!='complete' and dep not in needed:
+                needed.add(dep);pending.append(dep)
+    conditions=[]
+    for qid in sorted(needed):
+        quest=quests[qid]
+        for condition in quest['conditions']:
+            if not matches(state,condition,blueprint):
+                conditions.append({'quest':qid,'title':quest['title'],**deepcopy(condition)})
+    promises=[{'id':key,'description':blueprint.get('promise_descriptions',{}).get(key,key)}
+              for key,done in state['promises'].items() if not done]
+    for promise in promises:
+        goals=blueprint.get('promise_conditions',{}).get(promise['id'],[])
+        if goals:
+            promise['conditions']=deepcopy(goals)
+            promise['facts_satisfied']=all(matches(state,c,blueprint) for c in goals)
+            for condition in goals:
+                if not matches(state,condition,blueprint):
+                    conditions.append({'quest':promise['id'],'title':promise['description'],**deepcopy(condition)})
+    return {'unmet_conditions':conditions,'unfulfilled_promises':promises}
+
+
+def condition_distance(state, condition, blueprint):
+    """Bounded physical prerequisites: ownership, ingredients and presence."""
+    if matches(state,condition,blueprint):return 0
+    kind,key=condition['kind'],condition['key']
+    if kind=='relationship':
+        comparison=condition.get('comparison','eq');actual=state['relationships'][key]
+        gap=max(0,condition['value']-actual) if comparison=='gte' else max(0,actual-condition['value']) if comparison=='lte' else abs(actual-condition['value'])
+        return 1+gap+(state['characters'][key]['location']!=state['location'])
+    if kind=='owner':
+        item=state['items'][key];owner=item['owner']
+        if owner=='unmade':
+            ingredients=[state['items'][i] for i in item['recipe']]
+            missing=[i for i in ingredients if i['owner']!='player']
+            locations=[state['characters'][i['owner']]['location'] if i['owner'] in state['characters'] else i['owner'] for i in missing]
+            return 2+len(missing)+int(bool(locations) and state['location'] not in locations)
+        if owner=='player':
+            destination=condition['value']
+            location=state['characters'][destination]['location'] if destination in state['characters'] else destination
+            return 1+(location!=state['location'])
+        location=state['characters'][owner]['location'] if owner in state['characters'] else owner
+        return 1+(location!=state['location'])
+    return 1
+
+
+def prerequisite_hints(state, blueprint):
+    """Physical routes implied by facts, with no invented solution or dialogue."""
+    result=[]
+    def obtain(iid, seen):
+        if iid in seen:return [{'item':iid,'blocked':'cyclic recipe'}]
+        item=state['items'][iid];owner=item['owner']
+        if owner=='player':return []
+        if owner=='consumed':return [{'item':iid,'blocked':'already consumed; cannot recreate this instance'}]
+        if owner=='unmade':
+            return [step for ingredient in item['recipe'] for step in obtain(ingredient,seen|{iid})]+[
+                {'operation':'combine','item':iid,'inputs':item['recipe']}]
+        location=state['characters'][owner]['location'] if owner in state['characters'] else owner
+        return [{'operation':'obtain','item':iid,'holder':owner,'location':location,'travel_required':location!=state['location']}]
+    for condition in frontier(state,blueprint)['unmet_conditions']:
+        kind,key=condition['kind'],condition['key']
+        hint={'quest':condition['quest'],'condition':condition,'physical_prerequisites':[]}
+        if kind=='owner':
+            hint['physical_prerequisites']=obtain(key,set())
+            if condition['value']!='player':
+                destination=condition['value']
+                location=state['characters'][destination]['location'] if destination in state['characters'] else destination
+                hint['physical_prerequisites'].append({'operation':'place_or_give','item':key,'recipient':destination,'location':location})
+        elif kind=='relationship':
+            hint['physical_prerequisites']=[{'operation':'negotiate','character':key,
+                'location':state['characters'][key]['location'],'current':state['relationships'][key],'required':condition['value']}]
+        result.append(hint)
+    return result
+
+
+def progress(before, after, blueprint):
+    demand=frontier(before,blueprint)
+    score=sum(condition_distance(before,c,blueprint)-condition_distance(after,c,blueprint)
+              for c in demand['unmet_conditions'])
+    score+=sum(after['promises'][p['id']] for p in demand['unfulfilled_promises'])
+    return score
+
+
+def validate_resolution_page(story, context):
+    if story.get('ending') or story['status']=='continued':return
+    if context['closure_readiness']['ending_allowed']:
+        raise RuleError('all closure gates are met: return the evidenced ending, not another page')
+    # Earlier resolution can prepare a discussion or test an idea. Facts-based
+    # prerequisite hints start earlier; the final three planned pages must offer
+    # at least one direct route towards unfinished tasks or promises.
+    if context.get('pace')!='resolve' or len(story['pages'])<story['settings']['pages']-1:return
+    state=story['state'];blueprint=story['blueprint'];page=story['pages'][-1]
+    demand=frontier(state,blueprint)
+    used=set(context['closure_readiness']['interaction_types_used'])
+    incomplete=bool(demand['unmet_conditions'] or demand['unfulfilled_promises'])
+    if not incomplete and len(used)>=3:return
+    contexts=page_action_contexts(page,state,blueprint,story['manifest'])
+    for interaction in page['interactions']:
+        for action in interaction['actions']:
+            for enabling in contexts[action['id']]:
+                trial=deepcopy(enabling);effects(trial,action,blueprint,story['manifest'],'pacing-preview')
+                if incomplete and progress(state,trial,blueprint)>0:return
+                if len(used)<3 and VERB_KINDS[action['verb']] not in used:return
+    raise RuleError('resolution page has no executable route advancing unfinished conditions/promises'
+                    if incomplete else 'resolution page needs an actually missing interaction verb')

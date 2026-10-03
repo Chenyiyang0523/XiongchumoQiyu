@@ -1,0 +1,11 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global.picturebook
+[rpytest] [log] - global.picturebook
+
+[rpytest] Starting test run
+[rpytest] Platform:      Linux-7.0.14-linuxkit-x86_64-with-glibc2.36
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  2.0.0-alpha.1
+
+[rpytest] [exc] + global

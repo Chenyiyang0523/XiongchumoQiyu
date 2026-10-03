@@ -1,0 +1,5 @@
+[OK] test_story_parser
+[OK] 576 条完整离线路径：主题、时长、难度、神器、开局分支与结局一致性
+[OK] test_local_story_engine
+[OK] test_account_repair
+[OK] 3 组核心逻辑回归通过

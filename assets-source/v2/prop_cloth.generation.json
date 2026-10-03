@@ -1,0 +1,7 @@
+{
+  "id": "prop_cloth",
+  "transparent": true,
+  "reference": [],
+  "prompt": "Use case: game-asset. Generate ONE isolated interactive picturebook prop: one folded square of cheerful yellow cotton cloth. Warm hand-drawn cartoon storybook, deep brown clean contours, subtly shaded soft color, muted forest-green and honey-gold palette, crafted tactile texture. Three-quarter view, complete object entirely within canvas, large readable silhouette, generous clear margin, suitable for ages 6-12. Actual transparent alpha background, no backdrop, no floor, no checkerboard, no shadow outside the object, no glow. No words, letters, numbers, captions, watermark, or UI. Single prop only.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-6c94b05d-18d3-4e4e-82c3-c5779ed96d4d.png"
+}

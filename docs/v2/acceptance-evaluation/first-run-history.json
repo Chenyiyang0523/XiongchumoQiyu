@@ -1,0 +1,13 @@
+[
+  {
+    "mode": "live",
+    "model": "glm-5.3",
+    "reasoning_effort": "low",
+    "started_unix": 1791007871.4410088,
+    "pages": 12,
+    "attempts_per_request": 3,
+    "workers": 4,
+    "source_sha256": "fb0413a20a35bff4332ba6c3ca7713b6eab606f1fcdac85dd03476aa8d804401",
+    "source_commit": "3aafc011f6c0fb8b96c14c7299a273813610fedb"
+  }
+]

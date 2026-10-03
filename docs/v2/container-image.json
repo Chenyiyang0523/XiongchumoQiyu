@@ -1,0 +1,10 @@
+{
+  "image": "xcmqy-story:2.0-alpha",
+  "image_id": "sha256:1c2935cbd469eeb92e076af5cc5b39510bba2d72e66f281abeb0214a2aea591b",
+  "architecture": "arm64",
+  "user": "story",
+  "llm_key_baked_in": false,
+  "guardian_code_baked_in": false,
+  "mock_flag_baked_in": false,
+  "engine_sha256": "cf45b46b6cd5fd4a49b33275faec9f1130fa27ea7833ecccedb7b02df626ff05"
+}

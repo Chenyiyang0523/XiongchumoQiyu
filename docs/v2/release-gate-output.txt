@@ -1,0 +1,17 @@
+{
+  "formal_release_eligible": false,
+  "failures": [
+    "尚未完成60本真实模型生成",
+    "真实评测集不完整",
+    "缺少六种结构、两档年龄各五本的覆盖",
+    "新主题不足评测集的一半",
+    "缺少逐本人工检查",
+    "coherence未达到平均4分",
+    "fun未达到平均4分",
+    "choice_consequences未达到平均4分",
+    "image_consistency未达到平均4分",
+    "盲评缺少审阅者或两版同主题作品证据",
+    "windows安装包未完成实际验证",
+    "linux安装包未完成实际验证"
+  ]
+}

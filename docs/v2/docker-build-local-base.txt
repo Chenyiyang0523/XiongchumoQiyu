@@ -1,0 +1,45 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 533B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 132B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 6.68kB done
+#4 DONE 0.0s
+
+#5 [1/6] FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim@sha256:e5b65587bce7de595f299855d7385fe7fca39b8a74baa261ba1b7147afa78e58
+#5 resolve ghcr.io/astral-sh/uv:python3.12-bookworm-slim@sha256:e5b65587bce7de595f299855d7385fe7fca39b8a74baa261ba1b7147afa78e58 0.0s done
+#5 DONE 0.0s
+
+#6 [3/6] COPY service/requirements.txt /app/requirements.txt
+#6 CACHED
+
+#7 [4/6] RUN pip install --no-cache-dir -r requirements.txt && useradd --uid 10001 --create-home story && mkdir /data && chown story /data
+#7 CACHED
+
+#8 [2/6] WORKDIR /app
+#8 CACHED
+
+#9 [5/6] COPY service /app/service
+#9 CACHED
+
+#10 [6/6] COPY game/storybook /app/game/storybook
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers 0.0s done
+#11 exporting manifest sha256:aac711e10f400e87926d3ac9d62b36bb8b36abfcb155cbad34f9206ba3aa5be2 0.0s done
+#11 exporting config sha256:d32216b6b78adcfbc11e1e9fad2186951a7201dff2fdb513efb2aa4a6a8ddee9 done
+#11 exporting attestation manifest sha256:58eb63d2e3021cf8d25eed7e4045b8840cc2ae1de09a41868a899b19dad8c81a 0.0s done
+#11 exporting manifest list sha256:1c2935cbd469eeb92e076af5cc5b39510bba2d72e66f281abeb0214a2aea591b done
+#11 naming to docker.io/library/xcmqy-story:2.0-alpha done
+#11 unpacking to docker.io/library/xcmqy-story:2.0-alpha 0.0s done
+#11 DONE 0.2s

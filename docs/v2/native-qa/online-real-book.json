@@ -1,0 +1,3806 @@
+{
+  "schema_version": 2,
+  "id": "7a60a6fe443d4c96b56f8067c12ac78d",
+  "settings": {
+    "theme": "森林探险",
+    "character": "熊大",
+    "age": "6-8",
+    "pages": 8,
+    "parent_mode": false,
+    "arc": null,
+    "assets": [
+      "scene.forest",
+      "scene.cabin",
+      "scene.cave",
+      "scene.riverside",
+      "scene.mountain",
+      "scene.village",
+      "scene.bamboo",
+      "scene.lakeside",
+      "scene.bridge",
+      "scene.flowers",
+      "scene.orchard",
+      "scene.treehouse",
+      "scene.camp",
+      "scene.workshop",
+      "scene.library",
+      "scene.market",
+      "scene.stage",
+      "scene.sports",
+      "character.xiongda.calm",
+      "character.xiongda.happy",
+      "character.xiongda.thinking",
+      "character.xiongda.surprised",
+      "character.xiongda.worried",
+      "character.xiongda.determined",
+      "character.xionger.calm",
+      "character.xionger.happy",
+      "character.xionger.thinking",
+      "character.xionger.surprised",
+      "character.xionger.worried",
+      "character.xionger.determined",
+      "character.guangtouqiang.calm",
+      "character.guangtouqiang.happy",
+      "character.guangtouqiang.thinking",
+      "character.guangtouqiang.surprised",
+      "character.guangtouqiang.worried",
+      "character.guangtouqiang.determined",
+      "character.jijiguowang.calm",
+      "character.jijiguowang.happy",
+      "character.jijiguowang.thinking",
+      "character.jijiguowang.surprised",
+      "character.jijiguowang.worried",
+      "character.jijiguowang.determined",
+      "character.maomao.calm",
+      "character.maomao.happy",
+      "character.maomao.thinking",
+      "character.maomao.surprised",
+      "character.maomao.worried",
+      "character.maomao.determined",
+      "character.zhaolin.calm",
+      "character.zhaolin.happy",
+      "character.zhaolin.thinking",
+      "character.zhaolin.surprised",
+      "character.zhaolin.worried",
+      "character.zhaolin.determined",
+      "character.tiancaiwei.calm",
+      "character.tiancaiwei.happy",
+      "character.tiancaiwei.thinking",
+      "character.tiancaiwei.surprised",
+      "character.tiancaiwei.worried",
+      "character.tiancaiwei.determined",
+      "character.damahou.calm",
+      "character.damahou.happy",
+      "character.damahou.thinking",
+      "character.damahou.surprised",
+      "character.damahou.worried",
+      "character.damahou.determined",
+      "character.ergou.calm",
+      "character.ergou.happy",
+      "character.ergou.thinking",
+      "character.ergou.surprised",
+      "character.ergou.worried",
+      "character.ergou.determined",
+      "prop.map",
+      "prop.feather",
+      "prop.footprint",
+      "prop.letter",
+      "prop.bell",
+      "prop.ribbon",
+      "prop.key",
+      "prop.compass",
+      "prop.magnifier",
+      "prop.rope",
+      "prop.hammer",
+      "prop.scissors",
+      "prop.lantern",
+      "prop.bucket",
+      "prop.brush",
+      "prop.shovel",
+      "prop.plank",
+      "prop.bamboo",
+      "prop.cloth",
+      "prop.paper",
+      "prop.clay",
+      "prop.string",
+      "prop.paint",
+      "prop.wheel",
+      "prop.leaf",
+      "prop.flower",
+      "prop.pinecone",
+      "prop.apple",
+      "prop.honey",
+      "prop.seed",
+      "prop.kite",
+      "prop.drum",
+      "prop.flag",
+      "prop.basket",
+      "prop.mask",
+      "prop.star",
+      "key.00",
+      "key.01",
+      "key.02",
+      "key.03",
+      "key.04",
+      "key.05",
+      "key.06",
+      "key.07",
+      "key.08",
+      "key.09",
+      "key.10",
+      "key.11"
+    ]
+  },
+  "blueprint": {
+    "schema_version": 2,
+    "title": "寻找会唱歌的小溪",
+    "theme": "森林探险",
+    "arc": "journey",
+    "goal": "翻过山找到会唱歌的小溪，把清泉引回干涸的森林",
+    "conflict": "森林里的小溪突然不流了，动物们没有水喝，传说山顶的会唱歌的小溪是唯一的活水",
+    "characters": [
+      {
+        "id": "player",
+        "name": "熊大",
+        "location": "scene.forest",
+        "motivation": "守护森林，让动物们重新有水喝",
+        "strength": "聪明稳重，会看地图、善想办法",
+        "weakness": "有时太谨慎，不敢冒险",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      {
+        "id": "npc.xionger",
+        "name": "熊二",
+        "location": "scene.forest",
+        "motivation": "跟着哥哥找到小溪，顺便盼着路上有蜂蜜",
+        "strength": "力气大，能搬开挡路的石头",
+        "weakness": "贪吃又糊涂，容易被香味引走",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      {
+        "id": "npc.zhaolin",
+        "name": "赵琳",
+        "location": "scene.forest",
+        "motivation": "帮助森林里的小动物，探索大自然的秘密",
+        "strength": "机灵细心，善于发现小线索",
+        "weakness": "年纪小，力气不够大",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      {
+        "id": "npc.jijiguowang",
+        "name": "吉吉国王",
+        "location": "scene.forest",
+        "motivation": "显示本国王的本事，让猴群有水喝",
+        "strength": "爬树敏捷，熟悉山路",
+        "weakness": "爱面子又胆小，遇到危险想撤退",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "item.map",
+        "name": "旧地图",
+        "owner": "scene.forest",
+        "asset": "prop.map",
+        "recipe": []
+      },
+      {
+        "id": "item.rope",
+        "name": "绳索",
+        "owner": "scene.forest",
+        "asset": "prop.rope",
+        "recipe": []
+      },
+      {
+        "id": "item.honey.jar",
+        "name": "蜂蜜罐",
+        "owner": "player",
+        "asset": "prop.honey",
+        "recipe": []
+      },
+      {
+        "id": "item.lantern",
+        "name": "灯笼",
+        "owner": "scene.cabin",
+        "asset": "prop.lantern",
+        "recipe": []
+      },
+      {
+        "id": "item.bamboo.cut",
+        "name": "竹竿",
+        "owner": "scene.bamboo",
+        "asset": "prop.bamboo",
+        "recipe": []
+      },
+      {
+        "id": "item.bucket",
+        "name": "水桶",
+        "owner": "scene.cabin",
+        "asset": "prop.bucket",
+        "recipe": []
+      },
+      {
+        "id": "item.water.trough",
+        "name": "引水竹槽",
+        "owner": "unmade",
+        "asset": "prop.bamboo",
+        "recipe": [
+          "item.bamboo.cut",
+          "item.rope"
+        ]
+      }
+    ],
+    "clues": {
+      "clue.bamboo.path": "穿过竹林有条上山的近路",
+      "clue.bamboo.trough": "竹子可以打通做成引水槽",
+      "clue.blocked.rock": "泉水被一块大石头堵住了出口",
+      "clue.cave.echo": "山洞里能听到水声的回音",
+      "clue.dried.creek": "森林的小溪干涸了，河床裂开大口子",
+      "clue.map.marked": "旧地图上标着山顶'唱歌溪'的位置",
+      "clue.singing.spring": "山顶清泉叮咚作响，像唱歌一样",
+      "clue.source.stopped": "河床裂缝干燥无水痕，说明水是从上游源头断掉的",
+      "clue.water.back": "清水沿着竹槽流回了森林小溪"
+    },
+    "quests": [
+      {
+        "id": "task.read.map",
+        "title": "弄清上山的路",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.map.marked",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "knowledge",
+            "key": "clue.bamboo.path",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.find.spring",
+        "title": "找到会唱歌的小溪",
+        "required": true,
+        "dependencies": [
+          "task.read.map"
+        ],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.singing.spring",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "knowledge",
+            "key": "clue.blocked.rock",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.bring.water",
+        "title": "把清泉引回森林",
+        "required": true,
+        "dependencies": [
+          "task.find.spring"
+        ],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.water.back",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "owner",
+            "key": "item.water.trough",
+            "value": "player",
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.help.jiji",
+        "title": "帮吉吉国王爬过险坡",
+        "required": false,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "relationship",
+            "key": "npc.jijiguowang",
+            "value": 2,
+            "actor": "player",
+            "comparison": "gte"
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "materials": 15,
+      "time": 30
+    },
+    "promises": {},
+    "promise_descriptions": {},
+    "promise_conditions": {},
+    "twists": [
+      "泉水出口被大石头堵住，需要熊二的力气",
+      "山洞里回声引路，却也让吉吉国王害怕",
+      "竹子做水槽时发现绳子不够长，需要协作"
+    ],
+    "closure": "清泉顺着竹槽流回森林，小溪重新歌唱，动物们围着溪水欢呼庆祝",
+    "solution_tag": "带上地图和绳索，穿越竹林和山洞，把清泉引回森林"
+  },
+  "initial_blueprint": {
+    "schema_version": 2,
+    "title": "寻找会唱歌的小溪",
+    "theme": "森林探险",
+    "arc": "journey",
+    "goal": "翻过山找到会唱歌的小溪，把清泉引回干涸的森林",
+    "conflict": "森林里的小溪突然不流了，动物们没有水喝，传说山顶的会唱歌的小溪是唯一的活水",
+    "characters": [
+      {
+        "id": "player",
+        "name": "熊大",
+        "location": "scene.forest",
+        "motivation": "守护森林，让动物们重新有水喝",
+        "strength": "聪明稳重，会看地图、善想办法",
+        "weakness": "有时太谨慎，不敢冒险",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      {
+        "id": "npc.xionger",
+        "name": "熊二",
+        "location": "scene.forest",
+        "motivation": "跟着哥哥找到小溪，顺便盼着路上有蜂蜜",
+        "strength": "力气大，能搬开挡路的石头",
+        "weakness": "贪吃又糊涂，容易被香味引走",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      {
+        "id": "npc.zhaolin",
+        "name": "赵琳",
+        "location": "scene.forest",
+        "motivation": "帮助森林里的小动物，探索大自然的秘密",
+        "strength": "机灵细心，善于发现小线索",
+        "weakness": "年纪小，力气不够大",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      {
+        "id": "npc.jijiguowang",
+        "name": "吉吉国王",
+        "location": "scene.forest",
+        "motivation": "显示本国王的本事，让猴群有水喝",
+        "strength": "爬树敏捷，熟悉山路",
+        "weakness": "爱面子又胆小，遇到危险想撤退",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "item.map",
+        "name": "旧地图",
+        "owner": "scene.forest",
+        "asset": "prop.map",
+        "recipe": []
+      },
+      {
+        "id": "item.rope",
+        "name": "绳索",
+        "owner": "scene.forest",
+        "asset": "prop.rope",
+        "recipe": []
+      },
+      {
+        "id": "item.honey.jar",
+        "name": "蜂蜜罐",
+        "owner": "player",
+        "asset": "prop.honey",
+        "recipe": []
+      },
+      {
+        "id": "item.lantern",
+        "name": "灯笼",
+        "owner": "scene.cabin",
+        "asset": "prop.lantern",
+        "recipe": []
+      },
+      {
+        "id": "item.bamboo.cut",
+        "name": "竹竿",
+        "owner": "scene.bamboo",
+        "asset": "prop.bamboo",
+        "recipe": []
+      },
+      {
+        "id": "item.bucket",
+        "name": "水桶",
+        "owner": "scene.cabin",
+        "asset": "prop.bucket",
+        "recipe": []
+      },
+      {
+        "id": "item.water.trough",
+        "name": "引水竹槽",
+        "owner": "unmade",
+        "asset": "prop.bamboo",
+        "recipe": [
+          "item.bamboo.cut",
+          "item.rope"
+        ]
+      }
+    ],
+    "clues": {
+      "clue.bamboo.path": "穿过竹林有条上山的近路",
+      "clue.bamboo.trough": "竹子可以打通做成引水槽",
+      "clue.blocked.rock": "泉水被一块大石头堵住了出口",
+      "clue.cave.echo": "山洞里能听到水声的回音",
+      "clue.dried.creek": "森林的小溪干涸了，河床裂开大口子",
+      "clue.map.marked": "旧地图上标着山顶'唱歌溪'的位置",
+      "clue.singing.spring": "山顶清泉叮咚作响，像唱歌一样",
+      "clue.source.stopped": "河床裂缝干燥无水痕，说明水是从上游源头断掉的",
+      "clue.water.back": "清水沿着竹槽流回了森林小溪"
+    },
+    "quests": [
+      {
+        "id": "task.read.map",
+        "title": "弄清上山的路",
+        "required": true,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.map.marked",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "knowledge",
+            "key": "clue.bamboo.path",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.find.spring",
+        "title": "找到会唱歌的小溪",
+        "required": true,
+        "dependencies": [
+          "task.read.map"
+        ],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.singing.spring",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "knowledge",
+            "key": "clue.blocked.rock",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.bring.water",
+        "title": "把清泉引回森林",
+        "required": true,
+        "dependencies": [
+          "task.find.spring"
+        ],
+        "conditions": [
+          {
+            "kind": "knowledge",
+            "key": "clue.water.back",
+            "value": true,
+            "actor": "player",
+            "comparison": "eq"
+          },
+          {
+            "kind": "owner",
+            "key": "item.water.trough",
+            "value": "player",
+            "actor": "player",
+            "comparison": "eq"
+          }
+        ]
+      },
+      {
+        "id": "task.help.jiji",
+        "title": "帮吉吉国王爬过险坡",
+        "required": false,
+        "dependencies": [],
+        "conditions": [
+          {
+            "kind": "relationship",
+            "key": "npc.jijiguowang",
+            "value": 2,
+            "actor": "player",
+            "comparison": "gte"
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "materials": 15,
+      "time": 30
+    },
+    "promises": {},
+    "promise_descriptions": {},
+    "promise_conditions": {},
+    "twists": [
+      "泉水出口被大石头堵住，需要熊二的力气",
+      "山洞里回声引路，却也让吉吉国王害怕",
+      "竹子做水槽时发现绳子不够长，需要协作"
+    ],
+    "closure": "清泉顺着竹槽流回森林，小溪重新歌唱，动物们围着溪水欢呼庆祝",
+    "solution_tag": "带上地图和绳索，穿越竹林和山洞，把清泉引回森林"
+  },
+  "state": {
+    "schema_version": 2,
+    "version": 2,
+    "location": "scene.forest",
+    "characters": {
+      "npc.jijiguowang": {
+        "id": "npc.jijiguowang",
+        "name": "吉吉国王",
+        "location": "scene.forest",
+        "motivation": "显示本国王的本事，让猴群有水喝",
+        "strength": "爬树敏捷，熟悉山路",
+        "weakness": "爱面子又胆小，遇到危险想撤退",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      "npc.xionger": {
+        "id": "npc.xionger",
+        "name": "熊二",
+        "location": "scene.forest",
+        "motivation": "跟着哥哥找到小溪，顺便盼着路上有蜂蜜",
+        "strength": "力气大，能搬开挡路的石头",
+        "weakness": "贪吃又糊涂，容易被香味引走",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      "npc.zhaolin": {
+        "id": "npc.zhaolin",
+        "name": "赵琳",
+        "location": "scene.forest",
+        "motivation": "帮助森林里的小动物，探索大自然的秘密",
+        "strength": "机灵细心，善于发现小线索",
+        "weakness": "年纪小，力气不够大",
+        "knowledge": [
+          "clue.dried.creek"
+        ]
+      },
+      "player": {
+        "id": "player",
+        "name": "熊大",
+        "location": "scene.forest",
+        "motivation": "守护森林，让动物们重新有水喝",
+        "strength": "聪明稳重，会看地图、善想办法",
+        "weakness": "有时太谨慎，不敢冒险",
+        "knowledge": [
+          "clue.dried.creek",
+          "clue.map.marked"
+        ]
+      }
+    },
+    "items": {
+      "item.bamboo.cut": {
+        "id": "item.bamboo.cut",
+        "name": "竹竿",
+        "owner": "scene.bamboo",
+        "asset": "prop.bamboo",
+        "recipe": []
+      },
+      "item.bucket": {
+        "id": "item.bucket",
+        "name": "水桶",
+        "owner": "scene.cabin",
+        "asset": "prop.bucket",
+        "recipe": []
+      },
+      "item.honey.jar": {
+        "id": "item.honey.jar",
+        "name": "蜂蜜罐",
+        "owner": "player",
+        "asset": "prop.honey",
+        "recipe": []
+      },
+      "item.lantern": {
+        "id": "item.lantern",
+        "name": "灯笼",
+        "owner": "scene.cabin",
+        "asset": "prop.lantern",
+        "recipe": []
+      },
+      "item.map": {
+        "id": "item.map",
+        "name": "旧地图",
+        "owner": "player",
+        "asset": "prop.map",
+        "recipe": []
+      },
+      "item.rope": {
+        "id": "item.rope",
+        "name": "绳索",
+        "owner": "player",
+        "asset": "prop.rope",
+        "recipe": []
+      },
+      "item.water.trough": {
+        "id": "item.water.trough",
+        "name": "引水竹槽",
+        "owner": "unmade",
+        "asset": "prop.bamboo",
+        "recipe": [
+          "item.bamboo.cut",
+          "item.rope"
+        ]
+      }
+    },
+    "resources": {
+      "materials": 15,
+      "time": 30
+    },
+    "relationships": {
+      "npc.jijiguowang": 0,
+      "npc.xionger": 0,
+      "npc.zhaolin": 0
+    },
+    "knowledge": [
+      "clue.dried.creek",
+      "clue.map.marked"
+    ],
+    "quests": {
+      "task.bring.water": "open",
+      "task.find.spring": "open",
+      "task.help.jiji": "open",
+      "task.read.map": "open"
+    },
+    "promises": {},
+    "rewards": [],
+    "provenance": {
+      "character:npc.jijiguowang": "initial",
+      "character:npc.xionger": "initial",
+      "character:npc.zhaolin": "initial",
+      "character:player": "initial",
+      "item:item.bamboo.cut": "initial",
+      "item:item.bucket": "initial",
+      "item:item.honey.jar": "initial",
+      "item:item.lantern": "initial",
+      "item:item.map": "event.2.0",
+      "item:item.rope": "event.2.0",
+      "item:item.water.trough": "initial",
+      "knowledge:clue.dried.creek": "initial",
+      "knowledge:clue.map.marked": "event.2.0",
+      "quest:task.bring.water": "initial",
+      "quest:task.find.spring": "initial",
+      "quest:task.help.jiji": "initial",
+      "quest:task.read.map": "initial",
+      "relationship:npc.jijiguowang": "initial",
+      "relationship:npc.xionger": "initial",
+      "relationship:npc.zhaolin": "initial",
+      "resource:materials": "initial",
+      "resource:time": "initial"
+    }
+  },
+  "events": [
+    {
+      "schema_version": 2,
+      "id": "event.2.0",
+      "turn": 2,
+      "cause": [
+        "page:page.1"
+      ],
+      "action_id": "act.pick.map",
+      "verb": "observe",
+      "description": "熊大捡起地图，上面模糊地标着山顶'唱歌溪'的位置！",
+      "effects": [
+        {
+          "op": "learn",
+          "target": "clue.map.marked",
+          "value": true,
+          "actor": "player"
+        },
+        {
+          "op": "transfer",
+          "target": "item.map",
+          "value": "player",
+          "actor": "player"
+        },
+        {
+          "op": "transfer",
+          "target": "item.rope",
+          "value": "player",
+          "actor": "player"
+        }
+      ],
+      "reason": "",
+      "trait_use": {
+        "character": "player",
+        "aspect": "strength",
+        "explanation": "熊大稳重细心，一眼看出旧地图上标记的山顶溪流位置。"
+      },
+      "interaction_kind": "observe",
+      "expansion": null
+    }
+  ],
+  "pages": [
+    {
+      "schema_version": 2,
+      "id": "page.1",
+      "title": "干涸的小溪",
+      "text": "森林的小溪不见了！河床裂开大口子，小鱼搁浅，小鹿们渴得直喘气。熊大皱起眉头说：“别怕，交给我！”赵琳指着远处的山：“听说山顶有一条会唱歌的小溪！”熊二挠挠头：“俺老二跟哥哥去！”吉吉国王叉着腰：“本国王也去瞧瞧！”",
+      "illustration": {
+        "scene": "scene.forest",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.calm",
+          "npc.xionger": "character.xionger.worried",
+          "npc.zhaolin": "character.zhaolin.thinking",
+          "player": "character.xiongda.determined"
+        },
+        "props": [
+          "prop.map",
+          "prop.rope"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "it.open.observe",
+          "kind": "observe",
+          "instruction": "出发前，熊大先看看小溪边有什么可用的东西。",
+          "actions": [
+            {
+              "id": "act.pick.map",
+              "verb": "observe",
+              "label": "捡起旧地图看看",
+              "target": "item.map",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.map.marked",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.map",
+                  "value": "player",
+                  "actor": "player"
+                },
+                {
+                  "op": "transfer",
+                  "target": "item.rope",
+                  "value": "player",
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大捡起地图，上面模糊地标着山顶'唱歌溪'的位置！",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大稳重细心，一眼看出旧地图上标记的山顶溪流位置。"
+              },
+              "hotspot": "prop.map"
+            },
+            {
+              "id": "act.check.creek",
+              "verb": "observe",
+              "label": "检查干涸的河床",
+              "target": "item.rope",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.source.stopped",
+                  "value": true,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大蹲下细看，河床裂缝干得发白，没有水流过的痕迹。看来水是从上游源头断掉的，得去山顶找原因！",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大细心稳重，从干燥的河床推断出水源在上游断了。"
+              },
+              "hotspot": "prop.rope"
+            }
+          ],
+          "order": [],
+          "order_action": null
+        },
+        {
+          "id": "it.open.dialogue",
+          "kind": "dialogue",
+          "instruction": "问问伙伴们谁了解上山的路。",
+          "actions": [
+            {
+              "id": "act.ask.zhaolin",
+              "verb": "ask",
+              "label": "问赵琳小溪的事",
+              "target": "npc.zhaolin",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.bamboo.path",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "relationship",
+                  "target": "npc.zhaolin",
+                  "value": 1,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "赵琳说：“穿过竹林有条上山的近路，我们出发吧！”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": null
+            },
+            {
+              "id": "act.ask.jiji",
+              "verb": "ask",
+              "label": "问吉吉国王带路",
+              "target": "npc.jijiguowang",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "relationship",
+                  "target": "npc.jijiguowang",
+                  "value": 1,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "吉吉国王得意地说：“本国王最会爬树认路！不过嘛……你得夸夸本国王。”",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [],
+      "choices": [
+        {
+          "action_id": "act.pick.map",
+          "amount": null,
+          "items": [],
+          "order": []
+        }
+      ],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 1,
+        "location": "scene.forest",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.forest",
+            "motivation": "显示本国王的本事，让猴群有水喝",
+            "strength": "爬树敏捷，熟悉山路",
+            "weakness": "爱面子又胆小，遇到危险想撤退",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.forest",
+            "motivation": "跟着哥哥找到小溪，顺便盼着路上有蜂蜜",
+            "strength": "力气大，能搬开挡路的石头",
+            "weakness": "贪吃又糊涂，容易被香味引走",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          },
+          "npc.zhaolin": {
+            "id": "npc.zhaolin",
+            "name": "赵琳",
+            "location": "scene.forest",
+            "motivation": "帮助森林里的小动物，探索大自然的秘密",
+            "strength": "机灵细心，善于发现小线索",
+            "weakness": "年纪小，力气不够大",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.forest",
+            "motivation": "守护森林，让动物们重新有水喝",
+            "strength": "聪明稳重，会看地图、善想办法",
+            "weakness": "有时太谨慎，不敢冒险",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          }
+        },
+        "items": {
+          "item.bamboo.cut": {
+            "id": "item.bamboo.cut",
+            "name": "竹竿",
+            "owner": "scene.bamboo",
+            "asset": "prop.bamboo",
+            "recipe": []
+          },
+          "item.bucket": {
+            "id": "item.bucket",
+            "name": "水桶",
+            "owner": "scene.cabin",
+            "asset": "prop.bucket",
+            "recipe": []
+          },
+          "item.honey.jar": {
+            "id": "item.honey.jar",
+            "name": "蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.lantern": {
+            "id": "item.lantern",
+            "name": "灯笼",
+            "owner": "scene.cabin",
+            "asset": "prop.lantern",
+            "recipe": []
+          },
+          "item.map": {
+            "id": "item.map",
+            "name": "旧地图",
+            "owner": "scene.forest",
+            "asset": "prop.map",
+            "recipe": []
+          },
+          "item.rope": {
+            "id": "item.rope",
+            "name": "绳索",
+            "owner": "scene.forest",
+            "asset": "prop.rope",
+            "recipe": []
+          },
+          "item.water.trough": {
+            "id": "item.water.trough",
+            "name": "引水竹槽",
+            "owner": "unmade",
+            "asset": "prop.bamboo",
+            "recipe": [
+              "item.bamboo.cut",
+              "item.rope"
+            ]
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.xionger": 0,
+          "npc.zhaolin": 0
+        },
+        "knowledge": [
+          "clue.dried.creek"
+        ],
+        "quests": {
+          "task.bring.water": "open",
+          "task.find.spring": "open",
+          "task.help.jiji": "open",
+          "task.read.map": "open"
+        },
+        "promises": {},
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.xionger": "initial",
+          "character:npc.zhaolin": "initial",
+          "character:player": "initial",
+          "item:item.bamboo.cut": "initial",
+          "item:item.bucket": "initial",
+          "item:item.honey.jar": "initial",
+          "item:item.lantern": "initial",
+          "item:item.map": "initial",
+          "item:item.rope": "initial",
+          "item:item.water.trough": "initial",
+          "knowledge:clue.dried.creek": "initial",
+          "quest:task.bring.water": "initial",
+          "quest:task.find.spring": "initial",
+          "quest:task.help.jiji": "initial",
+          "quest:task.read.map": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.xionger": "initial",
+          "relationship:npc.zhaolin": "initial",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    },
+    {
+      "schema_version": 2,
+      "id": "page.2",
+      "title": "地图上的秘密",
+      "text": "熊大把地图摊在树桩上：“山顶标着‘唱歌溪’！”赵琳凑近细看：“咦，这里画着好多竹子！”熊二咽着口水：“竹子能有俺的蜂蜜好吃吗？”吉吉国王甩甩尾巴：“本国王最熟悉山路，尽管问！”上山的路该怎么走呢？",
+      "illustration": {
+        "scene": "scene.forest",
+        "characters": {
+          "npc.jijiguowang": "character.jijiguowang.happy",
+          "npc.xionger": "character.xionger.calm",
+          "npc.zhaolin": "character.zhaolin.surprised",
+          "player": "character.xiongda.thinking"
+        },
+        "props": [
+          "prop.map",
+          "prop.honey"
+        ],
+        "key_art": null
+      },
+      "interactions": [
+        {
+          "id": "int.page2.map",
+          "kind": "observe",
+          "instruction": "大家一起研究地图，找出上山的近路",
+          "actions": [
+            {
+              "id": "act.study.map",
+              "verb": "use",
+              "label": "熊大仔细研究地图上的竹子记号",
+              "target": "item.map",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.bamboo.path",
+                  "value": true,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "熊大指着图上的竹子记号说：“穿过竹林有条上山的近路！”赵琳高兴地拍手。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": {
+                "character": "player",
+                "aspect": "strength",
+                "explanation": "熊大会看地图，一眼认出竹子记号代表上山近路。"
+              },
+              "hotspot": "prop.map"
+            },
+            {
+              "id": "act.ask.jiji.path",
+              "verb": "ask",
+              "label": "向最熟悉山路的吉吉国王问路",
+              "target": "npc.jijiguowang",
+              "prerequisites": [],
+              "effects": [
+                {
+                  "op": "learn",
+                  "target": "clue.bamboo.path",
+                  "value": true,
+                  "actor": "player"
+                },
+                {
+                  "op": "relationship",
+                  "target": "npc.jijiguowang",
+                  "value": 1,
+                  "actor": "player"
+                }
+              ],
+              "feedback": "吉吉国王得意地说：“本国王带你们钻竹林，那条近路又快又好走！”他蹦到前头引路。",
+              "alternatives": [],
+              "inputs": [],
+              "trait_use": null,
+              "hotspot": null
+            }
+          ],
+          "order": [],
+          "order_action": null
+        }
+      ],
+      "callbacks": [
+        "event.2.0"
+      ],
+      "choices": [],
+      "state_snapshot": {
+        "schema_version": 2,
+        "version": 2,
+        "location": "scene.forest",
+        "characters": {
+          "npc.jijiguowang": {
+            "id": "npc.jijiguowang",
+            "name": "吉吉国王",
+            "location": "scene.forest",
+            "motivation": "显示本国王的本事，让猴群有水喝",
+            "strength": "爬树敏捷，熟悉山路",
+            "weakness": "爱面子又胆小，遇到危险想撤退",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          },
+          "npc.xionger": {
+            "id": "npc.xionger",
+            "name": "熊二",
+            "location": "scene.forest",
+            "motivation": "跟着哥哥找到小溪，顺便盼着路上有蜂蜜",
+            "strength": "力气大，能搬开挡路的石头",
+            "weakness": "贪吃又糊涂，容易被香味引走",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          },
+          "npc.zhaolin": {
+            "id": "npc.zhaolin",
+            "name": "赵琳",
+            "location": "scene.forest",
+            "motivation": "帮助森林里的小动物，探索大自然的秘密",
+            "strength": "机灵细心，善于发现小线索",
+            "weakness": "年纪小，力气不够大",
+            "knowledge": [
+              "clue.dried.creek"
+            ]
+          },
+          "player": {
+            "id": "player",
+            "name": "熊大",
+            "location": "scene.forest",
+            "motivation": "守护森林，让动物们重新有水喝",
+            "strength": "聪明稳重，会看地图、善想办法",
+            "weakness": "有时太谨慎，不敢冒险",
+            "knowledge": [
+              "clue.dried.creek",
+              "clue.map.marked"
+            ]
+          }
+        },
+        "items": {
+          "item.bamboo.cut": {
+            "id": "item.bamboo.cut",
+            "name": "竹竿",
+            "owner": "scene.bamboo",
+            "asset": "prop.bamboo",
+            "recipe": []
+          },
+          "item.bucket": {
+            "id": "item.bucket",
+            "name": "水桶",
+            "owner": "scene.cabin",
+            "asset": "prop.bucket",
+            "recipe": []
+          },
+          "item.honey.jar": {
+            "id": "item.honey.jar",
+            "name": "蜂蜜罐",
+            "owner": "player",
+            "asset": "prop.honey",
+            "recipe": []
+          },
+          "item.lantern": {
+            "id": "item.lantern",
+            "name": "灯笼",
+            "owner": "scene.cabin",
+            "asset": "prop.lantern",
+            "recipe": []
+          },
+          "item.map": {
+            "id": "item.map",
+            "name": "旧地图",
+            "owner": "player",
+            "asset": "prop.map",
+            "recipe": []
+          },
+          "item.rope": {
+            "id": "item.rope",
+            "name": "绳索",
+            "owner": "player",
+            "asset": "prop.rope",
+            "recipe": []
+          },
+          "item.water.trough": {
+            "id": "item.water.trough",
+            "name": "引水竹槽",
+            "owner": "unmade",
+            "asset": "prop.bamboo",
+            "recipe": [
+              "item.bamboo.cut",
+              "item.rope"
+            ]
+          }
+        },
+        "resources": {
+          "materials": 15,
+          "time": 30
+        },
+        "relationships": {
+          "npc.jijiguowang": 0,
+          "npc.xionger": 0,
+          "npc.zhaolin": 0
+        },
+        "knowledge": [
+          "clue.dried.creek",
+          "clue.map.marked"
+        ],
+        "quests": {
+          "task.bring.water": "open",
+          "task.find.spring": "open",
+          "task.help.jiji": "open",
+          "task.read.map": "open"
+        },
+        "promises": {},
+        "rewards": [],
+        "provenance": {
+          "character:npc.jijiguowang": "initial",
+          "character:npc.xionger": "initial",
+          "character:npc.zhaolin": "initial",
+          "character:player": "initial",
+          "item:item.bamboo.cut": "initial",
+          "item:item.bucket": "initial",
+          "item:item.honey.jar": "initial",
+          "item:item.lantern": "initial",
+          "item:item.map": "event.2.0",
+          "item:item.rope": "event.2.0",
+          "item:item.water.trough": "initial",
+          "knowledge:clue.dried.creek": "initial",
+          "knowledge:clue.map.marked": "event.2.0",
+          "quest:task.bring.water": "initial",
+          "quest:task.find.spring": "initial",
+          "quest:task.help.jiji": "initial",
+          "quest:task.read.map": "initial",
+          "relationship:npc.jijiguowang": "initial",
+          "relationship:npc.xionger": "initial",
+          "relationship:npc.zhaolin": "initial",
+          "resource:materials": "initial",
+          "resource:time": "initial"
+        }
+      },
+      "discussion": ""
+    }
+  ],
+  "manifest": {
+    "character.damahou.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 945496,
+      "character": "大马猴",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "9d3967677366bb74e5810efb9ad975fc1a685dc1e49e83353dc91343ac48bd6e",
+      "width": 1024
+    },
+    "character.damahou.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 996180,
+      "character": "大马猴",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "cd2b17f8edafe22163f62aa77d5bdce7cc2d054c43c428146eb0e88ab25372aa",
+      "width": 1024
+    },
+    "character.damahou.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 997432,
+      "character": "大马猴",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "ad1653ef92bb1d5d7363a60d1d61e5cfdc69fedfc51ed3523b2e17bbcad9fe0a",
+      "width": 1024
+    },
+    "character.damahou.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1007938,
+      "character": "大马猴",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "b4a11a2f99da37baee5bda6c4b112515e174a9c35801a92dc525d852e11cfbbc",
+      "width": 1024
+    },
+    "character.damahou.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 939254,
+      "character": "大马猴",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "12eb8b3e82576ec5e9ec0300bddf307574ab66f1473acdceff8c557c251fd321",
+      "width": 1024
+    },
+    "character.damahou.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 886606,
+      "character": "大马猴",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/damahou_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "505ce726fe418801c1e765d5352bdd6d73b239fb6e9a3e40829dd3e7a940208d",
+      "width": 1024
+    },
+    "character.ergou.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1087052,
+      "character": "二狗",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "e358d8ef8ae142ce7e14f210cfdf3cdb2c8f63af1e7495a6a53a35624c9d1b95",
+      "width": 1024
+    },
+    "character.ergou.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1131382,
+      "character": "二狗",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "a280c64afb6027e4d66e56f3bf7d40eea4b3f631f162e4935e44e88cfe63b7fa",
+      "width": 1024
+    },
+    "character.ergou.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1203112,
+      "character": "二狗",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "472d35756d9c99f89edd3cf9e4e4d419cefb2dce2867a81073b871cb74a4e7f2",
+      "width": 1024
+    },
+    "character.ergou.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1160892,
+      "character": "二狗",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "bcd7dd1597a23b6e9025322575d5f69541103fed0d1b4e6b979cb708ba28af89",
+      "width": 1024
+    },
+    "character.ergou.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1164936,
+      "character": "二狗",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "3559399e13289e4f87705b26d023e985c40f28bb6beeafe0e2fcfb2b965006ea",
+      "width": 1024
+    },
+    "character.ergou.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1096576,
+      "character": "二狗",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/ergou_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.85,
+      "sha256": "ef1cbb99386d86ec1c119e03adfde3a4103463e6aa264f4ffe48170fea34af8a",
+      "width": 1024
+    },
+    "character.guangtouqiang.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1113686,
+      "character": "光头强",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_calm_clean.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "6da90a670084556a0026dadf2bfe6d42e4ae62800c736ad930e026bd844513e7",
+      "width": 1024
+    },
+    "character.guangtouqiang.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1193270,
+      "character": "光头强",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "610c297b31ace13c7264f66298be481b9475763475c95a17833026e6e5f85c2f",
+      "width": 1024
+    },
+    "character.guangtouqiang.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1243024,
+      "character": "光头强",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "49ee7de60d9c6a141802b8b105619efcb0b28950dc1a18bcf85e9eabbfe6770a",
+      "width": 1024
+    },
+    "character.guangtouqiang.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1116494,
+      "character": "光头强",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "39f1c58586ac9976cb2c5bd230c69aa5b1c013ae9b648a021de24eb50d3b8e6b",
+      "width": 1024
+    },
+    "character.guangtouqiang.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1130970,
+      "character": "光头强",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "9179dddacb74e48cac97077fbc6258924375e70432c7879867b951eb20891e1e",
+      "width": 1024
+    },
+    "character.guangtouqiang.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1093560,
+      "character": "光头强",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/guangtouqiang_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "bbeb6370a4ad0457c3cc6fbbac588fb78c447a7a099040751d058701d58d80b5",
+      "width": 1024
+    },
+    "character.jijiguowang.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1161286,
+      "character": "吉吉国王",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_calm_clean.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "c2fdb3e741e152cf85212cb4ccd6a846658e25fb15c8fd16c404f4ab62beed1b",
+      "width": 1024
+    },
+    "character.jijiguowang.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1280130,
+      "character": "吉吉国王",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "1774bdc6c63242b2d903b1e14a63f217c8e35e38d9d1864dc5025b82531f082e",
+      "width": 1024
+    },
+    "character.jijiguowang.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1288268,
+      "character": "吉吉国王",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "1b61c746eac76e2dd79c5aa4f4a5fb6e095a9dce9c2882d0ec5a2e2e679413d4",
+      "width": 1024
+    },
+    "character.jijiguowang.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1225748,
+      "character": "吉吉国王",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "de0e05800898ff6bb41464fbf24f319856374c90305eb6844915d5bdb3e6c848",
+      "width": 1024
+    },
+    "character.jijiguowang.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1218698,
+      "character": "吉吉国王",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "4848556711f597ece3a4583ec584ff4ae4b9ee3327fe45d58595e6cf3fc69145",
+      "width": 1024
+    },
+    "character.jijiguowang.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1182064,
+      "character": "吉吉国王",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/jijiguowang_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.72,
+      "sha256": "930992422ea224595375e7e78772f7e1f4f70a8830a9f99b5803bd7b6b287b43",
+      "width": 1024
+    },
+    "character.maomao.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1179736,
+      "character": "毛毛",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_calm_clean.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "5fa605a035c2bd8525ac2c5ed8afaa0a95b2463268e7e50424e398377ec0e7ff",
+      "width": 1024
+    },
+    "character.maomao.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1198100,
+      "character": "毛毛",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "6bad3b8817e8a0ca3a769ebbe6678cacd3867131cf4ae3129e116dda6c7c9b7a",
+      "width": 1024
+    },
+    "character.maomao.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1216544,
+      "character": "毛毛",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "4b36557e225c6257e3b51db599d1452928b1424a57bfbcfb7369d8af1823d33e",
+      "width": 1024
+    },
+    "character.maomao.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1205240,
+      "character": "毛毛",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "559f19acf03da558875b3c0ebd8fded329068cbe95ffde69a6065955cd707769",
+      "width": 1024
+    },
+    "character.maomao.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1188208,
+      "character": "毛毛",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "e3c55b58abe588b11238087eb1918955a4579b7b664c7bd30c81df84368438ca",
+      "width": 1024
+    },
+    "character.maomao.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1179812,
+      "character": "毛毛",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/maomao_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.45,
+      "sha256": "30dbc76d04c5f0c574b4d3dc6c9f2d10318a657db0d4ec2e71029adf3c25f88f",
+      "width": 1024
+    },
+    "character.tiancaiwei.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 997302,
+      "character": "天才威",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "956665c86c8c0e286c2f99344a30b45d7f2c5296a1bd00d336fb76bd48cde308",
+      "width": 1024
+    },
+    "character.tiancaiwei.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1044320,
+      "character": "天才威",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "65410c4cf7a5b6de72acd8f84d982f38376c3f2688282e24595b527d9cfa7745",
+      "width": 1024
+    },
+    "character.tiancaiwei.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1099102,
+      "character": "天才威",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "ab5fa227c2edf6977c9b52d1e8810b7d0c301cd1d58e4d803d5035c1cf5c06db",
+      "width": 1024
+    },
+    "character.tiancaiwei.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 996628,
+      "character": "天才威",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "aa69580de57596fc67248b249f5a29d4ce4ac5fce4ff997bc00a0b366685ba2b",
+      "width": 1024
+    },
+    "character.tiancaiwei.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 942528,
+      "character": "天才威",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "ce77482756eb34c988ab3ef78ec2660e3021e13348f71519f7527d9c316c4cba",
+      "width": 1024
+    },
+    "character.tiancaiwei.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 923254,
+      "character": "天才威",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/tiancaiwei_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.92,
+      "sha256": "651bcbb8156f9b13634aa9d0c0444404465839b7e72325795ee4466ac33547f6",
+      "width": 1024
+    },
+    "character.xiongda.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1217416,
+      "character": "熊大",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "02152cb0c9371049d2bd0b7cb109bf620bc4f4cdf7b9b39b42e8a6a5b6b14c2e",
+      "width": 1024
+    },
+    "character.xiongda.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1428306,
+      "character": "熊大",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "c6e7d12196363790ae722f7614fd034636d43e061df6d177d0e6d9ee725fde05",
+      "width": 1024
+    },
+    "character.xiongda.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1327602,
+      "character": "熊大",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "b8e35204f35f48dc6248c70b3c4c1bcf9d88e821cfc3442012f11d7dc12eb2b1",
+      "width": 1024
+    },
+    "character.xiongda.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1342442,
+      "character": "熊大",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "17e163c5eebfb7046519e845cc9337186ebfaa1d5ba96983af11bf4e34319a57",
+      "width": 1024
+    },
+    "character.xiongda.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1320672,
+      "character": "熊大",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "6aa5183676e946c3f92e249e07303efd3029d29d82908d7dcb480845fae483c4",
+      "width": 1024
+    },
+    "character.xiongda.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1366108,
+      "character": "熊大",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xiongda_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "f290912435b7c334e4ba063b9ad9b2fef037856ebbabfb6e40ed6d947d5cbb44",
+      "width": 1024
+    },
+    "character.xionger.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1293084,
+      "character": "熊二",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "21cf33c743492cb102cb6d3d5f28f39901355f7072fd9d8cff6d33370475d0b1",
+      "width": 1024
+    },
+    "character.xionger.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1347072,
+      "character": "熊二",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "06fc98b38a34cc5c8ec88802d8e14c1c04f66eb58b726c11d41d1cbd855adb14",
+      "width": 1024
+    },
+    "character.xionger.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1392602,
+      "character": "熊二",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "51783b4eca8f9b054573f35596f7844b006bd7e9857d5f4b4e93067d742f6e6f",
+      "width": 1024
+    },
+    "character.xionger.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1333352,
+      "character": "熊二",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "350b328b2ca55517f7c9859edc86860f9e7d16bcee0fd01934569861acfc6453",
+      "width": 1024
+    },
+    "character.xionger.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1335218,
+      "character": "熊二",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "1f72bf32f6f06d89e4f7987232f48284e6ed13cdc9481bb78842b274df764975",
+      "width": 1024
+    },
+    "character.xionger.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1350210,
+      "character": "熊二",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/xionger_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 1,
+      "sha256": "258f7d60d5f4138dac0826b69c1d14a5cd4d73c6747b9ea7204be89faa163e02",
+      "width": 1024
+    },
+    "character.zhaolin.calm": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 960848,
+      "character": "赵琳",
+      "emotion": "calm",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_calm.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "c764a2fca3f4b664db959a6b493ec26226957b167b34acd7f586437a2d1c973a",
+      "width": 1024
+    },
+    "character.zhaolin.determined": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1053110,
+      "character": "赵琳",
+      "emotion": "determined",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_determined.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "e903f7cffcced09342d0973537dc12eb4bbe7ad04a7923e24921061eff16018a",
+      "width": 1024
+    },
+    "character.zhaolin.happy": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1075720,
+      "character": "赵琳",
+      "emotion": "happy",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_happy.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "670d4685c64a9b66017c3bd0a9255353d60b2dbc0549d21234ce16578829cb91",
+      "width": 1024
+    },
+    "character.zhaolin.surprised": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1037062,
+      "character": "赵琳",
+      "emotion": "surprised",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_surprised.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "85ca171ea4b052f208567a4ac5b152c74ef337725e1649e2d24b089e22ead1b2",
+      "width": 1024
+    },
+    "character.zhaolin.thinking": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1015594,
+      "character": "赵琳",
+      "emotion": "thinking",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_thinking.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "809d3e44f801b78883e5766f299c1c980ee0a8b3681ddfdf49edf91bacda1711",
+      "width": 1024
+    },
+    "character.zhaolin.worried": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 990706,
+      "character": "赵琳",
+      "emotion": "worried",
+      "height": 1536,
+      "kind": "character",
+      "path": "images/v2/zhaolin_worried.webp",
+      "regions": [
+        "left",
+        "center",
+        "right"
+      ],
+      "scale": 0.9,
+      "sha256": "1d757eb38248459ca1039f5108476f2b341dcf59d8ea247985f47bfd7ba1522d",
+      "width": 1024
+    },
+    "key.00": {
+      "bytes": 1869476,
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "observe"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_00.webp",
+      "props": [
+        "prop.footprint"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "sha256": "9f7a0dc51c395136fc869481944ec0d9e5a859570e5b1960321aa686b3c1ad5e",
+      "situation": "discovery",
+      "width": 1672
+    },
+    "key.01": {
+      "bytes": 2034450,
+      "characters": [
+        "光头强",
+        "毛毛"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "observe"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_01.webp",
+      "props": [
+        "prop.letter"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.bamboo"
+      ],
+      "sha256": "5a46c48bc77bc25304c8e37570099dbfadf7d84c51eadd55a627a10e1f05c125",
+      "situation": "discovery",
+      "width": 1672
+    },
+    "key.02": {
+      "bytes": 2127382,
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_02.webp",
+      "props": [
+        "prop.plank"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.bridge"
+      ],
+      "sha256": "06859a4c2d95e2c2a82475776d7938a72c8a15fdc1dde9e96ef79ddc40a07677",
+      "situation": "cooperation",
+      "width": 1672
+    },
+    "key.03": {
+      "bytes": 1766120,
+      "characters": [
+        "光头强",
+        "天才威"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "use",
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_03.webp",
+      "props": [
+        "prop.compass"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "sha256": "650cb353579b9b83b04cd83bec50d2392fce23c4739c7df4874e0e41b745cd08",
+      "situation": "cooperation",
+      "width": 1672
+    },
+    "key.04": {
+      "bytes": 2106622,
+      "characters": [
+        "吉吉国王",
+        "毛毛"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_04.webp",
+      "props": [
+        "prop.basket"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.orchard"
+      ],
+      "sha256": "34e2d3ef8964a4128cf717e4be1ef87682231be410f195a6e18e520e07266d9d",
+      "situation": "misunderstanding",
+      "width": 1672
+    },
+    "key.05": {
+      "bytes": 1913742,
+      "characters": [
+        "大马猴",
+        "二狗"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "ask",
+        "negotiate"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_05.webp",
+      "props": [
+        "prop.ribbon"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.market"
+      ],
+      "sha256": "530510cea4f8b8e4afee0d26f6ef947e096ba2def5f415dae862027061dfa145",
+      "situation": "misunderstanding",
+      "width": 1672
+    },
+    "key.06": {
+      "bytes": 1780930,
+      "characters": [
+        "光头强",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_06.webp",
+      "props": [
+        "prop.kite"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.workshop"
+      ],
+      "sha256": "6b0a0d1189c19859273df96de06f0d2afb5b9763bedf4807c1423137cb809ab1",
+      "situation": "making",
+      "width": 1672
+    },
+    "key.07": {
+      "bytes": 2000312,
+      "characters": [
+        "赵琳",
+        "毛毛"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "combine"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_07.webp",
+      "props": [
+        "prop.lantern"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.camp"
+      ],
+      "sha256": "c5d94c6ef48da9195980e31b9a7dd6268c38343c0da2ab8e030021b51b239618",
+      "situation": "making",
+      "width": 1672
+    },
+    "key.08": {
+      "bytes": 1946302,
+      "characters": [
+        "熊大",
+        "赵琳"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "allocate",
+        "use"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_08.webp",
+      "props": [
+        "prop.flag"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.mountain"
+      ],
+      "sha256": "67e80dbfe2eb033bbc1287f64bb981f6e9e4767a88275b7b6ff8ca6a2644cc0b",
+      "situation": "challenge",
+      "width": 1672
+    },
+    "key.09": {
+      "bytes": 2001102,
+      "characters": [
+        "吉吉国王",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "move",
+        "allocate"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_09.webp",
+      "props": [
+        "prop.flag"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.sports"
+      ],
+      "sha256": "0f525e2fbc1388c9165df84ac7494553694823f4fcd578fbb93f6383c589d872",
+      "situation": "challenge",
+      "width": 1672
+    },
+    "key.10": {
+      "bytes": 1861594,
+      "characters": [
+        "熊大",
+        "熊二"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_10.webp",
+      "props": [
+        "prop.bell"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.forest"
+      ],
+      "sha256": "f42a6e237e5fec249e61d223160486e8af7c30c874cfe63ce31d58bb7390486f",
+      "situation": "reunion",
+      "width": 1672
+    },
+    "key.11": {
+      "bytes": 2216572,
+      "characters": [
+        "光头强",
+        "赵琳"
+      ],
+      "conditions": [],
+      "event_verbs": [
+        "negotiate",
+        "ask"
+      ],
+      "height": 941,
+      "kind": "key_art",
+      "path": "images/v2/key_11.webp",
+      "props": [
+        "prop.drum"
+      ],
+      "regions": [
+        "full"
+      ],
+      "scenes": [
+        "scene.stage"
+      ],
+      "sha256": "394ab4bfdfca9437aa000a8b07feb83a86bdb19faac137500e4192e894c98b14",
+      "situation": "reunion",
+      "width": 1672
+    },
+    "prop.apple": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1334132,
+      "height": 1254,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_apple.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "179e25571edf2187a4f67514e81995ce9b320c62c545fee3716c94450a3b29f6",
+      "width": 1254
+    },
+    "prop.bamboo": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 756268,
+      "height": 1086,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_bamboo.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "dbb7258062e43e9be751d301c8e3c4e14d983394b3a508af2de92a33aeb78841",
+      "width": 1448
+    },
+    "prop.basket": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1100072,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_basket.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "e5eb8385b947bf6983f5e768ea50494d437cdc2efcd2cba33d5db2fd4a2088a8",
+      "width": 1312
+    },
+    "prop.bell": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 724598,
+      "height": 1374,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_bell.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "43410b3b7d2f24890f0cb9ba4876eb71e7a7bbe71e1677bf5548a8ce7e8d640f",
+      "width": 1145
+    },
+    "prop.brush": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1263828,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_brush.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "237ac3ab8a4e57d18d7cc16a5550330723c41d59eb3b6581fe39618c7ba813f9",
+      "width": 1536
+    },
+    "prop.bucket": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1298198,
+      "height": 1297,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_bucket.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "29eefb3934bd7c6070df28556517da1ac0fbe63c55ac929832607e9c8a5232ac",
+      "width": 1212
+    },
+    "prop.clay": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1130038,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_clay.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "74951d6ea6d953ed743bdf7f0a695ae9fe2f24311dd50cb68b270d1e17890357",
+      "width": 1374
+    },
+    "prop.cloth": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1261436,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_cloth.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "4f4482bf19eb4a9329448c8ed768f2eb587c87853608745a5956bf65ae8dde98",
+      "width": 1374
+    },
+    "prop.compass": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1064146,
+      "height": 1312,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_compass.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "fc8bb4e235f50b17a0ee8a98e212406608f586d81da3002588629221cd9d56e3",
+      "width": 1199
+    },
+    "prop.drum": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1245990,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_drum.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "1df5261dbf36d0f5ebd1bfd4b3333f2d48f39f84e1fc8f6e04e66fa18a998b52",
+      "width": 1312
+    },
+    "prop.feather": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 851464,
+      "height": 1287,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_feather.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "e72a094b752155f598e61145c510a8633cf85ed3ee9514f10ef4389d5e3d72dc",
+      "width": 1222
+    },
+    "prop.flag": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 962188,
+      "height": 1536,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_flag.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c3d705426e92ee61e956234da5522f64c6b7db266188fe7cced0346e43cdd552",
+      "width": 1024
+    },
+    "prop.flower": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1385302,
+      "height": 1536,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_flower.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "575cd900e82e702520093d260bb79d97a22f4e50781bbc1dadb6121cb3610b09",
+      "width": 1024
+    },
+    "prop.footprint": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1531336,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_footprint.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "f6ba2ff1e8041c16bc340587a1b648ae916fe2f0fb3ae1d308eeaa3d029f3d82",
+      "width": 1536
+    },
+    "prop.hammer": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 573860,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_hammer.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "0cfc448cadf4317b886a7fc08df9e23b1a4274301b9615cd955e1bc018c59cfa",
+      "width": 1312
+    },
+    "prop.honey": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1137442,
+      "description": "封闭的不透明蜂蜜容器，画面不表示里面是否有蜂蜜，也不表示数量。",
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_honey_covered.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "b85046bd6b786e44f655e5a952c65f9370e0bd01f39f2694c9854888bdeabe58",
+      "width": 1312
+    },
+    "prop.key": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 628960,
+      "height": 1286,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_key.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "8a8f2fe16708e610d7cc2526893d27411b000ef2ad04ee120a5f3eb608cce3ab",
+      "width": 1223
+    },
+    "prop.kite": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 590098,
+      "height": 1278,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_kite.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c1dc4cd62352d2e7959c7bbc078c31fed357e51d36a33474025f39287640c8ad",
+      "width": 1230
+    },
+    "prop.lantern": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1508158,
+      "height": 1536,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_lantern.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "8afa39272638a3f14ec0fc4355f6e028d4f5aea2d0485211fc461c169b2895a5",
+      "width": 1024
+    },
+    "prop.leaf": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1337776,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_leaf.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "0d55bfdd7e036e751f2a55219ed0525b9a5b98c6a2d0c20fcb1649b41b39b070",
+      "width": 1536
+    },
+    "prop.letter": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1220014,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_letter.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "5929f61b6db42ad46b0d1a7c4c6c012e15260188dfdadb1af984639cf7fce9e6",
+      "width": 1536
+    },
+    "prop.magnifier": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 761166,
+      "height": 1278,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_magnifier.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c55e70c3c3513c72dc7753e9f5462f1008e5a196de8ab0d9e0d66bf78221d47d",
+      "width": 1230
+    },
+    "prop.map": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1630928,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_map_approved.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "95a744dc6eb3e907e0e98b32d2d3d2795b36cc281e260dad245b5faf8e23ff88",
+      "width": 1536
+    },
+    "prop.mask": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1462794,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_mask.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "aba68e8ea5f9427e86b0f6afb6ee543348d8599932d6df6c52c3323bd88249ad",
+      "width": 1312
+    },
+    "prop.paint": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1369288,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_paint.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "96c4f0ca26388418ae89614dc40ed1989988b6e8db3a8f4fdc93ddb9a085e193",
+      "width": 1312
+    },
+    "prop.paper": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1160210,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_paper.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "1bbbc1883cff3e515b54fe1701e24a0f86926a71b090aa0395f0f9320d9b7bf3",
+      "width": 1536
+    },
+    "prop.pinecone": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1087156,
+      "height": 1199,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_pinecone.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "256cf4b4d74c39e6a725ecea6f318e2936575bc469386cc1d26cfca8ba0dc3d5",
+      "width": 1312
+    },
+    "prop.plank": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 1185610,
+      "height": 1024,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_plank.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "d2e9b6492cf7eb4a3702d3c51bfb3eaad4a1dfdbb2cd0729ebc5bc356c98a6e4",
+      "width": 1536
+    },
+    "prop.ribbon": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1229110,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_ribbon.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "a0cc937ca544d810a9ddea25e65d7a05db5b368865eeb695f007ba33467bfdb7",
+      "width": 1374
+    },
+    "prop.rope": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1167902,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_rope.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "7fdb6b57cef1feac29dda1e06628699a8772fd9f3fe5f90c60a6a0607c37329f",
+      "width": 1374
+    },
+    "prop.scissors": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 619612,
+      "height": 1122,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_scissors.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "56c1407a4bda3ab1f39366cf100e1661e1bf4218d7336321af00a2e74b2a2d40",
+      "width": 1402
+    },
+    "prop.seed": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1206242,
+      "height": 1145,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_seed.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "457d08fac1094960957ac0de0af8fd56d67f4855b83ea3c4c36ec11a2abfe50f",
+      "width": 1374
+    },
+    "prop.shovel": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 768432,
+      "height": 1283,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_shovel.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "df494b5fb04fde923e5c8ab8953f7385cb2b4dcf4feb55bd7c7e603c8dd0c53f",
+      "width": 1226
+    },
+    "prop.star": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 909018,
+      "height": 1201,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_star.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "c660546403d119a9cea5866381b15e77a05f01ccab28b989eeff15e8fbb09cda",
+      "width": 1309
+    },
+    "prop.string": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1167466,
+      "height": 1283,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_string.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "a2c07356c59b91292b1f62937a52200d141c7503864b802bb372003d30b1660d",
+      "width": 1226
+    },
+    "prop.wheel": {
+      "alpha": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 1159616,
+      "height": 1206,
+      "hotspot": true,
+      "kind": "prop",
+      "path": "images/v2/prop_wheel.webp",
+      "regions": [
+        "ground"
+      ],
+      "sha256": "eaf6755cba251b2ed2328410131186d0602cd7025ecc7df0496f7cf6f97930f0",
+      "width": 1304
+    },
+    "scene.bamboo": {
+      "bytes": 1929790,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_bamboo_approved.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "23894d1cd3ecb9465411929eabf05b1deb03e1224e5b7cce9c6109f19c46eda2",
+      "width": 1672
+    },
+    "scene.bridge": {
+      "bytes": 1939524,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_bridge.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "75aeea7aec40f5e6c614656d8bae75f803de3ff52815220e4059f01b7ecc4aac",
+      "width": 1672
+    },
+    "scene.cabin": {
+      "bytes": 238226,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_cabin.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "75e830c8df1e1b47c0ff1e1978717c2eededc5a374eeec24d55b708357e3ba28",
+      "width": 1376
+    },
+    "scene.camp": {
+      "bytes": 1908876,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_camp.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "8d36d90f2a08b8da022c607410075b1c56313ee38e024940471819a07a309206",
+      "width": 1672
+    },
+    "scene.cave": {
+      "bytes": 163684,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_cave.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "935c293edc71d194969e4d59fc016f645ce3085b0309cc2fee11b71264df9957",
+      "width": 1376
+    },
+    "scene.flowers": {
+      "bytes": 1981654,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_flowers.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "e03a5e40562b0f121771358d58ec298431f62c32c6271843d71e97eca8834b01",
+      "width": 1672
+    },
+    "scene.forest": {
+      "bytes": 178708,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_forest.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "d47afe17e644806d99cc0a0758d9eebe251fe60d82b08a055fc2bb8e5fcb59e2",
+      "width": 1376
+    },
+    "scene.lakeside": {
+      "bytes": 2124232,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_lakeside.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "03f967147a564a7225a35059636121e384f9592e99ff36cd247311194cfb9232",
+      "width": 1672
+    },
+    "scene.library": {
+      "bytes": 1786494,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_library.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "b32b24df31749c1ed2347d7c06c0442e4520722831174d5dbdc9f2db26cbee2a",
+      "width": 1672
+    },
+    "scene.market": {
+      "bytes": 1963556,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_market.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "2beb2e1fec33e1db429c3961679da56e87d073e1154f1fb6d66e849ecc744457",
+      "width": 1672
+    },
+    "scene.mountain": {
+      "bytes": 72322,
+      "height": 1080,
+      "kind": "scene",
+      "path": "images/bg/bg_mountain.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "60bc03656a1b2c9db4ae1286c18956fd6befb39899b1afc4813b6abd02f18af9",
+      "width": 1920
+    },
+    "scene.orchard": {
+      "bytes": 1930772,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_orchard.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "9503bc6b136860aecc7c29de5c6a5e82c73288144ee0e987632047f9420c92a2",
+      "width": 1672
+    },
+    "scene.riverside": {
+      "bytes": 173740,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_riverside.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "af19936c06eff74ea0fd745d4a4e0ffdc0600930d85598d05a187d65c76851e2",
+      "width": 1376
+    },
+    "scene.sports": {
+      "bytes": 1983418,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_sports.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "eee736e064e4734d9ee2eed7f780a60fcb0c9dcd16ccb173a0b7780efa73094c",
+      "width": 1672
+    },
+    "scene.stage": {
+      "bytes": 1950522,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_stage.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "c2a3523d12c1e605e9691168c31a77546cab02881b159edc5eb4136833c5b13a",
+      "width": 1672
+    },
+    "scene.treehouse": {
+      "bytes": 2042060,
+      "height": 941,
+      "kind": "scene",
+      "path": "images/v2/scene_treehouse.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "e0e91e1d6e7f451223c2873ff36d77215112ff851c756301d267e60cee25ab1f",
+      "width": 1672
+    },
+    "scene.village": {
+      "bytes": 281894,
+      "height": 768,
+      "kind": "scene",
+      "path": "images/bg/bg_village.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "e69f832ec7e702dec99e0e8813e3307cfef5e6de639d3d9a49f4e7850e685bf2",
+      "width": 1376
+    },
+    "scene.workshop": {
+      "bytes": 1708296,
+      "height": 937,
+      "kind": "scene",
+      "path": "images/v2/scene_workshop.webp",
+      "regions": [
+        "left",
+        "center",
+        "right",
+        "ground"
+      ],
+      "sha256": "a6206f428ed24a06c517d8bbcf1b8fdfa21b5daaf27c7736210fc85149e22d87",
+      "width": 1678
+    }
+  },
+  "ending": null,
+  "status": "active",
+  "mock": false,
+  "concepts": [
+    {
+      "arc": "mystery",
+      "title": "蜂蜜罐失踪之谜",
+      "conflict": "熊二藏在树洞里的蜂蜜罐一夜之间不见了，地上只留下一串奇怪的脚印和几根毛发。熊大要带大家顺着线索查清真相，找出是谁拿走了蜂蜜。",
+      "solution_tag": "收集脚印和毛发线索，推理出偷蜜人并礼貌地要回蜂蜜",
+      "cast": [
+        "熊大",
+        "熊二",
+        "光头强",
+        "赵琳"
+      ]
+    },
+    {
+      "arc": "journey",
+      "title": "寻找会唱歌的小溪",
+      "conflict": "森林里的小溪突然不流了，动物们没有水喝。传说山顶有一条会唱歌的小溪，熊大决定带队翻山越岭去找到它，引水回森林。",
+      "solution_tag": "带上地图和绳索，穿越竹林和山洞，把清泉引回森林",
+      "cast": [
+        "熊大",
+        "熊二",
+        "赵琳",
+        "吉吉国王"
+      ]
+    },
+    {
+      "arc": "negotiation",
+      "title": "谁动了森林的果树",
+      "conflict": "天才威在果园边装了奇怪的机器，说要摘光苹果做'天才苹果酱'。熊大想阻止他，但直接硬抢会弄坏果树，必须想办法让天才威改变主意。",
+      "solution_tag": "用蜂蜜和帮忙修机器交换，谈判让天才威只捡落在地上的苹果",
+      "cast": [
+        "熊大",
+        "熊二",
+        "天才威",
+        "大马猴"
+      ]
+    }
+  ],
+  "selected_concept": {
+    "arc": "journey",
+    "title": "寻找会唱歌的小溪",
+    "conflict": "森林里的小溪突然不流了，动物们没有水喝。传说山顶有一条会唱歌的小溪，熊大决定带队翻山越岭去找到它，引水回森林。",
+    "solution_tag": "带上地图和绳索，穿越竹林和山洞，把清泉引回森林",
+    "cast": [
+      "熊大",
+      "熊二",
+      "赵琳",
+      "吉吉国王"
+    ]
+  },
+  "usage": [
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 2854,
+      "mock": false,
+      "output_tokens": 364,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 0,
+      "seconds": 6.582,
+      "stage": "concepts",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 5967,
+      "mock": false,
+      "output_tokens": 1942,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 43,
+      "seconds": 24.133,
+      "stage": "setup",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 7697,
+      "mock": false,
+      "output_tokens": 2249,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 266,
+      "seconds": 22.048,
+      "stage": "setup_repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 5581,
+      "mock": false,
+      "output_tokens": 199,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 88,
+      "seconds": 4.842,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 10671,
+      "mock": false,
+      "output_tokens": 681,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 134,
+      "seconds": 9.006,
+      "stage": "proposal",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 11170,
+      "mock": false,
+      "output_tokens": 555,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 30,
+      "seconds": 5.565,
+      "stage": "repair",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    },
+    {
+      "admission_wait_seconds": 0.0,
+      "cost_basis": "coding_plan_charge_unknown",
+      "cost_usd": null,
+      "http_status": 200,
+      "input_tokens": 7810,
+      "mock": false,
+      "output_tokens": 141,
+      "provider": "glm-5.3",
+      "reasoning_effort": "low",
+      "reasoning_tokens": 57,
+      "seconds": 3.92,
+      "stage": "review",
+      "success": true,
+      "transport": "glm-coding-native",
+      "usage_known": true
+    }
+  ],
+  "pending": null,
+  "saved_at": 1791042830.3358002
+}

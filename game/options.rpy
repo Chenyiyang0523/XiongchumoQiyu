@@ -21,7 +21,7 @@ define gui.show_name = True
 
 ## 游戏版本号。
 
-define config.version = "1.1.0-rc.1"
+define config.version = "2.0.0-alpha.2"
 
 
 ## 放置在游戏内"关于"屏幕上的文本。将文本放在三个引号之间，并在段落之间留出空
@@ -35,7 +35,7 @@ define gui.about = _p("""
 ## 且不能包含空格、冒号或分号。
 
 define build.name = "XiongchumoQiyu"
-define build.mac_info_plist = {"CFBundleIdentifier": "org.xcmqy.forest-adventure"}
+define build.mac_info_plist = {"CFBundleIdentifier": "org.xcmqy.picturebook-v2"}
 
 ## 构建输出目录名称（不含中文和空格）
 define build.directory_name = "Xiongchumo_Qiyu_Build"
@@ -200,6 +200,8 @@ init python:
     build.classify('**/.git/**', None)
     build.classify('**/.vscode/**', None)
     build.classify('**/cache/**', None)
+    build.classify('**/__pycache__/**', None)
+    build.classify('**.pyc', None)
     build.classify('**/saves/**', None)
     build.classify('**/tts_cache/**', None)
     build.classify('**/python-packages/**', None)
@@ -213,6 +215,13 @@ init python:
     build.classify('**/C*/**', None)
     build.classify('**/c/**', None)
     build.classify('**/tools/**', None)
+    build.classify('**/service/**', None)
+    build.classify('**/tests/**', None)
+    build.classify('**/service-data/**', None)
+    build.classify('**/.venv/**', None)
+    build.classify('**/pytest.ini', None)
+    build.classify('**/compose.yaml', None)
+    build.classify('**/.env*', None)
     build.classify('**.md', None)
     build.classify('**.log', None)
     build.classify('**/errors.txt', None)

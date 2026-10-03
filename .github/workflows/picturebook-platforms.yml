@@ -1,0 +1,42 @@
+name: Picturebook installed-package checks
+on:
+  push:
+    branches: [codex/picturebook-v2]
+    paths: [game/**, service/**, tools/**, tests/**, .github/**]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  installed-package:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025, macos-14]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install service and test dependencies
+        run: python -m pip install -r service/requirements.txt pytest
+      - name: Run deterministic checks
+        run: python -m pytest -q
+      - name: Install native Linux graphics support
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libgl1-mesa-dri libglx-mesa0 libx11-6 libxext6 libxrender1
+      - name: Build and exercise an actual installed package
+        env:
+          XCMQY_DEVELOPMENT_MOCK: '1'
+          XCMQY_GUARDIAN_CODE: local-dev-guardian
+          RENPY_DISABLE_SOUND: '1'
+        run: python tools/ci_platform_package.py
+      - name: Retain package, screenshots, hashes and runtime logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: picturebook-${{ runner.os }}
+          path: .local/ci-platform/evidence/
+          retention-days: 30
+          if-no-files-found: warn

@@ -1,0 +1,945 @@
+[
+  {
+    "id": "case.01",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "森林探险",
+    "character": "熊大",
+    "new_theme": false,
+    "result": {
+      "completed": true,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 11,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 25,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 31,
+      "tokens": 322260,
+      "revisions": 4,
+      "model_wait_seconds": 293.707,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "complete",
+    "seconds": 294.461
+  },
+  {
+    "id": "case.02",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "寻宝之旅",
+    "character": "熊二",
+    "new_theme": false,
+    "status": "failed",
+    "error": "alternative actions have identical consequences",
+    "seconds": 181.877
+  },
+  {
+    "id": "case.03",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "不见的风铃",
+    "character": "光头强",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 11,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 29,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 45,
+      "tokens": 533840,
+      "revisions": 9,
+      "model_wait_seconds": 559.741,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 561.003
+  },
+  {
+    "id": "case.04",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "湖畔的脚印",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 12,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 28,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 43,
+      "tokens": 510760,
+      "revisions": 9,
+      "model_wait_seconds": 486.754,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 487.911
+  },
+  {
+    "id": "case.05",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "树屋里的来信",
+    "character": "毛毛",
+    "new_theme": true,
+    "result": {
+      "completed": true,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 9,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 25,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 37,
+      "tokens": 401624,
+      "revisions": 5,
+      "model_wait_seconds": 462.571,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "complete",
+    "seconds": 463.555
+  },
+  {
+    "id": "case.06",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "森林探险",
+    "character": "赵琳",
+    "new_theme": false,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 30,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 44,
+      "tokens": null,
+      "revisions": 11,
+      "model_wait_seconds": 551.684,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 552.795
+  },
+  {
+    "id": "case.07",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "寻宝之旅",
+    "character": "天才威",
+    "new_theme": false,
+    "result": {
+      "completed": true,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 11,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 28,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 40,
+      "tokens": 510131,
+      "revisions": 7,
+      "model_wait_seconds": 527.806,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "complete",
+    "seconds": 528.91
+  },
+  {
+    "id": "case.08",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "不见的风铃",
+    "character": "大马猴",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 31,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 35,
+      "tokens": 416839,
+      "revisions": 6,
+      "model_wait_seconds": 370.795,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 371.676
+  },
+  {
+    "id": "case.09",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "湖畔的脚印",
+    "character": "二狗",
+    "new_theme": true,
+    "status": "failed",
+    "error": "page text outside age band",
+    "seconds": 281.076
+  },
+  {
+    "id": "case.10",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "树屋里的来信",
+    "character": "熊大",
+    "new_theme": true,
+    "status": "failed",
+    "error": "unknown condition key",
+    "seconds": 183.803
+  },
+  {
+    "id": "case.11",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "拯救行动",
+    "character": "熊二",
+    "new_theme": false,
+    "result": {
+      "completed": true,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 11,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 24,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 35,
+      "tokens": 388658,
+      "revisions": 5,
+      "model_wait_seconds": 369.369,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "complete",
+    "seconds": 370.241
+  },
+  {
+    "id": "case.12",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "友谊考验",
+    "character": "光头强",
+    "new_theme": false,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 28,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 45,
+      "tokens": 604668,
+      "revisions": 11,
+      "model_wait_seconds": 485.346,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 486.625
+  },
+  {
+    "id": "case.13",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "吉吉的反向指挥牌",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 30,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 37,
+      "tokens": 445843,
+      "revisions": 6,
+      "model_wait_seconds": 371.808,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 372.826
+  },
+  {
+    "id": "case.14",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "光头强的错位野餐",
+    "character": "毛毛",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 31,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 35,
+      "tokens": 441630,
+      "revisions": 5,
+      "model_wait_seconds": 329.606,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 330.573
+  },
+  {
+    "id": "case.15",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "集市上的同名礼物",
+    "character": "赵琳",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 30,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 40,
+      "tokens": 466008,
+      "revisions": 7,
+      "model_wait_seconds": 370.174,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 371.259
+  },
+  {
+    "id": "case.16",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "拯救行动",
+    "character": "天才威",
+    "new_theme": false,
+    "status": "failed",
+    "error": "generation unavailable; confirmed state preserved",
+    "seconds": 24.998
+  },
+  {
+    "id": "case.17",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "友谊考验",
+    "character": "大马猴",
+    "new_theme": false,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 30,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 48,
+      "tokens": 622201,
+      "revisions": 13,
+      "model_wait_seconds": 537.337,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 538.538
+  },
+  {
+    "id": "case.18",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "吉吉的反向指挥牌",
+    "character": "二狗",
+    "new_theme": true,
+    "status": "failed",
+    "error": "item not owned",
+    "seconds": 297.842
+  },
+  {
+    "id": "case.19",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "光头强的错位野餐",
+    "character": "熊大",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 12,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 30,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 45,
+      "tokens": 622353,
+      "revisions": 9,
+      "model_wait_seconds": 438.565,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 439.8
+  },
+  {
+    "id": "case.20",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "集市上的同名礼物",
+    "character": "熊二",
+    "new_theme": true,
+    "status": "failed",
+    "error": "page text outside age band",
+    "seconds": 348.607
+  },
+  {
+    "id": "case.21",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "森林探险",
+    "character": "光头强",
+    "new_theme": false,
+    "status": "failed",
+    "error": "craft ingredients missing",
+    "seconds": 544.018
+  },
+  {
+    "id": "case.22",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "寻宝之旅",
+    "character": "吉吉国王",
+    "new_theme": false,
+    "status": "failed",
+    "error": "item inaccessible",
+    "seconds": 403.032
+  },
+  {
+    "id": "case.23",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "小木桥修理队",
+    "character": "毛毛",
+    "new_theme": true,
+    "status": "failed",
+    "error": "page text outside age band",
+    "seconds": 324.296
+  },
+  {
+    "id": "case.24",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "会转弯的风筝",
+    "character": "赵琳",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 12,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 29,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 35,
+      "tokens": 409580,
+      "revisions": 5,
+      "model_wait_seconds": 350.961,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 351.841
+  },
+  {
+    "id": "case.25",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "雨天的移动书架",
+    "character": "天才威",
+    "new_theme": true,
+    "status": "failed",
+    "error": "page text outside age band",
+    "seconds": 499.063
+  },
+  {
+    "id": "case.26",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "森林探险",
+    "character": "大马猴",
+    "new_theme": false,
+    "status": "failed",
+    "error": "craft ingredients missing",
+    "seconds": 284.519
+  },
+  {
+    "id": "case.27",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "寻宝之旅",
+    "character": "二狗",
+    "new_theme": false,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 30,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 41,
+      "tokens": 528004,
+      "revisions": 8,
+      "model_wait_seconds": 448.34,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 449.516
+  },
+  {
+    "id": "case.28",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "小木桥修理队",
+    "character": "熊大",
+    "new_theme": true,
+    "result": {
+      "completed": false,
+      "interaction_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "widget_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "action_types": [
+        "dialogue",
+        "evidence",
+        "items",
+        "observe"
+      ],
+      "callback_pages": 13,
+      "ledger_valid": true,
+      "page_snapshots_valid": true,
+      "counterfactual_actions": 29,
+      "counterfactuals_valid": true,
+      "human_checked": false,
+      "critical_contradictions": null,
+      "omitted_tasks": null,
+      "image_object_conflicts": null,
+      "calls": 39,
+      "tokens": 491724,
+      "revisions": 8,
+      "model_wait_seconds": 383.684,
+      "cost_usd": null,
+      "cost_basis": [
+        "coding_plan_charge_unknown"
+      ]
+    },
+    "status": "continued",
+    "seconds": 384.73
+  },
+  {
+    "id": "case.29",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "会转弯的风筝",
+    "character": "熊二",
+    "new_theme": true,
+    "status": "failed",
+    "error": "hotspot object absent from illustration",
+    "seconds": 416.219
+  },
+  {
+    "id": "case.30",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "雨天的移动书架",
+    "character": "光头强",
+    "new_theme": true,
+    "status": "failed",
+    "error": "hotspot object absent from illustration",
+    "seconds": 243.505
+  },
+  {
+    "id": "case.31",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "拯救行动",
+    "character": "吉吉国王",
+    "new_theme": false,
+    "status": "failed",
+    "error": "item inaccessible",
+    "seconds": 378.748
+  },
+  {
+    "id": "case.32",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "友谊考验",
+    "character": "毛毛",
+    "new_theme": false,
+    "status": "failed",
+    "error": "item not owned",
+    "seconds": 282.57
+  }
+]

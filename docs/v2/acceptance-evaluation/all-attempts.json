@@ -1,0 +1,4226 @@
+[
+  {
+    "id": "case.01",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "森林探险",
+    "character": "熊大",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "f5d9d1a6e33240ffb550f739200a56b2",
+        "creation_key": "evaluation-case.01",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 38,
+          "tokens": 487403,
+          "known_tokens": 487403,
+          "unknown_usage_calls": 0,
+          "revisions": 10,
+          "model_wait_seconds": 313.722,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.02",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "寻宝之旅",
+    "character": "熊二",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "92995d04c8d14981b78a2b7a18104068",
+        "creation_key": "evaluation-case.02",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 38,
+          "tokens": 489142,
+          "known_tokens": 489142,
+          "unknown_usage_calls": 0,
+          "revisions": 6,
+          "model_wait_seconds": 342.102,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.03",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "不见的风铃",
+    "character": "光头强",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "4202fbbfcc3c473493bccb9dc52b933b",
+        "creation_key": "evaluation-case.03",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 43,
+          "tokens": 550814,
+          "known_tokens": 550814,
+          "unknown_usage_calls": 0,
+          "revisions": 11,
+          "model_wait_seconds": 396.061,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.04",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "湖畔的脚印",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "9c9df121de6f44a5913acfec175b05e0",
+        "creation_key": "evaluation-case.04",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 43,
+          "tokens": 596836,
+          "known_tokens": 596836,
+          "unknown_usage_calls": 0,
+          "revisions": 11,
+          "model_wait_seconds": 964.18,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.05",
+    "arc": "mystery",
+    "age": "6-8",
+    "theme": "树屋里的来信",
+    "character": "毛毛",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "2983580253de4097b8efe9264893e9e6",
+        "creation_key": "evaluation-case.05",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 11,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 48,
+          "tokens": 706913,
+          "known_tokens": 706913,
+          "unknown_usage_calls": 0,
+          "revisions": 14,
+          "model_wait_seconds": 1284.054,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "6b79d0e886054acb8bdc5b035d61a136",
+        "creation_key": "evaluation-case.05-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 41,
+          "tokens": null,
+          "known_tokens": 558487,
+          "unknown_usage_calls": 3,
+          "revisions": 9,
+          "model_wait_seconds": 730.997,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.06",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "森林探险",
+    "character": "赵琳",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "aee6d525edf449bba4df8d2ec8b4e7b0",
+        "creation_key": "evaluation-case.06",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 30,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 36,
+          "tokens": 465407,
+          "known_tokens": 465407,
+          "unknown_usage_calls": 0,
+          "revisions": 6,
+          "model_wait_seconds": 313.603,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.07",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "寻宝之旅",
+    "character": "天才威",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "f70af0ad8b724007af07e115512e5250",
+        "creation_key": "evaluation-case.07",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 40,
+          "tokens": 550708,
+          "known_tokens": 550708,
+          "unknown_usage_calls": 0,
+          "revisions": 9,
+          "model_wait_seconds": 380.47,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.08",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "不见的风铃",
+    "character": "大马猴",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "68df0ab3ea194123b1cf9a3cdb37167e",
+        "creation_key": "evaluation-case.08",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 30,
+          "tokens": 366880,
+          "known_tokens": 366880,
+          "unknown_usage_calls": 0,
+          "revisions": 2,
+          "model_wait_seconds": 265.626,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.09",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "湖畔的脚印",
+    "character": "二狗",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "4622eb4a338f4a348f02be44771b25b2",
+        "creation_key": "evaluation-case.09",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 38,
+          "tokens": 500316,
+          "known_tokens": 500316,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 364.267,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.10",
+    "arc": "mystery",
+    "age": "9-12",
+    "theme": "树屋里的来信",
+    "character": "熊大",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "b6e73c8a26ec4357ba39fbb4eb25333f",
+        "creation_key": "evaluation-case.10",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": 513693,
+          "known_tokens": 513693,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 358.966,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.11",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "拯救行动",
+    "character": "熊二",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "42f056e42c774d21887dcaf06abdd68d",
+        "creation_key": "evaluation-case.11",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 43,
+          "tokens": 522169,
+          "known_tokens": 522169,
+          "unknown_usage_calls": 0,
+          "revisions": 9,
+          "model_wait_seconds": 390.473,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.12",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "友谊考验",
+    "character": "光头强",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "4c00738c0d214756a4ebe496185fc195",
+        "creation_key": "evaluation-case.12",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 37,
+          "tokens": 475532,
+          "known_tokens": 475532,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 319.687,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.13",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "吉吉的反向指挥牌",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "a9a8618ef31c4c89a4b1dc41df9951db",
+        "creation_key": "evaluation-case.13",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 44,
+          "tokens": 582479,
+          "known_tokens": 582479,
+          "unknown_usage_calls": 0,
+          "revisions": 10,
+          "model_wait_seconds": 738.337,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.14",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "光头强的错位野餐",
+    "character": "毛毛",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "c75fe1a61434470f95076cffe08f1b94",
+        "creation_key": "evaluation-case.14",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 46,
+          "tokens": 708058,
+          "known_tokens": 708058,
+          "unknown_usage_calls": 0,
+          "revisions": 11,
+          "model_wait_seconds": 1022.411,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "5ea9271afe16416bbaa91ba06214be3f",
+        "creation_key": "evaluation-case.14-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 33,
+          "tokens": null,
+          "known_tokens": 407867,
+          "unknown_usage_calls": 1,
+          "revisions": 5,
+          "model_wait_seconds": 638.44,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.15",
+    "arc": "comedy",
+    "age": "6-8",
+    "theme": "集市上的同名礼物",
+    "character": "赵琳",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "32d7f5607b9342bd91d3c927700cc7f7",
+        "creation_key": "evaluation-case.15",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 31,
+          "tokens": 380247,
+          "known_tokens": 380247,
+          "unknown_usage_calls": 0,
+          "revisions": 3,
+          "model_wait_seconds": 280.345,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.16",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "拯救行动",
+    "character": "天才威",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "05d0ddfe3ede4098b607de0c4943e4c5",
+        "creation_key": "evaluation-case.16",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 38,
+          "tokens": 543217,
+          "known_tokens": 543217,
+          "unknown_usage_calls": 0,
+          "revisions": 6,
+          "model_wait_seconds": 436.193,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.17",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "友谊考验",
+    "character": "大马猴",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "68220ced95d94cd7bdc5e5d577d79bfc",
+        "creation_key": "evaluation-case.17",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 48,
+          "tokens": 688756,
+          "known_tokens": 688756,
+          "unknown_usage_calls": 0,
+          "revisions": 11,
+          "model_wait_seconds": 537.0,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.18",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "吉吉的反向指挥牌",
+    "character": "二狗",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "258904b444e04b1c9b3097662258c278",
+        "creation_key": "evaluation-case.18",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 44,
+          "tokens": 702200,
+          "known_tokens": 702200,
+          "unknown_usage_calls": 0,
+          "revisions": 11,
+          "model_wait_seconds": 867.819,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "3f8f090762574c5499b1e341f534076f",
+        "creation_key": "evaluation-case.18-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 32,
+          "tokens": 388314,
+          "known_tokens": 388314,
+          "unknown_usage_calls": 0,
+          "revisions": 4,
+          "model_wait_seconds": 480.469,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.19",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "光头强的错位野餐",
+    "character": "熊大",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "08c8333b7ec647b790fc9c298dffc866",
+        "creation_key": "evaluation-case.19",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 32,
+          "tokens": 416425,
+          "known_tokens": 416425,
+          "unknown_usage_calls": 0,
+          "revisions": 5,
+          "model_wait_seconds": 301.274,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.20",
+    "arc": "comedy",
+    "age": "9-12",
+    "theme": "集市上的同名礼物",
+    "character": "熊二",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "0066dcdd3a484a45bcfe1a9da48ad856",
+        "creation_key": "evaluation-case.20",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 30,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": 513427,
+          "known_tokens": 513427,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 374.869,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.21",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "森林探险",
+    "character": "光头强",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "8f7748da85e24a49853dc07a87746b4f",
+        "creation_key": "evaluation-case.21",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 47,
+          "tokens": 724266,
+          "known_tokens": 724266,
+          "unknown_usage_calls": 0,
+          "revisions": 11,
+          "model_wait_seconds": 1199.114,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "134fae4c62bf4dd0b4cf87bcc4cc0656",
+        "creation_key": "evaluation-case.21-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 42,
+          "tokens": null,
+          "known_tokens": 569078,
+          "unknown_usage_calls": 3,
+          "revisions": 9,
+          "model_wait_seconds": 981.415,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.22",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "寻宝之旅",
+    "character": "吉吉国王",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "c590d71f8566467f85b740f3e7a1289f",
+        "creation_key": "evaluation-case.22",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 33,
+          "tokens": 406349,
+          "known_tokens": 406349,
+          "unknown_usage_calls": 0,
+          "revisions": 4,
+          "model_wait_seconds": 315.008,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.23",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "小木桥修理队",
+    "character": "毛毛",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "764d41299afb409fa822615229d90e52",
+        "creation_key": "evaluation-case.23",
+        "phase": "complete",
+        "status": "continued",
+        "confirmed_pages": 14,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 44,
+          "tokens": 596629,
+          "known_tokens": 596629,
+          "unknown_usage_calls": 0,
+          "revisions": 6,
+          "model_wait_seconds": 425.111,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "21838aff835f498c832dd7e8880514e4",
+        "creation_key": "evaluation-case.23-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 43,
+          "tokens": null,
+          "known_tokens": 529619,
+          "unknown_usage_calls": 8,
+          "revisions": 8,
+          "model_wait_seconds": 670.56,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.24",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "会转弯的风筝",
+    "character": "赵琳",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "3687ad2a89b243d8a7a1c6986295e3de",
+        "creation_key": "evaluation-case.24",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 40,
+          "tokens": 491850,
+          "known_tokens": 491850,
+          "unknown_usage_calls": 0,
+          "revisions": 8,
+          "model_wait_seconds": 394.745,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.25",
+    "arc": "craft",
+    "age": "6-8",
+    "theme": "雨天的移动书架",
+    "character": "天才威",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "074fe3070835419f8778f5f2f7525ca2",
+        "creation_key": "evaluation-case.25",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 36,
+          "tokens": 482196,
+          "known_tokens": 482196,
+          "unknown_usage_calls": 0,
+          "revisions": 5,
+          "model_wait_seconds": 355.24,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.26",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "森林探险",
+    "character": "大马猴",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "9c70f5e4b6984dceb004df375a71350e",
+        "creation_key": "evaluation-case.26",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 10,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 22,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 45,
+          "tokens": null,
+          "known_tokens": 707828,
+          "unknown_usage_calls": 3,
+          "revisions": 14,
+          "model_wait_seconds": 2193.679,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "15fb4b97c13241bd857d940cdeec5437",
+        "creation_key": "evaluation-case.26-attempt-2",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 10,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 23,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 52,
+          "tokens": null,
+          "known_tokens": 642960,
+          "unknown_usage_calls": 1,
+          "revisions": 14,
+          "model_wait_seconds": 883.704,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "7d0f0849540c42ae927764a961819387",
+        "creation_key": "evaluation-case.26-attempt-3",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 43,
+          "tokens": null,
+          "known_tokens": 469645,
+          "unknown_usage_calls": 1,
+          "revisions": 7,
+          "model_wait_seconds": 621.228,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.27",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "寻宝之旅",
+    "character": "二狗",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "fb231bd0a6d5438a888f6dc659c4a758",
+        "creation_key": "evaluation-case.27",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 9,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 8,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 22,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 53,
+          "tokens": null,
+          "known_tokens": 701442,
+          "unknown_usage_calls": 5,
+          "revisions": 16,
+          "model_wait_seconds": 1120.859,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "b0092848153743869a09c56057186a27",
+        "creation_key": "evaluation-case.27-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 30,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 34,
+          "tokens": null,
+          "known_tokens": 428226,
+          "unknown_usage_calls": 1,
+          "revisions": 4,
+          "model_wait_seconds": 373.63,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.28",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "小木桥修理队",
+    "character": "熊大",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "a89f98f2bb1b4b96ae516964edd19c01",
+        "creation_key": "evaluation-case.28",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 9,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 8,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 21,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 52,
+          "tokens": null,
+          "known_tokens": 712403,
+          "unknown_usage_calls": 4,
+          "revisions": 18,
+          "model_wait_seconds": 1806.99,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "2575c522746e4ec0a015b8ba66783339",
+        "creation_key": "evaluation-case.28-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 31,
+          "tokens": null,
+          "known_tokens": 365834,
+          "unknown_usage_calls": 1,
+          "revisions": 3,
+          "model_wait_seconds": 585.743,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.29",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "会转弯的风筝",
+    "character": "熊二",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "aa59a67db23b4f2dbf106b3c4dfc2f1e",
+        "creation_key": "evaluation-case.29",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": 552635,
+          "known_tokens": 552635,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 997.144,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.30",
+    "arc": "craft",
+    "age": "9-12",
+    "theme": "雨天的移动书架",
+    "character": "光头强",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "0682c19f80d7479cb422fd99ee4a87c4",
+        "creation_key": "evaluation-case.30",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 9,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 8,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 44,
+          "tokens": null,
+          "known_tokens": 701656,
+          "unknown_usage_calls": 2,
+          "revisions": 14,
+          "model_wait_seconds": 1601.704,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "93b277e14d754da7937c2afb3e4786c3",
+        "creation_key": "evaluation-case.30-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 38,
+          "tokens": null,
+          "known_tokens": 471340,
+          "unknown_usage_calls": 1,
+          "revisions": 7,
+          "model_wait_seconds": 574.905,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.31",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "拯救行动",
+    "character": "吉吉国王",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "3f85f4bf52ec42b595d0d5f2e8b17f66",
+        "creation_key": "evaluation-case.31",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 45,
+          "tokens": 596640,
+          "known_tokens": 596640,
+          "unknown_usage_calls": 0,
+          "revisions": 8,
+          "model_wait_seconds": 402.007,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.32",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "友谊考验",
+    "character": "毛毛",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "57c25834d5f14bccaf091e7a7c2b5a6b",
+        "creation_key": "evaluation-case.32",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "evidence",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 38,
+          "tokens": 458921,
+          "known_tokens": 458921,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 363.188,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.33",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "竹林的回声地图",
+    "character": "赵琳",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "555948136c194cb2b10978ca051d2538",
+        "creation_key": "evaluation-case.33",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 45,
+          "tokens": null,
+          "known_tokens": 645873,
+          "unknown_usage_calls": 3,
+          "revisions": 10,
+          "model_wait_seconds": 877.198,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.34",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "萤火虫营地",
+    "character": "天才威",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "9a5ff3217f5145518fe3de6ba9c1ce53",
+        "creation_key": "evaluation-case.34",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 34,
+          "tokens": 405536,
+          "known_tokens": 405536,
+          "unknown_usage_calls": 0,
+          "revisions": 6,
+          "model_wait_seconds": 320.09,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.35",
+    "arc": "journey",
+    "age": "6-8",
+    "theme": "果园里的新路",
+    "character": "大马猴",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "154513e95e5049f98ff5e58be3b1e11f",
+        "creation_key": "evaluation-case.35",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 51,
+          "tokens": null,
+          "known_tokens": 620352,
+          "unknown_usage_calls": 3,
+          "revisions": 13,
+          "model_wait_seconds": 1082.817,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.36",
+    "arc": "journey",
+    "age": "9-12",
+    "theme": "拯救行动",
+    "character": "二狗",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "18c0250226904090ba1a5e22b439730d",
+        "creation_key": "evaluation-case.36",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 35,
+          "tokens": 431114,
+          "known_tokens": 431114,
+          "unknown_usage_calls": 0,
+          "revisions": 5,
+          "model_wait_seconds": 342.908,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.37",
+    "arc": "journey",
+    "age": "9-12",
+    "theme": "友谊考验",
+    "character": "熊大",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "fcde47d39a544eaebd78107c7b8d7c8e",
+        "creation_key": "evaluation-case.37",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 11,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 23,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 47,
+          "tokens": 704891,
+          "known_tokens": 704891,
+          "unknown_usage_calls": 0,
+          "revisions": 12,
+          "model_wait_seconds": 1098.028,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "4bca5aa907bf4dd88416eee0cf0f5f8d",
+        "creation_key": "evaluation-case.37-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 36,
+          "tokens": null,
+          "known_tokens": 364972,
+          "unknown_usage_calls": 6,
+          "revisions": 2,
+          "model_wait_seconds": 389.689,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.38",
+    "arc": "journey",
+    "age": "9-12",
+    "theme": "竹林的回声地图",
+    "character": "熊二",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "48946f59cee843c0a4e78acbafb96029",
+        "creation_key": "evaluation-case.38",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": 486461,
+          "known_tokens": 486461,
+          "unknown_usage_calls": 0,
+          "revisions": 8,
+          "model_wait_seconds": 389.712,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.39",
+    "arc": "journey",
+    "age": "9-12",
+    "theme": "萤火虫营地",
+    "character": "光头强",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "edf9fb72b1df4085a102910fda7fcef7",
+        "creation_key": "evaluation-case.39",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 42,
+          "tokens": 598852,
+          "known_tokens": 598852,
+          "unknown_usage_calls": 0,
+          "revisions": 10,
+          "model_wait_seconds": 951.696,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.40",
+    "arc": "journey",
+    "age": "9-12",
+    "theme": "果园里的新路",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "37419febe03f4abb871dc64765287b90",
+        "creation_key": "evaluation-case.40",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 44,
+          "tokens": 567494,
+          "known_tokens": 567494,
+          "unknown_usage_calls": 0,
+          "revisions": 9,
+          "model_wait_seconds": 477.662,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.41",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "森林探险",
+    "character": "毛毛",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "be2e4296f3b04136aba55fd5e619ba60",
+        "creation_key": "evaluation-case.41",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 25,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 30,
+          "tokens": 386804,
+          "known_tokens": 386804,
+          "unknown_usage_calls": 0,
+          "revisions": 3,
+          "model_wait_seconds": 238.957,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.42",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "寻宝之旅",
+    "character": "赵琳",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "ac7c024f59544d64ac9e7624d484bd3a",
+        "creation_key": "evaluation-case.42",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 10,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 8,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 21,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 50,
+          "tokens": 711493,
+          "known_tokens": 711493,
+          "unknown_usage_calls": 0,
+          "revisions": 14,
+          "model_wait_seconds": 1075.74,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "acd3d0c178974dcea525612470d475c6",
+        "creation_key": "evaluation-case.42-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 49,
+          "tokens": null,
+          "known_tokens": 540926,
+          "unknown_usage_calls": 4,
+          "revisions": 10,
+          "model_wait_seconds": 675.101,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.43",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "树屋的使用约定",
+    "character": "天才威",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "965b19e9308c45988d27339645daa835",
+        "creation_key": "evaluation-case.43",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 36,
+          "tokens": 460580,
+          "known_tokens": 460580,
+          "unknown_usage_calls": 0,
+          "revisions": 6,
+          "model_wait_seconds": 281.614,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.44",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "谁来守护幼苗",
+    "character": "大马猴",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "bfb9417285244a32929f33ffbd722e80",
+        "creation_key": "evaluation-case.44",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 37,
+          "tokens": 471274,
+          "known_tokens": 471274,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 285.711,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.45",
+    "arc": "negotiation",
+    "age": "6-8",
+    "theme": "伙伴们的野餐分工",
+    "character": "二狗",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "6c1e48395fff481cab3ef48e7810183b",
+        "creation_key": "evaluation-case.45",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 31,
+          "tokens": 418346,
+          "known_tokens": 418346,
+          "unknown_usage_calls": 0,
+          "revisions": 4,
+          "model_wait_seconds": 273.349,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.46",
+    "arc": "negotiation",
+    "age": "9-12",
+    "theme": "森林探险",
+    "character": "熊大",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "50182ab3c0d94d7f8e7247062b4c003a",
+        "creation_key": "evaluation-case.46",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 40,
+          "tokens": 590638,
+          "known_tokens": 590638,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 437.084,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.47",
+    "arc": "negotiation",
+    "age": "9-12",
+    "theme": "寻宝之旅",
+    "character": "熊二",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "f467c939e1ab49409ed603dd58ad8a2f",
+        "creation_key": "evaluation-case.47",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 9,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 7,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 19,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 45,
+          "tokens": null,
+          "known_tokens": 698553,
+          "unknown_usage_calls": 1,
+          "revisions": 12,
+          "model_wait_seconds": 1298.474,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "646ca61b204d4b9395c16366a6b5643d",
+        "creation_key": "evaluation-case.47-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 32,
+          "tokens": 392170,
+          "known_tokens": 392170,
+          "unknown_usage_calls": 0,
+          "revisions": 3,
+          "model_wait_seconds": 553.244,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.48",
+    "arc": "negotiation",
+    "age": "9-12",
+    "theme": "树屋的使用约定",
+    "character": "光头强",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "948b9c725ba24d4fb9840111aef5514c",
+        "creation_key": "evaluation-case.48",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 10,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 21,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 48,
+          "tokens": null,
+          "known_tokens": 663359,
+          "unknown_usage_calls": 1,
+          "revisions": 14,
+          "model_wait_seconds": 954.422,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "2f8ca7d154dc4b71a3448642767af389",
+        "creation_key": "evaluation-case.48-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": null,
+          "known_tokens": 464039,
+          "unknown_usage_calls": 3,
+          "revisions": 7,
+          "model_wait_seconds": 484.247,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.49",
+    "arc": "negotiation",
+    "age": "9-12",
+    "theme": "谁来守护幼苗",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "9059f284728f4a6d939f9349f4970422",
+        "creation_key": "evaluation-case.49",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 9,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 7,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 47,
+          "tokens": null,
+          "known_tokens": 668399,
+          "unknown_usage_calls": 4,
+          "revisions": 15,
+          "model_wait_seconds": 959.341,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "3ee68566c78042f7917e6e641c604ad7",
+        "creation_key": "evaluation-case.49-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": null,
+          "known_tokens": 475631,
+          "unknown_usage_calls": 1,
+          "revisions": 6,
+          "model_wait_seconds": 489.918,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.50",
+    "arc": "negotiation",
+    "age": "9-12",
+    "theme": "伙伴们的野餐分工",
+    "character": "毛毛",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "0d5df3db21464ff9a933a38e70250ae3",
+        "creation_key": "evaluation-case.50",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 47,
+          "tokens": null,
+          "known_tokens": 446374,
+          "unknown_usage_calls": 10,
+          "revisions": 10,
+          "model_wait_seconds": 549.318,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.51",
+    "arc": "festival",
+    "age": "6-8",
+    "theme": "拯救行动",
+    "character": "赵琳",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "b489566643f342909d22f8e34c6e6f53",
+        "creation_key": "evaluation-case.51",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 41,
+          "tokens": null,
+          "known_tokens": 405283,
+          "unknown_usage_calls": 7,
+          "revisions": 6,
+          "model_wait_seconds": 466.262,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.52",
+    "arc": "festival",
+    "age": "6-8",
+    "theme": "友谊考验",
+    "character": "天才威",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "6cc946f17a164a00bc3525b4285aac54",
+        "creation_key": "evaluation-case.52",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 44,
+          "tokens": null,
+          "known_tokens": 415604,
+          "unknown_usage_calls": 8,
+          "revisions": 7,
+          "model_wait_seconds": 434.509,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.53",
+    "arc": "festival",
+    "age": "6-8",
+    "theme": "森林音乐会",
+    "character": "大马猴",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "f467e0e931ef4afdb8208c6fc523cc97",
+        "creation_key": "evaluation-case.53",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 28,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 52,
+          "tokens": null,
+          "known_tokens": 530363,
+          "unknown_usage_calls": 10,
+          "revisions": 9,
+          "model_wait_seconds": 482.183,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.54",
+    "arc": "festival",
+    "age": "6-8",
+    "theme": "湖边灯笼节",
+    "character": "二狗",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "f93966e66152458995cf09066c175235",
+        "creation_key": "evaluation-case.54",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "observe"
+          ],
+          "callback_pages": 10,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 32,
+          "tokens": null,
+          "known_tokens": 398470,
+          "unknown_usage_calls": 1,
+          "revisions": 5,
+          "model_wait_seconds": 372.031,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.55",
+    "arc": "festival",
+    "age": "6-8",
+    "theme": "运动场的友谊赛",
+    "character": "熊大",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "91b9d4a109b3425d8276f6f2984c337b",
+        "creation_key": "evaluation-case.55",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 11,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "observe"
+          ],
+          "callback_pages": 9,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 62,
+          "tokens": null,
+          "known_tokens": 711053,
+          "unknown_usage_calls": 5,
+          "revisions": 16,
+          "model_wait_seconds": 737.674,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown",
+            "unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "788151c34e924fd2b3223479ba81b5e9",
+        "creation_key": "evaluation-case.55-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 14,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 13,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 31,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 56,
+          "tokens": null,
+          "known_tokens": 662415,
+          "unknown_usage_calls": 1,
+          "revisions": 11,
+          "model_wait_seconds": 866.336,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.56",
+    "arc": "festival",
+    "age": "9-12",
+    "theme": "拯救行动",
+    "character": "熊二",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "8173ba5d37b947be84dd127c65384336",
+        "creation_key": "evaluation-case.56",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 26,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 62,
+          "tokens": null,
+          "known_tokens": 671767,
+          "unknown_usage_calls": 6,
+          "revisions": 12,
+          "model_wait_seconds": 1196.3,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.57",
+    "arc": "festival",
+    "age": "9-12",
+    "theme": "友谊考验",
+    "character": "光头强",
+    "new_theme": false,
+    "attempts": [
+      {
+        "story_id": "d1f17615466641a9b314e296306cacee",
+        "creation_key": "evaluation-case.57",
+        "phase": "complete",
+        "status": "active",
+        "confirmed_pages": 8,
+        "checks": {
+          "completed": false,
+          "interaction_types": [
+            "dialogue",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "observe"
+          ],
+          "callback_pages": 7,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 23,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 46,
+          "tokens": null,
+          "known_tokens": 586588,
+          "unknown_usage_calls": 6,
+          "revisions": 13,
+          "model_wait_seconds": 514.008,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      },
+      {
+        "story_id": "76ea89a53ae94ed28999d08157b8ae56",
+        "creation_key": "evaluation-case.57-attempt-2",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "evidence",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 24,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": 485358,
+          "known_tokens": 485358,
+          "unknown_usage_calls": 0,
+          "revisions": 7,
+          "model_wait_seconds": 453.738,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.58",
+    "arc": "festival",
+    "age": "9-12",
+    "theme": "森林音乐会",
+    "character": "吉吉国王",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "d309e4ac278f41baaab7826fd563d08a",
+        "creation_key": "evaluation-case.58",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 40,
+          "tokens": null,
+          "known_tokens": 402555,
+          "unknown_usage_calls": 6,
+          "revisions": 3,
+          "model_wait_seconds": 382.759,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.59",
+    "arc": "festival",
+    "age": "9-12",
+    "theme": "湖边灯笼节",
+    "character": "毛毛",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "dee87b1a49f44d69947bd1b67a074872",
+        "creation_key": "evaluation-case.59",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "allocation",
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 29,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 39,
+          "tokens": null,
+          "known_tokens": 519756,
+          "unknown_usage_calls": 3,
+          "revisions": 5,
+          "model_wait_seconds": 427.238,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case.60",
+    "arc": "festival",
+    "age": "9-12",
+    "theme": "运动场的友谊赛",
+    "character": "赵琳",
+    "new_theme": true,
+    "attempts": [
+      {
+        "story_id": "6627d1e8b1b548f1a8b1f911db775b3c",
+        "creation_key": "evaluation-case.60",
+        "phase": "complete",
+        "status": "complete",
+        "confirmed_pages": 12,
+        "checks": {
+          "completed": true,
+          "interaction_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "widget_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "action_types": [
+            "dialogue",
+            "items",
+            "observe"
+          ],
+          "callback_pages": 11,
+          "ledger_valid": true,
+          "page_snapshots_valid": true,
+          "counterfactual_actions": 27,
+          "counterfactuals_valid": true,
+          "human_checked": false,
+          "critical_contradictions": null,
+          "omitted_tasks": null,
+          "image_object_conflicts": null
+        },
+        "usage": {
+          "calls": 29,
+          "tokens": null,
+          "known_tokens": 381697,
+          "unknown_usage_calls": 1,
+          "revisions": 1,
+          "model_wait_seconds": 330.293,
+          "cost_usd": null,
+          "cost_basis": [
+            "coding_plan_charge_unknown"
+          ]
+        }
+      }
+    ]
+  }
+]

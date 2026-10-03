@@ -1,0 +1,32 @@
+{
+  "id": "key_03",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/tiancaiwei_calm.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_workshop.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_compass.png"
+  ],
+  "spec": {
+    "characters": [
+      "光头强",
+      "天才威"
+    ],
+    "scenes": [
+      "scene.workshop"
+    ],
+    "props": [
+      "prop.compass"
+    ],
+    "event_verbs": [
+      "use",
+      "combine"
+    ],
+    "conditions": [],
+    "situation": "cooperation",
+    "regions": [
+      "full"
+    ]
+  },
+  "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 天才威; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The two men lean over a workbench together, checking a pocket compass, one steadies it and the other points to its needle. Friendly concentration, no extra tools on the bench. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-833a68f5-4442-43f6-abee-025bc5b1ea33.png"
+}

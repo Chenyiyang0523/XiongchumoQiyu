@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "光头强",
+    "天才威"
+  ],
+  "scenes": [
+    "scene.workshop"
+  ],
+  "props": [
+    "prop.compass"
+  ],
+  "event_verbs": [
+    "use",
+    "combine"
+  ],
+  "conditions": [],
+  "situation": "cooperation",
+  "regions": [
+    "full"
+  ]
+}

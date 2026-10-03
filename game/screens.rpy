@@ -334,7 +334,10 @@ screen navigation():
 
         textbutton _("森林笔记") action ShowMenu("forest_notes")
 
+        textbutton _("我的绘本") action Function(renpy.call_in_new_context, "book_shelf")
+
         textbutton _("结局图鉴") action ShowMenu("ending_gallery")
+        textbutton _("绘本结局与勋章") action Show("book_collection")
 
         textbutton _("勋章墙") action ShowMenu("badge_gallery")
 

@@ -1,0 +1,21 @@
+{
+  "characters": [
+    "熊大",
+    "熊二"
+  ],
+  "scenes": [
+    "scene.bridge"
+  ],
+  "props": [
+    "prop.plank"
+  ],
+  "event_verbs": [
+    "use",
+    "combine"
+  ],
+  "conditions": [],
+  "situation": "cooperation",
+  "regions": [
+    "full"
+  ]
+}

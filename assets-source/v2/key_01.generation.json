@@ -1,0 +1,31 @@
+{
+  "id": "key_01",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/maomao_calm_clean.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/scene_bamboo.png",
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/prop_letter.png"
+  ],
+  "spec": {
+    "characters": [
+      "光头强",
+      "毛毛"
+    ],
+    "scenes": [
+      "scene.bamboo"
+    ],
+    "props": [
+      "prop.letter"
+    ],
+    "event_verbs": [
+      "observe"
+    ],
+    "conditions": [],
+    "situation": "discovery",
+    "regions": [
+      "full"
+    ]
+  },
+  "prompt": "Use case: illustration-story. Asset type: full-page children's picturebook illustration, wide 16:9 landscape. Reference image 1 is 光头强; reference image 2 is 毛毛; preserve both characters' exact identities, faces, fur or hair, clothing, accessories and body proportions. Reference image 3 sets the location and environment. Reference image 4 is the single key prop; keep its shape and colors. Scene: The man and small monkey discover a sealed blank envelope resting beside a bamboo root. Both look surprised and curious, gently pointing at the envelope without opening it. Exactly these two characters, no additional characters. Warm hand-painted cartoon book rendering, deep brown contours, expressive faces, soft golden forest light, gentle painterly texture, clear readable action and balanced composition. Show the entire two characters and key prop with comfortable margins and plenty of scenic depth. No text, letters, numbers, watermark, border, speech balloons or UI. Do not add story-relevant objects besides the specified prop.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ec9363f3-7ebd-4afa-ba35-11779e1c8e78.png"
+}

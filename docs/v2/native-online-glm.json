@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "assertions": 6,
+  "pages": 2,
+  "version": 2,
+  "mock": false,
+  "client_source_commit": "f534a2b7976109003c2d734e802e3be5352d8011",
+  "service_source_commit": "41b1dfc1b13329c2a53ca9dd3d79c5162fda0f1d",
+  "explicit_opening_retries": 0,
+  "explicit_action_retries": 0,
+  "book_sha256": "a44642ffc149b9d2e1570c9bcc862b9d9b31d7e21032bd66981488310cb674a6",
+  "prior_failures_retained": true,
+  "human_manual_play": false
+}

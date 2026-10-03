@@ -1,0 +1,15 @@
+{
+  "platform": "windows",
+  "environment": "Windows-2025Server-10.0.26100-SP0",
+  "architecture": "AMD64",
+  "installed_package": true,
+  "verified": false,
+  "mock": true,
+  "real_model": false,
+  "human_manual_play": false,
+  "source_commit": "c692f737974e2e64a901584714c9653e4765ae2c",
+  "evidence": "package-qa.txt",
+  "package_sha256": "f0fedd5960b16e3be7473b5f8c173d371fba4f1156e703c8334b1fdf541e54b7",
+  "package": "Xiongchumo_Qiyu_Build-pc.zip",
+  "failure": "package-qa.txt exited 1"
+}

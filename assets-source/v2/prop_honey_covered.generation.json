@@ -1,0 +1,9 @@
+{
+  "id": "prop_honey_covered",
+  "transparent": true,
+  "reference": [
+    "assets-source/v2/raw/prop_honey.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset type: transparent interactive picturebook prop, sibling revision. Edit target: the supplied honey jar. Change only the jar body so its contents cannot be seen: make the entire glass body softly opaque warm cream pottery with subtle tactile shading, preserving the same squat round silhouette, wooden lid, cord, green leaves and tiny carved honey ornament. No honey, liquid, bubbles or visible fill level anywhere. Keep the warm hand-drawn cartoon style, deep brown outlines, three-quarter angle, full object, generous margins and actual transparent alpha background. This general closed honey container must honestly fit both an empty container and a filled container; it makes no visual claim about the amount inside. No labels, letters, numbers, backdrop, floor, shadows outside the object, checkerboard or watermark.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-ce79830d-1765-40a9-be45-4a4fe8a6f4f0.png"
+}

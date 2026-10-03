@@ -1,0 +1,10 @@
+{
+  "id": "guangtouqiang_worried",
+  "character": "guangtouqiang",
+  "emotion": "worried",
+  "reference": [
+    "/Users/vvcc/Downloads/熊出没奇遇/熊出没奇遇/game/images/v2/guangtouqiang_calm_clean.png"
+  ],
+  "prompt": "Use case: identity-preserve. Create one full body transparent character sprite variant from the reference. Preserve EXACT character identity, costume, body proportions, fur/hair colors, headwear and warm hand drawn picturebook rendering from reference. Change only facial expression and pose to a concerned sympathetic expression with slightly furrowed brow, hands clasped. Emotion worried. Keep complete head, hands and feet fully inside canvas with ample transparent margins. Similar scale and three quarter front camera. Actual transparent alpha background, no environment or ground, no glow, no shadow, no labels, no text, no watermark. One character only.",
+  "source": "/Users/vvcc/.codex/generated_images/01a0fd37-4abb-7621-8749-e7870b118526/exec-2be1d111-cbcb-4022-98d2-e046ff8e2524.png"
+}

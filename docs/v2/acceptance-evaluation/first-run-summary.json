@@ -1,0 +1,15 @@
+{
+  "mode": "live",
+  "status": "technical_checks_incomplete",
+  "books_generated": 23,
+  "cases": 60,
+  "cases_attempted": 60,
+  "new_themes": 36,
+  "failed": 36,
+  "continued": 1,
+  "technical_corpus_passed": false,
+  "live_release_eligible": false,
+  "human_review_status": "pending",
+  "comparison_pairs_required": 20,
+  "platforms_verified": []
+}

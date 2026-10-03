@@ -1,0 +1,20 @@
+{
+  "characters": [
+    "光头强",
+    "熊二"
+  ],
+  "scenes": [
+    "scene.workshop"
+  ],
+  "props": [
+    "prop.kite"
+  ],
+  "event_verbs": [
+    "combine"
+  ],
+  "conditions": [],
+  "situation": "making",
+  "regions": [
+    "full"
+  ]
+}

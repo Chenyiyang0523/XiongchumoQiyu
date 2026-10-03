@@ -2,7 +2,7 @@
 set -eu
 project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 sdk_root=${XCMQY_RENPY_SDK_ROOT:-$project_root/.local/toolchains/renpy-8.5.2-sdk}
-output_root=${XCMQY_RELEASE_OUTPUT:-$project_root/dist/1.1.0-rc.1}
+output_root=${XCMQY_RELEASE_OUTPUT:-${1:-$project_root/dist/2.0.0-alpha.1}}
 python3 "$project_root/tools/check_project.py"
 temp_root=$(mktemp -d "${TMPDIR:-/tmp}/xcmqy-build.XXXXXX")
 trap 'chmod -R u+w "$temp_root"; rm -rf -- "$temp_root"' EXIT INT TERM
