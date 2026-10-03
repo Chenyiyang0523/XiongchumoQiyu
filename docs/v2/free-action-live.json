@@ -1,0 +1,364 @@
+{
+  "mode": "live",
+  "mock": false,
+  "all_passed": true,
+  "generated_books_counted": 0,
+  "method": "Independent restored confirmed prefixes of the real GLM example; fresh GLM interpretation and semantic review, then canonical replay.",
+  "cases": [
+    {
+      "id": "negation",
+      "input": "先不去山洞，也不拿蜂蜜罐。我想留在树洞旁看看地上的脚印。",
+      "source": "restored confirmed opening of a real GLM book",
+      "mock": false,
+      "phase": "complete",
+      "error": null,
+      "usage": {
+        "calls": 3,
+        "tokens": 33743,
+        "known_tokens": 33743,
+        "unknown_usage_calls": 0,
+        "revisions": 1,
+        "model_wait_seconds": 67.634,
+        "cost_usd": null,
+        "cost_basis": [
+          "coding_plan_charge_unknown"
+        ]
+      },
+      "clarifications": [],
+      "passed": true,
+      "events": [
+        {
+          "action_id": "a_examine_footprints",
+          "cause": [
+            "page:page_1"
+          ],
+          "description": "熊大蹲在树洞旁，盯着松果边的小脚印：五个脚趾，脚印旁还有一条长尾巴扫过的痕迹。他数了数，发现脚印是两双，一大一小，像是两只猴子一前一后走过。",
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "footprints_small",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "tail_mark",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "prints_two_people",
+              "value": true
+            }
+          ],
+          "id": "event.2.0",
+          "interaction_kind": "observe",
+          "reason": "",
+          "schema_version": 2,
+          "trait_use": {
+            "aspect": "strength",
+            "character": "player",
+            "explanation": "熊大聪明稳重，观察入微，从脚印形状判断出是小猴子留下的。"
+          },
+          "turn": 2,
+          "verb": "observe"
+        }
+      ],
+      "ledger_valid": true
+    },
+    {
+      "id": "creative_use",
+      "input": "不追脚印。我想用背包里的小灯笼照亮树洞边的泥地，看看暗处有没有留下痕迹。",
+      "source": "restored confirmed opening of a real GLM book",
+      "mock": false,
+      "phase": "complete",
+      "error": null,
+      "usage": {
+        "calls": 2,
+        "tokens": 17616,
+        "known_tokens": 17616,
+        "unknown_usage_calls": 0,
+        "revisions": 0,
+        "model_wait_seconds": 13.803,
+        "cost_usd": null,
+        "cost_basis": [
+          "coding_plan_charge_unknown"
+        ]
+      },
+      "clarifications": [],
+      "passed": true,
+      "events": [
+        {
+          "action_id": "a_lantern_mud",
+          "cause": [
+            "page:page_1"
+          ],
+          "description": "熊大举起小灯笼，光圈照进树洞旁的阴影里。泥地上露出小小的一串脚印，五个脚趾，还有长尾巴扫过的痕迹，像是猴子留下的！",
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "footprints_small",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "tail_mark",
+              "value": true
+            }
+          ],
+          "id": "event.2.0",
+          "interaction_kind": "items",
+          "reason": "",
+          "schema_version": 2,
+          "trait_use": {
+            "aspect": "strength",
+            "character": "player",
+            "explanation": "熊大不急着追脚印，先用灯笼照亮暗处细心查证，观察推理的特长让他发现了藏起来的痕迹。"
+          },
+          "turn": 2,
+          "verb": "use"
+        }
+      ],
+      "ledger_valid": true
+    },
+    {
+      "id": "ambiguous",
+      "input": "把它给他。",
+      "source": "restored confirmed opening of a real GLM book",
+      "mock": false,
+      "phase": "complete",
+      "error": null,
+      "usage": {
+        "calls": 3,
+        "tokens": 29436,
+        "known_tokens": 29436,
+        "unknown_usage_calls": 0,
+        "revisions": 1,
+        "model_wait_seconds": 56.708,
+        "cost_usd": null,
+        "cost_basis": [
+          "coding_plan_charge_unknown"
+        ]
+      },
+      "clarifications": [
+        {
+          "alternatives": [],
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "feather_found",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "transfer",
+              "target": "item.feather",
+              "value": "player"
+            },
+            {
+              "actor": "player",
+              "op": "transfer",
+              "target": "item.feather",
+              "value": "npc.xionger"
+            }
+          ],
+          "feedback": "熊大拾起羽毛递给熊二。熊二凑近一瞧：“好家伙，这毛又硬又亮，不是小鸟身上的，倒像是谁帽子上的装饰！”",
+          "hotspot": null,
+          "id": "cl_give_feather",
+          "inputs": [],
+          "label": "捡起那根奇怪的羽毛，递给熊二看",
+          "prerequisites": [],
+          "target": "item.feather",
+          "trait_use": {
+            "aspect": "strength",
+            "character": "player",
+            "explanation": "熊大善于观察，拾起羽毛就注意到它又硬又亮，和小鸟的绒毛不一样。"
+          },
+          "verb": "observe"
+        },
+        {
+          "alternatives": [],
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "footprints_small",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "tail_mark",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "transfer",
+              "target": "item.pinecone",
+              "value": "player"
+            },
+            {
+              "actor": "player",
+              "op": "transfer",
+              "target": "item.pinecone",
+              "value": "npc.xionger"
+            }
+          ],
+          "feedback": "熊大把松果捡起来递给熊二，两人蹲在脚印边细看：小小的脚印有五个脚趾，旁边还有长尾巴扫过的痕迹！",
+          "hotspot": null,
+          "id": "cl_give_pinecone",
+          "inputs": [],
+          "label": "捡起松果递给熊二，一起细看脚印",
+          "prerequisites": [],
+          "target": "item.pinecone",
+          "trait_use": {
+            "aspect": "strength",
+            "character": "player",
+            "explanation": "熊大蹲下数出脚印有五个脚趾，还认出旁边是长尾巴扫过的痕迹，像猴子留下的。"
+          },
+          "verb": "observe"
+        },
+        {
+          "alternatives": [],
+          "effects": [
+            {
+              "actor": "player",
+              "op": "transfer",
+              "target": "item.map",
+              "value": "npc.xionger"
+            }
+          ],
+          "feedback": "熊大把森林地图折好，塞进熊二怀里：“拿稳喽，待会儿顺着脚印找蜂蜜，全靠它认路。”熊二用力点头：“放心，交给俺！”",
+          "hotspot": null,
+          "id": "cl_give_map",
+          "inputs": [],
+          "label": "把森林地图交给熊二拿着",
+          "prerequisites": [],
+          "target": "item.map",
+          "trait_use": null,
+          "verb": "use"
+        }
+      ],
+      "passed": true,
+      "events": [],
+      "ledger_valid": true
+    },
+    {
+      "id": "unavailable",
+      "input": "我现在就把还在山洞里的蜂蜜罐交给熊二，留在树洞旁，不去山洞，也不请人送来。",
+      "source": "restored confirmed opening of a real GLM book",
+      "mock": false,
+      "phase": "complete",
+      "error": null,
+      "usage": {
+        "calls": 2,
+        "tokens": 16338,
+        "known_tokens": 16338,
+        "unknown_usage_calls": 0,
+        "revisions": 0,
+        "model_wait_seconds": 10.443,
+        "cost_usd": null,
+        "cost_basis": [
+          "coding_plan_charge_unknown"
+        ]
+      },
+      "clarifications": [
+        {
+          "alternatives": [],
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "cave_light",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "move",
+              "target": "player",
+              "value": "scene.cave"
+            }
+          ],
+          "feedback": "蜂蜜罐还在山洞里，不在手边。熊大可以带着灯笼和地图亲自去山洞，找到蜂蜜后再拿回来交给熊二。",
+          "hotspot": null,
+          "id": "ca_go_cave",
+          "inputs": [],
+          "label": "去山洞找蜂蜜",
+          "prerequisites": [],
+          "target": "item.honey",
+          "trait_use": null,
+          "verb": "move"
+        },
+        {
+          "alternatives": [],
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "honey_scent_river",
+              "value": true
+            }
+          ],
+          "feedback": "熊二闻一闻树洞边，也许能顺着蜂蜜味找到方向。他的鼻子最灵，说不定不用先去山洞也能发现新线索。",
+          "hotspot": null,
+          "id": "ca_sniff_trail",
+          "inputs": [],
+          "label": "让熊二用鼻子闻线索",
+          "prerequisites": [],
+          "target": "npc.xionger",
+          "trait_use": {
+            "aspect": "strength",
+            "character": "npc.xionger",
+            "explanation": "熊二的鼻子灵，能闻出淡淡的蜂蜜味，为追查方向提供线索。"
+          },
+          "verb": "ask"
+        },
+        {
+          "alternatives": [],
+          "effects": [
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "feather_found",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "learn",
+              "target": "footprints_small",
+              "value": true
+            },
+            {
+              "actor": "player",
+              "op": "transfer",
+              "target": "item.feather",
+              "value": "player"
+            }
+          ],
+          "feedback": "地上的羽毛和小脚印还没细看。先把证据弄清楚，知道是谁拿走蜂蜜，再去找蜂蜜也不迟。",
+          "hotspot": null,
+          "id": "ca_check_feather",
+          "inputs": [],
+          "label": "先查羽毛和脚印",
+          "prerequisites": [],
+          "target": "item.feather",
+          "trait_use": null,
+          "verb": "observe"
+        }
+      ],
+      "passed": true,
+      "events": [],
+      "ledger_valid": true
+    }
+  ],
+  "human_review": false,
+  "previous_regression_runs": [
+    ".local/glm/action-probes",
+    ".local/glm/action-probes-round2"
+  ]
+}

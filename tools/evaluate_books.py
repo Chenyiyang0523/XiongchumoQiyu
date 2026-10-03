@@ -151,6 +151,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mode',choices=['live','mock'],required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--database',type=Path,help='Reuse an existing corpus database for already-failed cases; results go to a separate directory. Does not recover another running worker.')
     parser.add_argument('--pages',type=int,choices=[8,12,16,20],default=12)
     parser.add_argument('--cases',default='',help='Comma-separated case IDs; empty selects the full corpus')
     parser.add_argument('--workers',type=int,choices=[1,2,3,4],default=1)
@@ -168,8 +169,8 @@ def main():
         (args.output/'summary.json').write_text(json.dumps({'mode':args.mode,'live_release_eligible':False,'status':'configuration_required','books_generated':0},indent=2), encoding='utf-8')
         print('未运行真实生成：请在本机配置 XCMQY_LLM_ENDPOINT、XCMQY_LLM_MODEL、XCMQY_LLM_KEY。',file=sys.stderr)
         return 2
-    store=Store(args.output/'evaluation.sqlite')
-    store.recover()
+    store=Store(args.database or args.output/'evaluation.sqlite')
+    if args.database is None:store.recover()
     pipeline=Pipeline(store,provider)
     sources=sorted([*ROOT.joinpath('service').glob('*.py'),*ROOT.joinpath('game/storybook').glob('*.py'),Path(__file__)])
     metadata={'mode':args.mode,'model':getattr(provider,'model','fixture-v2'),'reasoning_effort':getattr(provider,'reasoning_effort',None),
