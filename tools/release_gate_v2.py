@@ -42,6 +42,6 @@ def assess(directory, comparisons, platforms):
         require(p.get('verified') is True and p.get('installed_package') is True and bool(p.get('package_sha256')) and bool(p.get('evidence')),platform+'安装包未完成实际验证')
     return {'formal_release_eligible':not failures,'failures':failures}
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--evaluation',type=Path,default=ROOT/'docs/v2/live-evaluation');p.add_argument('--comparisons',type=Path,default=ROOT/'docs/v2/comparison-review.csv');p.add_argument('--platforms',type=Path,default=ROOT/'docs/v2/platforms.json');p.add_argument('--output',type=Path,default=ROOT/'docs/v2/release-gate.json');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--evaluation',type=Path,default=ROOT/'docs/v2/acceptance-evaluation');p.add_argument('--comparisons',type=Path,default=ROOT/'docs/v2/comparison-review.csv');p.add_argument('--platforms',type=Path,default=ROOT/'docs/v2/platforms.json');p.add_argument('--output',type=Path,default=ROOT/'docs/v2/release-gate.json');a=p.parse_args()
     result=assess(a.evaluation,a.comparisons,a.platforms);a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n', encoding='utf-8');print(json.dumps(result,ensure_ascii=False,indent=2));return 0 if result['formal_release_eligible'] else 1
 if __name__=='__main__':sys.exit(main())

@@ -26,7 +26,11 @@ XCMQY_BOOK_TOKEN_LIMIT=700000 \
 ```sh
 XCMQY_LLM_BACKEND=glm-local XCMQY_LLM_MODEL=glm-5.3 \
 .venv/bin/python tools/evaluate_books.py --mode live \
-  --output docs/v2/acceptance-evaluation --workers 4
+  --output docs/v2/acceptance-evaluation --workers 2
 ```
 
 修复后显式添加 `--retry-failed` 重试未提交请求；已完成作品不会重复生成。单次生成 / 修订仍最多四次调用，失败重试的历史用量保留。`--cases case.03,case.08` 可选择小规模试验，完整验收仍要求全部 60 本。人工检查表保留空白，等待实际审阅者填写。
+
+同一主机的 GLM 服务和评测进程默认共用两个请求槽，进程退出后操作系统释放锁。可用 `XCMQY_GLM_CONCURRENCY` 配置 1–4，但所有进程应保持一致；容器与宿主是不同锁域，额外并发仍需控制。HTTP 429、服务端错误或传输中断直接保存为可恢复失败，不执行内容修订；用户重试仍携带原请求。评测应一次运行一组工作进程，避免多个恢复组争用套餐额度。
+
+已保存为待续或达到预算的故事不会改写状态。基准需要重测时，显式使用 `--story-attempt 2` 新建同设定故事，原作品与失败记录仍保留；汇总记录每次故事尝试的用量，不能用新结果隐藏旧失败。

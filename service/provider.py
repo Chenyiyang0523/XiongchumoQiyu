@@ -10,6 +10,10 @@ import httpx
 class ModelError(ValueError):
     pass
 
+class RetryableModelError(ModelError):
+    """Transport unavailability should pause, not invoke a content repair."""
+    pass
+
 class BudgetExceeded(ModelError):
     pass
 
@@ -84,6 +88,13 @@ class Provider:
                 raise ModelError('response must be a JSON object')
             metric['success'] = True
             return result
+        except httpx.HTTPStatusError as exc:
+            status=exc.response.status_code
+            if status==429 or status>=500:
+                raise RetryableModelError('model HTTP '+str(status)+'; retry the preserved action later') from exc
+            raise ModelError('model response unavailable or invalid') from exc
+        except httpx.RequestError as exc:
+            raise RetryableModelError('model transport unavailable; retry the preserved action later') from exc
         except (httpx.HTTPError, json.JSONDecodeError, IndexError, TypeError) as exc:
             raise ModelError('model response unavailable or invalid') from exc
         finally:

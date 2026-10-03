@@ -6,7 +6,7 @@ from pydantic import ValidationError
 from copy import deepcopy
 from pathlib import Path
 from service.models import Concepts, StoryBlueprint, StoryOpening, BookPage, TurnProposal, Review, StoryRecord
-from service.provider import BudgetExceeded, ModelError
+from service.provider import BudgetExceeded, ModelError, RetryableModelError
 from service.context import for_generation, review_preview
 from service.prompts import compact_context
 from service.pacing import validate_resolution_page
@@ -244,7 +244,7 @@ class Pipeline:
                         errors=[str(exc)[:1200]]
                         if 'page' in locals() and 'state' in locals() and 'b' in locals():
                             errors+=page_diagnostics(page,state,b,manifest,[],settings)
-                        if attempt or not combined or isinstance(exc,BudgetExceeded):raise
+                        if attempt or not combined or isinstance(exc,(BudgetExceeded,RetryableModelError)):raise
                 review = invoke('review', {'blueprint': b, 'state': state, 'draft': page, 'settings': settings, 'manifest': manifest}, Review)
                 if not review['approved'] or review['issues']:
                     raise RuleError('opening review rejected')
@@ -301,7 +301,7 @@ class Pipeline:
                         if 'proposal' in locals() and not proposal.get('resolved_action') and not proposal.get('events'):
                             errors+=page_diagnostics(proposal.get('page'),state,source['blueprint'],source['manifest'],
                                 [e['id'] for e in source['events']+events],source['settings'])
-                        if attempt or isinstance(exc, BudgetExceeded):
+                        if attempt or isinstance(exc, (BudgetExceeded,RetryableModelError)):
                             raise
                 if story is None:
                     self.store.complete_without_change(job['id'], {'story_id': source['id'], 'version': source['state']['version'], 'clarification': proposal['clarification'], 'clarification_job': job['id']})
@@ -316,5 +316,5 @@ class Pipeline:
         except Exception as exc:
             # A response fault after commit must never turn a confirmed result into a retryable failure.
             if self.store.job(job['id'])['phase'] != 'complete':
-                message = str(exc)[:400] if isinstance(exc, (RuleError, BudgetExceeded)) else 'generation unavailable; confirmed state preserved'
+                message = str(exc)[:400] if isinstance(exc, (RuleError, BudgetExceeded, RetryableModelError)) else 'generation unavailable; confirmed state preserved'
                 self.store.fail(job['id'], message)

@@ -8,6 +8,11 @@ temp_root=$(mktemp -d /tmp/xcmqy-live.XXXXXX)
 trap 'chmod -R u+w "$temp_root"; rm -rf -- "$temp_root"' EXIT INT TERM
 mkdir -p "$output_root"
 cp -R "$project_root/game" "$temp_root/game"
-cp "$project_root/tools/qa_live_service.rpy" "$temp_root/game/qa_live_service.rpy"
+"$project_root/.venv/bin/python" - "$project_root/tools/qa_live_service.rpy" "$temp_root/game/qa_live_service.rpy" <<'PY'
+import json,os,pathlib,sys
+source=pathlib.Path(sys.argv[1]).read_text(encoding='utf-8')
+source=source.replace('"__XCMQY_QA_GUARDIAN__"',json.dumps(os.environ['XCMQY_REAL_QA_GUARDIAN'],ensure_ascii=False))
+pathlib.Path(sys.argv[2]).write_text(source,encoding='utf-8')
+PY
 XCMQY_QA_OUTPUT="$output_root" RENPY_DISABLE_SOUND=1 RENPY_SIMPLE_EXCEPTIONS=1 \
   "$sdk_root/renpy.sh" --savedir "$temp_root/saves" "$temp_root" test live_online --overwrite-screenshots --report-detailed

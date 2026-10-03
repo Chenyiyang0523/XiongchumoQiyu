@@ -5,10 +5,25 @@ from pathlib import Path
 import pytest
 from service.models import SubmitRequest
 from service.mock import MockProvider
+from service.provider import RetryableModelError
 from storybook.engine import apply_operations, effects, replay, RuleError
 from storybook.review import reflection, record_completion
 from storybook.export import export_html
 from test_storybook import app, create, turn, operation
+
+def test_rate_limit_pauses_the_exact_action_without_content_repair(app):
+    story=create(app);before=copy.deepcopy(story);stages=[]
+    class Limited(MockProvider):
+        def call(self,stage,context,schema,record):
+            stages.append(stage)
+            raise RetryableModelError('model HTTP 429; retry the preserved action later')
+    app.state.pipeline.provider=Limited()
+    request=SubmitRequest(version=story['state']['version'],idempotency_key='rate-limited-action',operations=[operation(story)]).model_dump()
+    jid=app.state.store.enqueue('test','turn',request,story['id'])
+    app.state.pipeline.process(app.state.store.next_job())
+    job=app.state.store.job(jid)
+    assert stages==['proposal'] and job['phase']=='failed' and 'HTTP 429' in job['error']
+    assert job['request']==request and app.state.store.story(story['id'])==before
 
 def test_crafting_is_atomic_and_replays(app):
     story=create(app)

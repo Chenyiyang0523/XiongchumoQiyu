@@ -2,11 +2,13 @@
 
 2.0 将四个既有主题和自定义主题接入同一个互动绘本引擎：在线服务规划故事，Ren’Py 客户端呈现页面、收集行动并保存已确认内容。年龄分为 6–8 岁、9–12 岁，支持亲子共玩及 8 / 12 / 16 / 20 页。
 
-当前交付为 **2.0.0-alpha.1 实现候选版**，不是正式发行版。真实模型 60 本、逐本人工检查、20 组同主题盲评和 Windows 安装包实测仍须完成。模拟作品有明确标记，不能替代真实生成验收。具体结果见 [验收报告](docs/v2/ACCEPTANCE.md)。
+当前开发版本为 **2.0.0-alpha.2**。已经接入本机 Claude Code 配置中的 GLM，真实模型技术评测持续进行；Mac、Windows、Linux 实际安装包的自动化试玩均已通过。按用户决定，60 本逐本人工检查和 20 组同主题盲评保持待完成，正式发布门禁保持关闭。具体证据见 [验收报告](docs/v2/ACCEPTANCE.md)。
 
 ## 开始使用
 
-Mac 包及 Windows / Linux 合包在 `dist/2.0.0-alpha.1-final/`。Mac 解压后运行 `XiongchumoQiyu.app`；Windows 运行包内 `.exe`；Linux 运行 `XiongchumoQiyu.sh`。首版包未签名、公证，也未执行 Windows 实机验收。
+Mac 解压后运行 `XiongchumoQiyu.app`；Windows 运行包内 `.exe`；Linux 运行 `XiongchumoQiyu.sh`。首版包未签名、公证。三平台测试在各自原生系统中运行实际打包后的应用，测试记录和包散列见 [平台证据](docs/v2/platforms.json)。
+
+本机使用 GLM 时，双击 `tools/run_glm_service.command`，再在游戏中填写终端显示的 `http://127.0.0.1:8001` 和监护人连接码。模型凭据从现有 Claude Code 设置读取，只保留在服务端。完整说明见 [本地 GLM 接入](docs/v2/LOCAL_GLM.md)。
 
 先部署故事服务，再在游戏中选择角色、主题、年龄与长度，输入服务地址及监护人连接码，确认本次联网。凭据过期可以重新连接；断网可以从「我的绘本」继续阅读已有页面。生成失败不会把未经校验的草稿写入故事，保存后可重新连接并重试原行动。
 
@@ -34,7 +36,7 @@ python3.12 -m venv .venv
 .venv/bin/uvicorn service.app:create_app --factory --host 127.0.0.1 --port 8000 --workers 1
 ```
 
-配置说明及完整请求协议见 [实现说明](docs/v2/IMPLEMENTATION.md) 和 [OpenAPI](docs/v2/openapi.json)。默认每本上限 120 次调用 / 300000 token；费用上限可设。正费用上限需要实际输入及输出费率。缺失计量时不能以零费用满足发布验收。
+配置说明及完整请求协议见 [实现说明](docs/v2/IMPLEMENTATION.md) 和 [OpenAPI](docs/v2/openapi.json)。默认每本上限 120 次调用 / 700000 token；费用上限可设。正费用上限需要实际输入及输出费率。GLM Coding 套餐实际收费金额未知，不能当成零费用。
 
 开发演示须显式设置 `XCMQY_DEVELOPMENT_MOCK=1`，与实际 LLM 使用分开。例如：
 
@@ -62,8 +64,11 @@ tools/run_book_qa.sh
 真实模型配置可用后，执行标准长度评测并填写逐本人工表；中断后用同一输出目录恢复，不覆盖已有人工评分：
 
 ```sh
-.venv/bin/python tools/evaluate_books.py --mode live --pages 12 --output docs/v2/live-evaluation
+XCMQY_LLM_BACKEND=glm-local XCMQY_LLM_MODEL=glm-5.3 \
+.venv/bin/python tools/evaluate_books.py --mode live --pages 12 --output docs/v2/acceptance-evaluation --workers 4
 # 60 本：六种结构 × 两档年龄 × 每组五个主题，其中36本采用新主题
+.venv/bin/python tools/technical_gate_v2.py
+# 下项还要求人工逐本检查、20组评分和费用证据，当前应保持不通过
 .venv/bin/python tools/release_gate_v2.py
 ```
 

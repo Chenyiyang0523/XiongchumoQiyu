@@ -18,7 +18,8 @@ testsuite live_online:
         click '熊大'
         pause until screen 'book_setup'
         click '8 页'
-        run SetScreenVariable('guardian',__import__('os').environ['XCMQY_REAL_QA_GUARDIAN'])
+        click id 'book_guardian_input'
+        type "__XCMQY_QA_GUARDIAN__" id 'book_guardian_input'
         click '同意本次联网'
         click '连接'
         pause until eval (not book_busy)
