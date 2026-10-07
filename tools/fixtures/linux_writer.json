@@ -1,0 +1,675 @@
+{
+  "source": "Linux m3-r2@8514075 tests/fakes.py, scripted transport fixture (not a live story)",
+  "head": {
+    "type": "title",
+    "title": "会打喷嚏的云",
+    "logline": "熊二捡到一朵会打喷嚏的小云",
+    "hero": "xionger",
+    "cast": [
+      "xionger",
+      "xiongda",
+      "qiang"
+    ],
+    "guest": {
+      "name": "小云朵",
+      "look": "拳头大的白云"
+    },
+    "places": [
+      "狗熊岭森林"
+    ],
+    "want": "把小云朵送回天上"
+  },
+  "chapters": [
+    [
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "sfx",
+            "text": "阿嚏！"
+          },
+          {
+            "k": "narr",
+            "text": "树丛里传来一个喷嚏，熊二的帽子飘上了天。"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "谁？谁在那儿嘞？"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "仰头看飘走的帽子",
+              "face": "吃惊"
+            }
+          ],
+          "focus": "飘上天的帽子",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [
+            "帽子飘走了"
+          ],
+          "rule_used": true,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "熊二掏出口袋里的半块蜂蜜饼，又塞了回去。"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "这是俺留着过冬的嘞。"
+          },
+          {
+            "k": "narr",
+            "text": "草丛里探出一朵小白云，红着脸。"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "把半块蜂蜜饼塞回口袋"
+            },
+            {
+              "id": "guest",
+              "act": "探出头"
+            }
+          ],
+          "focus": "半块蜂蜜饼",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [
+            "半块蜂蜜饼"
+          ],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [
+            "S1"
+          ],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "熊二捂住小云朵的鼻子，小铃铛却叮铃响了。"
+          },
+          {
+            "k": "sfx",
+            "text": "阿——嚏！"
+          },
+          {
+            "k": "say",
+            "who": "guest",
+            "text": "对、对不起……"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "捂住小云朵的鼻子还摇着小铃铛"
+            },
+            {
+              "id": "guest",
+              "act": "打喷嚏"
+            }
+          ],
+          "focus": "叮铃作响的小铃铛",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [
+            "小铃铛"
+          ],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [
+            "S2"
+          ],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "choice",
+        "q": "小云朵越缩越小，喷嚏还停不下来",
+        "ideas": [
+          "给它围上围巾",
+          "唱歌哄它睡觉"
+        ],
+        "opts": [
+          {
+            "id": "A",
+            "text": "用小铃铛哄小云朵",
+            "kind": "careful",
+            "hint": "铃铛一响小云朵就不打喷嚏了",
+            "token": "安静的小云朵"
+          },
+          {
+            "id": "B",
+            "text": "抱起小云朵去找光头强",
+            "kind": "bold",
+            "hint": "光头强想拿小云朵运木头",
+            "token": "光头强的卡车"
+          },
+          {
+            "id": "C",
+            "text": "对着小云朵也打个喷嚏",
+            "kind": "silly",
+            "hint": "两个喷嚏对上变成了比赛",
+            "token": "喷嚏比赛"
+          }
+        ],
+        "chosen": "C"
+      }
+    ],
+    [
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "熊二摇起小铃铛，小云朵的喷嚏一下子停了。"
+          },
+          {
+            "k": "say",
+            "who": "guest",
+            "text": "嗯……好困，好困。"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "摇小铃铛"
+            },
+            {
+              "id": "guest",
+              "act": "安静下来打哈欠"
+            }
+          ],
+          "focus": "安静下来的小云朵",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [
+            "小云朵安静了"
+          ],
+          "rule_used": false,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "熊二抱着小云朵往山上跑。"
+          },
+          {
+            "k": "sfx",
+            "text": "呼呼——"
+          },
+          {
+            "k": "narr",
+            "text": "山顶的风声近了，像有人在唱歌。"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "快到啦，快到啦！"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "抱着小云朵跑"
+            }
+          ],
+          "focus": "山顶的风声",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": true,
+          "plant": [
+            "S3"
+          ],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "光头强从树后钻出来，一把抢过了小铃铛。"
+          },
+          {
+            "k": "say",
+            "who": "qiang",
+            "text": "这铃铛归我了！"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "那是俺的！"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "qiang",
+              "act": "抢过小铃铛"
+            },
+            {
+              "id": "xionger",
+              "act": "伸手去够"
+            }
+          ],
+          "focus": "被抢走的小铃铛",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [
+            "小铃铛"
+          ],
+          "flags": [
+            "铃铛被抢"
+          ],
+          "rule_used": false,
+          "plant": [],
+          "payoff": [
+            "S2"
+          ]
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "choice",
+        "q": "小铃铛被光头强抢走了",
+        "ideas": [
+          "给光头强唱首歌",
+          "用蜂蜜换铃铛"
+        ],
+        "opts": [
+          {
+            "id": "A",
+            "text": "用帽子换回小铃铛",
+            "kind": "careful",
+            "hint": "光头强戴上帽子就不肯还了",
+            "token": "光头强的帽子"
+          },
+          {
+            "id": "B",
+            "text": "让小云朵追着光头强打喷嚏",
+            "kind": "bold",
+            "hint": "光头强的工具全飘上了天",
+            "token": "飘走的工具"
+          },
+          {
+            "id": "C",
+            "text": "学安静的小云朵装睡",
+            "kind": "silly",
+            "hint": "光头强以为大家都睡着了",
+            "token": "装睡的熊二"
+          }
+        ],
+        "chosen": "A"
+      }
+    ],
+    [
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "光头强的工具全飘了起来，在天上转圈圈。"
+          },
+          {
+            "k": "say",
+            "who": "qiang",
+            "text": "我的扳手！我的锯子！"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "qiang",
+              "act": "追着飘走的工具"
+            }
+          ],
+          "focus": "飘走的工具",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": true,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "小云朵缩成小小的一团，再也打不出喷嚏了。"
+          },
+          {
+            "k": "say",
+            "who": "guest",
+            "text": "我想回家……"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "guest",
+              "act": "缩成一团"
+            }
+          ],
+          "focus": "缩成一团的小云朵",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "choice",
+        "q": "小云朵快要没力气了",
+        "ideas": [
+          "抱抱它",
+          "给它讲故事"
+        ],
+        "opts": [
+          {
+            "id": "A",
+            "text": "让小云朵安静地睡一觉",
+            "kind": "careful",
+            "hint": "睡饱的小云朵又有了力气",
+            "token": "睡饱的小云朵"
+          },
+          {
+            "id": "B",
+            "text": "抓住一件飘走的工具",
+            "kind": "bold",
+            "hint": "光头强的扳手变成了小飞机",
+            "token": "会飞的扳手"
+          },
+          {
+            "id": "C",
+            "text": "对着山顶学风声唱歌",
+            "kind": "silly",
+            "hint": "山顶的风声跟着一起唱",
+            "token": "唱歌的风"
+          }
+        ],
+        "chosen": "B"
+      }
+    ],
+    [
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "熊二抓着会飞的扳手，飞到了小云朵身边。"
+          },
+          {
+            "k": "narr",
+            "text": "他掏出半块蜂蜜饼，盖在小云朵身上。"
+          },
+          {
+            "k": "say",
+            "who": "guest",
+            "text": "暖、暖和……"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "抓着会飞的扳手，把半块蜂蜜饼盖上去"
+            },
+            {
+              "id": "guest",
+              "act": "被盖住"
+            }
+          ],
+          "focus": "半块蜂蜜饼做的被子",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [],
+          "payoff": [
+            "S1"
+          ]
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "sfx",
+            "text": "阿——嚏！"
+          },
+          {
+            "k": "narr",
+            "text": "最后一个大喷嚏，把熊二和小云朵全送上了山顶。"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "哇，俺飞起来嘞！"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "举着蜂蜜罐",
+              "face": "惊讶"
+            },
+            {
+              "id": "xiongda",
+              "act": "跑过来",
+              "face": "着急"
+            }
+          ],
+          "focus": "飘起来的蜂蜜罐",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "narr",
+            "text": "山顶的风哼起了歌，小云朵到家了。"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "再见啦，小云朵！常回来玩嘞！"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "举着蜂蜜罐",
+              "face": "惊讶"
+            },
+            {
+              "id": "xiongda",
+              "act": "跑过来",
+              "face": "着急"
+            }
+          ],
+          "focus": "飘起来的蜂蜜罐",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "page",
+        "lines": [
+          {
+            "k": "sfx",
+            "text": "阿嚏！"
+          },
+          {
+            "k": "narr",
+            "text": "第二天，熊二的帽子又飘上了天。"
+          },
+          {
+            "k": "say",
+            "who": "xionger",
+            "text": "这回俺知道是谁嘞！"
+          }
+        ],
+        "art": {
+          "place": "狗熊岭森林",
+          "time": "早上",
+          "weather": "晴",
+          "shot": "中景",
+          "who": [
+            {
+              "id": "xionger",
+              "act": "举着蜂蜜罐",
+              "face": "惊讶"
+            },
+            {
+              "id": "xiongda",
+              "act": "跑过来",
+              "face": "着急"
+            }
+          ],
+          "focus": "飘起来的蜂蜜罐",
+          "offscreen": []
+        },
+        "delta": {
+          "items_add": [],
+          "items_remove": [],
+          "flags": [],
+          "rule_used": false,
+          "plant": [],
+          "payoff": []
+        },
+        "sum": "测试页"
+      },
+      {
+        "type": "end",
+        "title": "小云朵回家了",
+        "family": "warm"
+      }
+    ]
+  ]
+}

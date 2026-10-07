@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "notes": "Tier A = banned (any hit is a violation, repaired). Tier B = per-book budget across all pages of one world line. Openings = patterns a page's first narration line must not start with. Safety: hard = must never ship; soft = repair, then regenerate once. Refresh Tier B from n-gram mining of harness runs (tools/metrics.py).",
+  "function_chars": "的了着是在把被和与也都就还又呢吗吧啊呀啦嘛一个这那他她它们我你俺",
+  "tier_a": {
+    "literal": [
+      "不禁",
+      "心中涌起",
+      "涌上心头",
+      "一股暖流",
+      "眼中闪烁",
+      "眼里闪着光",
+      "眼里闪烁",
+      "眼中闪过",
+      "嘴角上扬",
+      "嘴角勾起",
+      "嘴角微微",
+      "脸上洋溢",
+      "空气中弥漫",
+      "斑驳",
+      "洒下一地",
+      "映入眼帘",
+      "久久不能平静",
+      "银铃般",
+      "心头一暖",
+      "不由得",
+      "宛如",
+      "犹如",
+      "璀璨",
+      "熠熠生辉",
+      "交织在一起",
+      "时间仿佛静止",
+      "这一刻",
+      "微微一笑",
+      "一抹",
+      "一缕",
+      "一丝",
+      "缓缓地",
+      "不容置疑",
+      "命运",
+      "这个故事告诉我们",
+      "故事告诉我们",
+      "我们明白了",
+      "大家都明白了",
+      "终于明白了",
+      "他们明白了",
+      "友谊的力量",
+      "团结的力量",
+      "分享的力量",
+      "勇气的力量",
+      "小朋友们",
+      "要做一个",
+      "好孩子",
+      "懂得了",
+      "成了好朋友",
+      "手拉手围成一圈",
+      "盛大的派对",
+      "开开心心地回家",
+      "难忘的一天",
+      "原来是一场梦",
+      "大家都笑了",
+      "久久回荡",
+      "幸福快乐的生活",
+      "请选择",
+      "答对了",
+      "你真棒",
+      "千万不要模仿",
+      "大人陪同",
+      "让我们一起",
+      "干啥子",
+      "二哥我",
+      "俺老二",
+      "本天才",
+      "伏笔",
+      "节拍",
+      "选项",
+      "作为AI",
+      "人工智能",
+      "提示词",
+      "本章",
+      "这一章",
+      "读者",
+      "钩子",
+      "孩子的选择",
+      "你选择了",
+      "这个选择",
+      "做出选择",
+      "翻盘"
+    ],
+    "regex": [
+      "第[0-9一二三四五六七八九十]+页",
+      "不是[^，。！？]{1,12}，而是",
+      "才是最[^，。！？]{0,6}的",
+      "(明白|懂得|知道)了[^，。！？]{0,10}(道理|重要|意义|真谛)",
+      "这就是[^，。！？]{0,8}(意义|力量)",
+      "从此以后[^。！？]{0,10}再也不",
+      "仿佛[^。！？]{0,15}一般",
+      "小朋友[，,]?(你|你们)"
+    ],
+    "applies_to": "narr lines everywhere, all lines on the final page; dialogue elsewhere is free"
+  },
+  "tier_b": [
+    {
+      "variants": [
+        "亮晶晶"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "软软的",
+        "软绵绵",
+        "软乎乎"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "暖暖的",
+        "暖乎乎",
+        "暖洋洋"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "甜甜的"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "香喷喷"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "毛茸茸"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "圆滚滚"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "小小的"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "轻轻地",
+        "轻轻"
+      ],
+      "max_per_book": 3
+    },
+    {
+      "variants": [
+        "慢慢地"
+      ],
+      "max_per_book": 3
+    },
+    {
+      "variants": [
+        "默默"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "棉花糖"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "一屁股坐"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "哎哟妈呀",
+        "哎呀妈呀",
+        "俺的天呐",
+        "我的天哪",
+        "我的天呐"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "眨眨眼",
+        "眨了眨眼"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "挠挠头",
+        "挠了挠头",
+        "挠挠脑袋",
+        "挠了挠脑袋"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "拍拍肚皮",
+        "拍了拍肚皮"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "小声说"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "得意地"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "彩虹色"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "秘密"
+      ],
+      "max_per_book": 3
+    },
+    {
+      "variants": [
+        "仿佛"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "露珠"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "清晨"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "叽叽喳喳"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "哈哈哈"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "嘿嘿"
+      ],
+      "max_per_book": 3
+    },
+    {
+      "variants": [
+        "深吸一口气"
+      ],
+      "max_per_book": 1
+    },
+    {
+      "variants": [
+        "刚好",
+        "正好"
+      ],
+      "max_per_book": 2
+    },
+    {
+      "variants": [
+        "紧紧",
+        "牢牢"
+      ],
+      "max_per_book": 2
+    }
+  ],
+  "openings_banned_regex": "^(清晨|早晨|一大早|傍晚|黄昏|夜晚|夜里|晚上|深夜|这天|有一天|那天|天空|阳光|太阳|月亮|狗熊岭的(早晨|清晨|夜晚|傍晚))",
+  "safety": {
+    "notes": "Action+object patterns. Canon words such as 电锯, 电话, 火车, 火锅, 绳子 and scenery mushrooms are allowed. hard = weapons, gore, insults and the imitable dangers a child could copy (grabbing wires — 电话线 and 电缆 too —, jumping from a height, swallowing a small thing or having it in the belly, a small thing into the mouth unless it is blown, catching with the mouth: M3 r2 findings #4 and the review's R2CHK-4); soft also has setting bees on someone (R2CHK-15); soft = other imitable danger and 「死」 for degree (repair). substitutions = 「死」 words with one fixed replacement, made in code (safety.word); 死死 is dropped (抱得死死的 → 抱得很紧), since r2's 死死 → 紧紧 put 紧紧 into 42 lines of the panel's books (M3 r3 lean #1: 紧紧/牢牢 are a Tier B group). The picture brief (every text of it the image prompt copies: focus, place, time, weather, shot, mood, each who.act and who.face — M3 r3 review R3-SAFE-2) gets the soft patterns and the hard ones except `spoken` (insults are only said: a bird 「停在屋顶闭嘴」 is a beak) — safety.art (M3 r2 review). 子弹 after a noun ending in 子 is a bounce (帽子弹飞, 盖子弹开), not a bullet; 被 is not on that list (被子弹打中 is the passive). Every pattern also reads the text with the marks a word can be drawn out or broken up with taken out between two 汉字 (笨——蛋, 闭～嘴, 笨 蛋 are 笨蛋, 闭嘴: textutil.fold, M3 r3 review R3-SAFE-1), so a word here needs no stretched variants.",
+    "hard": [
+      "(?<!水)枪",
+      "(?<![帽盖瓶箱罐杯椅桌柜袋盒鞋叉勺种豆栗果桃竹板毯筐篮石珠绳])子弹",
+      "炸弹",
+      "炸药",
+      "匕首",
+      "毒药",
+      "流血",
+      "鲜血",
+      "血淋淋",
+      "杀死",
+      "杀掉",
+      "打死",
+      "弄死",
+      "摔死",
+      "淹死",
+      "砸死",
+      "咬死",
+      "去死",
+      "笨蛋",
+      "傻瓜",
+      "蠢货",
+      "白痴",
+      "废物",
+      "闭嘴",
+      "滚开",
+      "蠢猪",
+      "(摸|碰|拔|咬|抓|握|拉|拽|扯|顺着|爬)[^。！？，,、]{0,4}(电线|电话线|电缆|高压线|插座|电闸)",
+      "(天上|云上|云端|空中|半空|房顶|屋顶|楼上|楼顶|悬崖|山崖|崖上|高处)[^。！？，,、]{0,8}(跳下|跳了下|跳回|跳出|跳进|往下跳)",
+      "(跳下|跳出|跳了出)[^。！？，,、]{0,2}(窗|悬崖|山崖|房顶|屋顶|楼顶)",
+      "窗[^。！？，,、]{0,4}(跳下|跳了下|跳出|往下跳)",
+      "(吞|咽|吃进|吃到肚|吃下)[^。！？，,、]{0,4}(哨子|口哨|扣子|纽扣|硬币|珠子|电池|磁铁|钉(?!耙)|弹珠|铃铛|钥匙|戒指|别针|螺丝|石子|玻璃)",
+      "(哨子|口哨|扣子|纽扣|硬币|珠子|电池|磁铁|钉(?!耙)|弹珠|铃铛|钥匙|戒指|别针|螺丝|石子|玻璃)[^。！？，,、]{0,6}(吞|咽|吃进|吃到肚|吃下)",
+      "(哨子|口哨|扣子|纽扣|硬币|珠子|电池|磁铁|钉(?!耙)|弹珠|铃铛|钥匙|戒指|别针|螺丝|石子|玻璃)[^。！？，,、]{0,4}(进肚|进了肚|肚子?里)",
+      "(哨子|口哨|扣子|纽扣|硬币|珠子|电池|磁铁|钉(?!耙)|弹珠|铃铛|钥匙|戒指|别针|螺丝|石子|玻璃)[^。！？，,、]{0,6}(进|到)[^。！？，,、]{0,4}肚(?!皮|兜)",
+      "肚子?里的(哨|铃铛|扣子|纽扣|硬币|珠子|电池|磁铁|钉|弹珠|钥匙)",
+      "(哨子|口哨|扣子|纽扣|硬币|珠子|电池|磁铁|钉(?!耙)|弹珠|铃铛|钥匙|戒指|别针|螺丝|石子|玻璃)[^。！？，,、]{0,2}进了?嘴(?![^。！？]{0,8}吹)",
+      "进了?嘴里?的(哨子|口哨|扣子|纽扣|硬币|珠子|电池|磁铁|钉(?!耙)|弹珠|铃铛|钥匙|戒指|别针|螺丝|石子|玻璃)",
+      "(张(开|大)?嘴巴?|用嘴巴?)[，,]?[^。！？，,、]{0,3}接(?!话|茬|着)"
+    ],
+    "soft": [
+      "(吃|尝|啃|咬)[^。！？]{0,6}(野蘑菇|野果|毒蘑菇|野莓)",
+      "(野蘑菇|野果|毒蘑菇|野莓)[^。！？]{0,6}(吃|尝|啃|咬)",
+      "采蘑菇吃",
+      "(点火|生火|烤火)",
+      "篝火",
+      "火柴",
+      "打火机",
+      "从[^。！？]{0,8}跳(下|了下)",
+      "往下跳",
+      "跳下去",
+      "跳了下去",
+      "(躲|钻|藏)进(冰箱|洗衣机|烤箱)",
+      "马路中间",
+      "笑死",
+      "累死",
+      "饿死",
+      "吓死",
+      "(闷|憋|勒|掐|晕|撑|冻|热|挤|吵|烦|气|困|渴|疼|痛|冷|急)死",
+      "升天",
+      "惨叫",
+      "(捂|堵|蒙|塞)[^。！？]{0,4}(嘴巴?和鼻子|鼻子和嘴巴?|口鼻)",
+      "跳下树洞",
+      "(领|引|招|叫|让)[^。！？，,、]{0,4}(蜜蜂|蜂群|马蜂)[^。！？，,、]{0,4}(蜇|叮|咬)"
+    ],
+    "spoken": ["笨蛋", "傻瓜", "蠢货", "白痴", "废物", "闭嘴", "滚开", "蠢猪"],
+    "substitutions": {
+      "捂死": "捂紧",
+      "得死死的": "得很紧",
+      "死死地": "",
+      "死死": "",
+      "堵死": "堵住",
+      "卡死": "卡住",
+      "糊死": "糊住"
+    }
+  },
+  "adult": {
+    "notes": "Words of grown-ups' business and written style for a 4–10-year-old listener (M3 r2 #15, findings #11): `words` are repaired once (adult) in pages, fork questions, options and hints, idea chips and display strings, and drop a secret's twist or ending template; `substitutions` have one fixed replacement, made in code (adult.word); longer keys win, so a word that holds one gets its own (内壁上 → 墙上, 我们三人 → 我们仨, 在场的人们 → 大家: the review found 墙上上, 我们他们仨, 大家们). 扣工资 once is canon and stays. false_friends hold an adult word without being one (在场地上 is 在 + 场地).",
+    "words": [
+      "条款",
+      "克扣",
+      "收讫",
+      "交差",
+      "合同",
+      "禁行",
+      "压境",
+      "突围",
+      "死灰复燃",
+      "铁血",
+      "战神",
+      "在场",
+      "罚款",
+      "过路费",
+      "违约",
+      "赔偿",
+      "押金",
+      "利息",
+      "贷款",
+      "欠条",
+      "账单",
+      "发票"
+    ],
+    "substitutions": {
+      "内壁上": "墙上",
+      "内壁里": "墙里",
+      "内壁": "墙上",
+      "必定": "一定",
+      "在场的人": "大家",
+      "所有在场的人": "所有人",
+      "在场的人们": "大家",
+      "三人": "他们仨",
+      "他们三人": "他们仨",
+      "我们三人": "我们仨",
+      "咱们三人": "咱们仨",
+      "你们三人": "你们仨",
+      "这三人": "这仨",
+      "那三人": "那仨",
+      "三人份的": "三份",
+      "三人份": "三份",
+      "否则": "不然",
+      "大敞": "大开",
+      "点头哈腰": "连连点头"
+    },
+    "false_friends": [
+      "在场地",
+      "在场上",
+      "在场院",
+      "在场边"
+    ]
+  },
+  "opening_moves": {
+    "sfx": "用一句单独的拟声词开头",
+    "say": "用一句台词开头",
+    "action": "用一个动作开头",
+    "question": "用一个问题开头",
+    "image": "用一个让人好奇的画面细节开头"
+  },
+  "sudden": {
+    "variants": [
+      "突然",
+      "忽然",
+      "就在这时",
+      "这时候",
+      "就在这个时候"
+    ],
+    "max_per_chapter": 1
+  },
+  "narr_question_max_per_book": 2,
+  "sfx_chars": "咚啪哗啦嗡呼噜噗嘟哔叮当咔嚓哒嗒吱嘎咕唰嗖啵砰哐嘭哧溜嘿哟阿嚏嗝吧唧咣骨碌轰隆沙呜哈嘻嘀扑通滴叽喳汪喵铃咯噔嘣噼哩呱咩哞嘶咻哇呀哎唉嗷嗯噢哦喔咦哼嘘呃啊嘤嗨呦嗵丁啾嚯嗬咿唔呸答啷锵铛叭淅沥簌嘚吼乒乓呵咳滋刷梆笃噌嗤",
+  "sfx_notes": "sfx_chars: the characters of sounds and cries (M3 r2 #16, findings #16). An sfx line with more than half of its characters outside the list, or one rare character (outside GB2312 level 1) outside it, is no sound (sfx.word, one repair; the book's refrain is exempt); a narration line of short exclamations with a sound in it (「叮！变！」) becomes an sfx line in code (narr.sfx).",
+  "soft_fix_substitutions": {
+    "亮晶晶": "亮",
+    "软软的": "软",
+    "软绵绵": "软",
+    "软乎乎": "软",
+    "暖暖的": "暖",
+    "暖乎乎": "暖",
+    "暖洋洋": "暖",
+    "甜甜的": "甜",
+    "香喷喷": "香",
+    "毛茸茸的": "毛",
+    "毛茸茸": "毛",
+    "圆滚滚的": "圆",
+    "圆滚滚": "圆",
+    "小小的": "小",
+    "轻轻地": "轻",
+    "慢慢地": "慢",
+    "一屁股坐": "坐",
+    "眨了眨眼": "眨眼",
+    "眨眨眼": "眨眼",
+    "挠了挠头": "挠头",
+    "挠挠头": "挠头",
+    "挠挠脑袋": "挠头",
+    "小声说": "说",
+    "得意地": "",
+    "彩虹色的": "彩色的",
+    "仿佛": "像",
+    "哎哟妈呀": "哎哟",
+    "哎呀妈呀": "哎呀",
+    "深吸一口气": "吸了口气",
+    "得紧紧的": "得很紧",
+    "得牢牢的": "得很牢",
+    "紧紧地": "",
+    "牢牢地": "",
+    "紧紧的": "很紧的",
+    "牢牢的": "很牢的",
+    "紧紧": "",
+    "牢牢": ""
+  },
+  "sudden_strip": [
+    "突然，",
+    "忽然，",
+    "就在这时，",
+    "这时候，",
+    "突然",
+    "忽然"
+  ]
+}

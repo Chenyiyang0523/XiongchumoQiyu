@@ -89,22 +89,16 @@ label story_begin:
         story_online_enabled,
     )
 
-    # 等待首个段落就绪
-    call screen loading_animation
-
-    # 检查是否有错误
-    if game.ai_error:
-        call screen ai_error_screen(game.ai_error)
-        if _return == "retry":
-            jump story_begin
-        else:
-            return
+    call await_story_response
+    if not _return:
+        return
 
     if game.ai_notice:
         $ renpy.notify(game.ai_notice)
 
     # 显示四维属性侧边栏和百科提示
-    show screen stats_overlay
+    if not game.online_enabled:
+        show screen stats_overlay
     show screen encyclopedia_hint
     $ quick_menu = True
 
@@ -120,6 +114,17 @@ label story_begin:
 # 流式渲染：循环消费段落队列
 # ============================================================
 
+label await_story_response:
+    call screen loading_animation
+    if game.ai_error:
+        call screen ai_error_screen(game.ai_error)
+        if _return == "retry":
+            $ game.retry_story_stream()
+            jump await_story_response
+        return False
+    return True
+
+
 label display_stream:
 
     # 循环渲染段落，直到流结束且队列清空
@@ -132,19 +137,11 @@ label display_stream:
                 # 队列空但流未结束，短暂等待
                 renpy.pause(0.2, hard=True)
 
-    # 检查流式中途是否出错
-    if game.ai_error and not game._full_response:
-        call screen ai_error_screen(game.ai_error)
-        if _return == "retry":
-            jump story_begin
-        else:
-            return
-
     # 流式完成，将完整响应存入消息历史
     $ game.finalize_stream_response()
 
     # 从完整响应中提取选项
-    $ current_options = extract_options(game._full_response)
+    $ current_options = story_options(game)
 
     jump player_turn
 
@@ -204,8 +201,9 @@ label ai_continue:
 
     $ game.continue_story_stream(player_input)
 
-    # 等待首个段落就绪
-    call screen loading_animation
+    call await_story_response
+    if not _return:
+        return
 
     if game.ai_notice:
         $ renpy.notify(game.ai_notice)
@@ -228,7 +226,7 @@ label ai_continue:
         jump story_end
 
     # 提取下一轮选项
-    $ current_options = extract_options(game._full_response)
+    $ current_options = story_options(game)
 
     jump player_turn
 

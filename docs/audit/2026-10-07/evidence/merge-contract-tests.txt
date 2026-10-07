@@ -1,0 +1,146 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+________________ test_a_split_page_and_the_sessions_page_views _________________
+
+tmp_path = PosixPath('/private/var/folders/km/cr09jv6s7zx8km89pgb2gy6m0000gn/T/pytest-of-vvcc/pytest-76/test_a_split_page_and_the_sess0')
+
+    def test_a_split_page_and_the_sessions_page_views(tmp_path):
+        chapters = list(LEAN_CHAPTERS)
+        chapters[1] = [C1, LONG, C3, K2]
+        r = Router(chapters=chapters)
+        s = make(tmp_path, router=r, prefs={"speculate": False})
+        bid = start(s)
+        nid = to_fork(s, bid)
+        settle(s)
+        node = s.books[bid].nodes[nid]
+        assert node.status == "done" and len(node.pages) == 4 and ops.planned(node.pages) == 3
+        assert ops.CONT in node.pages[2].fixes
+        nv = s.node_view(bid, nid)
+        pv = {p: s.page_view(bid, p) for p in nv["pages"]}
+        report = {p: {k: v[k] for k in ("index", "number", "total", "last", "next", "fork")} for p, v in pv.items()}
+        print(json.dumps({"planned": nv["planned"], "pages": nv["pages"], "views": report}, ensure_ascii=False, indent=1))
+        # B2's router: next non-empty → that page; fork → the fork; end → the ending; else wait for the chapter
+        p4 = pv[f"{nid}.p4"]
+>       assert p4["fork"] or p4["next"], "the chapter's real last page (C3) has neither next nor fork: B2 waits forever"
+E       AssertionError: the chapter's real last page (C3) has neither next nor fork: B2 waits forever
+E       assert (False or '')
+
+merged-preview/tests/test_audit_r3_contract.py:210: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{
+ "planned": 3,
+ "pages": [
+  "n.A.p1",
+  "n.A.p2",
+  "n.A.p3",
+  "n.A.p4"
+ ],
+ "views": {
+  "n.A.p1": {
+   "index": 1,
+   "number": 4,
+   "total": 12,
+   "last": false,
+   "next": "n.A.p2",
+   "fork": false
+  },
+  "n.A.p2": {
+   "index": 2,
+   "number": 5,
+   "total": 12,
+   "last": false,
+   "next": "n.A.p3",
+   "fork": false
+  },
+  "n.A.p3": {
+   "index": 3,
+   "number": 6,
+   "total": 12,
+   "last": true,
+   "next": "n.A.p4",
+   "fork": true
+  },
+  "n.A.p4": {
+   "index": 4,
+   "number": 7,
+   "total": 12,
+   "last": false,
+   "next": "",
+   "fork": false
+  }
+ }
+}
+_____________ test_a_split_page_in_the_finale_and_the_ending_read ______________
+
+tmp_path = PosixPath('/private/var/folders/km/cr09jv6s7zx8km89pgb2gy6m0000gn/T/pytest-of-vvcc/pytest-76/test_a_split_page_in_the_final0')
+
+    def test_a_split_page_in_the_finale_and_the_ending_read(tmp_path):
+        chapters = list(LEAN_CHAPTERS)
+        fin = list(chapters[3])
+        fin[1] = LONG
+        chapters[3] = fin
+        r = Router(chapters=chapters)
+        s = make(tmp_path, router=r, prefs={"speculate": False})
+        bid = start(s)
+        path = "n"
+        for oid in "ABC":
+            read_chapter(s, bid, path)
+            settle(s)
+            path = s.choose(bid, path, oid)
+            settle(s)
+        node = s.books[bid].nodes[path]
+        assert node.ending is not None and len(node.pages) == 5
+        pages = s.node_view(bid, path)["pages"]
+        found = []
+        for p in pages:
+            s.page_shown(bid, p)
+            found.append((p, len(s.books[bid].endings_found), s.page_view(bid, p)["end"], s.page_view(bid, p)["next"]))
+        print(found)
+>       assert found[3][1] == 0, "the ending is marked read on page 4 of 5 (the layout's last page), before its real last page"
+E       AssertionError: the ending is marked read on page 4 of 5 (the layout's last page), before its real last page
+E       assert 1 == 0
+
+merged-preview/tests/test_audit_r3_contract.py:235: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[('n.A.B.C.p1', 0, False, 'n.A.B.C.p2'), ('n.A.B.C.p2', 0, False, 'n.A.B.C.p3'), ('n.A.B.C.p3', 0, False, 'n.A.B.C.p4'), ('n.A.B.C.p4', 1, True, 'n.A.B.C.p5'), ('n.A.B.C.p5', 1, False, '')]
+_______________ test_siblings_wait_for_sibling_ones_first_event ________________
+
+tmp_path = PosixPath('/private/var/folders/km/cr09jv6s7zx8km89pgb2gy6m0000gn/T/pytest-of-vvcc/pytest-76/test_siblings_wait_for_sibling0')
+
+    def test_siblings_wait_for_sibling_ones_first_event(tmp_path):
+        """B1: siblings 2-3 start with sibling 1's first event (it warms the prefix cache for them) or after 3 s. The first
+        event of a chapter job is plan_meta, emitted before its request: are B and C sent before A's request got a byte?"""
+        gate, reached = threading.Event(), threading.Event()
+        r = Router()
+        s = make(tmp_path, router=r, threaded=True)
+        bid = s.start(s.cards()[0]["id"], length="medium")
+        until(s, lambda: s.books[bid].nodes["n"].status == "done")
+        r.overrides = [(lambda i: i["kind"] == "chapter" and i["chapter"] == 2,
+                        ("block", sse(*r.rest(2)), 0, gate, reached))]
+        for p in s.node_view(bid, "n")["pages"]:
+            s.page_shown(bid, p)
+        until(s, lambda: reached.is_set())
+        import time as _t
+        t0 = _t.monotonic()
+        while _t.monotonic() - t0 < 0.5:
+            s.poll()
+            _t.sleep(0.01)
+        sent = [i for i in r.requests if i["kind"] == "chapter" and i["chapter"] == 2]
+        clock_advanced = s.test["clock"]()
+        gate.set()
+        until(s, lambda: all(s.books[bid].nodes[f"n.{o}"].status == "done" for o in "ABC"), 20)
+        s.shutdown()
+        print("chapter-2 requests sent while sibling 1 had not received a byte:", len(sent), "session clock", clock_advanced)
+>       assert len(sent) == 1, "siblings 2-3 were sent before sibling 1's request had any answer (no cache warm-up)"
+E       AssertionError: siblings 2-3 were sent before sibling 1's request had any answer (no cache warm-up)
+E       assert 3 == 1
+E        +  where 3 = len([{'kind': 'chapter', 'chapter': 2, 'user': '【奇遇卡】\n书名提示：地图长腿跑了\n开头：赵琳日记本里的地图长出两条小腿，一溜烟跑向了雪山。\n意外真相（优先用它）：地图要跑去一个地图上没画的...数得清的怪规矩；前面不起眼地埋下一样东西，最后关键时刻用它解决难题；中间尝试三次，一次比一次好笑，然后掉进低谷；结尾呼应第一页，再来一个小笑点。'}], 'stream': True, 'temperature': 0.9, ...}}])
+
+merged-preview/tests/test_audit_r3_contract.py:408: AssertionError
+----------------------------- Captured stdout call -----------------------------
+chapter-2 requests sent while sibling 1 had not received a byte: 3 session clock 1000.0
+=========================== short test summary info ============================
+FAILED merged-preview/tests/test_audit_r3_contract.py::test_a_split_page_and_the_sessions_page_views
+FAILED merged-preview/tests/test_audit_r3_contract.py::test_a_split_page_in_the_finale_and_the_ending_read
+FAILED merged-preview/tests/test_audit_r3_contract.py::test_siblings_wait_for_sibling_ones_first_event
+3 failed, 15 deselected in 0.80s

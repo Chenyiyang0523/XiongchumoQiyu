@@ -1,0 +1,31 @@
+{
+ "tool": "lean_proto",
+ "seed": "baseline",
+ "from_run": "/Users/vvcc/XiongchumoQiyu2/m3/runs/r2-pipeline",
+ "cards": [
+  "c23",
+  "c17",
+  "c41",
+  "c37",
+  "c10",
+  "c32"
+ ],
+ "personas": [
+  "random",
+  "careful",
+  "bold",
+  "silly",
+  "callback",
+  "freetext"
+ ],
+ "media": "text",
+ "books": 6,
+ "projected_per_book": 0.1879,
+ "started": "2026-10-07T05:40:31+00:00",
+ "pid": 79878,
+ "done": 6,
+ "failed": 0,
+ "yuan": 0.9999,
+ "stopped": null,
+ "finished": "2026-10-07T05:50:47+00:00"
+}

@@ -1,0 +1,33 @@
+{
+ "again": {
+  "a": 0,
+  "b": 5,
+  "tie": 0,
+  "invalid": 0,
+  "answered_pref_a": 0.0,
+  "pref_a": 0.0
+ },
+ "natural": {
+  "a": 0,
+  "b": 5,
+  "tie": 0,
+  "invalid": 0,
+  "answered_pref_a": 0.0,
+  "pref_a": 0.0
+ },
+ "surprise": {
+  "a": 1,
+  "b": 4,
+  "tie": 0,
+  "invalid": 0,
+  "answered_pref_a": 0.2,
+  "pref_a": 0.2
+ },
+ "pairs_scored": 5,
+ "coverage": {
+  "pairs": 5,
+  "items": 10,
+  "answered": 10,
+  "problems": {}
+ }
+}

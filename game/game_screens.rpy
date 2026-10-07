@@ -453,7 +453,7 @@ screen game_settings():
 
                         textbutton "随机":
                             style "settings_btn_small"
-                            action SetScreenVariable("scenario_text", renpy.random.choice(EXAMPLE_SCENARIOS))
+                            action SetScreenVariable("scenario_text", random_story_scenario(online_enabled))
 
                 hbox:
                     spacing 12
@@ -463,8 +463,12 @@ screen game_settings():
                             text_size 22
                             action SetScreenVariable("scenario_text", _theme["title"])
 
-                text ("本地篇章：" + local_theme(scenario_text)["title"] + " / 开局选择将进入不同路线") size 22 color "#BFD8C4"
-                text "本地提供寻宝、运动会、风雨重建、美食节四个篇章；其他主题采用寻宝篇。" size 18 color "#BFD8C4"
+                if online_enabled:
+                    text "云端绘本会接着你的选择发展；点「随机」试试新的奇遇。5/10/15–20 分钟对应短/中/长篇。" size 22 color "#BFD8C4"
+                    text "人物由故事情景决定。云端绘本不使用难度、属性和神器设置。" size 18 color "#BFD8C4"
+                else:
+                    text ("本地篇章：" + local_theme(scenario_text)["title"] + " / 开局选择将进入不同路线") size 22 color "#BFD8C4"
+                    text "本地提供寻宝、运动会、风雨重建、美食节四个篇章；其他主题采用寻宝篇。" size 18 color "#BFD8C4"
 
                 # --- 体验模式 ---
                 vbox:
@@ -772,7 +776,7 @@ screen story_choice(options):
             spacing 15
             xfill True
 
-            text "你想怎么做？" size 30 color "#FFD700" bold True xalign 0.5
+            text (getattr(game, "_linux_view", {}).get("question") or "你想怎么做？") size 30 color "#FFD700" bold True xalign 0.5
 
             if game.powerup == "问题提示神器" and not game.online_enabled:
                 text local_hint(game) id "local_hint" size 23 color "#BFE5BE" xmaximum 1400
@@ -918,7 +922,7 @@ screen ai_error_screen(error_msg):
 
             text "哎呀，故事暂停了一下" size 32 color "#F6B73C" bold True xalign 0.5
 
-            text "你可以重试，或先返回主菜单。技术详情已记录，不会在小朋友的界面中展示。":
+            text error_msg:
                 size 22
                 color "#D6C9A3"
                 xalign 0.5
@@ -929,6 +933,7 @@ screen ai_error_screen(error_msg):
                 spacing 30
 
                 textbutton "重试":
+                    sensitive not (game.online_enabled and getattr(game, "_story_writer", "") != "linux-lean")
                     padding (30, 15)
                     text_size 28
                     text_color "#2ecc71"

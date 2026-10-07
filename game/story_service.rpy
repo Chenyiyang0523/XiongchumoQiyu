@@ -67,7 +67,7 @@ init python:
         payload_data = {
             "messages": messages,
             "temperature": 0.8,
-            "max_tokens": 900,
+            "max_tokens": 4096,
             "stream": bool(stream),
         }
         if AI_MODEL:
@@ -88,23 +88,29 @@ init python:
             method="POST",
         )
 
-        # 不提供任何证书校验降级路径。证书失败即转本地故事。
-        response = _story_urlopen(request, timeout=60)
+        # 不提供任何证书校验降级路径。证书失败保留本轮供重试。
+        response = _story_urlopen(request, timeout=120)
         try:
             if not stream:
                 raw = response.read(AI_MAX_RESPONSE_BYTES + 1)
                 if len(raw) > AI_MAX_RESPONSE_BYTES:
                     raise ValueError("AI response exceeds size limit")
                 data = _story_json.loads(raw.decode("utf-8"))
-                content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                choice = data.get("choices", [{}])[0]
+                if choice.get("finish_reason") != "stop":
+                    raise ValueError("AI response did not finish normally")
+                content = choice.get("message", {}).get("content", "")
                 content = str(content or "").strip()
                 if not content:
                     raise ValueError("AI returned an empty response")
-                return content[:12000]
+                if len(content) > 12000:
+                    raise ValueError("AI text exceeds display limit")
+                return content
 
             chunks = []
             byte_count = 0
             saw_done = False
+            finish_reason = None
             for raw_line in response:
                 byte_count += len(raw_line)
                 if byte_count > AI_MAX_RESPONSE_BYTES:
@@ -117,14 +123,20 @@ init python:
                     saw_done = True
                     break
                 chunk = _story_json.loads(body)
-                delta = chunk.get("choices", [{}])[0].get("delta", {})
+                choices = chunk.get("choices") or []
+                if not choices:
+                    continue
+                choice = choices[0]
+                if choice.get("finish_reason") is not None:
+                    finish_reason = choice["finish_reason"]
+                delta = choice.get("delta", {})
                 content = delta.get("content", "")
                 if content:
                     chunks.append(str(content))
             result = "".join(chunks).strip()
-            if not saw_done or not result:
+            if not saw_done or not result or finish_reason != "stop" or len(result) > 12000:
                 raise ValueError("AI stream ended before a valid completion")
-            return result[:12000]
+            return result
         finally:
             try:
                 response.close()
@@ -171,6 +183,13 @@ init python:
         score = _local_score(game_ref)
         title = "{}{}".format(labels[strongest], "小队长" if strongest != "友" else "守护者")
         ending_title, ending_kind, ending_summary = local_ending(game_ref)
+        if getattr(game_ref, "online_enabled", False):
+            # 云端评价失败时不能凭本地篇章编造另一种结局。
+            ending_title, ending_kind = "这次奇遇的最后一幕", "云端奇遇"
+            last_story = next((m["content"] for m in reversed(game_ref.messages) if m["role"] == "assistant"), "")
+            text_lines = [s[2] if s[0] == "dialogue" else s[1] for s in parse_ai_response(last_story)
+                          if s[0] in ("dialogue", "narration", "text")]
+            ending_summary = sanitize_player_text(" ".join(text_lines[-2:]), 120, "本次冒险已结束。")
         return """**角色表现**
 你完成了{turns}轮互动。从“{first}”到“{last}”，每次选择都真正推动了故事。
 
@@ -227,27 +246,31 @@ init python:
         return build_local_story(game_ref)
 
     def call_ai(messages, game_ref=None, purpose="story"):
-        """非流式边界：仅在玩家选择联网且端点合法时请求，任何失败均安全降级。"""
+        """故事失败留给重试；评价和报告可根据真实记录在本地整理。"""
         if use_online_story(game_ref):
             try:
+                if purpose == "story":
+                    return _request_online_story(messages, game_ref, stream=False)
                 return _online_request(messages, stream=False)
             except _StoryHTTPError as error:
                 _story_log("online HTTP error {} for {}".format(error.code, purpose))
             except Exception as error:
                 _story_log("online {} failed: {}".format(purpose, type(error).__name__))
-            if game_ref is not None:
-                game_ref.ai_notice = "云端故事暂时不可用，已安全切换到本地模式。"
+            if purpose == "story":
+                raise ValueError("Online story unavailable; retry the same turn")
+            game_ref.ai_notice = "云端整理暂时不可用，已根据本次记录生成本地回顾。"
+        elif purpose == "story" and getattr(game_ref, "online_enabled", False):
+            raise ValueError("Online story endpoint unavailable; restart the launcher")
         return _fallback_for_purpose(game_ref, purpose)
+
+    def _request_online_story(messages, game_ref, stream=True, request_epoch=None):
+        # Linux builds the request from its Book; the old UI transcript is not sent.
+        return request_linux_story(game_ref, request_epoch)
 
     def _commit_story_response(game_ref, response, request_epoch):
         if request_epoch != getattr(game_ref, "_request_epoch", None):
             return False
-        parsed = parse_ai_response(response)
-        visible = [s for s in parsed if s and s[0] in ("scene", "dialogue", "narration", "text")]
-        if not visible:
-            response = build_local_story(game_ref)
-            parsed = parse_ai_response(response)
-            game_ref.ai_notice = "故事响应格式不完整，已改用本地剧情继续。"
+        parsed = game_ref._linux_view["segments"] if game_ref.online_enabled else parse_ai_response(response)
         game_ref._full_response = response
         game_ref._stream_buffer = ""
         game_ref.ai_result = response
@@ -257,22 +280,15 @@ init python:
 
     def call_ai_stream(messages, game_ref, request_epoch):
         """
-        先在后台完整验证远端 SSE，再一次性提交到游戏队列。
-        这避免断网时把半截故事写入存档和上下文。
+        Linux 引擎读到本章选择/结局后，再一次性提交到显示队列。
+        失败时保留原版已确认的页面供续写，界面不展示未完成的章节。
         """
         if request_epoch != getattr(game_ref, "_request_epoch", None):
             return
         if use_online_story(game_ref):
-            try:
-                response = _online_request(messages, stream=True)
-            except _StoryHTTPError as error:
-                _story_log("online stream HTTP error {}".format(error.code))
-                response = build_local_story(game_ref)
-                game_ref.ai_notice = "云端故事暂时不可用，已安全切换到本地模式。"
-            except Exception as error:
-                _story_log("online stream failed: {}".format(type(error).__name__))
-                response = build_local_story(game_ref)
-                game_ref.ai_notice = "云端故事暂时不可用，已安全切换到本地模式。"
+            response = _request_online_story(messages, game_ref, stream=True, request_epoch=request_epoch)
+        elif game_ref.online_enabled:
+            raise ValueError("Online endpoint unavailable; keep the current story")
         else:
             response = build_local_story(game_ref)
         _commit_story_response(game_ref, response, request_epoch)

@@ -1,0 +1,14 @@
+test_custom_scenario_uses_linux_premise_interpreter (__main__.LinuxStoryTests.test_custom_scenario_uses_linux_premise_interpreter) ... ok
+test_display_keeps_all_lines_and_guest_names_without_legacy_parser (__main__.LinuxStoryTests.test_display_keeps_all_lines_and_guest_names_without_legacy_parser) ... ok
+test_entire_book_requests_and_state_equal_direct_linux_calls (__main__.LinuxStoryTests.test_entire_book_requests_and_state_equal_direct_linux_calls) ... ok
+test_free_idea_uses_original_interpreter_and_choice_object (__main__.LinuxStoryTests.test_free_idea_uses_original_interpreter_and_choice_object) ... ok
+test_partial_failure_retry_keeps_pages_choice_and_save_state (__main__.LinuxStoryTests.test_partial_failure_retry_keeps_pages_choice_and_save_state) ... ok
+test_short_book_uses_linux_two_choices_and_four_page_finale (__main__.LinuxStoryTests.test_short_book_uses_linux_two_choices_and_four_page_finale) ... ok
+test_stale_epoch_and_old_save_never_replace_the_story (__main__.LinuxStoryTests.test_stale_epoch_and_old_save_never_replace_the_story) ... ok
+test_vendored_files_are_byte_identical_to_linux (__main__.LinuxStoryTests.test_vendored_files_are_byte_identical_to_linux) ... ok
+test_only_complete_stop_is_accepted_for_nonstory_requests (__main__.TransportTests.test_only_complete_stop_is_accepted_for_nonstory_requests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.392s
+
+OK

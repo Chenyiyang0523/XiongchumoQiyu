@@ -1,0 +1,113 @@
+{
+  "model": "glm-5.3",
+  "endpoint": "BigModel ordinary metered API",
+  "stories": [
+    {
+      "scenario": "所有人的影子一起出走，跑去干自己偷偷想干的事。",
+      "duration": 5,
+      "turns": [
+        {
+          "turn": 0,
+          "seconds": 10.32,
+          "choice": null,
+          "story": "【场景：forest】\n早上，太阳照进大树洞。熊大站起来，往脚下一看——咦？地上光溜溜的，没有影子。\n**熊大**：我的影子呢？站好队，出列的是谁？\n地上什么都没有。只有一片亮亮的草地。\n【场景：forest】\n熊大跑出树洞。小路上，一排影子正踮着脚往远处溜：有兔子的、有猴子的，最前头那个圆滚滚的，是熊二的影子。\n**熊二**：俺的影子跑啦！熊大，它还偷拿了俺的蜂蜜勺嘞！\n影子们排着队，谁也不回头。\n【场景：forest】\n追到岔路口，影子队伍分了家。一队往河边去，一队往山上去。熊大的影子混在中间，走几步，还打个哈欠。\n**熊大**：它打的哈欠……怎么跟我早上没睡够一模一样？\n岔路口的风一吹，两边的影子越走越远了。\n**请选择：**\nA. 悄悄跟上自己的影子，看它想干嘛\nB. 先拦住熊二的影子，把蜂蜜勺要回来\nC. 学影子走路混进队伍，跟着上山",
+          "ended": false
+        },
+        {
+          "turn": 1,
+          "seconds": 23.74,
+          "choice": "B. 先拦住熊二的影子，把蜂蜜勺要回来",
+          "story": "【场景：forest】\n熊大张开手臂，拦在路中间。熊二的影子停住了，把蜂蜜勺藏到背后。\n**熊二**：俺跟你说好话咧，把勺勺还俺吧。\n熊二弯腰作了个揖。影子也学他作揖，勺子从背后滑了出来，在地上拖出一条亮线。\n【场景：forest】\n熊大眼疾手快，一脚踩住地上的勺子。影子拽了两下，拽不动，松了手。\n叮铃——\n**熊二**：嘿嘿，勺勺回来啦！熊大你真机灵！\n【场景：forest】\n熊二的影子一屁股坐在地上，肩膀一抽一抽，扁扁地抹眼泪。它指指熊二的肚皮。\n咕噜噜——\n**熊二**：别哭咧……其实俺早上偷偷想先舔一勺，才让你拿的勺勺，不怪你。\n影子不哭了，站起来，指了指上山的路——熊大的影子正往那边晃，晃一步打个哈欠。\n**请选择：**\nA. 分一勺蜂蜜给熊二的影子，请它带路上山\nB. 让熊二牵着他的影子，大家一起追上山\nC. 先躲起来偷看，自己的影子到底想睡哪儿",
+          "ended": false
+        },
+        {
+          "turn": 2,
+          "seconds": 10.28,
+          "choice": "我想和自己的影子交换工作一天，先问它最想做什么",
+          "story": "【场景：mountain】\n熊大追到山坡上，蹲下来，对准自己的影子比划：我干活，你睡觉，换一天？\n影子猛地点头，点得像小鸡啄米。它躺倒，抱住脑袋，又指指熊大，再指指树荫下的软草地。\n**熊大**：你憋了一句话？说来听听。\n影子张了张嘴，没有声音。它捡起一根松针，在土上画了个大大的枕头，又画了三个Z。\n【场景：mountain】\n熊大看懂了。他往草地上一躺，四脚朝天。\n呼——呼——\n影子立刻跳起来，站得笔直，学着熊大平时的样子在坡上走来走去，挺着胸，还学他挥手下命令的姿势。熊二的影子在旁边看得直拍手。\n【场景：mountain】\n熊二也追上来了，一屁股坐在熊大旁边。\n**熊二**：熊大，你白天睡觉，太阳都愣住咧。\n天上，太阳真的停了一下。影子们全停住了，齐刷刷看过来。光头强的影子从山下走上来，手里抱着一棵小树苗，栽进坡上的土坑里。\n**熊大**：（眯着眼）怪了……光头强的影子，怎么种起树来了？\n**请选择：**\nA. 假装睡着，偷偷眯着眼看光头强的影子种树\nB. 站起来喊光头强上山，看他见到自己影子啥表情\nC. 让熊二的影子去找光头强的影子，问问小树苗哪来的",
+          "ended": false
+        },
+        {
+          "turn": 3,
+          "seconds": 13.7,
+          "choice": "A. 假装睡着，偷偷眯着眼看光头强的影子种树",
+          "story": "【场景：mountain】\n熊大闭上眼，只留一条小缝。光头强的影子挖坑、扶苗、拍土，动作又轻又熟，还哼着小调。\n哼——哼——\n不远处传来电锯声。光头强扛着工具爬上山，看见自己的影子，愣在原地。\n【场景：mountain】\n**光头强**：你……你干什么呢！我砍树，你种树，让李老板看见，我工资就飞啦！\n影子不慌不忙，又栽下一棵苗，然后指指光头强的心口。光头强的脸慢慢红了，安全帽都歪了。\n**光头强**：行行行，种就种……其实我早想试试，不砍树，种树。\n**熊大**：光头强，你心里的小秘密，全被影子说出去咯。\n【场景：mountain】\n太阳往西边溜，影子们排好队，一个个溜回主人脚下。熊大的影子回来了，趴在他脚边，还打了个哈欠。\n熊二抱着蜂蜜勺，坐得直直的。山坡上，一排新栽的小树苗站得笔直，像一排小哨兵。\n**熊二**：熊大，明天俺们还来给小树浇水嘞！\n**熊大**：来。不过明天——先让我把觉补完。\n【属性变化：智+1，友+1】\n【剧终】",
+          "ended": true
+        }
+      ],
+      "completed": true,
+      "final_stats": {
+        "智": 6,
+        "勇": 5,
+        "体": 5,
+        "友": 6
+      }
+    }
+  ],
+  "usage": [
+    {
+      "completion_tokens": 586,
+      "completion_tokens_details": {
+        "reasoning_tokens": 206
+      },
+      "prompt_tokens": 1677,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "total_tokens": 2263,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 1402,
+      "completion_tokens_details": {
+        "reasoning_tokens": 975
+      },
+      "prompt_tokens": 2089,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "total_tokens": 3491,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 461,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      },
+      "prompt_tokens": 2513,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "total_tokens": 2974,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 466,
+      "completion_tokens_details": {
+        "reasoning_tokens": 136
+      },
+      "prompt_tokens": 3012,
+      "prompt_tokens_details": {
+        "cached_tokens": 2496
+      },
+      "total_tokens": 3478,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 478,
+      "completion_tokens_details": {
+        "reasoning_tokens": 57
+      },
+      "prompt_tokens": 3384,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008
+      },
+      "total_tokens": 3862,
+      "returned_model": "glm-5.3"
+    }
+  ],
+  "validation": [
+    "[story-service] repairing story format once: Final turn needs an ending without options"
+  ],
+  "passed": true
+}

@@ -1,0 +1,11 @@
+{
+  "completed_stories": 2,
+  "accepted_turns": 10,
+  "seconds_min": 7.3,
+  "seconds_median": 10.3,
+  "seconds_max": 23.74,
+  "models": [
+    "glm-5.3"
+  ],
+  "note": "Sound story completed in live-stories.json. Its next shadow opening failed format checks; after parser/choice compatibility fixes the independent live-shadow.json run completed, including custom input."
+}

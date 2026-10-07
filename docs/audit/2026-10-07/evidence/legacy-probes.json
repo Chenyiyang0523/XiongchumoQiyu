@@ -1,0 +1,30 @@
+{
+  "nonstream_accepts_length_stop": true,
+  "stream_accepts_length_stop": true,
+  "fallback": {
+    "actual_choice": "C. 请光头强一起爬上树",
+    "rendered_opening": [
+      "【场景：光头强家】",
+      "你决定“请伙伴回忆刚才的路标”。每位伙伴都分到了适合的任务，大家一起完成了这一步。",
+      "【属性变化：友+2】",
+      "旧工具箱里有一把钝头小铲，还有一张写着“别伤树根”的纸条。"
+    ],
+    "online_enabled_after_failure": true,
+    "local_response_stored_as_assistant": true
+  },
+  "duplicate_stat_tags": {
+    "initial": 5,
+    "final": 9,
+    "change": 4
+  },
+  "scene_only_accepted": {
+    "segments": [
+      [
+        "scene",
+        "狗熊岭森林"
+      ]
+    ],
+    "options": [],
+    "fallback_notice": ""
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "audit_date": "2026-10-07",
+  "timezone": "America/Los_Angeles",
+  "local_head": "b9ff9b3577b763c88c845fe6017403ada687398a",
+  "linux_repo": "bj:/home/ubuntu/cyy/XiongchumoQiyu",
+  "remote_refs": {
+    "rewrite": "0071ef84a9ce177e54c9913995a84ce064efb18d",
+    "m3-r2": "85140750c5e2d2ee5760af158dd9ffd1b9b000e8",
+    "fix-port": "279cf9075a5f2e6bfe6c25ef10919ee32c682e17",
+    "main": "6b3684244e9475eaf6a83e385a2f207f1746315c"
+  },
+  "merge_tree": "7524d4ab1728350ea44c075ebcbb68cb785d3d93",
+  "legacy_pure_tests": {
+    "groups_passed": 3,
+    "offline_paths": 576
+  },
+  "legacy_scan_live_working_tree": {
+    "exit_code": 1,
+    "issues": [
+      "game/cache",
+      "game/saves",
+      "game/*.rpyc"
+    ]
+  },
+  "legacy_scan_isolated_source": {
+    "exit_code": 0
+  },
+  "legacy_lint": {
+    "version": "8.5.2.26010301",
+    "diagnostics": 0
+  },
+  "rewrite_tests_on_linux": {
+    "passed": 1261,
+    "exit_code": 0
+  },
+  "m3_r2_tests_on_linux": {
+    "passed": 1172,
+    "skipped": 1,
+    "exit_code": 0
+  },
+  "automatic_merge_tests_on_mac": {
+    "passed": 1507,
+    "skipped": 4
+  },
+  "contract_before_patch": {
+    "failed": 3,
+    "deselected": 15
+  },
+  "merge_with_patch_and_all_contract_tests": {
+    "passed": 1525,
+    "skipped": 4
+  },
+  "paid_calls_started_by_audit": 0,
+  "r3_running_snapshot": {
+    "observed_utc": "2026-10-07T09:04:16.829064+00:00",
+    "source": "/Users/vvcc/XiongchumoQiyu2/m3/runs/r3-lean/run.json",
+    "run": {
+      "siblings": true,
+      "media": "text",
+      "writer": "lean",
+      "books": 6,
+      "started": "2026-10-07T08:50:13+00:00",
+      "pid": 17093
+    },
+    "completed_summaries": [
+      "000-random",
+      "001-careful",
+      "002-bold"
+    ]
+  }
+}

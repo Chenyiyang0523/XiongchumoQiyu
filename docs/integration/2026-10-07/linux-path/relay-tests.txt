@@ -1,0 +1,8 @@
+test_auth_and_upstream_error_status_are_preserved (__main__.RelayTests) ... ok
+test_body_and_linux_model_parameters_are_not_rewritten (__main__.RelayTests) ... ok
+test_stream_arrives_before_upstream_finishes_and_closes_on_disconnect (__main__.RelayTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.016s
+
+OK

@@ -560,7 +560,17 @@ init python:
                 continue
             # 其他
             segments.append(("text", s))
-        return segments[:32]  # 防止异常长响应阻塞交互，同时保留完整短篇剧情。
+        totals = {}
+        result = []
+        for segment in segments:
+            if segment[0] == "stats":
+                for dim, delta in segment[1].items():
+                    totals[dim] = totals.get(dim, 0) + delta
+            else:
+                result.append(segment)
+        if totals:
+            result.append(("stats", {dim: max(-2, min(2, delta)) for dim, delta in totals.items()}))
+        return result[:32]  # 联网响应在提交前另行校验行数，避免显示不全。
 
     # --------------------------------------------------------
     # 知识挑战模板（按难度+模式组合）
@@ -916,6 +926,9 @@ C. 8勺"""
             self.ai_error = None
             self.ai_notice = ""
             self.online_enabled = False
+            self._story_writer = ""
+            self._linux_state = None
+            self._linux_view = {}
             self.current_scene_id = "forest"
             self._request_epoch = next_epoch
             # 流式输出状态
@@ -1041,34 +1054,21 @@ C. 8勺"""
             self.fate_text = sanitize_player_text(fate_text, 60, "")
             self.ending_type = ending_type if ending_type in ENDING_DESCRIPTIONS else ""
             self.online_enabled = bool(online_enabled and ai_service_configured())
-            self.system_prompt = build_system_prompt(
+            if self.online_enabled:
+                self._story_writer = "linux-lean"
+                self.max_turns = len(_linux_story.load_content().layout(_linux_story.length_for(self.duration))) - 1
+            self.system_prompt = build_lean_story_prompt(self) if self.online_enabled else build_system_prompt(
                 self.character, self.scenario, self.duration,
                 self._game_mode, self._game_difficulty,
                 self.powerup, self.fate_text, self.ending_type
             )
 
-        def start(self, character, scenario, duration_minutes,
-                  mode="小朋友独立体验", difficulty="儿童难度",
-                  powerup="", fate_text="", ending_type="", online_enabled=False):
-            self.reset()
-            self._configure_run(character, scenario, duration_minutes, mode, difficulty,
-                                powerup, fate_text, ending_type, online_enabled)
-            self.messages = [{"role": "system", "content": self.system_prompt}]
-            self.started = True
-            self.messages.append({
-                "role": "user",
-                "content": "请开始这个精彩的故事吧！设定场景，让角色登场！"
-            })
-            reply = call_ai(self.messages, self, "story")
-            self.messages.append({"role": "assistant", "content": reply})
-            return reply
-
-        def continue_story(self, user_input):
-            if not self.started or self.ended:
-                return "请先开始一个新的故事！", False
+        def _prepare_story_turn(self, user_input):
+            """记录一次选择；失败重试不再次调用，也不提前宣告结束。"""
             user_input = sanitize_player_text(user_input, 120, "继续观察周围的情况")
             self.turn_count += 1
             self.user_responses.append(user_input)
+            qte_result = self._qte_result
             # QTE 结果注入
             qte_prefix = ""
             if self._qte_result is not None:
@@ -1088,8 +1088,33 @@ C. 8勺"""
                     hint = "\n\n（提示：这是最后一个回合，请按照「{}」给故事一个相应的结局，在结尾加上'【剧终】'。）".format(self.ending_type)
                 else:
                     hint = "\n\n（提示：这是最后一个回合，请给故事一个温馨圆满的结局，在结尾加上'【剧终】'。）"
-                self.ended = True
-            self.messages.append({"role": "user", "content": qte_prefix + user_input + hint})
+            if self.online_enabled:
+                # UI 记录；Linux Writer 自己从 Book 构造完整生成上下文。
+                content = lean_turn_prompt(self, user_input, qte_result)
+            else:
+                content = qte_prefix + user_input + hint
+            self.messages.append({"role": "user", "content": content})
+
+        def start(self, character, scenario, duration_minutes,
+                  mode="小朋友独立体验", difficulty="儿童难度",
+                  powerup="", fate_text="", ending_type="", online_enabled=False):
+            self.reset()
+            self._configure_run(character, scenario, duration_minutes, mode, difficulty,
+                                powerup, fate_text, ending_type, online_enabled)
+            self.messages = [{"role": "system", "content": self.system_prompt}]
+            self.started = True
+            self.messages.append({
+                "role": "user",
+                "content": lean_turn_prompt(self) if self.online_enabled else "请开始这个精彩的故事吧！设定场景，让角色登场！"
+            })
+            reply = call_ai(self.messages, self, "story")
+            self.messages.append({"role": "assistant", "content": reply})
+            return reply
+
+        def continue_story(self, user_input):
+            if not self.started or self.ended:
+                return "请先开始一个新的故事！", False
+            self._prepare_story_turn(user_input)
             reply = call_ai(self.messages, self, "story")
             self.messages.append({"role": "assistant", "content": reply})
             is_ending = self.ended or "【剧终】" in reply
@@ -1103,10 +1128,10 @@ C. 8勺"""
             conversation_log = []
             for msg in self.messages:
                 if msg["role"] == "assistant":
-                    conversation_log.append("【AI剧情】{}...".format(msg['content'][:500]))
+                    conversation_log.append("【AI剧情】{}".format(msg['content']))
                 elif msg["role"] == "user" and "请开始这个精彩的故事" not in msg["content"]:
                     conversation_log.append("【用户回应】{}".format(msg['content']))
-            conversation_text = "\n\n".join(conversation_log[-10:])
+            conversation_text = "\n\n".join(conversation_log)
             prompt = EVALUATION_PROMPT_TEMPLATE.format(
                 character=self.character,
                 scenario=self.scenario,
@@ -1150,7 +1175,7 @@ C. 8勺"""
             self.started = True
             self.messages.append({
                 "role": "user",
-                "content": "请开始这个精彩的故事吧！设定场景，让角色登场！"
+                "content": lean_turn_prompt(self) if self.online_enabled else "请开始这个精彩的故事吧！设定场景，让角色登场！"
             })
             self.ai_busy = True
             self.ai_result = None
@@ -1161,30 +1186,7 @@ C. 8勺"""
             """异步推进故事"""
             if not self.started or self.ended:
                 return
-            user_input = sanitize_player_text(user_input, 120, "继续观察周围的情况")
-            self.turn_count += 1
-            self.user_responses.append(user_input)
-            # QTE 结果注入
-            qte_prefix = ""
-            if self._qte_result is not None:
-                if self._qte_result:
-                    qte_prefix = "（刚才的挑战成功了！）"
-                else:
-                    qte_prefix = "（刚才的挑战失败了……）"
-                self._qte_result = None
-            hint = ""
-            if self.turn_count >= self.max_turns - 1:
-                if self.ending_type:
-                    hint = "\n\n（提示：剧情即将接近尾声，请开始为「{}」铺垫。）".format(self.ending_type)
-                else:
-                    hint = "\n\n（提示：剧情即将接近尾声，请开始为故事铺垫一个圆满的结局。）"
-            if self.turn_count >= self.max_turns:
-                if self.ending_type:
-                    hint = "\n\n（提示：这是最后一个回合，请按照「{}」给故事一个相应的结局，在结尾加上'【剧终】'。）".format(self.ending_type)
-                else:
-                    hint = "\n\n（提示：这是最后一个回合，请给故事一个温馨圆满的结局，在结尾加上'【剧终】'。）"
-                self.ended = True
-            self.messages.append({"role": "user", "content": qte_prefix + user_input + hint})
+            self._prepare_story_turn(user_input)
             self.ai_busy = True
             self.ai_result = None
             self.ai_error = None
@@ -1206,10 +1208,10 @@ C. 8勺"""
             conversation_log = []
             for msg in self.messages:
                 if msg["role"] == "assistant":
-                    conversation_log.append("【AI剧情】{}...".format(msg['content'][:500]))
+                    conversation_log.append("【AI剧情】{}".format(msg['content']))
                 elif msg["role"] == "user" and "请开始这个精彩的故事" not in msg["content"]:
                     conversation_log.append("【用户回应】{}".format(msg['content']))
-            conversation_text = "\n\n".join(conversation_log[-10:])
+            conversation_text = "\n\n".join(conversation_log)
             eval_prompt = EVALUATION_PROMPT_TEMPLATE.format(
                 character=self.character,
                 scenario=self.scenario,
@@ -1294,9 +1296,10 @@ C. 8勺"""
                 call_ai_stream(list(self.messages), self, request_epoch)
             except Exception as e:
                 if request_epoch == self._request_epoch:
-                    renpy.log("[story] fallback after {}".format(type(e).__name__))
-                    _commit_story_response(self, build_local_story(self), request_epoch)
-                    self.ai_notice = "故事服务暂时不可用，已切换到本地模式。"
+                    _story_log("story failed: {}".format(type(e).__name__))
+                    self.ai_error = ("这份云端存档来自旧版文字引擎。请返回主菜单，开始一次新冒险。"
+                        if self.online_enabled and getattr(self, "_story_writer", "") != "linux-lean"
+                        else "故事暂时未能完成。前文和选择都还在，请重试这一段。")
             finally:
                 if request_epoch == self._request_epoch:
                     self._stream_buffer = ""
@@ -1315,7 +1318,7 @@ C. 8勺"""
             self.started = True
             self.messages.append({
                 "role": "user",
-                "content": "请开始这个精彩的故事吧！设定场景，让角色登场！"
+                "content": lean_turn_prompt(self) if self.online_enabled else "请开始这个精彩的故事吧！设定场景，让角色登场！"
             })
             request_epoch = self._reset_stream_state()
             renpy.invoke_in_thread(self._bg_call_stream, request_epoch)
@@ -1324,30 +1327,14 @@ C. 8勺"""
             """流式推进故事"""
             if not self.started or self.ended:
                 return
-            user_input = sanitize_player_text(user_input, 120, "继续观察周围的情况")
-            self.turn_count += 1
-            self.user_responses.append(user_input)
-            # QTE 结果注入
-            qte_prefix = ""
-            if self._qte_result is not None:
-                if self._qte_result:
-                    qte_prefix = "（刚才的挑战成功了！）"
-                else:
-                    qte_prefix = "（刚才的挑战失败了……）"
-                self._qte_result = None
-            hint = ""
-            if self.turn_count >= self.max_turns - 1:
-                if self.ending_type:
-                    hint = "\n\n（提示：剧情即将接近尾声，请开始为「{}」铺垫。）".format(self.ending_type)
-                else:
-                    hint = "\n\n（提示：剧情即将接近尾声，请开始为故事铺垫一个圆满的结局。）"
-            if self.turn_count >= self.max_turns:
-                if self.ending_type:
-                    hint = "\n\n（提示：这是最后一个回合，请按照「{}」给故事一个相应的结局，在结尾加上'【剧终】'。）".format(self.ending_type)
-                else:
-                    hint = "\n\n（提示：这是最后一个回合，请给故事一个温馨圆满的结局，在结尾加上'【剧终】'。）"
-                self.ended = True
-            self.messages.append({"role": "user", "content": qte_prefix + user_input + hint})
+            self._prepare_story_turn(user_input)
+            request_epoch = self._reset_stream_state()
+            renpy.invoke_in_thread(self._bg_call_stream, request_epoch)
+
+        def retry_story_stream(self):
+            """沿用失败请求的前文与选择，轮次、角色和 run_id 均不重置。"""
+            if self.ai_busy or not self.messages or self.messages[-1]["role"] != "user":
+                return
             request_epoch = self._reset_stream_state()
             renpy.invoke_in_thread(self._bg_call_stream, request_epoch)
 
@@ -1409,10 +1396,10 @@ C. 8勺"""
             conversation_log = []
             for msg in self.messages:
                 if msg["role"] == "assistant":
-                    conversation_log.append("【AI剧情】{}...".format(msg['content'][:500]))
+                    conversation_log.append("【AI剧情】{}".format(msg['content']))
                 elif msg["role"] == "user" and "请开始这个精彩的故事" not in msg["content"]:
                     conversation_log.append("【用户回应】{}".format(msg['content']))
-            conversation_text = "\n\n".join(conversation_log[-10:])
+            conversation_text = "\n\n".join(conversation_log)
 
             # 计算属性变化
             start_stats = {"智": STAT_DEFAULT, "勇": STAT_DEFAULT, "体": STAT_DEFAULT, "友": STAT_DEFAULT}

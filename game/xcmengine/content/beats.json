@@ -1,0 +1,103 @@
+{
+  "version": 2,
+  "notes": "Story skeleton owned by code. lengths → chapter sizes and roles (the finale always has 4 pages, the chapter before it 2). Each role lists one beat per page; '{outcome}' is replaced, per sibling, by one of the outcome variants so the three children of a fork differ in WHAT HAPPENS. {turn_setup} and {hero} are filled by the director; '{ending}' (finale page 3) is the ending family's page3 beat. reveal.page replaces page 2 of the chapter that tells the twist (the low point), reveal.finale is added to the finale's page 2 when the finale tells it (a short book, whose low point is no reveal chapter); {reveal} is the truth, retold in a child's words, and the sentence that planted its clue. A medium or long twist ending gets reveal.told on its page 3 instead: the truth was told at the low point, never twice. {low_menu} is low_menu, or nothing when the secret names what every low point loses (its 低谷 line follows). Each finale's page 4 is {echo}: page 1's picture with the want met (the director fills {picture} and {want}). fork_axes say what each fork is about. Ending families are scored from branch state (see endings.score).",
+  "lengths": {
+    "short": {"chapters": [3, 2, 4], "roles": ["setup", "lowpoint_short", "finale"]},
+    "medium": {"chapters": [3, 3, 2, 4], "roles": ["setup", "trouble", "lowpoint", "finale"]},
+    "long": {"chapters": [3, 3, 3, 2, 4], "roles": ["setup", "trouble", "detour", "lowpoint", "finale"]}
+  },
+  "tension": {
+    "setup": [1, 2, 2], "trouble": [2, 3, 3], "detour": [2, 3, 3],
+    "lowpoint": [4, 2], "lowpoint_short": [4, 2], "finale": [4, 5, 3, 1]
+  },
+  "outcomes": {
+    "success_with_cost": "这个办法成功了一半，事情往前走了一步，却惹出一个新麻烦（最好是怪规矩惹的）",
+    "fail_but_gain": "这个办法失败了，失败得很好笑，却让大家发现了怪规矩的一个新用法",
+    "detour": "这个办法把大家带到了一个新地方（出场的还是本书的角色）",
+    "idea": "这个点子真的做成了，事情往前走了一步；做成以后才冒出一个新麻烦（最好是怪规矩惹的）"
+  },
+  "hooks": {
+    "question": "以一个悬着的问题或一个小威胁结束（不要用旁白提问）",
+    "interrupted": "以一个被打断的动作结束",
+    "reveal": "以一个马上就要揭晓的东西结束",
+    "joke": "以一个笑话的铺垫结束，下一页抖响",
+    "quiet": "以一个安静的瞬间结束，下一页会很热闹"
+  },
+  "fork_axes": {
+    "1": "怎么对付这件怪事：三个完全不同的办法",
+    "2": "接下来怎么办：三个完全不同的办法（可以利用怪规矩）",
+    "3": "关键时刻之前：三个不同的准备",
+    "final": "最后怎么解决难题：三个完全不同的办法"
+  },
+  "reveal": {
+    "page": "安静的一页：有人发现了真相——用一句旁白或台词说清楚：{reveal}，以及它和怪事有什么关系；前面埋下的那样东西也不起眼地出现一下",
+    "finale": "这一页用一句旁白或台词说清楚真相：{reveal}",
+    "told": "真相已经在低谷时揭开：{truth}，结局用它变出意外，不要再揭一遍"
+  },
+  "low_menu": "（东西丢了、朋友生气了，或计划全砸了）",
+  "echo": "第一页的画面又出现了{picture}，这回{hero}已经得到了{want}：同样的东西，结果反过来，不要照抄第一页的句子；再来一个小笑点，只能锦上添花，不能把得到的东西弄丢，也不能让开头的麻烦再来一次",
+  "structures": {
+    "three_tries": {
+      "name": "三次尝试",
+      "roles": {
+        "setup": ["开场：{hero}正在做一件具体的小事，怪事第一次出现", "怪规矩第一次露出来，旁白用一句“只要……就……”把它说清楚，也写出它靠的那样东西在谁手里；不起眼地埋下 role 为 turn 的那个伏笔（写进文字，也写进 art.focus，留到最后关键时刻才用）", "第一次尝试：信心满满，好笑地失败；难题摆到了面前；复沓句第一次出现：让一个角色喊出来，或跟着怪规矩一起出现"],
+        "trouble": ["{outcome}", "第二次尝试：更大、更好笑，还是失败；复沓句第二次出现", "对手亮出真正的动机，或冒出一个更大的阻碍"],
+        "detour": ["{outcome}", "岔路上的一段小冒险，发现一条关于怪规矩的新线索", "线索指向一个更大的麻烦"],
+        "lowpoint": ["{outcome}；第三次尝试翻车，大家掉进低谷{low_menu}", "低谷里安静的一页：话很少；前面埋下的那样东西不起眼地出现了一下"],
+        "lowpoint_short": ["{outcome}；第二次尝试更大更好笑，却彻底翻车，大家掉进低谷；复沓句第二次出现", "低谷里安静的一页：话很少；前面埋下的那样东西不起眼地出现了一下"],
+        "finale": ["关键时刻：按最后那个选择，用{turn_setup}加上{hero}自己的本事解决难题", "高潮好戏：有声音有动作，复沓句第三次出现但变了花样，问题解决", "{ending}", "结尾：{echo}"]
+      }
+    },
+    "countdown": {
+      "name": "倒计时",
+      "roles": {
+        "setup": ["开场：一个期限出现了（太阳落山前、月亮出来前，或者有人来之前）", "怪规矩第一次露出来，旁白用一句“只要……就……”把它说清楚，也写出它靠的那样东西在谁手里；不起眼地埋下 role 为 turn 的那个伏笔（写进文字，也写进 art.focus，留到最后关键时刻才用）；倒计时第一次被提起（钟声、影子或数数）：单独一行拟声词（比如“当——”），再跟一句短句", "第一步行动出了岔子，耽误了时间；复沓句第一次出现：让一个角色喊出来，或跟着怪规矩一起出现"],
+        "trouble": ["{outcome}", "抄近路或想妙招，结果闹出更大的岔子（好笑）；倒计时第二次出现（单独一行拟声词，再跟一句短句）；复沓句第二次出现", "对手的动机露出来，或冒出新阻碍；只剩最后一点时间"],
+        "detour": ["{outcome}", "绕了一段远路，发现一条关于怪规矩的新线索", "线索指向更大的麻烦，时间又少了一截"],
+        "lowpoint": ["{outcome}；最后的办法也失败了，好像来不及了", "安静的一页：只听得见倒计时（单独一行拟声词，再跟一句短句）；前面埋下的东西不起眼地出现了一下"],
+        "lowpoint_short": ["{outcome}；抄近路闹出大岔子，最后的办法也失败了，好像来不及了；复沓句第二次出现", "安静的一页：只听得见倒计时（单独一行拟声词，再跟一句短句）；前面埋下的东西不起眼地出现了一下"],
+        "finale": ["关键时刻：按最后那个选择，用{turn_setup}加上{hero}的本事解决难题，就在最后一刻赶上了", "高潮：倒计时的最后一声（单独一行拟声词，再跟一句短句），问题解决，复沓句第三次变了花样", "{ending}", "结尾：{echo}"]
+      }
+    },
+    "snowball": {
+      "name": "滚雪球",
+      "roles": {
+        "setup": ["开场：一个小麻烦或一件小差事挡在了{hero}前面", "第一个帮手（或第一个跟屁虫）加入；怪规矩第一次露出来，旁白用一句“只要……就……”把它说清楚，也写出它靠的那样东西在谁手里；不起眼地埋下 role 为 turn 的那个伏笔（写进文字，也写进 art.focus，留到最后关键时刻才用）；复沓句第一次出现：让一个角色喊出来，或跟着怪规矩一起出现", "第一次一起试，失败；又有人加入，或者麻烦又大了一圈"],
+        "trouble": ["{outcome}", "人越来越多（或麻烦越滚越大），复沓句第二次出现，场面更热闹更好笑", "对手登场，或者最大的麻烦出现"],
+        "detour": ["{outcome}", "雪球滚到一个新地方，又卷进来一个新角色或新麻烦", "新来的带来一条关于怪规矩的线索，也带来更大的麻烦"],
+        "lowpoint": ["{outcome}；大家一起用力——全散了架", "安静的一页：最小、最不起眼的那一个注意到了前面埋下的东西"],
+        "lowpoint_short": ["{outcome}；人越来越多，一起用力——全散了架；复沓句第二次出现", "安静的一页：最小、最不起眼的那一个注意到了前面埋下的东西"],
+        "finale": ["关键时刻：按最后那个选择，最小或最不被看好的那一个用{turn_setup}帮上大忙，解决难题", "高潮：大家一起，复沓句第三次变了花样，问题解决", "{ending}", "结尾：{echo}"]
+      }
+    },
+    "there_and_back": {
+      "name": "出门再回家",
+      "roles": {
+        "setup": ["在家里：{hero}正在做一件具体的小事；家里有一个小细节（以后会呼应）", "怪事把大家带出了门；怪规矩第一次露出来，旁白用一句“只要……就……”把它说清楚，也写出它靠的那样东西在谁手里；不起眼地埋下 role 为 turn 的那个伏笔（写进文字，也写进 art.focus，留到最后关键时刻才用）", "到了第一个奇怪的地方，第一次尝试失败；复沓句第一次出现：让一个角色喊出来，或跟着怪规矩一起出现"],
+        "trouble": ["{outcome}", "同一条怪规矩在这里闹出更离谱的事，第二次尝试更大、更好笑地失败；复沓句第二次出现", "想家了，或者对手出现"],
+        "detour": ["{outcome}", "又到了一个更奇怪的地方，发现一条关于怪规矩的线索", "线索把大家引向最远的地方"],
+        "lowpoint": ["{outcome}；迷路了，回不去了", "安静的一页：家里那个小细节（或前面埋下的东西）突然在这里出现"],
+        "lowpoint_short": ["{outcome}；第二个地方更离谱，大家彻底迷了路，回不去了；复沓句第二次出现", "安静的一页：家里那个小细节突然在这里出现"],
+        "finale": ["关键时刻：按最后那个选择，用{turn_setup}加上{hero}的本事解决难题，找到回家的路", "高潮：一路回家，复沓句第三次变了花样，带回来一样东西", "{ending}", "回到家：{echo}"]
+      }
+    }
+  },
+  "endings": {
+    "families": {
+      "warm": {"name": "温暖结局", "slot": "暖心", "brief": "心意被看见：用一样东西或一个动作表达出来，不说道理",
+               "page3": "温暖的收尾：{hero}得到了想要的；心意用一样东西或一个动作表达出来"},
+      "twist": {"name": "意外结局", "slot": "反转", "brief": "真相带来一个意想不到的收尾；主角照样得到想要的",
+                "page3": "意外的收尾：{hero}照样得到了想要的，只是方式出乎意料"},
+      "funny": {"name": "爆笑结局", "slot": "爆笑", "brief": "事情解决了，却用一种让人笑出声的方式收尾",
+                "page3": "好笑的收尾：{hero}得到了想要的，却是用一种让人笑出声的方式"}
+    },
+    "score": {
+      "warm": {"kinds": {"careful": 1, "idea": 1}, "flag_words": ["朋友", "信任", "帮", "送", "谢", "抱", "回家", "一起"], "promise_paid": 2},
+      "twist": {"kinds": {"bold": 1}, "twist_clue_planted": 2},
+      "funny": {"kinds": {"silly": 1}, "gag_paid": 2}
+    },
+    "novelty_penalty_found_in_book": 2,
+    "novelty_penalty_recent_books": 1,
+    "tie_break": ["twist", "warm", "funny"]
+  }
+}

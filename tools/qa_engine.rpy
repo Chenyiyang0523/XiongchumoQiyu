@@ -59,10 +59,11 @@ init 999 python:
                 g.online_enabled = True
                 _story_urlopen = transport
                 epoch = g._reset_stream_state()
-                call_ai_stream([], g, epoch)
-                assert g._full_response == expected
-                assert len(g._segment_queue) > 0
-                results.append({"check": "mock transport fallback: " + name, "passed": True})
+                g._bg_call_stream(epoch)
+                assert g.ai_error and not g._full_response
+                assert not g._segment_queue and g.online_enabled
+                assert not g.ended
+                results.append({"check": "mock transport preserves story: " + name, "passed": True})
             g = StoryGame()
             assert not _commit_story_response(g, "stale text", g._request_epoch - 1)
             assert not g._full_response and not g._segment_queue

@@ -1,0 +1,46 @@
+--- a/game/xcmengine/session.py
++++ b/game/xcmengine/session.py
+@@ -408,7 +408,7 @@
+                 revs[pid] = int(revs.get(pid, 0)) + 1
+                 self._cancel_prefix(f"img:{book.id}:{pid}:")
+                 self._cancel_prefix(f"tts:{book.id}:{pid}-")
+-        warm = self._warm.pop((book.id, ev.node), None)
++        warm = self._warm.pop((book.id, ev.node), None) if ev.kind != "plan_meta" else None
+         if warm is not None and self._spec_ok(book):
+             for cid in warm[1]:
+                 if cid in book.nodes and book.nodes[cid].status != "done":
+@@ -616,7 +616,7 @@
+         self._shown[key] = max(self._shown.get(key, 0), idx)
+         self._first_shown.setdefault(key, self.clock())
+         node.read, node.speculative = True, False
+-        if node.ending is not None and node.status == "done" and idx == book.chapter_sizes()[node.chapter - 1]:
++        if node.ending is not None and node.status == "done" and idx == ops.chapter_size(book, node):
+             ops.mark_ending_read(book, node)                  # endings_found = endings read (engine R1)
+             if not book.usage.get("remembered"):
+                 mem = self.lib.memory()
+@@ -730,7 +730,7 @@
+         book = self._book(book_id)
+         node = book.nodes[node_id]
+         sizes = book.chapter_sizes()
+-        planned = sizes[node.chapter - 1] if node.chapter <= len(sizes) else len(node.pages)
++        planned = ops.chapter_size(book, node)
+         done = node.status == "done"
+         visible = [p.id for i, p in enumerate(node.pages, 1) if i < planned or done]
+         choice = None
+@@ -791,14 +791,14 @@
+             else:
+                 placeholder = {"mode": "bg", "file": fb["bg"], "tint": fb["tint"]}
+         sizes = book.chapter_sizes()
+-        planned = sizes[node.chapter - 1]
++        planned = ops.chapter_size(book, node)
+         opt = None
+         if idx == 1 and node.parent:
+             parent = book.nodes[node.parent]
+             opt = parent.choice.option(node.via) if parent.choice is not None else None
+         done = node.status == "done"
+         nxt = node.pages[idx].id if idx < len(node.pages) and (idx + 1 < planned or done) else ""
+-        return {"id": page.id, "node": node_id, "index": idx, "number": book.first_page_number(node.chapter) + idx - 1,
++        return {"id": page.id, "node": node_id, "index": idx, "number": ops.page_number(book, node, idx),
+                 "total": sum(sizes), "lines": lines, "image": page.image.file if page.image.state == "ready" else "",
+                 "painting": (self._images_on() and page.image.state in ("none", "queued") and self._budget() == "ok"
+                              and self.api["state"] == "ok"),

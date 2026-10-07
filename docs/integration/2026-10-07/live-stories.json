@@ -1,0 +1,177 @@
+{
+  "model": "glm-5.3",
+  "endpoint": "BigModel ordinary metered API",
+  "stories": [
+    {
+      "scenario": "一觉醒来，狗熊岭一点声音都没有了，连熊二的呼噜都不见了。",
+      "duration": 10,
+      "turns": [
+        {
+          "turn": 0,
+          "seconds": 15.03,
+          "choice": null,
+          "story": "【场景：forest】\n天亮了。熊二打了个大哈欠，哈欠没有声音。\n鸟不叫，风不响，狗熊岭安静得像一口倒扣的大锅。\n【场景：forest】\n熊二拍肚皮，拍不出声。他心里说：俺要把声音找回来！\n没有呼噜，连睡觉都不香嘞。他顺着树影往前走。\n【场景：forest】\n前面是三岔路口。左边通向光头强的小木屋，烟囱冒着烟，还飘来一丝怪味，像蜂蜜罐的盖子。\n中间通向河边，右边钻进山洞，洞口的风铃直晃，也是哑的。\n**请选择：**\nA. 去小木屋，闻闻那股怪味是啥\nB. 去河边，找鱼儿问问动静\nC. 进山洞，把哑巴风铃摘下来看",
+          "ended": false
+        },
+        {
+          "turn": 1,
+          "seconds": 9.89,
+          "choice": "A. 去小木屋，闻闻那股怪味是啥",
+          "story": "【场景：cabin】\n小木屋的门关得紧紧的。窗户开着一条缝，怪味就是从这儿飘出来的。\n熊二踮起脚往里看。桌上摆着一排罐子，罐口全用蜡封着。\n**熊二**：咦？蜂蜜咋装在这么小的罐罐里咧？\n【场景：cabin】\n最近的那罐上贴着纸条，写着：熊二呼噜，勿动。\n罐子轻轻地抖，一下，一下，像里面有东西在打滚。\n床上，光头强蒙着被子，睡得口水都流出来了。\n【场景：cabin】\n熊二伸手敲窗框。咚，咚——他瞪圆了眼睛。\n拳头明明打出去了，一点声儿都没有。声音真的全被收走啦！\n罐子越抖越欢，桌上的标签哗啦啦翻了个面。\n**请选择：**\nA. 悄悄钻进窗户，先抱走呼噜那罐\nB. 回树林找熊大，兄弟俩一起想办法\nC. 掀光头强的被子，叫他起来看罐子",
+          "ended": false
+        },
+        {
+          "turn": 2,
+          "seconds": 7.8,
+          "choice": "B. 回树林找熊大，兄弟俩一起想办法",
+          "story": "【场景：forest】\n熊二一路小跑回大树洞。熊大正站在洞口，张着嘴喊，嘴里也是空的。\n**熊大**：（用手指比划）你那边，有发现？\n熊二用力点头，拉着熊大的爪子就往小木屋方向拽。\n【场景：forest】\n半路上，熊大突然蹲下。地上有一串车辙印，从小木屋一直通向山那边。\n车辙旁边掉了一样东西：一根细管子，管口粘着蜡，跟罐口的蜡一个样。\n熊大把管子插进耳朵里听了听，眉毛拧成了疙瘩。\n【场景：forest】\n**熊二**：（心里想）管管是吸声音用的？那车车装着一整车罐罐跑啦？\n熊大拍拍熊二的肩膀，朝小木屋指了指，又朝山那边指了指，意思是：查哪个？\n**请选择：**\nA. 先回小木屋，抱住会抖的呼噜罐\nB. 顺着车辙追上山，追那辆车\nC. 把细管子插树洞里，试试吸别的东西",
+          "ended": false
+        },
+        {
+          "turn": 3,
+          "seconds": 19.95,
+          "choice": "C. 把细管子插树洞里，试试吸别的东西",
+          "story": "【场景：forest】\n熊大把细管子插进树洞，管尾立刻鼓起一个小蜡泡，圆溜溜的，像颗豆子。\n树洞里的蜂蜜味一下子被抽走了，闻着只剩一股木头味。\n**熊二**：哇，管管连味儿都能吸嘞！\n【场景：forest】\n熊二凑上去捏蜡豆。豆子啪的一声炸开，蜂蜜味扑了满鼻子。\n熊二打了个大喷嚏——阿嚏！\n这一声又响又亮，把兄弟俩都震得跳了起来。\n【场景：forest】\n熊大抱着熊二又蹦又跳，指着他的鼻子，意思是：声音是从豆子里跑出来的！\n熊二心里一亮：罐罐封着声音，打开就能放出来！\n可车辙印的那头，山那边还压着一整车罐罐咧。\n**请选择：**\nA. 回小木屋，掀开呼噜罐的蜡封\nB. 带着细管子，顺着车辙追上山\nC. 用管子对准喷嚏，试试把声音吸回来",
+          "ended": false
+        },
+        {
+          "turn": 4,
+          "seconds": 7.3,
+          "choice": "A. 回小木屋，掀开呼噜罐的蜡封",
+          "story": "【场景：cabin】\n熊二从窗户缝钻进小木屋，抱起那罐会抖的呼噜。\n他用熊爪抠住蜡封，轻轻一掀。\n噗——罐子里滚出一串呼噜，震得桌上的筷子都跳了舞。\n【场景：cabin】\n呼噜声钻进被窝，光头强一个激灵坐起来，头发都没有的脑袋上全是汗。\n他看见熊二抱着空罐子，脸一下红到了鼻子尖。\n**光头强**：狗熊！那是我做的一夜安眠罐！我就是想睡个清净觉啊！\n【场景：cabin】\n光头强指着墙角一个木头匣子，上面亮着一盏小红灯。\n匣子上写着：李老板专用铃。红灯一闪一闪，铃在匣子里拼命撞，就是响不出来。\n熊二心里明白啦：山那头的车，拉的是大伙儿剩下的声音咧。\n**请选择：**\nA. 让光头强赔大家的声音，一起上山追车\nB. 用细管子把铃声吸走，永远别再吵人\nC. 先开呼噜罐安顿光头强睡觉，再上路",
+          "ended": false
+        },
+        {
+          "turn": 5,
+          "seconds": 8.39,
+          "choice": "B. 用细管子把铃声吸走，永远别再吵人",
+          "story": "【场景：cabin】\n熊大把细管子插进木匣。管尾鼓起一颗小小的蜡豆，红灯一下子灭了。\n光头强捧着那颗铃声豆，眼泪在眼眶里打转。\n**光头强**：三年了，我终于不用一听见铃声就立正啦！\n【场景：mountain】\n光头强领着熊大熊二追上山。卡车停在半山腰，车厢里堆满了封蜡的罐子。\n熊二伸出爪子，一罐一罐掀蜡封。呼噜、鸟叫、风声，全都蹦了出来，撒腿往狗熊岭跑。\n哗啦啦——啾啾啾——\n【场景：forest】\n狗熊岭一下子热闹起来。熊大唱起了歌，光头强在河边洗耳朵，说头一回觉得水声这么好听。\n太阳落山了。熊二躺回大树洞，打起了震天响的呼噜。\n**熊二**：呼噜回家喽，俺的蜂蜜罐也得看紧嘞……\n【属性变化：智+1，友+1】\n【剧终】",
+          "ended": true
+        }
+      ],
+      "completed": true,
+      "final_stats": {
+        "智": 6,
+        "勇": 5,
+        "体": 5,
+        "友": 6
+      }
+    },
+    {
+      "scenario": "所有人的影子一起出走，跑去干自己偷偷想干的事。",
+      "duration": 5,
+      "turns": [],
+      "error": "故事暂时未能完成，请重试这一段。"
+    }
+  ],
+  "usage": [
+    {
+      "completion_tokens": 629,
+      "completion_tokens_details": {
+        "reasoning_tokens": 201
+      },
+      "prompt_tokens": 1687,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 2316,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 315,
+      "completion_tokens_details": {
+        "reasoning_tokens": 34
+      },
+      "prompt_tokens": 2161,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "total_tokens": 2476,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 562,
+      "completion_tokens_details": {
+        "reasoning_tokens": 219
+      },
+      "prompt_tokens": 2032,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "total_tokens": 2594,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 426,
+      "completion_tokens_details": {
+        "reasoning_tokens": 77
+      },
+      "prompt_tokens": 2410,
+      "prompt_tokens_details": {
+        "cached_tokens": 1984
+      },
+      "total_tokens": 2836,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 997,
+      "completion_tokens_details": {
+        "reasoning_tokens": 644
+      },
+      "prompt_tokens": 2801,
+      "prompt_tokens_details": {
+        "cached_tokens": 2368
+      },
+      "total_tokens": 3798,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 410,
+      "completion_tokens_details": {
+        "reasoning_tokens": 43
+      },
+      "prompt_tokens": 3191,
+      "prompt_tokens_details": {
+        "cached_tokens": 2752
+      },
+      "total_tokens": 3601,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 491,
+      "completion_tokens_details": {
+        "reasoning_tokens": 161
+      },
+      "prompt_tokens": 3597,
+      "prompt_tokens_details": {
+        "cached_tokens": 3136
+      },
+      "total_tokens": 4088,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 668,
+      "completion_tokens_details": {
+        "reasoning_tokens": 208
+      },
+      "prompt_tokens": 1677,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 2345,
+      "returned_model": "glm-5.3"
+    },
+    {
+      "completion_tokens": 458,
+      "completion_tokens_details": {
+        "reasoning_tokens": 132
+      },
+      "prompt_tokens": 2179,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "total_tokens": 2637,
+      "returned_model": "glm-5.3"
+    }
+  ]
+}

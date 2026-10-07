@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "notes": "Canonical places. 'prompt' feeds image prompts when the art brief names the place; 'bg' is the fallback background shown while an illustration is pending or when illustrations are off; 'tint' is an optional default grade for the fallback.",
+  "places": [
+    {"id": "treehole", "name": "熊大熊二的树洞", "keywords": ["树洞", "熊窝", "洞口", "家里"], "prompt": "熊大熊二住的大树洞，木架子上摆着蜂蜜罐，干草垫子，洞口透进阳光", "bg": "bg_cave", "tint": ""},
+    {"id": "cabin", "name": "光头强的木屋", "keywords": ["木屋", "小屋", "光头强家", "工作台", "壁炉"], "prompt": "光头强的小木屋里，墙上挂着锯子和工具，石头壁炉，工作台上散着零件", "bg": "bg_cabin", "tint": ""},
+    {"id": "river", "name": "狗熊岭小河边", "keywords": ["河", "小河", "溪", "水边", "湖", "瀑布", "岸边"], "prompt": "狗熊岭的小河边，圆圆的石头，清清的河水，小小的瀑布", "bg": "bg_riverside", "tint": ""},
+    {"id": "town", "name": "狗熊岭镇", "keywords": ["镇", "村", "集市", "街", "广场", "火车站", "庙会"], "prompt": "狗熊岭镇的小广场，红柱子、灯笼、彩旗、喷泉", "bg": "bg_village", "tint": ""},
+    {"id": "jijicave", "name": "吉吉国王的山洞", "keywords": ["山洞", "王宫", "宝座"], "prompt": "吉吉国王的山洞王宫，石头宝座，香蕉堆成小山", "bg": "bg_cave", "tint": "dim"},
+    {"id": "night", "name": "夜晚的森林", "keywords": ["夜", "晚上", "月亮", "星星", "萤火虫", "月光"], "prompt": "夜晚的狗熊岭森林，紫蓝色的天空，星星和萤火虫", "bg": "bg_night", "tint": ""},
+    {"id": "snow", "name": "雪地", "keywords": ["雪", "雪山", "冰", "冬天", "雪地"], "prompt": "白雪覆盖的狗熊岭，松树上压着厚厚的雪", "bg": "bg_forest", "tint": "snow"},
+    {"id": "lab", "name": "天才威的实验室", "keywords": ["实验室", "机器", "仪器", "机甲"], "prompt": "天才威的实验室，闪烁的仪表盘，奇怪的大机器，一张整整齐齐的工作台", "bg": "bg_cabin", "tint": "cool"},
+    {"id": "meadow", "name": "山坡草地", "keywords": ["草地", "花丛", "山坡", "花海", "草坡"], "prompt": "开满野花的山坡草地，远处是蓝色的山", "bg": "bg_forest", "tint": "warm"},
+    {"id": "sky", "name": "天上", "keywords": ["天上", "云上", "空中", "云朵上"], "prompt": "高高的蓝天和大朵大朵的白云", "bg": "bg_forest", "tint": "bright"},
+    {"id": "forest", "name": "狗熊岭森林", "keywords": ["森林", "树林", "林子", "小路", "林间", "狗熊岭"], "prompt": "狗熊岭的森林，高大的阔叶树和松树，弯弯的林间小路，野花", "bg": "bg_forest", "tint": ""}
+  ],
+  "default": "forest",
+  "backgrounds": {
+    "bg_forest": "images/bg/bg_forest.webp",
+    "bg_cave": "images/bg/bg_cave.webp",
+    "bg_cabin": "images/bg/bg_cabin.webp",
+    "bg_riverside": "images/bg/bg_riverside.webp",
+    "bg_village": "images/bg/bg_village.webp",
+    "bg_night": "images/bg/bg_night.webp"
+  }
+}
